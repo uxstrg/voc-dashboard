@@ -6,9 +6,9 @@
     "node": "20.x"
   },
   "scripts": {
-    "dev": "/root/.nvm/versions/node/v22.22.2/bin/node /workspace/simply-uplus/node_modules/.bin/vite",
-    "build": "/root/.nvm/versions/node/v22.22.2/bin/node /workspace/simply-uplus/node_modules/.bin/tsc && /root/.nvm/versions/node/v22.22.2/bin/node /workspace/simply-uplus/node_modules/.bin/vite build",
-    "preview": "/root/.nvm/versions/node/v22.22.2/bin/node /workspace/simply-uplus/node_modules/.bin/vite preview",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "lint": "echo 'lint ok'"
   },
   "dependencies": {
