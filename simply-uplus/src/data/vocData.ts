@@ -1,0 +1,8855 @@
+import { DiagnosedVoC } from "../types";
+
+export const VOC_DATA: DiagnosedVoC[] = [
+  {
+    "id": "voc-0001",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+one",
+    "service": "U+one",
+    "raw_text": "유플러스를 6년째 사용하고 있는 장기고객으로서 처음에는 앱이 정말 답답했어요 사실 무슨 기능이 있는지도 잘 모르고 있는둥 없는둥한 앱이였는데 .. 정말 한계절 두계절 지나면서 업데이트 할때마다 속도도 빨라지고 통신사 상담원 연결 없이 앱으로 해결할 수 있는 일도 많아지고 매번 발전하고 있다는 느낌을 가장 많이 받는 앱이에요 특히 U+멤버스 앱도 정말 유용한거 아시죠 ?? 설치 안하신분들 꼭꼭 하세요 !!! 매번 좋은 정보와 이벤트 열일 하시는게 소비자에게 느껴지니 안찾을수가 없네요 앞으로도 어떻게 발전할지 지켜보겠습니다 항상 화이팅 하세요 !! ❤️",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "초기 앱 기능 인지 어려움 및 사용성 부족 (과거 경험)",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "학습용이성",
+          "정보구조화"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "6년 장기고객 기준에서 초기 앱은 기능 발견성과 정보 구조가 낮아 유입 경험이 실망 수준이었음",
+        "action_hint": "신규 유입 온보딩 플로우 기능 발견성 점검"
+      },
+      {
+        "issue_summary": "업데이트 반복을 통한 앱 속도 및 자가처리 기능 개선 체감",
+        "feedback_type": "사용편의",
+        "domain": "기술",
+        "attributes": [
+          "신속성",
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 95,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": 5,
+        "status": "Alignment",
+        "diagnosis": "매 업데이트마다 속도 향상과 자가처리 확장이 장기고객의 기대를 지속적으로 충족시키며 신뢰를 형성 중",
+        "action_hint": "업데이트 릴리즈 노트에 성능 지표 변화 가시화"
+      },
+      {
+        "issue_summary": "상담원 연결 없이 앱 내 자가처리 가능 범위 확대에 대한 만족",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성",
+          "지원 신속성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": 0,
+        "status": "Alignment",
+        "diagnosis": "CS 채널 의존도 감소와 앱 자가처리 확장이 장기고객의 운영 편의 기대를 정확히 충족",
+        "action_hint": "자가처리 커버리지 확대 로드맵 CS 인바운드 감소율과 연계 추적"
+      },
+      {
+        "issue_summary": "U+멤버스 앱의 이벤트·혜택 정보 제공에 대한 높은 만족 및 추천 의사",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": 0,
+        "status": "Alignment",
+        "diagnosis": "지속적 이벤트 운영과 혜택 정보 제공이 장기고객의 브랜드 체감 기대를 충족하며 자발적 추천 행동으로 이어짐",
+        "action_hint": "멤버스 이벤트 참여율-재방문율 세그먼트별 효과 분석"
+      }
+    ],
+    "overall_summary": "U+one 앱과 U+멤버스 앱 전반에 걸쳐 UX·기술·운영·전략 도메인 모두에서 긍정 체감이 확인되며, 특히 속도 개선·자가처리 확대·혜택 제공 측면에서 장기고객의 높은 기대 수준을 충족하고 있다. 다만 초기 앱 경험에 대한 과거 부정 언급은 신규 유입 고객의 온보딩 플로우가 여전히 취약할 수 있음을 시사하는 간접 신호다. UX기획 팀은 기능 발견성 중심의 온보딩 플로우를 점검하고, 상품전략 팀은 멤버스 혜택의 세그먼트별 체감 효과를 지속 모니터링할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0002",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+one",
+    "service": "U+one",
+    "raw_text": "매달 데이터 선물하기 들어가서 번호 입력 후 인증하기도 번거로웠고 자동주기는 결합된 가족 한정으로 결합 구성원 아니면 줄수없음으로 어려움 많았는데 이번 업데이트는 고객의 편의에 중점을 두었다는걸 느꼈습니다. 최근에 데이터 준 인원이 자동으로 떠있어서 클릭 한번하면 데이터 선물하기 완료로 끝나버리네요! 유플쵝오",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "데이터 선물하기 번호 수동 입력 및 인증 절차가 번거로움",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "효율성",
+          "간결성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "매달 반복되는 수동 인증 플로우가 사용 피로를 누적시켜 편의성 기대치에 미달",
+        "action_hint": "데이터 선물 수동 입력 단계 최소화 스프린트 반영"
+      },
+      {
+        "issue_summary": "자동 주기 데이터 선물이 결합 가족으로만 제한되어 비결합 고객은 이용 불가",
+        "feedback_type": "사용편의",
+        "domain": "전략",
+        "attributes": [
+          "기능 보편성",
+          "타겟 적합성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "자동 주기 기능이 결합 회선 한정으로 설계되어 비결합 고객의 기능 접근성이 차단됨",
+        "action_hint": "자동 주기 선물 대상 세그먼트 확대 검토"
+      },
+      {
+        "issue_summary": "업데이트 후 최근 선물 수신자 자동 노출로 원터치 선물 완료 가능",
+        "feedback_type": "감성",
+        "domain": "UX",
+        "attributes": [
+          "효율성",
+          "예측가능성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "최근 수신자 자동 노출 기능이 반복 선물 플로우를 획기적으로 단축하며 고객 만족을 견인",
+        "action_hint": "최근 수신자 자동 노출 UX 패턴 타 기능에 확장 적용"
+      }
+    ],
+    "overall_summary": "이번 VoC는 데이터 선물하기 기능의 UX 개선 전후를 동시에 담은 피드백으로, 기존 수동 인증 플로우와 결합 가족 한정 자동 주기 제약이 반복적 불편을 야기했던 반면 최근 수신자 자동 노출 업데이트가 명확한 체감 개선으로 이어졌다. 특히 매달 반복 사용하는 고객일수록 이전 플로우의 피로도가 누적되어 기대 낙차가 컸던 맥락이 확인된다. UX기획팀은 이번 업데이트의 긍정 패턴을 타 반복 기능에 확장 적용하고, 상품전략팀은 자동 주기 선물의 비결합 고객 대상 확대 여부를 검토할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0003",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+one",
+    "service": "U+one",
+    "raw_text": "부모님은 데이터를 많이 사용하시지는 않는데 비싼 요금제는 아깝고 싼 요금제는 데이터가 부족하고…. 근데 땋!! 제가 사용하고 있는 데이터 무제한 요금제에서 부모님께 데이터를 선물할 수 있네요 그것도 한번만 설정하면 매달 자동으로.. 유플러스 데이터 선물하기 찐으로 좋습니다",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "무제한 요금제 데이터 선물 기능으로 부모님 요금 고민 해결",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "개인 맞춤화"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "가족 간 데이터 공유·선물 기능이 실질적 요금 고민을 해소하며 강한 혜택 체감으로 이어짐",
+        "action_hint": "가족결합 세그먼트 대상 데이터선물 혜택 마케팅 강화"
+      },
+      {
+        "issue_summary": "매달 자동 반복 설정 기능으로 편의성 극대화",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "효율성",
+          "예측가능성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "1회 설정으로 매달 자동 실행되는 플로우가 반복 조작 부담을 제거하며 사용편의성 극찬으로 연결됨",
+        "action_hint": "자동반복 설정 플로우를 온보딩 하이라이트로 노출 강화"
+      }
+    ],
+    "overall_summary": "전략 및 UX 도메인 모두에서 혜택 체감성과 사용편의성이 고객 기대를 크게 상회하는 긍정 신호가 감지되었다. 가족 요금제 선택 고민이라는 실생활 페인포인트를 데이터 선물 + 자동 반복 기능이 동시에 해소하면서 기대 낙차가 플러스 방향으로 크게 발생한 케이스다. 상품전략팀은 해당 기능을 가족결합·시니어 세그먼트 획득 레버로 적극 활용하고, UX기획팀은 자동반복 설정 플로우를 신규 가입자 온보딩 핵심 경험으로 배치하는 방안을 검토할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0004",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+one",
+    "service": "U+one",
+    "raw_text": "매월 가족 결합되어 있는 어머니께 데이터를 드리는데, 이번 ux리뉴얼로 데이터 선물 절차가 대폭 줄어들어 엄청 편하네요. 매월 번호 입력하고 인증하고 뭐하고 하세월이었는데 클릭클릭으로 완료되니 넘 좋습니다. 발전하는 모습이 고맙고 좋네요.",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "UX 리뉴얼 후 데이터 선물 절차가 대폭 간소화되어 사용 편의성 향상",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "효율성",
+          "간결성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": 0,
+        "status": "Alignment",
+        "diagnosis": "가족결합 장기 이용 고객이 리뉴얼 전후 플로우 차이를 체감하며 높은 만족을 표현, UX 간소화 효과가 실사용에서 명확히 검증됨",
+        "action_hint": "데이터 선물 간소화 플로우를 온보딩 화면에 노출"
+      }
+    ],
+    "overall_summary": "이번 VoC는 UX 도메인의 효율성·간결성 속성에서 뚜렷한 긍정 신호를 보이고 있다. 가족결합 장기 고객이 매월 반복 수행하는 데이터 선물 플로우에서 리뉴얼 전후 체감 낙차를 직접 비교하며 만족을 표현한 만큼, 개선 효과가 실사용 맥락에서 유효하게 작동하고 있음을 확인할 수 있다. UX기획팀은 해당 플로우를 긍정 레퍼런스로 아카이빙하고, 유사한 반복 작업 플로우에 동일 패턴을 확산 적용하는 방향을 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0005",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[이유를 알수없는] 무슨 버그인지 모르겠는데 전화를 자기마음대로 끊어버리네요? 뭔 어이없는 버그인지 모르겠네요",
+    "collected_at": "2026-02-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "통화 중 앱이 임의로 전화를 종료하는 버그 발생",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "사용자가 원인조차 파악할 수 없는 통화 강제 종료 버그로, 통화 앱의 핵심 기능 자체가 무너진 상태",
+        "action_hint": "통화 종료 크래시 로그 즉시 수집·핫픽스 배포"
+      }
+    ],
+    "overall_summary": "익시오 앱의 통화 기능에서 사용자 의도와 무관하게 전화가 끊기는 시스템 안정성 결함이 확인된다. 통화 앱에서 자동 종료는 가장 기본적인 신뢰를 훼손하는 치명적 결함으로, 표준 기대 수준 대비 실제 경험 낙차가 매우 크다. 서비스개발팀은 해당 버전의 통화 세션 종료 크래시 로그를 즉시 수집하고 원인 식별 후 핫픽스 우선 적용 여부를 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0006",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[연결 계속 끊김] 수신 전화 계속 끊김. 연결 안되고.",
+    "collected_at": "2026-02-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "수신 전화 연결이 반복적으로 끊기는 통화 품질 장애",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "수신 통화 반복 단절로 앱의 핵심 기능 자체가 신뢰를 잃은 상태",
+        "action_hint": "수신 통화 크래시 로그 즉시 분석 및 핫픽스 배포"
+      }
+    ],
+    "overall_summary": "익시오 앱의 핵심 기능인 수신 통화 연결이 반복적으로 실패하는 기술 안정성 이슈가 확인된다. 별점 1점과 '계속'이라는 반복 표현이 겹쳐 단순 일회성 오류가 아닌 구조적 결함일 가능성이 높아 기대치 낙차가 매우 크다. 서비스개발·인프라 팀은 수신 호 처리 흐름의 크래시 로그와 네트워크 세션 유지 로직을 우선 점검하고 긴급 핫픽스 여부를 판단해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0007",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[앱이 이상해요] 통화 종료가 제대로 안되요, 끊어도 워치에서 계속 통화가 울려요",
+    "collected_at": "2026-02-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "통화 종료 후 워치에서 계속 통화 울림 지속",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "연동성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "앱에서 통화 종료 시 워치와 상태 동기화가 끊겨 통화 세션이 잔존하는 연동 버그",
+        "action_hint": "앱-워치 통화 종료 이벤트 싱크 핫픽스 배포"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 앱과 워치 간 통화 종료 상태 동기화 실패 이슈가 발생하고 있다. 통화를 끊어도 워치에서 지속 울리는 현상은 단순 불편을 넘어 반복 체감되는 오작동으로, 기본 기능 신뢰를 훼손하는 수준이다. 서비스개발팀은 익시오 앱의 통화 종료 이벤트가 워치로 정상 전달되는지 연동 플로우를 즉시 점검하고 핫픽스 여부를 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0008",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[전화 통화 버튼 눌러도 활성화가 안 됨] 전화 어플이 전화가 안 되면 뭐 어쩌라는 거지 통화가 안 돼요;;",
+    "collected_at": "2026-02-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "전화 통화 버튼 눌러도 활성화 안 되어 통화 불가",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "전화 앱의 핵심 기능인 통화 버튼이 동작하지 않아 앱 존재 이유 자체가 훼손된 치명적 기능 불량",
+        "action_hint": "통화 버튼 비활성화 크래시 원인 즉시 핫픽스"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 이슈로, 전화 앱의 핵심 기능인 통화 버튼이 아예 작동하지 않는 치명적 결함이 확인되었다. 전화 앱에 대한 고객 기대는 '당연히 전화가 되어야 한다'는 최고 수준이므로 실제 경험과의 낙차가 극심하다. 서비스개발팀은 통화 버튼 비활성화 재현 케이스를 즉시 수집하고 핫픽스 배포를 최우선으로 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0009",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[익시오 넘 편리해요] 통화 내용을 AI 대화 검색 기능으로 쉽게 찾을 수 있어서 시간 단축 할 수 있어서 넘 편리해요.",
+    "collected_at": "2026-02-25T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "AI 대화 검색으로 통화 내용 조회 시 시간 단축 경험",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "효율성",
+          "간결성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "AI 대화 검색 기능이 통화 내용 탐색의 시간 비용을 낮춰 핵심 사용 가치를 명확히 체감시킴",
+        "action_hint": "AI 검색 플로우를 온보딩 핵심 시나리오로 전면 배치"
+      }
+    ],
+    "overall_summary": "UX 도메인의 효율성·간결성 속성에서 뚜렷한 긍정 신호가 감지된다. 특별한 사전 기대치 없이 서비스를 접한 일반 사용자가 AI 대화 검색의 시간 절감 효과를 직접 체감하면서 기대 대비 큰 만족 낙차를 경험한 것으로 보인다. UX기획팀은 해당 기능의 진입 경로와 온보딩 시나리오를 점검해 신규 유입 사용자의 첫 성공 경험 도달률을 높이는 방향을 검토하기 바란다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0010",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[데이터 연결 없이는 무용지물이라 아쉬워요.] 녹음 요약 기능이 좋아서 쓰는데, 무조건 데이터를 켜야만 요약이 된다는 게 너무 불편합니다. 데이터 환경이 원활하지 않을 때도 많은데, 매번 데이터 연결을 확인해야 해서 번거롭네요. 추후 업데이트를 통해 오프라인 환경에서도 요약 기능을 사용할 수 있게 개선 부탁드립니다.",
+    "collected_at": "2026-02-25T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "녹음 요약 기능이 온라인 환경에서만 작동하여 오프라인 사용 불가",
+        "feedback_type": "사용편의",
+        "domain": "기술",
+        "attributes": [
+          "기능 보편성",
+          "시스템 안정성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "핵심 기능인 녹음 요약이 네트워크 의존 구조로 설계되어 오프라인 환경에서 완전히 비활성화되며, 매번 연결 확인이 요구되는 반복 마찰이 체감 불편을 증폭시키고 있음",
+        "action_hint": "오프라인 요약 로컬 처리 스프린트 검토"
+      }
+    ],
+    "overall_summary": "기술 도메인의 기능 보편성 이슈로, 익시오의 핵심 가치 기능인 녹음 요약이 네트워크 상시 연결을 전제로 설계되어 있어 데이터 불안정 환경에서 반복적으로 사용 단절이 발생하고 있다. 해당 고객은 기능 자체에는 만족하나 인프라 의존 구조에서 비롯된 제약이 누적 불편으로 이어지고 있어 기대 대비 경험 낙차가 크게 나타난다. 서비스개발팀은 온디바이스 경량 모델 적용 또는 오프라인 큐잉 후 재연결 시 처리하는 구조 전환 가능성을 우선 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0011",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+tv모아",
+    "service": "U+tv모아",
+    "raw_text": "우선 리모콘 어플 자체는 잘 쓰고 있으며, 말 그대로 리모콘이라는 간단한 기능은 이미 완벽히 갖추어져 있습니다. 그런데 제가 타 통신사 리모콘 어플을 이용하다 와서 그런지 유플러스 리모콘에는 없는 한 가지 기능이 아쉽더라고요. 현재 시청 중인 채널 정보가 짧게라도 보이면 정말 좋을 것 같습니다~ 리모콘 어플 사용자가 티비를 볼 수 없는 상태에서 원격으로 그 채널 또는 그 방송을 틀어줘야 할 때, 현재 시청 중인 채널이 어디인지 알 수 있으면 정말 편하더라고요ㅎㅎ 그렇다고 리모콘 어플에서 현재 시청 중인 채널의 실시간 화면까지 바라는 건 절대 아닙니다... 한 줄로 짧게 현재 시청 중인 채널의 번호, 방송사, 프로그램명 정도가 보인다면 충분할 것 같습니다! 긍정적으로 검토해 주시면 감사하겠습니다 :-)",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "리모콘 앱에서 현재 시청 중인 채널 정보(번호·방송사·프로그램명) 확인 기능 부재",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "기능 보편성",
+          "효율성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "타 통신사 리모콘 앱 대비 채널 상태 확인 기능이 누락되어 원격 조작 시 사용성이 저하됨",
+        "action_hint": "리모콘 앱에 현재 채널 정보 표시 플로우 설계"
+      }
+    ],
+    "overall_summary": "UX 도메인에서 리모콘 앱의 기능 보편성과 효율성 속성에 Gap이 확인된다. 타 통신사 앱을 경험한 고객이 동일 기능을 기대하는 상황으로, TV를 직접 볼 수 없는 원격 조작 시나리오에서 기대치 낙차가 뚜렷하게 나타난다. UX기획팀은 현재 채널 번호·방송사·프로그램명을 한 줄로 노출하는 상태 표시 컴포넌트를 다음 스프린트 백로그에 반영할 것을 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0012",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+tv모아",
+    "service": "U+tv모아",
+    "raw_text": "넷플도보고 티비도보고 유툽도보는데 리모컨이 고장남.유플만 쓰는 장기고객인데도 리모컨 교체 시 3만원 내고 구입하래서 열심히 버티다가 앱을 알게 됨. 세상 너무 편함. 휴대폰이 구형이라 그런지 자고일어났더니 앱실행이 안되서 다시 연결해제했다가 재연결하니 잘 작동함. 리모컨으로 조작하는게 힘들어서 tv번호도 사진찍어둠 ㅋ 손가락도 안아프고 좋음.",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "장기고객임에도 리모컨 교체 비용 3만원 청구로 혜택 체감 실패",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "장기고객 로열티에 상응하는 부품 교체 혜택이 부재하여 브랜드 신뢰 낙차 발생",
+        "action_hint": "장기고객 리모컨 교체 혜택 세그먼트 설계"
+      },
+      {
+        "issue_summary": "U+tv모아 앱으로 리모컨 대체 후 조작 편의성 만족",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "효율성",
+          "공감성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "리모컨 대체 수단으로서 앱의 조작 편의성이 기대 이상으로 체감됨",
+        "action_hint": "앱 리모컨 기능 온보딩 노출 확대"
+      },
+      {
+        "issue_summary": "구형 휴대폰 환경에서 앱 실행 불가 후 재연결로 복구",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "저사양 디바이스에서 앱 세션 유지 실패로 수동 재연결 우회 발생",
+        "action_hint": "구형 기기 크래시 로그 수집 및 세션 복구 핫픽스"
+      }
+    ],
+    "overall_summary": "이번 VoC는 전략·기술·UX 세 도메인에 걸쳐 복합적 이슈가 혼재하며, 장기고객 혜택 부재와 구형 기기 앱 불안정이 핵심 부정 신호다. 특히 10년 이상 유플만 사용한 장기고객이 리모컨 교체 비용 부담을 느끼는 상황에서 기대 낙차가 가장 크게 나타나며, 앱을 우회 수단으로 발견한 것은 기회이자 온보딩 부재의 방증이다. 상품전략팀은 장기고객 디바이스 교체 혜택 기준을 재검토하고, 서비스개발팀은 구형 기기 환경에서의 세션 유지 안정성을 우선 점검할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0013",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+tv모아",
+    "service": "U+tv모아",
+    "raw_text": "며칠 전 사용자 개선이라며 업데이트 후 아예 사용불가 상태였다고 리뷰 작성한 후에 오늘 개선 되었다며 재설치 하라고 답변 메일이 왔길래 삭제하고 재설치 하였지만 증상은 마찬가지 였습니다달라진게 없어요 실행하면 초기화면에서 넘어가지 않는..조치 부탁드립니다",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "업데이트 이후 앱 초기화면에서 진행 불가 상태 지속",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": -60,
+        "status": "Gap",
+        "diagnosis": "업데이트 이후 앱이 초기화면에서 멈추는 크래시가 재설치 이후에도 동일하게 재현되어 서비스 진입 자체가 불가한 상태",
+        "action_hint": "초기화면 크래시 핫픽스 즉시 배포"
+      },
+      {
+        "issue_summary": "개선 완료 안내 메일 발송 후에도 동일 오류 재현",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "처리 정확성",
+          "투명성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": -60,
+        "status": "Gap",
+        "diagnosis": "CS가 수정 완료로 안내했으나 실제 증상이 동일하게 재현되어 고객 신뢰를 이중으로 훼손한 상태",
+        "action_hint": "CS 답변 전 재현 검증 프로세스 수립"
+      }
+    ],
+    "overall_summary": "U+tv모아 앱에서 기술 도메인의 시스템 안정성 이슈와 운영 도메인의 처리 정확성 이슈가 동시에 발생하고 있다. 고객은 업데이트 직후부터 사용 불가 상태를 경험하였고, CS의 '개선 완료' 안내를 신뢰하여 재설치까지 시도했으나 동일 증상이 반복되면서 기대 낙차가 매우 큰 상황이다. 서비스개발팀은 초기화면 크래시 로그를 즉시 확인하고, 고객지원팀은 기술 검증 없이 개선 완료를 안내하는 CS 스크립트 운영 방식을 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0014",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+자녀폰지킴이",
+    "service": "U+자녀폰지킴이",
+    "raw_text": "[이앱은 정말 엉터리] 위치조회도 실시간 안되고…그외 여러가지… 제대로 되는게 없어요 그러면서 무료도 아니예요",
+    "collected_at": "2026-02-21T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "위치조회 실시간 미작동",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "자녀 안전 목적 앱의 핵심 기능인 실시간 위치조회가 작동하지 않아 앱의 존재 가치 자체가 훼손됨",
+        "action_hint": "실시간 위치조회 크래시 원인 핫픽스 배포"
+      },
+      {
+        "issue_summary": "전반적 기능 다수 미작동",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "위치조회 외 복수 기능이 정상 동작하지 않아 앱 전반의 품질 신뢰가 붕괴된 상태",
+        "action_hint": "전체 기능 QA 점검 스프린트 즉시 가동"
+      },
+      {
+        "issue_summary": "기능 불량 상태에서 유료 과금 지속",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "가격 합리성",
+          "혜택 체감성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "제 기능을 못하는 앱에 유료 요금이 부과되어 고객이 과금 정당성에 강한 의구심을 갖고 있으며 브랜드 신뢰 손상 위험이 매우 높음",
+        "action_hint": "기능 불량 기간 요금 환불 정책 즉시 수립"
+      }
+    ],
+    "overall_summary": "U+자녀폰지킴이 앱에서 실시간 위치조회를 포함한 핵심 기능 다수가 정상 작동하지 않는 기술 품질 문제와, 그 상태에서 유료 과금이 유지된다는 가격 합리성 문제가 동시에 발생하고 있다. 자녀 보호라는 민감한 목적으로 유료 결제까지 감수한 고객에게 기능 미작동은 기대 낙차를 극대화하며 브랜드 기만으로 인식될 수 있는 수준이다. 서비스개발팀은 위치조회 및 전체 기능 장애 원인을 즉시 점검하고, 상품전략·고객지원팀은 장애 기간 환불 또는 보상 정책을 마련하여 고객 이탈을 선제적으로 차단해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0015",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+자녀폰지킴이",
+    "service": "U+자녀폰지킴이",
+    "raw_text": "sk의 zem과 달리 유료이지만, 유료값을 못하는 어플인듯합니다.메세지는 잠글수 있는 어플이 아닌걸로 분류되어(참고로 타사 어플은 잠글수 있음)메시지->돋보기옆 점 세개클릭->설정->채팅사용팁->스크롤 젤 아래->유투브배너클릭 하면 유튜브 시청이 가능해요이러면 뭐가 보호 됩니까?!다음 업데이트에 참고해서 막아주세요",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유료 앱임에도 메시지 앱 잠금 미지원으로 자녀 보호 기능 부재",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "기능 보편성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "경쟁사(SK ZEM) 대비 유료 앱이 핵심 자녀보호 기능을 미지원해 가치 정당성 상실",
+        "action_hint": "메시지 앱 잠금 기능 상품 로드맵 반영"
+      },
+      {
+        "issue_summary": "메시지 앱 내 설정 경로를 통해 유튜브 시청 우회 가능한 보안 취약점 존재",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "보안성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "메시지 앱 내부 설정→유튜브 배너 경로로 콘텐츠 차단을 우회할 수 있는 구체적 취약점 확인됨",
+        "action_hint": "메시지 앱 내 외부 배너 링크 차단 핫픽스 즉시 배포"
+      }
+    ],
+    "overall_summary": "UX·기술 영역 전반에서 자녀보호 앱의 핵심 가치인 보안성과 기능 보편성이 경쟁사 대비 현저히 낮은 수준으로, 유료 서비스에 대한 기대 낙차가 극단적으로 크다. 메시지 앱 잠금 미지원과 앱 내 유튜브 우회 경로라는 두 가지 구체적 취약점이 동시에 제기된 만큼, 고객의 신뢰 이탈 가능성이 매우 높다. 서비스개발팀은 메시지 앱 내 외부 링크 차단 핫픽스를 우선 배포하고, 상품전략팀은 SK ZEM 대비 기능 격차 해소를 위한 잠금 지원 범위 확대를 다음 스프린트에 반영해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0016",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+우리집지킴이",
+    "service": "U+우리집지킴이",
+    "raw_text": "[인증안되요] U+지킴이 요금제로변경해는데  전화번호인증에서  이번호가 u+통신사에가입되지않았데요…….",
+    "collected_at": "2026-03-24T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "U+지킴이 요금제 변경 후 전화번호 인증 실패",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "오류방지성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": -80,
+        "status": "Gap",
+        "diagnosis": "요금제 전환 직후 통신사 가입 미인식으로 인증 자체가 불가한 치명적 온보딩 차단 오류",
+        "action_hint": "요금제 변경 후 인증 미동기화 핫픽스 적용"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 시스템 안정성 및 오류방지성 속성이 동시에 무너진 사례로, U+지킴이 요금제로 변경한 직후 앱 첫 진입 단계에서 통신사 가입 여부를 인식하지 못해 인증이 원천 차단되는 문제가 발생했다. 신규 전환 고객이 서비스를 단 한 번도 사용하지 못한 채 실패를 경험한 것으로, 기대 낙차가 극단적으로 크다. 서비스개발팀은 요금제 변경 이벤트 발생 시 인증 시스템으로의 가입 상태 동기화 지연 구간을 즉시 점검하고, 인프라팀과 함께 전환 직후 인증 실패율 로그를 확인해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0017",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+우리집지킴이",
+    "service": "U+우리집지킴이",
+    "raw_text": "[비번 틀리면 로그인 아에 차단] 비번 5번 틀리면 24시간도 아니고 그냥 계속 안됌.유플러스 공식 홈페이지에서 비번 바꾸고 재설정해도 안됌. 114 및 101 전화해서 물어봐도 걍 기다리라함. 권한이 없다함. 해결책 제시못함. 어플이 기억력 안좋은 고객은 추방하는 앱인가봄. 나 혼자 설연휴동안 방법찾음. 탈퇴하고 다시 깔거나, 아이디 바꿔야 로그인 가능함. 이거때매 기사님 오셨다가 가셨음. 개쓰레기같은앱.이거 홈서비스에 한달 내는돈이 얼만데 앱 관리를 이따위로함? 내가 공짜로 쓰는거면 말도안함... 도어카메라까지 인터넷포함해서 4는 내는듯 매달.. 유플러스 앱개발팀을 다시뽑든지 교육을 시키세요.... 이게뭡니까 대기업인데 어플 수준은 리얼 허접... 어플이 허접하면 고객센터에서 원격으로라도 해결해줘야하는데 해결능력 0. 이게뭐노",
+    "collected_at": "2026-02-16T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "비밀번호 5회 오류 시 계정이 영구 차단되어 복구 불가",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "오류방지성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "비밀번호 오류 잠금 이후 공식 재설정 경로도 무효화되는 복구 불가 구조로, 유료 홈서비스 이용 고객의 장기 이탈을 유발하는 치명적 결함",
+        "action_hint": "비밀번호 잠금 해제 플로우 핫픽스 배포"
+      },
+      {
+        "issue_summary": "114·101 고객센터가 계정 잠금 문제에 권한 없음을 이유로 해결책 미제시",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "처리 정확성",
+          "지원 신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "기술 장애 상황에서 CS 채널이 권한 부재를 이유로 방치한 결과, 고객이 설 연휴 내내 직접 해결해야 했으며 서비스 신뢰가 완전히 붕괴됨",
+        "action_hint": "앱 계정 잠금 CS 에스컬레이션 스크립트 수립"
+      },
+      {
+        "issue_summary": "계정 잠금 해결을 위해 탈퇴 후 재설치 또는 아이디 변경을 강요받는 비정상 우회 구조",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "오류방지성",
+          "사용자 제어"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "공식 복구 경로 부재로 탈퇴·재가입이라는 극단적 우회만 가능한 구조는 UX 설계 자체의 안전망 결여를 방증함",
+        "action_hint": "계정 복구 플로우 스프린트 내 신규 설계"
+      },
+      {
+        "issue_summary": "앱 계정 오류로 인해 방문 기사가 서비스 처리를 완료하지 못하고 귀환",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "처리 정확성",
+          "채널 접근성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "앱 로그인 불가가 현장 서비스 이행 실패로 직결되어 유·무형 비용 손실과 고객 분노가 동시에 발생한 복합 운영 장애",
+        "action_hint": "현장 기사 방문 전 앱 접근 가능 여부 사전 점검 프로세스 도입"
+      },
+      {
+        "issue_summary": "월 4만원 이상 유료 홈서비스 대비 앱 품질과 CS 대응 수준이 현저히 낮다는 브랜드 불신",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "가격 합리성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "월정액 유료 구독 고객이 앱·CS 품질을 대기업 수준 이하로 체감하면서 지불 금액 대비 가치 신뢰가 완전히 붕괴된 상태",
+        "action_hint": "홈서비스 유료 세그먼트 대상 품질 격차 리뷰 착수"
+      }
+    ],
+    "overall_summary": "U+우리집지킴이 앱의 계정 잠금 복구 부재라는 기술 결함이 CS 응대 무력화, 현장 서비스 이행 실패, 브랜드 신뢰 붕괴까지 연쇄적으로 확산된 복합 장애 사례다. 월 4만원 이상을 지불하는 유료 홈서비스 고객의 고기대 맥락에서 공식 복구 경로가 전혀 없었다는 점이 Gap을 극단적으로 벌렸다. 서비스개발팀은 비밀번호 잠금 해제 플로우 핫픽스를 즉시 배포하고, 고객지원팀은 동일 문제 인바운드에 대한 에스컬레이션 스크립트를 긴급 수립해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0018",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+우리집지킴이",
+    "service": "U+우리집지킴이",
+    "raw_text": "[어플이 이상하네요] 아니 지난영상하나보고 뒤로가기 누르면 깜빡거리고 어플이 아예 멈추네요 왜 그러는건가요? 다시 들어가보고 그래도 똑같은데 솔직히 이걸 쓸 필요가 있을까 싶어요",
+    "collected_at": "2026-01-03T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "영상 재생 후 뒤로가기 시 화면 깜빡임 및 앱 멈춤 발생",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "영상 재생 후 뒤로가기 동작 시 앱이 멈추는 크래시성 버그가 재현되며, 재진입 후에도 동일 증상이 반복되어 앱 사용 가치 자체에 의문을 유발하는 심각한 안정성 결함",
+        "action_hint": "영상→뒤로가기 크래시 핫픽스 즉시 배포"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 이슈로, U+우리집지킴이 앱에서 영상 재생 후 뒤로가기 시 화면 깜빡임과 앱 프리즈가 반복 재현되고 있다. 재진입 후에도 동일 증상이 지속되는 구조적 결함으로, 앱 재사용 의지를 꺾는 수준까지 감성이 악화된 상태다. 서비스개발팀은 영상 플레이어 종료 시 메모리 해제 및 백스택 처리 로직을 긴급 점검하고 핫픽스 배포를 최우선으로 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0019",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+우리집지킴이",
+    "service": "U+우리집지킴이",
+    "raw_text": "갑자기 안되네요 별짓을 다해도 안되는데요? 뭐 이런 앱이 다 있나요갑자기 어플 실행 안됨 눌러서 들어가면 세가족 그림 나오면서 거기서 멈춤 폰 문제인가 싶어서 재부팅 해보고 어플 삭제 했다 다시 깔아보고 했는데 안 됨 아예 로그인조차 안됨 지웠다 다시 깔았으니 다시 로그인 해야 하는데 로그인하면 또 시간끌면서 멈췄다가 요청한 시간이 지났습니다 ㅇㅈㄹ함 아이디 비번 잘못 입력한 것도 아님 유플러스 홈페이지는 잘만 들어가짐 어플문제 맞음 진짜 개 그지같음 약정 끝나면 뒤도 안 돌아보고 끊을것임 다달이 돈은 받아가면서 이게 뭐하는 짓인지? 허구헌날 저장용량이 다 찼습니다 이딴 알림이나 오고 그 알림만 따로 끄고 싶어도 그거 끌려면 전체 알림 꺼야되는데 그럼 홈캠 의미가 있음? 아 진짜 짜증남 뭔 통신사 제품이 이럼? 어플 개구려",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "앱 실행 시 초기 화면(세 가족 그림)에서 앱이 멈추며 진입 불가",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "앱 초기 진입 단계에서 완전 블로킹이 발생하며, 재부팅·재설치 등 우회 시도 후에도 해소되지 않아 서비스 접근 자체가 불가한 심각한 크래시 상태",
+        "action_hint": "앱 초기화면 크래시 핫픽스 즉시 배포"
+      },
+      {
+        "issue_summary": "앱 로그인 시 타임아웃 오류('요청한 시간이 지났습니다')로 로그인 실패",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "재설치 후 로그인 재시도 시에도 타임아웃이 반복 발생하며, 동일 계정으로 웹 로그인은 정상 동작하므로 앱 내 인증 요청 처리 로직에 결함이 특정됨",
+        "action_hint": "앱 로그인 인증 타임아웃 임계값 및 재시도 로직 점검"
+      },
+      {
+        "issue_summary": "'저장용량이 다 찼습니다' 알림이 반복 수신되며 해당 알림만 선택 차단 불가",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "사용자 제어",
+          "오류방지성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "알림 유형별 세분화 제어 기능이 없어 불필요한 알림을 끄려면 홈캠 전체 알림을 비활성화해야 하며, 이는 핵심 기능 자체를 무력화시키는 UX 구조적 결함",
+        "action_hint": "알림 유형별 개별 온오프 플로우 스프린트 반영"
+      },
+      {
+        "issue_summary": "약정 종료 시 서비스 해지 의사 표명",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "지속적인 앱 품질 불만이 '약정 종료 즉시 해지' 의사로 이어져, 서비스 품질에 대한 신뢰가 요금 납부 당위성 자체에 의문을 제기하는 수준까지 악화된 상태",
+        "action_hint": "이탈 위험 세그먼트 대상 선제적 리텐션 혜택 설계"
+      }
+    ],
+    "overall_summary": "U+우리집지킴이 앱에서 실행 블로킹, 로그인 타임아웃, 알림 제어 불가 등 기술·UX 전 영역에 걸쳐 복합적 품질 결함이 동시 발생하고 있다. 고객은 재부팅·재설치 등 모든 우회 수단을 소진한 상태에서도 문제가 해소되지 않아 기대 수준 대비 낙차가 극대화된 것으로 판단되며, 이는 약정 종료 즉시 이탈 의사로 직결되었다. 서비스개발팀은 앱 초기 진입 크래시 및 인증 타임아웃 원인을 긴급 점검하고, UX기획팀은 알림 세분화 제어 기능을 다음 스프린트에 반영해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0020",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+우리집지킴이",
+    "service": "U+우리집지킴이",
+    "raw_text": "백그라운드로 나갔다 들어가면 실시간영상준비중이라고 나오면서 렉걸려요. 매번 앱 재실행해야해서 불편합니다. 예전엔 안그랬는데 재설치하고 재부팅해도 똑같음.. 왜그런건가요??",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "백그라운드 복귀 시 실시간 영상 렉 및 매번 앱 재실행 필요",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "백그라운드 전환 후 스트리밍 세션 미복구로 매번 앱 재실행을 강제하는 반복 장애 상태",
+        "action_hint": "백그라운드 복귀 시 스트림 세션 재연결 핫픽스 배포"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 시스템 안정성과 신속성 속성이 동시에 침해되는 이슈로, 백그라운드 전환 시 실시간 영상 스트림이 복구되지 않아 앱 재실행을 반복 강제하는 상황이다. 재설치·재부팅 후에도 동일 증상이 유지되고 '예전엔 안 그랬다'는 발화에서 특정 업데이트 이후 회귀 버그일 가능성이 높으며, 고객의 기대 낙차가 매우 크다. 서비스개발·인프라팀은 최근 앱 업데이트 버전 기준으로 백그라운드 복귀 시 스트리밍 세션 재연결 로직의 크래시 로그를 우선 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0021",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[아이폰에서 이제 필수 앱] 정말 필요한 앱이었는데 익시오 덕분에 유용하게 사용중 입니다. 안드로이드에서는 자체 지원하는 기능이 있었지만 아이폰은 AI비서앱이 한정적이어서 필수 앱이네요. 다만 워치에서도 통화가능하면 더욱 좋을거 같네요~!",
+    "collected_at": "2026-02-25T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "아이폰 환경에서 AI 비서 앱으로서 높은 만족감",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "맥락 적합성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "iOS 환경에서 AI 비서 앱이 희소한 상황에서 익시오가 명확한 포지션을 선점하며 고객 기대를 초과 충족",
+        "action_hint": "iOS 타겟 세그먼트 마케팅 강화"
+      },
+      {
+        "issue_summary": "애플워치에서 통화 기능 미지원",
+        "feedback_type": "사용편의",
+        "domain": "기술",
+        "attributes": [
+          "연동성",
+          "기능 보편성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "현재 불편 수준은 낮으나 워치 통화 연동 부재가 잠재적 기능 완성도 한계로 인식될 수 있음",
+        "action_hint": "워치 통화 연동 스프린트 우선순위 검토"
+      }
+    ],
+    "overall_summary": "iOS 생태계에서 AI 비서 앱 공백을 익시오가 효과적으로 채우며 브랜드 체감과 타겟 적합성 측면에서 높은 평가를 받고 있다. 다만 애플워치 통화 연동 미지원은 iOS 헤비유저일수록 기대 낙차로 이어질 수 있는 신호로, 서비스개발팀이 WatchOS 통화 API 연동 가능성을 로드맵에 포함할지 검토가 필요하다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0022",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[AI스마트요약 기능 만족] 타사 앱과는 다르게 알뜰폰도 개방하고 AI스마트 요약도 통화 요약에서 진짜 필요한 내용만 뽑아서 간단하게 확인이 가능하여 너무 좋아요. 아이폰에서 통화녹음때문에 U+로 넘어왔는데 기능 너무 만족하며 사용중입니다.",
+    "collected_at": "2026-02-24T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "알뜰폰 개방 정책에 대한 타사 대비 차별성 만족",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "기능 보편성",
+          "타겟 적합성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "타사 미지원 알뜰폰 개방이 명확한 브랜드 차별점으로 체감되며 전환 동기로 직접 작용",
+        "action_hint": "알뜰폰 개방 혜택을 전환 세그먼트 마케팅에 활용"
+      },
+      {
+        "issue_summary": "AI 스마트 요약의 통화 요약 품질에 대한 높은 만족",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "효율성",
+          "간결성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "핵심 정보만 추출하는 요약 품질이 실사용 니즈에 정확히 부합하여 기능 만족도 극대화",
+        "action_hint": "요약 정확도 유지 지표를 스프린트 KPI로 고정"
+      },
+      {
+        "issue_summary": "아이폰 통화녹음 기능을 위해 U+로 통신사 전환",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "맥락 적합성",
+          "타겟 적합성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "아이폰 통화녹음이라는 특정 페인포인트 해소가 타사 대비 실질적 전환 유인으로 작동 중",
+        "action_hint": "아이폰 통화녹음 전환 유입 경로를 세그먼트별로 추적"
+      }
+    ],
+    "overall_summary": "익시오 앱의 AI 스마트 요약 품질과 알뜰폰 개방 정책이 UX 및 전략 도메인 전반에서 고객 기대를 큰 폭으로 상회하는 긍정 신호가 확인된다. 특히 아이폰 통화녹음이라는 구체적 페인포인트를 해소하며 실제 통신사 전환까지 이끌어낸 점에서 기능-고객 맥락 간 적합성이 높다. 상품전략 및 UX기획 부서는 이 전환 패턴을 데이터로 검증하고 아이폰 사용자·알뜰폰 이탈 세그먼트 대상 마케팅 소재로 즉시 활용할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0023",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[너무 좋아요] 아이폰 고질병인 녹음의 문제가 해결되어서 다음핸드폰도 아이폰으로 선택할 수 있었어요 요약까지 잘되어 너무 유용하게 쓰고있어요 다만 아직 애플워치와 연동이 안되어 워치를 쓸경우 워치만으로는 누구에게 전화가 왔는지 확인이어려워 아쉬움이 있어요 워치까지 연동된다면 더할나위없이 좋을 것 같습니다!",
+    "collected_at": "2026-02-24T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "통화 녹음 및 요약 기능에 대한 높은 만족",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "기능 보편성",
+          "혜택 체감성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "아이폰 통화 녹음 한계를 해결한 핵심 기능이 실질적 기기 선택까지 영향을 줄 만큼 강한 록인 효과를 발생시키고 있음",
+        "action_hint": "녹음·요약 기능을 핵심 획득 메시지로 강화"
+      },
+      {
+        "issue_summary": "애플워치 미연동으로 착신 확인 불가",
+        "feedback_type": "사용편의",
+        "domain": "기술",
+        "attributes": [
+          "연동성",
+          "기능 보편성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "애플워치 연동 부재로 워치 사용자의 착신 식별 경험이 단절되어 있으며, 전반적 만족도 대비 유일한 기능 공백으로 체감 낙차가 큼",
+        "action_hint": "CallKit 기반 워치 착신 연동 스프린트 검토"
+      }
+    ],
+    "overall_summary": "익시오는 통화 녹음·요약 기능에서 강한 혜택 체감성을 제공하며 기기 선택 행동까지 유도하는 우수한 성과를 보이고 있으나, 애플워치 연동 미지원으로 인해 착신 확인이라는 기본 연동성 속성에서 Gap이 발생하고 있다. 워치를 일상적으로 활용하는 iOS 헤비유저 세그먼트에서 기대 수준 대비 경험 낙차가 크게 체감된다. 서비스개발팀은 CallKit 기반 워치 연동 구현 가능성을 우선 검토하고, 상품전략팀은 해당 기능 완성 시 록인 강화 포인트로 활용하는 시나리오를 준비할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0024",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[앱 불안정 먹통 현상 빈번] 제대로 안정화 해주세요",
+    "collected_at": "2026-02-24T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "익시오 앱 불안정·먹통 현상 빈번 발생",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "빈번한 먹통·앱 크래시가 반복적으로 발생해 기본 사용 신뢰도가 붕괴된 상태",
+        "action_hint": "익시오 앱 크래시 로그 긴급 점검 및 핫픽스 배포"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 속성에서 앱 먹통·크래시가 반복 발생하는 심각한 품질 이슈가 확인된다. 별점 1점과 '빈번'이라는 표현이 결합되어 일회성 오류가 아닌 구조적 불안정 상태임을 시사하며, 기대 수준 대비 낙차가 매우 크다. 서비스개발 및 인프라 팀은 익시오 앱 크래시 로그와 ANR 리포트를 즉시 확인하고 안정화 스프린트를 우선 편성해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0025",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[너무 편리해요] 자동 음성녹음 뿐만아니라 AI 비서로 통화내용 저장 및 요약, 대화 검색 이 되어 업무전화시 유용하고, 모르는번호만 녹음되게 설정도 가능해 너무 편리합니다",
+    "collected_at": "2026-02-23T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "자동 음성녹음 및 AI 요약·검색 기능에 대한 높은 만족",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "효율성",
+          "개인 맞춤화"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "업무 통화 맥락에서 자동녹음·AI 요약·검색 플로우가 기대를 크게 상회하는 핵심 만족 요인으로 작용 중",
+        "action_hint": "업무 사용 시나리오 중심 온보딩 강화"
+      },
+      {
+        "issue_summary": "모르는 번호 선택적 녹음 설정 기능에 대한 편의성 만족",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "사용자 제어",
+          "맥락 적합성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "모르는 번호 한정 녹음이라는 세밀한 사용자 제어 옵션이 불필요한 녹음을 줄이는 실용성으로 체감되어 만족도를 견인",
+        "action_hint": "선택적 녹음 설정 UX 레퍼런스로 스프린트 확장 검토"
+      }
+    ],
+    "overall_summary": "UX 도메인의 효율성·사용자 제어 속성에서 명확한 긍정 신호가 확인된다. 업무 통화라는 구체적 사용 맥락에서 자동녹음·AI 요약·선택적 설정이 복합적으로 기대를 초과하며 만족을 형성하고 있다. UX기획팀은 해당 플로우를 핵심 사용자 여정으로 고정하고, 업무 사용자 세그먼트 대상 온보딩 및 앱스토어 노출 키워드 전략에 반영할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0026",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[통화요약 진짜 죽이네요] 꼭쓰세요",
+    "collected_at": "2026-02-23T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "통화요약 기능에 대한 강한 만족 및 적극 추천",
+        "feedback_type": "감성",
+        "domain": "UX",
+        "attributes": [
+          "공감성",
+          "유희성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "통화요약 기능이 고객 기대를 크게 상회하며 자발적 추천으로 이어지는 강력한 만족 경험을 제공하고 있음",
+        "action_hint": "통화요약 긍정 UX 패턴을 타 기능 온보딩에 적용"
+      }
+    ],
+    "overall_summary": "익시오 앱의 통화요약 기능에서 감성 및 공감성 측면의 강한 긍정 신호가 확인되었다. 별점 5점과 함께 자발적 추천 의사를 표현한 고객으로, 기대 수준을 대폭 초과하는 경험 낙차가 발생했다. UX기획·AI서비스 담당 부서는 통화요약의 어떤 인터랙션 요소가 이 만족을 견인했는지 분석해 성공 패턴을 다른 AI 기능으로 확산할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0027",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[익시오] 아이폰 사용자인데 AI 스마트 요약으로 잘 쓰고있어오 아이폰 쓰시는분은 꼭 필수로 깔아두세요!!!",
+    "collected_at": "2026-02-23T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "아이폰 사용자가 AI 스마트 요약 기능에 강한 만족 및 추천 의사 표현",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "기능 보편성",
+          "타겟 적합성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "iOS 사용자 세그먼트에서 AI 스마트 요약 기능이 기대를 크게 상회하는 실사용 만족을 유발하고 있으며, 자발적 추천으로 이어지는 긍정 구전 효과 발생 중",
+        "action_hint": "iOS 세그먼트 AI 요약 사용 패턴 데이터 확보 및 추천 캠페인 연계 검토"
+      }
+    ],
+    "overall_summary": "익시오 앱의 AI 스마트 요약 기능이 iOS 사용자 세그먼트에서 높은 기능 체감성과 타겟 적합성을 입증하며 자발적 추천까지 이어지는 강한 긍정 신호가 확인된다. 특별한 기대 맥락 없이도 기대 점수를 20점 초과하는 Exceeding 상태로, 해당 기능이 핵심 락인 요소로 작동하고 있음을 시사한다. 상품전략 및 마케팅 부서는 iOS 사용자 대상 AI 요약 기능 중심의 추천·유입 캠페인을 우선 검토할 것을 권고한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0028",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "좀 불안했지만 잘 사용하고 있었는데 (어떤 건 익시오로 잘 오고 어떤 건 일반 전화로 오고 살짝 왔다리갔다리 했었음) 이번에는 업데이트까지 했는데도 불구하고 상대방에서 전화를 걸면 익시오가 아니라 일반 통화로만 계속 오네요 ㅠㅠ 이 기능 하나 땜에 갤럭시 넘어가야 하나 고민중 , 익시오 발견해서 안심하고 사용중이었고 익시오 때문이라도 엘지 계속 써야겠다 생각하고 있었는데 ㅜ 불안하네요 ㅠㅜ 내가 꼭 걸었던 번호여야만 익시오로 다시 전화오나요.... ㅜ",
+    "collected_at": "2026-02-23T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "발신자 전화 수신 시 익시오 연결 불일치 (일반 통화로 수신됨)",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "예측가능성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "수신 통화의 익시오 라우팅이 비결정적으로 동작하여 핵심 기능 신뢰성이 훼손됨",
+        "action_hint": "수신 라우팅 로직 크래시 로그 점검"
+      },
+      {
+        "issue_summary": "업데이트 후에도 수신 익시오 연결 미복구",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "앱 업데이트가 수신 라우팅 결함을 해소하지 못해 패치 신뢰도까지 저하됨",
+        "action_hint": "최신 빌드 수신 라우팅 핫픽스 배포"
+      },
+      {
+        "issue_summary": "기능 불안정으로 갤럭시 기기 이탈 고민",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "익시오를 LGU+ 유지 이유로 삼던 충성 고객이 기기 이탈을 고민하는 최고 위험 신호",
+        "action_hint": "익시오 락인 세그먼트 이탈 위험 모니터링"
+      }
+    ],
+    "overall_summary": "기술 도메인의 수신 라우팅 안정성과 UX 예측가능성이 동시에 무너지며 익시오 핵심 기능에 대한 신뢰가 반복적으로 훼손되고 있다. 익시오를 LGU+ 잔류 근거로 삼을 만큼 충성도가 높은 고객임에도 업데이트 후 미복구 경험이 누적되어 기기 이탈 고민으로 이어진 점에서 기대치 낙차가 특히 크다. 서비스개발팀은 수신 라우팅 로직의 크래시 로그를 즉시 점검하고, 고객지원팀은 해당 증상 인바운드 스크립트를 정비해 이탈 방어에 나서야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0029",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 익시오",
+    "service": "익시오",
+    "raw_text": "[익시오 고쳐야 됨] 하지만  1. 구글백업 지연 2. 통화녹음 검색어 지원 삭제등  너무 느려요",
+    "collected_at": "2026-02-22T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "구글 백업 기능 지연 발생",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "구글 백업 연동 과정에서 처리 지연이 발생하여 기본 기능 신뢰도가 훼손됨",
+        "action_hint": "구글 백업 연동 지연 구간 로그 점검"
+      },
+      {
+        "issue_summary": "통화녹음 검색어 지원 기능 삭제",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "사용자 제어",
+          "효율성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "기존 사용자가 익숙하게 쓰던 통화녹음 검색 기능이 제거되어 사용 흐름이 단절됨",
+        "action_hint": "통화녹음 검색 기능 삭제 경위 검토 및 복구 스프린트 검토"
+      }
+    ],
+    "overall_summary": "익시오 앱의 기술 안정성(구글 백업 지연)과 UX 사용자 제어(통화녹음 검색 삭제) 두 영역에서 동시에 품질 낙차가 발생하고 있다. 별점 1점과 '고쳐야 됨'이라는 직접적 표현에서 알 수 있듯, 핵심 기능 퇴행에 대한 실망감이 크며 기존 기능 유지에 대한 기대치가 충족되지 못하고 있다. 서비스개발팀은 백업 지연 구간의 트래픽 로그를 점검하고, UX기획팀은 통화녹음 검색 기능 삭제 배경과 대안 플로우를 긴급 재검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0030",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - U+one",
+    "service": "U+one",
+    "raw_text": "앱 업데이트 이후로 계속 튕겨요. 이게 몇 번째인지 모르겠어요. 진짜 타사로 바꿀까 진지하게 고민 중입니다.",
+    "collected_at": "2026-03-20T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "앱 업데이트 이후 반복적인 강제 종료(크래시) 발생",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "업데이트 배포 후 크래시가 반복 재현되며 이탈 의사까지 유발하는 최고 심각도 기술 결함",
+        "action_hint": "업데이트 버전 크래시 로그 즉시 분석 후 핫픽스 배포"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 속성에서 치명적 결함이 확인된다. 업데이트 직후부터 크래시가 반복되는 상황으로, 고객의 기본 신뢰 기대조차 충족하지 못해 실제 이탈 고려로 이어졌다. 서비스개발·인프라 팀은 해당 업데이트 빌드의 크래시 리포트를 즉시 수집하고, 긴급 핫픽스 릴리즈 여부를 우선 판단해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0031",
+    "source": "app_store_ios",
+    "channel_detail": "App Store - 아이들나라",
+    "service": "아이들나라",
+    "raw_text": "아이들나라 진짜 좋아요. 콘텐츠도 많고 아이가 너무 좋아해서 저도 편하고요. 업데이트할 때마다 새로운 콘텐츠가 추가되는 것도 마음에 들어요.",
+    "collected_at": "2026-03-25T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "콘텐츠 다양성과 아이 만족도에 대한 전반적 긍정 평가",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "콘텐츠 볼륨과 아이 몰입도가 양육 편의성으로 직결되며, 타겟 세그먼트(영유아 보호자)의 핵심 니즈를 충족하고 있음",
+        "action_hint": "콘텐츠 만족 세그먼트를 리텐션 캠페인에 활용"
+      },
+      {
+        "issue_summary": "업데이트마다 신규 콘텐츠가 추가되는 주기적 업데이트 방식 만족",
+        "feedback_type": "브랜드 체감",
+        "domain": "운영",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "정기 업데이트를 통한 콘텐츠 갱신이 지속 사용 동기로 작동하며, 서비스 운영 주기가 고객 기대를 초과 충족하고 있음",
+        "action_hint": "업데이트 주기·콘텐츠 추가 패턴을 NPS 상관 지표로 모니터링"
+      }
+    ],
+    "overall_summary": "아이들나라 앱에서 콘텐츠 다양성과 정기 업데이트 운영 방식이 타겟 고객(영유아 보호자)의 기대를 크게 상회하는 긍정 체감을 만들어내고 있다. 자녀 만족 → 보호자 편의로 이어지는 이중 가치 구조가 자연 발생적 긍정 리뷰로 연결된 맥락이며, 현재 콘텐츠 볼륨과 업데이트 주기가 핵심 유지 동인으로 기능하고 있다. 상품전략·콘텐츠운영팀은 해당 만족 패턴을 리텐션 및 가족결합 상품 세그먼트와 연결하는 캠페인 기획을 검토할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0033",
+    "source": "community",
+    "channel_detail": "클리앙 - 사용기",
+    "service": null,
+    "raw_text": "안녕하세요. 잦은 해외 출장으로 짐 싸는 데는 도가 텄지만, 네트워크 지식은 전무한 '네알못'입니다. 유료 VPN정도만 사용할 줄아는 수준이라 그 이상의 지식이 있으신 분들에게는 전혀 의미없는 글입니다. 중국 출장을 가면 호텔 와이파이를 잡아도 한국 앱들이 다 막혀서 너무 불편했습니다. 결국 호텔 방안에서도 사용할 데이터를 비싼 데이터 로밍을 켜서 써야했습니다. 포트포워딩 시도 중 제미나이가 알려주길, \"외부에서 베릴 7을 통해 집 인터넷 문을 두드릴 때, 맨 앞단에 있는 U+ 공유기가 '어? 너 누구야?' 하고 막아버립니다. 특정 문(포트)으로 들어오는 손님은 묻지도 따지지도 않고 넷기어 라우터로 직행하게끔 '개구멍'을 뚫어주는 게 포트포워딩입니다.\" 443 포트는 유플러스 고객센터가 공유기 원격 제어용으로 쓰는 포트라 자기들이 미리 점유하고 있어 신호를 가로채고 있다는 걸 알게 됐습니다. Super DMZ 설정으로 해결하고 나서 마침내 VPN 연결 성공. 폴드7 업무폰(U+)으로 테더링 시 와이파이 데이터를 뿌려주는 것도 알게 됐습니다.\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-28T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "U+ 공유기가 443 포트를 원격 제어용으로 선점하여 고객의 포트포워딩 설정 불가",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "보안성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "U+ 공유기가 443 포트를 사전 점유함으로써 고객의 정상적인 네트워크 설정 권한을 침해하고, Super DMZ라는 우회 수단을 강제함",
+        "action_hint": "443 포트 선점 정책 및 고객 개방 여부 검토"
+      },
+      {
+        "issue_summary": "포트 점유 사실을 고객이 AI를 통해 우연히 파악하고 Super DMZ로 스스로 우회 해결",
+        "feedback_type": "사용편의",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "U+ 공유기의 포트 점유 정책이 공식 채널에서 안내되지 않아, 고객이 외부 AI에 의존해 문제를 파악하고 자력 해결하는 정보 공백이 발생함",
+        "action_hint": "공유기 포트 점유 정책 고객 안내 문서화"
+      },
+      {
+        "issue_summary": "중국 출장 중 호텔 와이파이에서 한국 앱 차단으로 비싼 데이터 로밍 불가피 사용",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "잦은 해외 출장 고객이 현지 인터넷 차단 환경에서 로밍 비용을 추가 부담해야 하는 상황이며, U+의 해외 사용 솔루션(VPN 연계·로밍 최적화 상품)이 이 고객군의 니즈를 충족시키지 못하고 있음",
+        "action_hint": "잦은 출장 세그먼트 대상 로밍·VPN 결합 상품 검토"
+      },
+      {
+        "issue_summary": "U+ 업무폰 테더링 시 와이파이 데이터 공유 가능 사실을 우연히 인지",
+        "feedback_type": "사용편의",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "테더링을 통한 와이파이 데이터 공유 기능이 존재하나 고객이 사전에 인지하지 못했으며, 이를 알게 된 후 긍정적으로 수용함—기능 자체보다 안내 부재가 아쉬움으로 남음",
+        "action_hint": "테더링 와이파이 공유 기능 온보딩 안내 추가"
+      }
+    ],
+    "overall_summary": "이번 VoC는 기술·운영 도메인에서 U+ 공유기의 포트 선점 정책과 정보 투명성 부재가 핵심 이슈로, 고객이 네트워크 전문 지식 없이 스스로 AI와 커뮤니티에 의존해 문제를 해결하는 구조적 공백이 드러난다. 잦은 해외 출장이라는 고반복 사용 맥락임에도 불구하고 U+의 공식 안내·상품이 해당 니즈를 선제적으로 다루지 못해 기대 낙차가 크게 발생했다. 서비스개발팀은 443 포트 점유 정책의 고객 개방 가능성을 검토하고, 고객지원팀은 공유기 설정 관련 FAQ·안내 문서를 정비하며, 상품전략팀은 잦은 출장 고객 세그먼트를 대상으로 로밍·VPN 결합 상품의 적합성을 재점검할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0034",
+    "source": "community",
+    "channel_detail": "클리앙 - 자유게시판",
+    "service": null,
+    "raw_text": "어디라고는 그 유명한 유플러스의 알..입니다 10원요금제도 나왔다했는데요 진짜 나왔습니다 이야 100원도 감탄하면서 작년에 이쪽으로 번이했거든요 10원짜리 4.5기가 요금제.. 진짜 보고 놀랬네요 단점은 6개월까지만 저가격이라 어 깜빡하면 요금폭탄이 날라와요 타 통신사 뺏어오는건 그래도 이런게 최고죠 저도 그래서 놀고있는 표준요금제를 9개월 5G 90원에 이심번이시켰습니다\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-24T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "10원 요금제 출시에 놀라움과 긍정 반응",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "가격 합리성",
+          "혜택 체감성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "극단적 저가 요금제가 타사 고객의 번호이동을 유도하는 강력한 경쟁 트리거로 작동 중",
+        "action_hint": "저가 요금제 번이 유인 효과 세그먼트별 분석"
+      },
+      {
+        "issue_summary": "6개월 한정 저가 조건 종료 후 요금 폭탄 우려",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "처리 정확성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "프로모션 종료 시점 안내 부재로 고객이 요금 폭탄 리스크를 직접 인지·관리해야 하는 부담 발생",
+        "action_hint": "프로모션 만료 사전 알림 스크립트 및 푸시 설계"
+      },
+      {
+        "issue_summary": "잉여 표준요금제를 이심으로 번이한 우회 활용",
+        "feedback_type": "사용편의",
+        "domain": "전략",
+        "attributes": [
+          "지불 유연성",
+          "맥락 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 87,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 17,
+        "status": "Exceeding",
+        "diagnosis": "저가 요금제 라인업이 이심 번이 수요까지 흡수하며 예상 외의 복수 회선 전환 행동을 유발",
+        "action_hint": "이심 복수 회선 전환 패턴 기반 요금제 상품 설계 검토"
+      }
+    ],
+    "overall_summary": "이번 VoC는 전략 도메인의 가격 합리성·혜택 체감성 속성에서 강한 긍정 신호와 함께, 운영 도메인의 투명성 속성에서 명확한 Gap이 공존하는 구조이다. 극단적 저가 요금제가 번이 유인에는 효과적으로 작동하고 있으나, 프로모션 종료 조건을 고객이 스스로 관리해야 하는 상황이 잠재적 불만 전환점으로 작용할 수 있다. 서비스운영 부서는 프로모션 만료 30일·7일 전 자동 알림 체계를 우선 점검하고, 상품전략 부서는 이심 복수 회선 전환 패턴을 신규 요금제 설계에 반영할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0035",
+    "source": "community",
+    "channel_detail": "클리앙 - 사용기",
+    "service": null,
+    "raw_text": "갤럭시s26가 핫한 요즘 s25 엣지로 기변을 결심하고 당근을 보다가 거의 신품에 가까운 제품으로 구했습니다. 인증이 나오는데 유플러스 알뜰폰을 쓰는 저는 유플러스로만 갑니다. 인증은 당연히 안되겠지요. 찾아보니 알뜰폰은 고객센터를 통해서만 가능하더군요. 그 힘들다는 알뜰폰 114. 그나마 헬로모바일이었지만 20여분만에 상담사와 연결에 성공하고 링크를 받습니다. 구비서류가 뭔지에 대해서 설명이 없이 업로드를 하라고 옵니다. 대충 업로드 하니 반려를 당합니다. 보완내용으로 각 서류에 필요한 것들을 자세히 알려주더군요. 누락서류를 접수하고 나니 오후 3시였습니다. 다음날 9시30분인 현재까지도 esim은 오지않고 있습니다. 알뜰폰 유저분들은 그냥 유심쓰세요... 재발급비 2750원은 그렇다 치는데 너무 불편합니다.\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-12T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "알뜰폰 eSIM 기기변경 시 고객센터 경유만 가능 — 셀프 처리 불가",
+        "feedback_type": "사용편의",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성",
+          "처리 정확성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "알뜰폰 eSIM 기기변경이 앱·웹 자동화 없이 114 고객센터 통화로만 처리 가능해 진입 장벽이 높음",
+        "action_hint": "알뜰폰 eSIM 기변 셀프처리 플로우 도입 검토"
+      },
+      {
+        "issue_summary": "알뜰폰 114 연결까지 20분 이상 대기",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "지원 신속성",
+          "채널 접근성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "알뜰폰 전용 CS 채널의 응답 대기 시간이 과도하게 길어 고객 이탈 위험 구간 진입",
+        "action_hint": "알뜰폰 114 인바운드 대기시간 모니터링 및 인력 보강 검토"
+      },
+      {
+        "issue_summary": "구비서류 안내 없이 업로드 요청 → 반려 후 사후 안내",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "처리 정확성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "상담사가 필요 서류를 사전에 명확히 안내하지 않아 반려-재접수 루프가 발생하고 처리 지연을 심화시킴",
+        "action_hint": "eSIM 기변 서류 안내 CS 스크립트 표준화 및 체크리스트 제공"
+      },
+      {
+        "issue_summary": "eSIM 발급이 접수 후 18시간 이상 지연되어 미수신",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "서류 접수 완료 후 eSIM QR 발급까지 18시간 이상 소요되어 정상 서비스 이용이 불가한 상태",
+        "action_hint": "eSIM 발급 처리 파이프라인 지연 구간 로그 점검 및 SLA 설정"
+      }
+    ],
+    "overall_summary": "이번 VoC는 알뜰폰 eSIM 기기변경 전 과정에 걸쳐 채널 접근성·투명성·처리 신속성이 복합적으로 실패한 사례입니다. 셀프 처리 불가, 긴 대기, 사후 서류 안내, 18시간 이상의 발급 지연이 순차적으로 누적되면서 Standard 기대 수준 대비 낙차가 특히 발급 지연 구간에서 극대화되었습니다. 고객지원팀은 eSIM 기변 상담 스크립트와 서류 체크리스트를 즉시 정비하고, 서비스개발팀은 eSIM 발급 파이프라인의 처리 지연 구간을 우선 점검해야 합니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0036",
+    "source": "community",
+    "channel_detail": "클리앙 - 자유게시판",
+    "service": null,
+    "raw_text": "10년 가까이 SKB 온가족 무료로 인터넷을 0원에 쓰면서 매년 재약정 사은품을 달달하게 받다가 재작년부터 재약정 사은품이 절반으로 떨어지고 올해는 거기서 더 적게 준다고 해서 과감하게 유플러스 인터넷으로 변경했습니다. 인터넷 + TV 두대라 사은품도 크게 받았어요. 받을 땐 좋았습니다만..... 토렌트 다운이 잘안됩니다. 아니 아예 안됩니다.;; 저만 그런건지 다른 분들도 그런건지.... 내일부터 연휴 시작이니 연휴 끝나고 출장 점검을 받아봐야겠습니다. ㅠㅠ\"\n작성자 후속: 없음",
+    "collected_at": "2026-02-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플러스 인터넷 전환 후 토렌트 다운로드 불가",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "기능 보편성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "SKB 대비 기대치 높은 신규 전환 고객이 기본 네트워크 기능 장애를 경험하며 후회 감정 표출",
+        "action_hint": "P2P 트래픽 차단 정책 및 대역폭 설정 긴급 점검"
+      },
+      {
+        "issue_summary": "연휴 이후로 출장 점검 일정이 미뤄지는 서비스 대응 한계",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "지원 신속성",
+          "채널 접근성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "문제 발생 직후 즉각 해소 수단이 없어 연휴 이후까지 불편이 지속되는 구조적 CS 공백",
+        "action_hint": "연휴 기간 기술장애 인바운드 대응 채널 확보"
+      }
+    ],
+    "overall_summary": "SKB에서 유플러스로 전환한 신규 고객이 인터넷 개통 직후 P2P 트래픽 불통이라는 기술 도메인의 시스템 안정성 이슈를 경험하고 있으며, 연휴 일정으로 출장 점검조차 즉시 이루어지지 않아 운영 도메인의 지원 신속성 격차가 중첩되고 있다. 사은품을 기대하며 경쟁사에서 이탈해 온 고객인 만큼 기대 수준이 높고, 이탈 의사에 준하는 '후회' 감정이 이미 표출된 상태라 초기 경험 회복이 시급하다. 서비스개발팀은 해당 회선의 P2P 트래픽 정책을 즉시 확인하고, 고객지원팀은 연휴 기간 원격 진단 또는 우선 점검 일정을 선제적으로 안내해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0037",
+    "source": "community",
+    "channel_detail": "클리앙 - 자유게시판",
+    "service": null,
+    "raw_text": "제 돈내고 계속 가족 제미나이 공유로 쓰다가 이번에 유플러스 사용하면서 구글 AI PRO 구독 이벤트가 있길래 들어가서 살펴보니까 오히려 이득인데? 싶어서 할인받고 구독을 저번주에 했습니다. 갑자기 가족들이 gemini pro 가 안된다면서 연락이 와서 보니까 구글 AI 도미노피자 구독팩에는 안된다는 말이 없음. 제가 구독했을때 살펴봤던 자세한 상품 페이지에는 그 글이 안보이는데 구글 AI 프로 출시 기념 이벤트 페이지에만 안된다고 적혀있음. 그럼 이게 할인입니까... 제품 페이지에 안된다고 적어놔야지. 만원 빼주고 6인 공유 gemini를 빼버리면 그게 무슨 할인이에요... 당장 가족들 gemini pro 써야 하는 상황인데 이번달까지 꼼짝없이 유플러스 구글AI PRO요금제에 묶여버리는데....\"\n작성자 후속: 없음",
+    "collected_at": "2026-02-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "구글 AI PRO 구독팩 상품 페이지에 '가족 공유 불가' 조건 미표기",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "처리 정확성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "상품 구독 결정의 핵심 제한 조건(가족 공유 불가)이 이벤트 페이지에만 기재되고 상품 상세 페이지에 누락되어 고객이 기만당했다고 인식함",
+        "action_hint": "구독팩 상품 페이지에 제한 조건 즉시 표기"
+      },
+      {
+        "issue_summary": "기존 가족 공유 Gemini Pro 혜택이 유플러스 구독 전환 후 사전 고지 없이 중단됨",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "만원 할인 혜택이 6인 가족 공유 Gemini Pro 손실로 상쇄되어 실질적 혜택이 없거나 오히려 손해로 체감되며, 이벤트 할인의 가치 자체가 부정됨",
+        "action_hint": "가족결합 고객 대상 혜택 손익 비교 안내 시나리오 설계"
+      },
+      {
+        "issue_summary": "이달 중도 해지 불가로 불리한 요금제에 강제 묶임",
+        "feedback_type": "사용편의",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성",
+          "투명성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "잘못된 정보로 구독을 결정했음에도 당월 해지가 불가하여 고객이 선택권을 완전히 박탈당한 상황으로 인식하고 있음",
+        "action_hint": "정보 오기재 귀책 건 즉시 해지 예외 처리 CS 스크립트 수립"
+      }
+    ],
+    "overall_summary": "이번 VoC는 운영 도메인의 정보 투명성 결여와 전략 도메인의 혜택 체감성 미스매치가 동시에 발생한 복합 사안입니다. 가족 공유 Gemini를 적극 활용하던 고객이 상품 상세 페이지의 조건 누락으로 인해 오히려 혜택 손실을 입었고, 당월 해지마저 불가한 상황이 '기만'으로 인식되어 브랜드 신뢰 훼손이 심각합니다. 서비스운영팀은 구독팩 상품 페이지의 제한 조건 즉시 업데이트와 귀책 인정 시 중도 해지 예외 처리 절차를 확인해야 하며, 상품전략팀은 가족결합 고객 대상 전환 이벤트 설계 시 실질 혜택 손익 비교 안내를 표준화해야 합니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0038",
+    "source": "community",
+    "channel_detail": "클리앙 - cm_vcoin",
+    "service": null,
+    "raw_text": "네트워크 : SK브로드밴드, KT, 유플러스 (세 노드는 서로 링크) - 맘 같이선 스타링크도 한대 돌려보고 싶습니다.\"\n작성자 후속: 없음",
+    "collected_at": "2026-02-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "비트코인 노드 운용 시 LGU+ 네트워크를 SK브로드밴드·KT와 함께 긍정적으로 언급",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "기능 보편성",
+          "맥락 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "개인 블록체인 노드 운용이라는 고사용량·고안정성 요구 환경에서 LGU+ 네트워크가 경쟁사와 동등하게 긍정 평가됨",
+        "action_hint": "파워유저 세그먼트 대상 네트워크 안정성 소구 포인트 발굴"
+      }
+    ],
+    "overall_summary": "이번 VoC는 비트코인 노드라는 고트래픽·고연속성 환경에서 LGU+ 네트워크가 SK브로드밴드·KT와 동등한 선택지로 자연스럽게 언급된 긍정 신호다. 불만이나 이탈 징후 없이 기술 친화적 파워유저가 자발적으로 LGU+를 복수 회선 구성에 포함했다는 점에서 브랜드 체감 기대치를 충족한 사례로 볼 수 있다. 상품전략 및 네트워크 마케팅 팀은 해당 사용자 군(홈서버·노드 운용자)을 타깃으로 한 안정성 중심 소구 메시지 및 세그먼트 요금제 기회를 검토할 것을 권고한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0039",
+    "source": "community",
+    "channel_detail": "클리앙 - 사용기",
+    "service": null,
+    "raw_text": "어차피 통화용으로는 아예 안쓰고 데이터 쉐어링으로만 쓸거라 미개봉 가개통 기기가 싸게 나와서 사봤습니다. 삼케플 가입을 하려니 기존에 가개통하면서 유플러스에서 나온 폰패스라는 통신사+삼케플 조합의 서비스가 가입이 되어 있더군요. 이거 때문에 삼케플 가입이 안되는데 업자한테 사서 좀 처리가 되려나 했는데 아직 소식이 없네요. ㅠ\"\n작성자 후속: 없음",
+    "collected_at": "2026-02-19T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "폰패스 선가입으로 인해 삼케플 신규 가입 불가",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "처리 정확성",
+          "투명성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "가개통 기기에 통신사 번들 서비스(폰패스)가 선가입 상태로 유통되어 고객이 원하는 서비스 가입을 막는 서비스 충돌 문제",
+        "action_hint": "가개통 기기 폰패스 선가입 해지 프로세스 정비"
+      }
+    ],
+    "overall_summary": "운영 도메인에서 처리 정확성·투명성 속성의 이슈가 발생했다. 가개통 유통 기기에 폰패스가 선가입된 채 시장에 나오면서 고객이 삼케플 가입을 시도하는 맥락에서 기대 낙차가 발생했다. 서비스운영 및 유통채널 관리 부서는 가개통 기기의 번들 서비스 선가입 현황을 점검하고, 해지 처리 경로와 고객 안내 스크립트를 정비해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0040",
+    "source": "community",
+    "channel_detail": "클리앙 - 아이포니언",
+    "service": null,
+    "raw_text": "셀룰러 연결 상태일때 앱이든 웹이든 새로이 접속을 시도할때 5-10초이상 연결이 안됩니다. 앱을 켜면 로딩화면이 지속되다가 정 못기다리겠으면 앱을 강제종료 후 다시켜면 그나마 빨리 됩니다. 에어는 셀룰러 문제 없다는 이야기 들을때마다 속이 터져요 ㅋㅋ 유플러스 쓰고 인구30만 중소도시에 허허벌판에서도 증상이 보이는걸 보면 음영지역 문제는 아닙니다.\"\n작성자 후속: 없음\n---",
+    "collected_at": "2026-02-11T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "셀룰러 연결 상태에서 앱·웹 초기 접속 시 5~10초 이상 연결 지연",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "셀룰러 초기 접속 시 지속적인 고지연 현상이 음영지역과 무관하게 재현되어 네트워크 핸드쉐이크 또는 데이터 세션 복구 로직 결함이 의심됨",
+        "action_hint": "셀룰러 데이터 세션 초기화 지연 구간 트래픽 로그 분석"
+      },
+      {
+        "issue_summary": "앱 강제종료 후 재실행 시에만 로딩이 단축되는 우회 패턴 반복",
+        "feedback_type": "사용편의",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "앱 백그라운드 상태에서 셀룰러 세션 유지 실패로 인해 강제종료 재실행이 사실상 필수 우회 수단으로 고착된 상태",
+        "action_hint": "앱 백그라운드 셀룰러 소켓 유지 로직 핫픽스 검토"
+      },
+      {
+        "issue_summary": "인구 30만 중소도시 허허벌판에서도 동일 증상 발생 — 음영지역 외 일반 구역에서의 셀룰러 품질 저하",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "음영지역이 아닌 커버리지 정상 구역에서도 재현됨에 따라 단말·기지국 간 신호 품질 문제보다 코어망 또는 데이터 세션 처리 단계의 구조적 결함 가능성이 높음",
+        "action_hint": "해당 지역 기지국 데이터 세션 수락률 및 코어망 지연 지표 점검"
+      }
+    ],
+    "overall_summary": "셀룰러 환경에서 앱·웹 초기 접속 지연과 백그라운드 세션 유지 실패가 복합적으로 발생하는 기술 도메인의 시스템 안정성·신속성 이슈가 핵심이다. 음영지역과 무관하게 정상 커버리지 구역에서도 반복 재현된다는 고객 진술은 단순 전파 환경 문제가 아닌 코어망 또는 앱 소켓 레이어의 구조적 결함일 가능성을 높이며, 강제종료 우회가 일상화된 점에서 고객 기대 낙차가 상당하다. 서비스개발팀은 셀룰러 데이터 세션 초기화 구간의 트래픽 로그와 백그라운드 소켓 유지 로직을 우선 점검하고, 인프라팀은 해당 지역 코어망 세션 수락률 지표를 교차 확인해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0041",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "중랑구 지역 일대 인터넷장애   9시에 증상 확인하고 인부를 11시에 파견해?   내가 전화 안 했으면 씨발년아 계속 놀았겠네?",
+    "collected_at": "2026-03-31T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "중랑구 일대 인터넷 장애 발생 후 2시간 이상 지연 대응",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "지원 신속성",
+          "처리 정확성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "장애 인지 후 고객 자발 신고 없이는 출동 조치가 이뤄지지 않았으며, 인지~파견 간 2시간 공백이 대응 체계 부재를 직접적으로 노출함",
+        "action_hint": "장애 감지 즉시 자동 출동 트리거 프로세스 점검"
+      },
+      {
+        "issue_summary": "고객 전화 신고 전까지 현장 대응 미착수 — 수동 의존 구조 노출",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "내부 장애 감지 후 고객 인바운드 없이는 복구 절차가 시작되지 않는 수동 의존 구조로, 고객이 서비스 복구의 트리거 역할을 떠안은 상황",
+        "action_hint": "장애 감지~고객 통보 간 자동 알림 CS 스크립트 수립"
+      }
+    ],
+    "overall_summary": "운영 도메인의 지원 신속성과 처리 정확성에서 심각한 Gap이 발생한 사례로, 장애 인지 후 2시간 이상 고객 통보 및 현장 파견이 지연된 점이 핵심 문제다. 고객이 직접 전화하지 않았다면 대응이 시작되지 않았을 수동 의존 구조는, 기본 서비스 신뢰를 기대하는 일반 고객에게도 극도의 배신감을 유발한다. 고객지원·서비스운영 부서는 네트워크 장애 감지 시 자동 출동 트리거 및 선제 고객 안내 프로세스가 실제로 작동하는지 즉시 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0042",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "인터넷 100Mbps 2만 2천원 할인받아서 공짜고 LTE 데이터 스페셜 2로 인데 1인당 5만원씩 2인 월 10만원 나가고 일 2GB 받고 그거 넘으면 3mbps 로 제한됨.   유플 앱에서 뭐 막 투게더 결합이니 쉬운 가족결합이니 보고있는데 내가 틀딱이라서 그런건지 보기가 쉽지 않음 내가 지금 가입한거랑 비교해서 어느정도인지 감이 안잡힘",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "현재 요금제가 합리적인지 다른 결합 상품과 비교하기 어려움",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "정보구조화",
+          "예측가능성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "앱 내 결합 상품 정보가 현재 가입 상태와 비교 불가능한 구조로 제시되어 판단 자체가 불가능한 상태",
+        "action_hint": "현재 요금제 기준 결합 비교 플로우 설계"
+      },
+      {
+        "issue_summary": "투게더 결합·쉬운 가족결합 등 상품 정보의 가독성 및 이해 난이도 높음",
+        "feedback_type": "시각·인지",
+        "domain": "UX",
+        "attributes": [
+          "정보가독성",
+          "학습용이성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "결합 상품 화면이 비전문 사용자 눈높이에 맞지 않게 구성되어 정보 해석 자체를 포기하게 만드는 구조적 가독성 실패",
+        "action_hint": "결합 상품 화면 시니어 친화 온보딩 재설계"
+      }
+    ],
+    "overall_summary": "UX 도메인에서 정보구조화·가독성 속성의 복합 이슈가 확인된다. 인터넷·모바일 결합을 장기 유지 중인 고연령 실사용자가 앱에서 결합 상품을 탐색했으나, 현재 가입 상태와의 비교 기준이 제공되지 않아 의사결정 자체가 차단된 상황이다. UX기획팀은 '내 요금제 기준 결합 시뮬레이션' 플로우의 부재 여부를 우선 점검하고, 결합 상품 화면의 정보 계층 구조를 시니어 사용자 관점에서 스프린트 단위로 재검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0043",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "현재 SKT브로드밴드 쓰는 중",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "KT 인터넷 사용 당시 잦은 끊김 경험 후 SKT 브로드밴드로 전환",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "LGU+ 직접 경험 없이 타사 비교 맥락만 존재하며, 현재 LGU+ 이탈 상태로 브랜드 접점이 없는 잠재 고객 신호",
+        "action_hint": "타사 이탈 고객 대상 유선 재유치 세그먼트 발굴"
+      }
+    ],
+    "overall_summary": "본 VoC는 LGU+에 대한 직접적 사용 경험이 아닌, KT 인터넷 불안정 경험 후 SKT 브로드밴드로 전환한 상태를 서술한 간접 신호다. 고객은 현재 LGU+ 비고객으로, 유선 인터넷 안정성을 핵심 판단 기준으로 삼고 있어 이탈 타사 고객 재유치 가능성이 있는 잠재 세그먼트로 분류된다. 전략·상품기획 부서는 인터넷 안정성 소구 메시지와 함께 타사 대비 전환 혜택 구성을 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0044",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "내년 2월 초에 약정 끝나는데",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유심교체 거부 의사와 약정 종료 시점 언급",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "유심교체 조치에 납득하지 못한 고객이 약정 종료를 이탈 시점으로 인식 중",
+        "action_hint": "약정 만료 고객 이탈 세그먼트 선제 관리"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 혜택 체감성과 타겟 적합성 이슈가 동시에 감지된다. 유심교체 정책에 대한 수용 거부와 약정 종료 시점을 연결 짓는 발화는, 별도 케어 없이 방치될 경우 자연 이탈로 전환될 가능성이 높은 고위험 신호다. 상품전략 및 고객지원 부서는 해당 약정 만료 구간 고객군의 유심교체 관련 컴플레인 비율과 이탈 전환율을 즉시 교차 확인해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0045",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "유심교체 하게 되면 이전 유심은 매장에 반납하고 와야해? 그냥 갖고 올수 있음? 아님 내야하는거임..?",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유심 교체 시 이전 유심 반납 여부 정보 부재",
+        "feedback_type": "사용편의",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "유심 교체 절차에 대한 기본 안내 정보가 고객에게 충분히 전달되지 않아 커뮤니티에서 직접 문의하는 상황 발생",
+        "action_hint": "유심 교체 반납 정책 안내문 매장·앱 노출 강화"
+      }
+    ],
+    "overall_summary": "운영 도메인의 투명성·채널 접근성 속성에서 유심 교체 절차 관련 기본 안내가 미흡한 이슈가 확인된다. 고객이 공식 채널이 아닌 커뮤니티에서 정책을 문의하고 있다는 점은, 매장 방문 전 필요한 절차 정보가 자기해결(self-serve) 경로에서 충분히 제공되지 않음을 시사한다. 고객지원·서비스운영 부서는 유심 교체 관련 FAQ 및 매장 안내문의 노출 위치와 내용 완결성을 점검하고, U+앱 및 공식 홈페이지 내 해당 정보 접근 경로를 재확인해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0046",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "게임하고잇는데 30분전부터 끊기고나서 계속 안됨",
+    "collected_at": "2026-03-29T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "게임 중 인터넷이 30분 이상 지속 불통",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "게임 세션 중 30분 이상 인터넷 연결이 회복되지 않는 지속 장애로, 서비스 기본 가용성이 훼손된 상태",
+        "action_hint": "해당 시간대 인터넷 장애 구간 트래픽 로그 즉시 확인"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 이슈로, 인터넷 연결이 30분 이상 복구되지 않는 지속 장애가 발생하였다. 게임 이용 중 발생한 장애인 만큼 체감 피해가 크고, 불특정 다수에게 동시 발생한 광역 장애 가능성도 배제할 수 없다. 서비스개발·인프라팀은 해당 시간대 장애 구간 및 영향 범위를 즉시 파악하고, CS팀은 유사 인바운드 급증 여부를 병행 모니터링해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0047",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "씨발 승급전 이기는거 튕겨서 탈주됐네 이 씨발련들 개 좆같은 새끼들 좆병신 인터넷 씨발련들",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "게임 승급전 승리 중 인터넷 연결 끊김으로 탈주 처리됨",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "게임 중 인터넷 순단으로 승리 결과가 무효화되어 고객이 실질적 손해를 체감, 극도의 분노 반응 유발",
+        "action_hint": "게임 중 순단 크래시 패턴 로그 분석 및 핫픽스 우선순위 지정"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 이슈로, 인터넷 순단이 게임 내 치명적 불이익(탈주 패널티)으로 직결된 사례다. 고객은 단순 불편이 아닌 유·무형의 실질적 손해를 입은 상황으로, 체감 낙차가 극단적으로 크다. 서비스개발·인프라 팀은 해당 시간대 트래픽 불안정 구간과 순단 발생 패턴을 즉시 확인하고, 반복 민원 여부를 CS 채널과 교차 검증해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0048",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "자고일어나니까 왜 인터넷이 안되노? 몰래카메라 뭐 그런거냐?",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "수면 후 인터넷 연결 갑자기 불통",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "사전 고지 없는 인터넷 서비스 단절로 고객이 극도의 불신과 황당함을 표출",
+        "action_hint": "해당 시간대 인터넷 크래시 로그 즉시 확인"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 시스템 안정성 이슈가 발생하여 고객이 예고 없는 인터넷 불통을 경험했다. 특별한 사전 맥락 없이 일상적인 사용 상황에서 서비스가 갑자기 중단되며 기대치와의 낙차가 매우 크게 발생했다. 서비스개발·인프라 팀은 해당 시간대 장애 여부 및 영향 범위를 즉시 파악하고, 업체 답변이 부재한 만큼 CS 채널을 통한 선제적 안내 여부도 함께 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0049",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "어제한번 신호 차단되더니 그때부터 존나 느려지는데",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "전일 신호 차단 이후 데이터 속도 지속 저하",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "일시적 신호 차단 이후 속도 저하가 지속되는 것으로 보아 단순 순간 장애가 아닌 기지국 또는 세션 복구 실패 가능성이 있으며, 고객 체감 품질이 장시간 훼손된 상태",
+        "action_hint": "해당 지역 기지국 로그 및 세션 복구 이력 즉시 점검"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성·신속성 속성에서 신호 차단 후 속도 저하가 이어지는 복합 품질 이슈가 발생하였다. 특별한 계기 없이 서비스를 이용하던 일반 고객이 전일부터 이어진 지속 장애를 경험하면서 기대 대비 낙차가 매우 크게 형성되어 있다. 서비스개발·인프라 담당팀은 해당 고객의 접속 지역과 시간대를 기준으로 기지국 장애 로그 및 세션 재접속 실패 여부를 우선 확인해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0050",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "이번 LG유플러스 IMSI(국제 이동통신 가입자 식별자) 체계 개편의 핵심은 기존에 전화번호가 그대로 노출되던 방식을 난수화(Randomization)하여 보안을 강화   이에 따라 유심 교체가 반드시 실물 교체로만 이루어지는 것이 아니라, 기존 유심에서도 소프트웨어 업데이트(재설정)를 통해 해결이 가능한 경우   1. 주요 핵심 사항 교체 대상: LG유플러스 MNO 및 MVNO(알뜰폰) 전 가입자. 해결 방식  물리적 교체: 최신 보안 표준이 적용된 유심으로 교환.   나밍(Naming) 및 재설정: 유심의 IMSI 정보를 난수 기반으로 재기록하는 방식.   시행 시기: 2026년 4월 13일부터 순차적으로 진행 예정.  2. '나밍'으로 간단히 해결되는 경우   말씀하신 것처럼 정보값만 업데이트하면 되는 상황이라, 무상 교체 기간에 대리점을 방문하거나 직접 나밍 코드를 입력하여 가입자 정보를 갱신   LG유플러스 나밍 코드: 키패드에서 #758353266# 입력. 입력 후 유심 다운로드 및 재설정 과정이 진행되며, 이를 통해 새로운 보안 체계(난수화된 IMSI)가 적용   다만, 너무 오래된 구형 유심은 난수화 구조를 담기에 기술적 한계가 있을 수 있어, 이 경우에는 실물 유심을 새것으로 교체   본인의 유심이 실물 교체 대상인지 아니면 단순 재설정으로 끝날지는 4월 중순 이후 고객센터나 전용 페이지를 통해 확인",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "IMSI 난수화 보안 개편 관련 유심 교체 방식(실물 교체 vs 나밍 재설정) 정보 공유",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "고객이 공식 안내 이전에 나밍 코드 등 구체적 해결 방식을 자발적으로 공유하며 정보 공백을 메우는 상황으로, LGU+ 공식 커뮤니케이션이 선행되지 못한 구조적 지연이 드러남",
+        "action_hint": "4월 시행 전 유심 교체 기준 FAQ 선제 공지"
+      },
+      {
+        "issue_summary": "나밍 코드(#758353266#) 직접 입력을 통한 소프트웨어 재설정 방식 유효성 공유",
+        "feedback_type": "사용편의",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "나밍 코드를 통한 자가 처리 방식이 커뮤니티에서 먼저 유통되고 있어, 공식 검증 없이 고객이 직접 시도할 경우 오작동 또는 보안 설정 오류 리스크가 존재함",
+        "action_hint": "나밍 코드 공식 검증 후 자가처리 가이드 배포"
+      },
+      {
+        "issue_summary": "구형 유심의 실물 교체 필요 여부를 4월 중순 이후에야 확인 가능한 정보 제공 공백",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "지원 신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "실물 교체 대상 여부를 시행일 이후에야 고객센터나 전용 페이지로 확인 가능하다는 구조는, 교체 전 사전 준비를 원하는 고객의 기대를 충족하지 못하며 불필요한 대기 불안을 유발함",
+        "action_hint": "유심 교체 대상 사전 조회 채널 4월 전 오픈"
+      }
+    ],
+    "overall_summary": "이번 VoC는 LGU+ IMSI 난수화 보안 개편을 앞두고 고객이 공식 안내보다 먼저 나밍 코드와 처리 방식을 커뮤니티에서 자발적으로 확산시키는 정보 선점 현상을 담고 있으며, 투명성과 채널 접근성 측면에서 운영 공백이 뚜렷하게 포착됩니다. 공식 커뮤니케이션이 시행일(4월 13일) 이후로 집중된 구조 탓에, 사전 준비를 원하는 일반 가입자의 기대 수준과 실제 정보 제공 시점 간 낙차가 발생하고 있습니다. 고객지원 및 서비스운영 부서는 4월 시행 전 유심 교체 기준 FAQ, 나밍 코드 공식 검증 결과, 자가처리 가이드를 선제적으로 전용 페이지와 CS 채널에 배포하여 커뮤니티 정보 확산으로 인한 오처리 리스크를 차단해야 합니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0051",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "예네 광케이블을 두더지가 씹어먹어서 그러나?   어떻게 이따구로 인터넷이 쳐 끊기냐",
+    "collected_at": "2026-03-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유선 인터넷이 대낮에 반복적으로 끊기는 연결 불안정 경험",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "유선 인터넷의 반복 단절로 기본 서비스 신뢰성이 무너진 상태이며, 격앙된 감성 표현에서 이탈 가능성이 감지됨",
+        "action_hint": "인터넷 단절 크래시 로그 즉시 확인 및 해당 회선 긴급 점검"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 이슈로, 유선 인터넷의 반복적 연결 단절이 핵심 문제다. 별도 고객 맥락 없이도 기본 인터넷 품질에 대한 기대치가 극단적으로 충족되지 못한 상황으로, 실제 경험과 기대 수준의 낙차가 매우 크다. 서비스개발·인프라 팀은 해당 시간대 회선 품질 로그와 광케이블 물리 인프라 이상 여부를 긴급 확인해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0052",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "아이피를 못찾는다 그러는거냐 찾았다 못찾았다하노",
+    "collected_at": "2026-03-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "IP 주소 간헐적 인식 실패로 연결 불안정",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "IP 할당이 찾았다·못찾았다를 반복하는 간헐적 불안정 상태로, 네트워크 기본 품질에 대한 신뢰가 훼손됨",
+        "action_hint": "IP 할당 간헐 실패 구간 로그 추출 및 핫픽스 검토"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 속성에서 IP 할당 반복 실패 이슈가 확인된다. 'DC인사이드 LGU+ 갤러리'에 '나만 그러냐'는 형태로 제보된 점으로 미루어 단일 사용자가 아닌 복수 고객에게 확산되었을 가능성이 있으며, 기대 대비 실제 경험 낙차가 크다. 서비스개발·인프라팀은 해당 시간대 IP 할당 서버 로그를 우선 점검하고 동일 증상 신고 건수를 집계해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0053",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "괜히 최근에 우승하고 상위권에 머물고 우승하고해도 롯데한화삼성기아보다 인기가 밀리는게 아니지 하.. 화제성이라는게 필요한데 화제성을 일부로 피해가  장원영 김채원 윈터 카리나 시구 다 뺏겼던 과거가 떠오르네   김인석차명석염경엽구광모구본준마케팅홍보고동현신현철마케팅홍보팀배건우",
+    "collected_at": "2026-03-25T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "개막 시구 등 화제성 있는 마케팅 기회를 경쟁사에 반복적으로 빼앗김",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "맥락 적합성",
+          "타겟 적합성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "우승 성적에도 불구하고 팬덤·화제성 창출 마케팅에서 반복적으로 경쟁구단 대비 후순위로 밀리며 브랜드 존재감이 희석되고 있음",
+        "action_hint": "팬덤 집중 콘텐츠 세그먼트 재설계"
+      },
+      {
+        "issue_summary": "장원영·김채원·윈터·카리나 등 고화제성 인물 시구 기회를 과거에도 반복적으로 놓침",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "개인 맞춤화"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "MZ·아이돌 팬덤 타겟 고화제성 인물과의 협업 기회가 지속적으로 경쟁사에 선점되어 LGU+ 연계 스포츠 마케팅의 팬덤 어필력이 반복적으로 소실되고 있음",
+        "action_hint": "고화제성 인물 섭외 선제 협의 프로세스 수립"
+      }
+    ],
+    "overall_summary": "LG유플러스-LG트윈스 연계 스포츠 마케팅에서 화제성 확보 역량과 브랜드 차별화 속성이 반복적으로 실기(失機)되고 있다는 강한 불만이 표출되고 있습니다. 팀 성적과 팬덤 인기 간 괴리에 민감한 코어 팬층이 과거 사례까지 축적하여 비판하고 있어, 기대치 대비 실망의 낙차가 매우 크게 형성된 상태입니다. 마케팅·홍보팀은 개막전 등 연간 주요 이벤트 캘린더에 맞춘 고화제성 인물 섭외 우선순위 체계와 선제적 협의 프로세스를 즉시 점검해야 합니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0054",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "이 애미뒤진 병신새끼들은 왜 내 결합상품을 못 보게 해놓음?   고객센터 => U One으로 앱이름 변경한것도   늙은이들 접근 어렵게 하려고 한거고   결합상품조회 가 아니라 결합할인 조회만 드롭다운리스트로 놓은 것도   어떤 애미 쳐뒤진 씨발새끼가 다크패턴으로 만든거잖아   이씨발버러지새끼들 다 죽여버리고싶네   UI구조도보면 볼수록 애미씹창난 개버러지 놀음인데   어떤 개병신조현병걸린 저능아새끼가 만든게 아니라면   이건 그냥 늙은이들 상품해지 어렵게 하려는 다크패턴임ㅇㅇ   애미쳐뒤진 고아새끼가 아닌이상 프론트엔드를 이따위로 만들 수 없음 그것도 대기업이라는게   심지어 뭔 개듣보잡 AI로 내 상품진단 누르면 월평균 데이터 사용량이 5G인데 10G짜리를 추천하고 있다   미친씨발버러지년들 다 쳐죽여버리고싶네",
+    "collected_at": "2026-03-24T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "결합상품 조회 경로가 숨겨져 있어 고객이 직접 확인 불가",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "정보구조화",
+          "예측가능성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "결합상품 조회 진입점이 드롭다운 내 '결합할인 조회'로만 노출되어 고객이 자신의 결합상품 전체를 조회할 수 없는 정보구조 결함",
+        "action_hint": "결합상품 조회 진입점 최상위 메뉴에 노출 스프린트 편성"
+      },
+      {
+        "issue_summary": "앱 이름 변경(고객센터→U One)으로 기존 사용자 접근성 저하",
+        "feedback_type": "시각·인지",
+        "domain": "UX",
+        "attributes": [
+          "학습용이성",
+          "예측가능성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "앱 리브랜딩 시 기존 명칭 기반 사용자의 재탐색 비용을 고려하지 않은 온보딩 부재로 인지 단절 발생",
+        "action_hint": "앱 명칭 변경 온보딩 가이드 및 검색 키워드 매핑 적용"
+      },
+      {
+        "issue_summary": "AI 상품진단이 실제 데이터 사용량(5GB)과 무관한 10GB 요금제를 추천",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "처리 정확성",
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "AI 상품진단 로직이 고객의 실측 데이터 사용량을 반영하지 않고 상위 요금제를 추천하여 고객이 의도적 유도로 인식하는 신뢰 붕괴",
+        "action_hint": "AI 추천 로직 사용량 기반 재보정 핫픽스 적용"
+      }
+    ],
+    "overall_summary": "이번 VoC는 UX 도메인의 정보구조화·예측가능성 결함과 기술 도메인의 AI 추천 정확성 문제가 복합적으로 발화된 사례로, 고객이 자신의 결합상품을 앱 내에서 자력으로 확인할 수 없는 구조가 핵심 트리거다. 앱 리브랜딩 이후 탐색 동선이 재설계되지 않은 상태에서 AI 진단마저 상위 요금제를 권유하자, 고객은 이를 의도적 다크패턴으로 귀인하며 신뢰가 완전히 붕괴된 상황이다. UX기획팀은 결합상품 조회 진입점 노출 우선순위를 즉시 검토하고, 서비스개발팀은 AI 추천 모델의 사용량-요금제 매칭 로직을 긴급 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0055",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "대단하다 오늘도 저녁되니까 시작이네   이 정도면 인터넷 장애 챌린지네 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+    "collected_at": "2026-03-23T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "저녁 시간대 인터넷 반복 끊김 발생",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "저녁 시간대 반복적 인터넷 단절이 지속되고 있으며, 고객이 패턴으로 인지할 만큼 만성적 장애 상태임",
+        "action_hint": "저녁 피크타임 트래픽 집중 구간 네트워크 안정성 점검"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 시스템 안정성 속성의 심각한 반복 장애가 확인된다. 고객이 '오늘도', '어김없이' 등 패턴 인식 표현을 사용할 만큼 저녁 시간대 인터넷 끊김이 일상화된 상태로, 기대 수준 대비 실제 경험 낙차가 극단적으로 크다. 인프라·서비스개발 부서는 해당 지역·시간대의 트래픽 집중 여부와 장비 이상 이력을 즉시 확인하고 핫픽스 우선순위를 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0056",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "진짜 이제 인내심도 한계가 오네   아니 무슨 3분 간격으로 무한대로 끊기네 인터넷이 정상 상태인걸 24시간을 못 넘기노   진짜 혐플러스 이 ㅄ 같은 인터넷은 컴퓨터에서 네트워크 끊기는걸 인식도 못한 상태에서 인터넷 본질적으로 찐빠내는게 ㄹㅈㄷ네 ㅅㅂ",
+    "collected_at": "2026-03-22T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "인터넷 연결이 3분 간격으로 반복 단절되며 24시간 이상 정상 상태 유지 불가",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "인터넷 연결이 3분 주기로 반복 단절되는 만성적 불안정 현상으로, 고객의 인내 임계치를 이미 초과한 상태",
+        "action_hint": "반복 단절 구간 로그 추출 후 긴급 현장 점검 배정"
+      },
+      {
+        "issue_summary": "네트워크 단절 시 PC 단말이 연결 끊김을 인식하지 못하는 비정상 동작",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "단말 OS가 네트워크 단절을 감지하지 못하는 상태에서 실제 인터넷은 불통인 이중 장애로, 고객이 원인 진단조차 불가한 가장 심각한 기술 결함",
+        "action_hint": "ARP/DHCP 세션 유지 오류 원인 핫픽스 우선 검토"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 속성에서 복합적 장애가 동시에 발생하고 있다. 인터넷 연결이 3분 주기로 반복 단절되는 만성 불안정에 더해, PC 단말이 단절 자체를 인식하지 못하는 이중 결함으로 인해 고객의 자가 조치도 원천 차단된 상황이며, 격앙된 발화 수위로 보아 이탈 가능성이 매우 높다. 서비스개발 및 인프라팀은 해당 고객의 회선 로그를 즉시 추출하여 반복 단절 원인과 세션 유지 오류를 병행 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0057",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "이게 뭐야 시발 1분 1초가 아까운데",
+    "collected_at": "2026-03-22T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "휴가 중 게임 사용 시 서비스 장애 또는 연결 불가 경험",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "군 휴가라는 극히 제한된 여가 시간에 서비스 미작동으로 체감 손실이 극대화된 상황",
+        "action_hint": "해당 시간대 트래픽·크래시 로그 즉시 확인"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 및 신속성 속성에서 심각한 이슈가 감지됐다. 군 휴가라는 시간적으로 극히 희소한 맥락에서 서비스 장애가 발생해 기대 낙차가 매우 크며, 격앙된 감성 표현이 이를 뒷받침한다. 서비스개발·인프라 팀은 해당 시간대 장애 이력과 트래픽 이상 여부를 우선 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0058",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "어제 하루 잠잠하더니 오늘은 아침 9시 넘어서부터 지금까지 3분 단위로 20번 넘게 끊기노 ㅋㅋㅋㅋㅋ   진짜 이 정도 장애현상을 대처도 못하는 ㅄ 기업 ㅋㅋㅋㅋㅋㅋ",
+    "collected_at": "2026-03-22T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "아침부터 3분 단위로 20회 이상 반복 통신 끊김 발생",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "단발성 장애가 아닌 고빈도·반복 장애로, 네트워크 안정성에 대한 신뢰가 임계점을 넘어선 상태",
+        "action_hint": "반복 끊김 구간 트래픽 로그 즉시 점검"
+      },
+      {
+        "issue_summary": "반복 장애에도 기업 측 대처 없음에 강한 불신 표출",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "지원 신속성",
+          "투명성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "장애 인지 후 공지·대응 부재가 브랜드 신뢰 훼손으로 직결되어 격앙된 이탈 신호로 이어진 상태",
+        "action_hint": "장애 감지 시 고객 선제 공지 프로세스 수립"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성과 운영 도메인의 대응 투명성이 동시에 무너진 복합 이슈로, 단순 불편을 넘어 기업 역량 자체에 대한 불신이 표출되고 있다. 전일 대비 장애가 재발한 맥락에서 고객의 누적 기대 낙차가 극도로 커진 상태이며, 특히 아무런 사전 공지나 대처 없이 반복된 점이 감정을 격화시킨 핵심 원인이다. 서비스개발·인프라팀은 해당 시간대 반복 끊김 구간의 트래픽 로그와 장애 감지 알람 체계를 즉시 점검하고, 고객지원팀은 유사 장애 발생 시 선제 공지 스크립트와 인바운드 대응 프로세스를 정비해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0059",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "저번 주말부터 화요일까지 하루에 수십번씩 끊겼다가 목요일 어제 하루 잠잠하다 오늘 저녁부터 또 ㅈㄹ났네    20살 넘어서 밖에 나와 살면서 인터넷으로 스트레스 받는건 이번에 이사하고 첨이네 ㅅㅂ 끊기기 시작하면 거의 초딩 때 쓰던 천리안 수준임   진짜 단체회선이라서 바꾸지도 못하고 일년 동안 빼박이네   그리고 이 헬지 인터넷은 다른 인터넷 끊길 때 처럼 \"인터넷 연결이 끊어졌습니다.\" 이런 것도 없이 그냥 끊기는게 킥임 ㅋㅋㅋㅋㅋㅋ",
+    "collected_at": "2026-03-20T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "주말~화요일 하루 수십 번 인터넷 반복 끊김",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "단기간 수십 회 반복 단절로 기본 인터넷 품질 자체가 붕괴된 상태",
+        "action_hint": "해당 단지 회선 트래픽 로그 즉시 점검"
+      },
+      {
+        "issue_summary": "단체회선 계약으로 서비스 변경·이탈 불가 상태",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "지불 유연성",
+          "맥락 적합성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "품질 불만족 상태에서도 단체회선 구조로 1년간 이탈조차 불가능해 브랜드 신뢰 급락",
+        "action_hint": "단체회선 품질 불만 세그먼트 별도 구제 옵션 검토"
+      },
+      {
+        "issue_summary": "인터넷 끊김 시 연결 단절 알림 메시지 미제공",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "예측가능성",
+          "투명성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "타사 대비 단절 피드백 부재로 사용자가 상태 인지 자체를 못 해 경험 불신 가중",
+        "action_hint": "연결 단절 인지 알림 UX 플로우 스프린트 반영"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성과 UX 도메인의 예측가능성이 동시에 무너진 복합 이슈다. 이사 후 첫 인터넷 경험임에도 단체회선으로 자력 해결이 막혀 있어 기대 낙차가 극단적으로 크고, 이탈 의사 표현까지 동반된 고위험 고객군에 해당한다. 서비스개발팀은 해당 단지 회선 품질 로그를 즉시 확인하고, 사업전략팀은 단체회선 구제 옵션 마련을 병행 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0060",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "다들 그럼? 왜이러냐 도대체시팔",
+    "collected_at": "2026-03-20T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LG 공유기 인터넷 연결이 수일째 끊김·복구 반복",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "수일간 지속된 인터넷 단절·복구 반복으로 시스템 안정성에 심각한 신뢰 훼손",
+        "action_hint": "공유기 펌웨어·트래픽 로그 긴급 점검"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 시스템 안정성 속성의 심각한 이슈가 확인된다. 수일에 걸친 반복적 인터넷 끊김은 일회성 장애가 아닌 지속 장애로 인식되어 고객 기대치 대비 낙차가 극단적으로 크다. 서비스개발·인프라팀은 해당 기간 공유기 연결 불안정 리포트 및 펌웨어 이슈를 즉시 확인하고, 동일 증상을 보고한 고객군이 존재하는지 광역 장애 여부를 선제적으로 파악해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0061",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "지금 인터넷속도 500메가 쓰는데 70에서 50 왔다갔다 하는데 이거 지금 문제있어서 그러나요?",
+    "collected_at": "2026-03-19T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "500Mbps 요금제 사용 중 실제 속도가 50~70Mbps 수준에 그치는 속도 저하",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "계약 속도(500Mbps) 대비 실측 속도(50~70Mbps)가 약 10~14% 수준에 불과해 체감 품질 격차가 크고, 고객이 장애 여부를 스스로 판단하지 못하는 상황",
+        "action_hint": "해당 회선 속도 저하 원인 즉시 진단하고 핫픽스 조치"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 시스템 안정성 및 신속성 속성의 이슈가 발생하였으며, 계약 속도 대비 실측 속도 낙차가 현저하게 크다. 고객이 문제 여부조차 스스로 판단하기 어려운 상태로 방치되어 있어, 기대 수준 대비 실제 경험 점수가 유의미하게 하회하고 있다. 서비스개발·인프라 팀은 해당 회선의 속도 저하 원인(장비 불량, 트래픽 과부하, 회선 설정 오류 등)을 즉시 점검하고, CS 채널에서 선제적 안내 스크립트를 마련할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0062",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "ㅅㅂ 느려진것도 아니고 그냥 인터넷 접속 자체가 불가능한데 개좆같네 아",
+    "collected_at": "2026-03-18T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LTE/5G 데이터 인터넷 접속 자체 불가",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "속도 저하가 아닌 접속 전면 불가 수준의 장애로, 고객 기본 서비스 이용 자체가 차단된 임계 상황",
+        "action_hint": "해당 시간대·지역 망 장애 로그 즉시 확인"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 속성에서 데이터 접속 전면 불가라는 최중증 장애가 발생했다. 속도 저하가 아닌 연결 자체의 단절로 기본 통신 서비스 기대치조차 충족되지 못한 상황이며, 극도의 격앙 표현에서 이탈 위험 신호가 감지된다. 서비스개발·인프라팀은 해당 작성 시점(2026-03-18) 전후의 지역별 망 트래픽 및 크래시 로그를 즉시 조회하고, 동일 증상 고객군 규모를 파악해 핫픽스 또는 장애 공지 여부를 판단해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0063",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "자고 일어나면 해결되있길...",
+    "collected_at": "2026-03-17T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "특정 시각 이후 인터넷 서비스 갑자기 불통",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "2시 이후 갑작스러운 인터넷 단절로 자연 복구를 기다리는 수동 대기 상태 진입",
+        "action_hint": "2시 전후 트래픽·장애 로그 즉시 확인"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 이슈로, 특정 시각을 기점으로 인터넷 서비스가 갑작스럽게 중단되는 현상이 발생했다. 고객은 업체 문의나 해결 시도 없이 자연 복구를 기다리는 상태로, 능동적 지원 채널에 대한 인지 또는 신뢰가 부재한 맥락으로 보인다. 서비스개발·인프라팀은 해당 시간대 장애 이벤트 유무를 확인하고, 고객지원팀은 무응답 상태의 인바운드 유입 여부를 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0064",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "오늘따라 그냥 죽었다가 살았다가 빌빌거리더라. 씨발 빨리 약정 끝났으면...",
+    "collected_at": "2026-03-16T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "인터넷 연결이 반복적으로 끊겼다 복구되는 불안정 현상 경험",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "인터넷 연결 불안정이 약정 이탈 의사로 이어진 심각한 품질 이슈",
+        "action_hint": "해당 지역·시간대 네트워크 크래시 로그 즉시 점검"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 인터넷 연결 안정성 이슈가 극단적 부정 감성과 이탈 신호를 동반하며 발생했다. 약정 만료를 해소 수단으로 언급한 만큼 서비스 품질에 대한 기대 낙차가 매우 크며, 단순 일시 장애가 아닌 반복·지속성 문제로 인식되고 있다. 인프라팀은 해당 작성일 전후 동일 지역 네트워크 이상 이력을 확인하고, 재발 방지 핫픽스 및 선제적 고객 안내 프로세스를 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0065",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "가격이 제일 싸구려인데는 이유가있다   가입하지도말고 했으면 약정끝나자마자 뒤도 돌아보지말고 바로 옮겨라   개씨발 3분에 1번씩 팅겨서 뭘 하지를 못하겠네",
+    "collected_at": "2026-03-13T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "통화·데이터 연결이 3분 간격으로 반복 끊김",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "3분 주기 반복 끊김은 단순 불편을 넘어 서비스 사용 자체를 불가능하게 만드는 임계 수준의 품질 장애",
+        "action_hint": "반복 크래시 구간 로그 즉시 추출 및 핫픽스 검토"
+      },
+      {
+        "issue_summary": "약정 종료 즉시 타사 이탈 의사 표명 및 신규 가입 비추천",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "가격 합리성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "낮은 가격이 품질 저하의 합리화 근거로 인식되며, 브랜드 가치 전체가 부정되는 이탈 임박 신호",
+        "action_hint": "이탈 위험 세그먼트 대상 약정 만료 전 선제 리텐션 오퍼 설계"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성과 전략 도메인의 브랜드 체감 가치가 동시에 붕괴된 복합 위기 VoC다. 3분 주기 반복 끊김이라는 극단적 품질 경험이 '싸구려=이유 있는 품질'이라는 부정적 가격 귀인으로 이어져 브랜드 신뢰 자체를 훼손하고 있다. 서비스개발·인프라 팀은 해당 고객의 접속 로그를 즉시 추출해 반복 끊김 원인을 진단하고, 사업기획 팀은 약정 만료 임박 고객군에 대한 리텐션 시나리오를 긴급 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0066",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "[긴급] 농협은 민주당 민노총 으로 부터 ubi cdbc 도입 중.. etf해외 은행 계좌 개설막힐듯  현재 질문하신 UBI, CBDC, ETF와 관련된 농협 계좌 이슈는 일반적인 은행 점검보다는 최근 도입되고 있는 디지털 자산 및 혁신 금융 서비스와 연관되어 있을 가능성이 높아   농협은행은 최근 CBDC(중앙은행 디지털화폐) 실거래 테스트 및 가상자산 현물 ETF 관련 인프라 구축에 적극적인 행보   UBI (Universal Basic Income, 보편적 기본소득): 최근 Web3 기반의 기본소득 구현을 위해 CBDC 네트워크를 활용하는 방안이 논의되고 있으며, 농협 등 주요 은행이 이 시스템의 테스트베드 역할을 수행   CBDC (중앙은행 디지털화폐): 한국은행과 시중은행이 협력하여 예금 토큰 기반의 실거래 테스트를 진행 중입니다. 이 과정에서 특정 계좌의 기능이 제한되거나 테스트 시간대에 서비스가 일시 중단   ETF 계좌: 농협은행은 퇴직연금 계좌를 통해 미국 양자컴퓨팅 ETF, 금(Gold) 현물 ETF 등 다양한 상품 라인업을 운영하고 있습니다.    목요일 오후에 문제가 발생하는 이유 서비스 점검 및 업데이트: 새로운 디지털 화폐(CBDC) 시스템이나 ETF 상품 연동을 위한 임시 시스템 점검이 평일 오후에도 발생   ETF 거래 시간 제한: ETF는 거래소 장 운영 시간(09:00~15:30) 외에는 주문이 제한되거나 계좌 조회가 지연   혁신금융서비스 테스트: 만약 CBDC 실거래 테스트 대상자라면, 시스템 안정화를 위해 특정 시간대 이체나 조회가 제한되는 경우   농협의 고질적인 점검 문제 때문에 다른 은행으로 옮기신 것은 탁월한 선택일 수 있습니다. 다만, 특정 ETF 전용 계좌나 디지털 자산 테스트 계좌는 해당 은행에서만 제공하는 특수 기능일 수 있으니 해지 전 혜택을 다시 확인해 보시는 것   현재 계좌에서 구체적으로 어떤 단계(이체, 조회, 매수 등)에서 막히시는 건가요? 혹은 별도의 오류 메시지가 있는지 알려주시면 더 자세히 확인",
+    "collected_at": "2026-03-12T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LGU+ 갤러리에 금융·정치 관련 무관 스팸성 게시물 노출",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "처리 정확성",
+          "채널 접근성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "LGU+ 브랜드 커뮤니티에 금융·정치 관련 완전 무관 콘텐츠가 게시되어 채널 신뢰도를 저하시킬 수 있으나, 고객 감성 피해는 현재 확인되지 않음",
+        "action_hint": "갤러리 스팸 게시물 삭제 및 모니터링 강화"
+      }
+    ],
+    "overall_summary": "해당 VoC는 LGU+ 고객의 서비스 경험 피드백이 아닌, DC인사이드 LG유플러스 갤러리에 게시된 금융·정치 관련 무관 스팸성 게시물로 판단된다. 브랜드 커뮤니티 채널 내 이종 콘텐츠가 여과 없이 노출될 경우 채널 신뢰도 및 브랜드 이미지 저하로 이어질 수 있다. 소셜·커뮤니티 운영팀은 해당 게시물을 즉시 삭제하고, 유사 스팸 게시물 자동 필터링 기준을 점검할 것을 권고한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0067",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "ㅋㅋㅋㅋ 나다ㅜ 지방은 사람취급도 안해주노",
+    "collected_at": "2026-03-11T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "지방 지역 5G 커버리지 미비로 LTE로 강등 사용 중",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "기능 보편성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "5G 요금을 납부하면서 실제로는 LTE만 사용 가능한 지방 커버리지 공백이 고객의 강한 배신감과 자조를 유발하고 있음",
+        "action_hint": "지방 5G 커버리지 공백 구간 우선 식별 및 핫픽스 로드맵 수립"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 지방 지역의 5G 커버리지 미비로 인한 시스템 안정성 및 기능 보편성 이슈가 확인된다. 5G 요금제를 납부하는 고객이 실제로는 LTE 품질만 제공받는 상황이 지속되며, 서비스 대가와 실제 경험 간 낙차가 매우 크고 지역 차별로 인식되는 강한 부정 감성이 형성되어 있다. 인프라·서비스개발 부서는 지방 5G 음영지역 현황을 즉시 점검하고, 상품전략 부서는 커버리지 미제공 지역 고객 대상 요금제 적용 기준의 적정성을 재검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0068",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "SK 정보유출때메 LG유플 갈아탄거 일상생활이 불가능할 정도로 인터넷 존나 끊기네 진짜    깡시골도 아니고 부산광역시 사는데도 개지랄이네  개버러지같은 통신사 다시 SK로 갈아탐    점유율 제일낮고 사람들이 안쓰는데는 이유가 있음 무조건 걸러라 진짜 개버러지 동남아 통신사임",
+    "collected_at": "2026-03-09T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "부산 도심 지역에서 인터넷 연결이 반복적으로 끊기는 통신 품질 불량",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "광역시 도심 거주 고객이 일상 사용 불가 수준의 통신 불안정을 경험하며 즉각 이탈로 이어진 최고 심각도 품질 장애",
+        "action_hint": "부산 지역 망 품질 크래시 로그 즉시 점검"
+      },
+      {
+        "issue_summary": "통신 품질 불만으로 LGU+ 해지 후 SK 재가입 이탈 완료",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "타사 보안 이슈로 유입된 전환 고객이 기본 품질 미충족으로 즉시 이탈, 브랜드 신뢰 회복 불가 상태로 공개 채널에 부정 확산 중",
+        "action_hint": "타사 이탈 유입 고객 조기 이탈 세그먼트 분석 착수"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성과 전략 도메인의 브랜드 체감성 두 축에서 동시에 최고 수준의 Gap이 발생한 사례다. SK 보안 이슈로 인해 자발적으로 전환한 고객, 즉 기대 수준이 높고 비교 기준이 명확한 세그먼트에서 도심 지역 기본 통신 품질조차 충족되지 않아 이탈이 완료되었으며, 공개 커뮤니티를 통한 부정 여론 확산이 진행 중이다. 인프라팀은 부산 광역시 내 해당 고객 이용 지역의 망 품질 데이터와 크래시 로그를 즉시 확인하고, 사업전략팀은 타사 이탈 유입 고객군의 초기 이탈률 패턴을 긴급 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0069",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "개좆같이도 끊겨대네 개병신통신사가 갤질하는 내부자있으면 좀 회선관리해라 계속 ip처바꿔대면서 끊어대노 일처리 개병신같네",
+    "collected_at": "2026-03-08T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "고양시 특정 지역에서 LGU+ 회선이 반복적으로 끊기는 불안정 현상",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "고양시 지역 내 IP 변경을 동반한 반복 접속 단절로 회선 품질에 심각한 신뢰 손상 발생",
+        "action_hint": "고양시 기지국·회선 트래픽 로그 긴급 점검"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 속성에서 지역 단위 반복 회선 단절 이슈가 확인된다. 고객은 IP가 지속적으로 변경되며 연결이 끊기는 현상을 반복 경험하고 있어 기대 대비 낙차가 매우 크며, 브랜드 신뢰 훼손 수준까지 감정이 격화된 상태다. 서비스개발·인프라팀은 경기도 고양시 해당 회선의 IP 할당 및 접속 안정성 로그를 즉시 확인하고 핫픽스 여부를 판단해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0070",
+    "source": "community",
+    "channel_detail": "DC인사이드 - LG유플러스 갤러리",
+    "service": null,
+    "raw_text": "Lg공유기 쓰는데 가끔 유튜브 볼때나 ott볼때 갑자기 로딩 존나되고 영상재생 안되다가 갑자기 와이파이 신호 완전히 사라져서 데이터 연결되는데 이거 원래 이럼? 랜선도 그지랄나서 어제 롤하다가 인터넷끊겨서 한타 터졌다 ㅅㅂ\"\n---",
+    "collected_at": "2026-03-08T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유튜브·OTT 시청 중 갑작스러운 로딩 지연 및 영상 재생 불가",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "무선 구간에서 간헐적 처리 지연이 반복 발생하여 스트리밍 품질을 저해하고 있음",
+        "action_hint": "Wi-Fi 간헐 단절 구간 로그 분석 및 펌웨어 점검"
+      },
+      {
+        "issue_summary": "와이파이 신호 완전 소실 후 데이터(LTE/5G)로 자동 전환",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "공유기 무선 신호가 완전히 소실되는 크래시 수준의 불안정 현상이 반복되고 있음",
+        "action_hint": "공유기 무선 모듈 크래시 패턴 원격 진단 실시"
+      },
+      {
+        "issue_summary": "유선 랜선 연결 중에도 인터넷 끊김 발생(게임 중 단절)",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "유선 구간까지 단절이 발생해 무선 문제가 아닌 공유기 본체 또는 회선 자체의 불안정으로 의심되며, 피해가 명확한 행동 맥락(게임 팀플레이)에서 발생해 감성 훼손이 심각함",
+        "action_hint": "유선 포트 및 WAN 회선 안정성 현장 점검 우선 배정"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 속성에서 무선·유선 전 구간에 걸친 반복적 연결 단절 이슈가 집중 발생하고 있다. 고객은 스트리밍·게임 등 실시간 서비스 이용 중 끊김을 여러 차례 경험하며 기대 대비 낙차가 크게 누적된 상태로, 특히 유선까지 영향을 받는 점에서 공유기 하드웨어 또는 회선 품질 문제로 범위가 확대될 가능성이 높다. 서비스개발·인프라팀은 해당 고객의 공유기 모델 펌웨어 버전 및 WAN 포트 로그를 우선 확인하고, 필요 시 장비 교체 또는 현장 점검을 신속히 배정해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0071",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+one",
+    "service": "U+one",
+    "raw_text": "모바일만 알뜰로 변경 인터넷티비는 엘지그대로 쓰는데 타통신사라고 접속도안됨 인터넷 요금약정등등 조회하러왔는데 빡치네 집에 컴터도 없는데",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "알뜰폰 전환 후 LG 인터넷·TV 요금약정 조회 불가",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성",
+          "투명성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "LG 인터넷·TV 유지 고객임에도 모바일만 알뜰 전환 시 타통신사로 분류되어 앱 접근 자체가 차단됨",
+        "action_hint": "알뜰+LG 결합 고객 앱 접근 정책 재정의"
+      },
+      {
+        "issue_summary": "컴퓨터 없는 환경에서 앱 외 대안 채널 부재",
+        "feedback_type": "사용편의",
+        "domain": "전략",
+        "attributes": [
+          "채널 접근성",
+          "기능 보편성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "모바일 앱 차단 시 PC 웹조차 없는 고객에게 요금 조회 대안 채널이 전혀 제공되지 않음",
+        "action_hint": "알뜰 전환 고객 대상 CS 인바운드 조회 경로 안내 추가"
+      }
+    ],
+    "overall_summary": "운영·전략 도메인에서 채널 접근성과 기능 보편성 이슈가 동시에 발생했다. LG 인터넷·TV를 유지 중인 고객을 타통신사로 일괄 분류하는 앱 접근 정책이 모바일 전용 환경 고객에게 정보 조회 경로를 완전히 차단하는 결과를 초래했다. 서비스운영팀은 알뜰폰 전환 + LG 유선 결합 고객의 앱 인증 정책을 즉시 점검하고, 앱 접근이 불가한 경우 CS 조회 경로를 안내하는 fallback 스크립트를 마련해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0072",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+one",
+    "service": "U+one",
+    "raw_text": "제삼자가 유심 교쳬 할수 있나요",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "제3자의 유심 교체 가능 여부에 대한 정보 부재",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "앱 내에서 유심 교체 관련 정책 정보를 찾지 못해 리뷰로 문의한 것으로, 자가 해결 경로 부재가 원인",
+        "action_hint": "유심 교체 정책 FAQ 및 앱 내 안내 콘텐츠 보강"
+      }
+    ],
+    "overall_summary": "운영 도메인의 투명성·채널 접근성 속성에서 정보 제공 공백이 확인된다. 고객이 앱 내에서 유심 교체 관련 정책(제3자 대리 처리 가능 여부)을 찾지 못해 앱 리뷰로 문의하는 우회 행동이 발생한 상황으로, 자가 해결 채널이 실질적으로 기능하지 못하고 있다. 고객지원·서비스운영 부서는 유심 교체 관련 대리인 처리 정책을 앱 내 FAQ 및 챗봇 스크립트에 명확히 노출하고, 동일 문의 인바운드 빈도를 점검할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0073",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+one",
+    "service": "U+one",
+    "raw_text": "앱자체가 실행이 안되는 무슨이유가 있는건가요?",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "U+one 앱 자체가 실행되지 않음",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "앱 실행 자체가 불가한 치명적 크래시 상태로, 서비스 진입점이 완전히 차단된 최악의 사용자 경험",
+        "action_hint": "앱 실행 크래시 원인 즉시 핫픽스 배포"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 속성에서 앱 실행 불가라는 치명적 이슈가 확인된다. 별점 1점과 의문형 어조에서 고객이 원인조차 파악하지 못한 채 서비스 접근이 완전히 차단된 상황으로, 기본 기대 수준(Standard)조차 크게 하회하는 30점 갭이 발생하고 있다. 서비스개발팀은 해당 앱 버전의 크래시 로그를 즉시 수집하고, 특정 단말·OS 환경과의 호환성 여부를 우선 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0074",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+one",
+    "service": "U+one",
+    "raw_text": "u one 앱 업데이트 이후로 이앱 먹통",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "U+one 앱 업데이트 이후 앱 전체 먹통 발생",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "업데이트 배포 이후 앱이 정상 작동하지 않는 크리티컬 결함으로, 서비스 사용 자체가 불가한 상태",
+        "action_hint": "업데이트 버전 크래시 로그 즉시 확인 후 핫픽스 배포"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 속성에서 업데이트 직후 앱 전체 불능이라는 중대 결함이 확인된다. 업데이트를 트리거로 서비스 접근 자체가 차단된 상황으로, 표준 기대 수준 대비 낙차가 매우 크다. 서비스개발팀은 해당 버전의 크래시 로그와 배포 전 QA 누락 항목을 즉시 점검하고, 안정 버전 롤백 또는 긴급 핫픽스 배포 여부를 결정해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0075",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+one",
+    "service": "U+one",
+    "raw_text": "쿠폰 사용시 기간만료만 표시하지 말고 사용했는지 안했는지 여부도 표기해주세요. 월초에 쓴 쿠폰인지 아닌지 가물가물해서 한번 찍어봤더니 이미 사용된 쿠폰이라길래 당황했네요.",
+    "collected_at": "2026-03-29T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "쿠폰 상태 표시가 '기간만료'만 제공되어 사용 여부 확인 불가",
+        "feedback_type": "시각·인지",
+        "domain": "UX",
+        "attributes": [
+          "정보구조화",
+          "예측가능성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "쿠폰 상태값이 '기간만료' 단일 레이블만 제공되어 사용 완료 여부를 인지하지 못한 채 재시도하는 혼란이 발생함",
+        "action_hint": "쿠폰 상태 레이블에 '사용완료' 구분 추가"
+      }
+    ],
+    "overall_summary": "UX 도메인의 정보구조화·예측가능성 속성에서 쿠폰 상태 표시 부재 이슈가 확인된다. 월초 사용 여부가 기억나지 않는 일반적인 고객 맥락에서 '기간만료'만 노출되면 사용 완료 쿠폰을 재시도하는 혼란을 막을 수 없어 기대치 낙차가 발생한다. UX기획팀은 쿠폰 상태값을 '사용완료 / 기간만료 / 사용가능'으로 세분화하고, 사용 일시를 함께 노출하는 레이블 정의를 다음 스프린트에 반영해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0076",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+one",
+    "service": "U+one",
+    "raw_text": "LG G3 구형폰이긴한데 업데이트 된 이후로 접속이 안되네요",
+    "collected_at": "2026-03-29T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "앱 업데이트 이후 구형 기기(LG G3)에서 접속 불가",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "기능 보편성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "최신 업데이트가 구형 단말 호환성을 보장하지 못해 접속 자체가 차단된 상태",
+        "action_hint": "업데이트 후 구형 단말 호환성 크래시 로그 확인"
+      }
+    ],
+    "overall_summary": "이번 VoC는 기술 도메인의 시스템 안정성·기능 보편성 이슈로, 앱 업데이트 이후 LG G3 등 구형 단말에서 접속이 전면 차단되는 현상이 신고되었습니다. 업데이트 배포 시 하위 호환 검증이 누락된 것으로 추정되며, 해당 기기군 사용자의 기본 이용 기대조차 충족되지 못하는 Gap 상태입니다. 서비스개발팀은 해당 업데이트 버전의 구형 단말 크래시 로그를 즉시 확인하고, 최소 지원 기기 범위 정책 재정비 및 긴급 핫픽스 적용 여부를 검토해야 합니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0077",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - 익시오",
+    "service": "익시오",
+    "raw_text": "친정부모님과 통화가 좀 길었는데 정말 비교적 정확하게 글로 정리가 되어 있어서 놀랐습니다",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "장시간 통화 내용의 높은 음성-텍스트 변환 정확도에 대한 만족",
+        "feedback_type": "감성",
+        "domain": "기술",
+        "attributes": [
+          "신속성",
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "장시간 가족 통화라는 실사용 맥락에서 변환 정확도가 기대를 크게 상회하며 강한 긍정 경험 유발",
+        "action_hint": "장시간 통화 변환 정확도 사례를 홍보 소재로 발굴"
+      }
+    ],
+    "overall_summary": "기술 도메인의 음성-텍스트 변환 정확도에서 고객 기대를 크게 웃도는 긍정 경험이 확인된다. 일상적 가족 통화라는 비격식 발화 환경에서도 정확한 변환이 이루어져 고객 기대치를 큰 폭으로 초과한 것으로 보인다. 서비스개발·마케팅 부서는 해당 사례를 실사용 기반 차별화 포인트로 활용하는 방안을 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0078",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - 익시오",
+    "service": "익시오",
+    "raw_text": "통화중 인터넷하려고 하면 계속 통화중화면으로 돌아감",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "통화 중 인터넷 사용 시 통화 화면으로 반복 복귀",
+        "feedback_type": "사용편의",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "사용자 제어"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "통화 중 멀티태스킹 상황에서 앱이 포커스를 강제 복귀시켜 기본 사용 흐름을 반복적으로 차단함",
+        "action_hint": "통화 중 화면 전환 크래시 재현 후 핫픽스 우선순위 지정"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 문제로, 통화 중 인터넷 병행 사용이라는 기본적인 멀티태스킹 시나리오에서 앱이 정상 작동하지 않고 있다. '계속'이라는 표현에서 드러나듯 단순 오류가 아닌 재현성 높은 반복 결함으로, 1점 별점과 함께 사용자 이탈 가능성이 높은 상황이다. 서비스개발팀은 통화 세션 활성 상태에서의 앱 포커스 전환 로직을 우선 점검하고, 해당 플로우에 대한 핫픽스 배포를 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0079",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - 익시오",
+    "service": "익시오",
+    "raw_text": "메인은 유플 물리유심이고 서브는 이심을 쓰는데 익시오에서 연락처 검색을 하면 메인전번말고 자꾸 이심번흐가 먼저 뜨서 설정 거서 해도 이심번호로 자꾸뜨서 상댜방에게 전화할때 난처할때가 있는데 그래서 다시 삼성 기본앱으로 사용중인데 진짜 여러번 건의 했는데 개선이 안되마봐요",
+    "collected_at": "2026-03-29T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "연락처 검색 시 메인 유심 대신 이심 번호가 우선 노출되는 문제",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "예측가능성",
+          "사용자 제어"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "듀얼심 환경에서 발신 번호 우선순위 로직이 사용자 설정을 무시하고 이심을 기본 노출하여 실사용 흐름을 방해함",
+        "action_hint": "듀얼심 발신번호 우선순위 플로우 수정 스프린트 투입"
+      },
+      {
+        "issue_summary": "설정 변경 후에도 이심 번호 우선 노출이 유지되는 설정 미반영 오류",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "사용자가 설정을 통해 수동 변경을 시도했음에도 이심 번호 노출이 반복되어 설정 저장 또는 적용 로직에 버그가 존재하는 것으로 판단됨",
+        "action_hint": "듀얼심 설정 저장 로직 크래시 원인 핫픽스 적용"
+      },
+      {
+        "issue_summary": "반복 건의에도 개선이 이루어지지 않아 기본 앱으로 이탈",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "처리 정확성",
+          "투명성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "여러 차례 건의에도 피드백 처리 결과가 고객에게 전달되지 않았고, 결국 삼성 기본 앱으로의 이탈로 이어져 VOC 처리 프로세스 전반의 신뢰성이 훼손된 상태",
+        "action_hint": "반복 VOC 건의 이력 확인 후 CS 응대 스크립트 및 처리 결과 안내 프로세스 점검"
+      }
+    ],
+    "overall_summary": "익시오 앱의 듀얼심 환경에서 발신 번호 우선순위 UX 및 설정 적용 기술 로직 두 영역에 걸쳐 복합적인 오류가 발생하고 있다. 물리유심을 메인으로 사용하는 고객이 수동 설정 후에도 문제가 반복되는 상황에서 여러 차례 건의까지 무응답 처리되어 기대 낙차가 극대화된 사례다. UX기획 및 서비스개발 팀은 듀얼심 발신번호 우선순위 플로우와 설정 저장 로직을 즉시 점검하고, 고객지원팀은 해당 고객의 반복 VOC 이력을 확인하여 처리 결과를 직접 안내해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0080",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - 익시오",
+    "service": "익시오",
+    "raw_text": "원래쓰던 에#닷 쓰다가 오늘부터 새로쓰게됬는데 아직까진 좋은것 같아용 응원합니다!!!",
+    "collected_at": "2026-03-28T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "기존 AI 서비스에서 익시오로 전환 후 초기 긍정 체감",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "브랜드 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 5,
+        "status": "Alignment",
+        "diagnosis": "타 AI 서비스 이탈 후 익시오 첫 사용에서 긍정 첫인상을 형성했으나, 초기 사용 단계로 체감 안착 여부는 미확정",
+        "action_hint": "신규 전환 유저 온보딩 리텐션 플로우 점검"
+      }
+    ],
+    "overall_summary": "경쟁 AI 서비스에서 익시오로 전환한 신규 사용자가 초기 긍정 감성을 표출한 사례로, 전략·브랜드 체감 영역에서 첫인상 경쟁력이 작동하고 있음을 시사한다. 다만 '아직까진'이라는 표현에서 알 수 있듯 체험이 초기 단계에 머물러 있어 지속 만족으로 이어질지는 불확실하다. 상품전략 및 UX기획 부서는 경쟁 서비스 이탈 유저의 온보딩 경험과 초기 재방문율 데이터를 함께 점검하여 전환 리텐션 전략을 강화할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0081",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - 익시오",
+    "service": "익시오",
+    "raw_text": "혹시 낫싱폰은 지원 안되나요? 쓰면 좋은데...",
+    "collected_at": "2026-03-28T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "낫싱폰(Nothing Phone) 기기 미지원으로 앱 사용 불가",
+        "feedback_type": "사용편의",
+        "domain": "기술",
+        "attributes": [
+          "기능 보편성",
+          "시스템 안정성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "특정 제조사(낫싱폰) 기기에서 익시오 앱 사용이 불가하여 잠재 이용 의향 고객이 접근 자체를 못하고 있음",
+        "action_hint": "낫싱폰 기기 호환성 점검 및 지원 범위 확대 검토"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 특정 단말(낫싱폰) 미지원으로 인한 기능 보편성 이슈가 확인된다. 앱을 사용하고 싶다는 긍정적 의향이 있음에도 단말 호환 문제로 진입 자체가 막혀 있어, 의향-경험 간 낙차가 발생하고 있다. 서비스개발팀은 낫싱폰 OS 및 하드웨어 환경에 대한 호환성 테스트 커버리지를 점검하고 지원 단말 확대 여부를 우선 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0082",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - 익시오",
+    "service": "익시오",
+    "raw_text": "글씨가 작은데 혹시 글자크기른 크게 하는 방법이 없을까요???",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "앱 내 글씨 크기 조절 기능 부재로 인한 가독성 불편",
+        "feedback_type": "시각·인지",
+        "domain": "UX",
+        "attributes": [
+          "정보가독성",
+          "사용자 제어"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "글자 크기 조절 수단이 없어 시각적 접근성 기준을 충족하지 못하고 있음",
+        "action_hint": "글자 크기 조절 설정 옵션 스프린트 반영"
+      }
+    ],
+    "overall_summary": "익시오 앱의 UX 도메인에서 정보가독성 및 사용자 제어 속성의 이슈가 확인된다. 글자 크기 조절 기능이 제공되지 않아 일반 사용자 기대치 대비 체감 품질이 낮은 상태이며, 별점 1점이라는 강한 부정 신호가 동반되고 있다. UX기획팀은 텍스트 크기 커스터마이징 옵션 또는 시스템 접근성 설정 연동 여부를 우선 점검할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0083",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+tv모아",
+    "service": "U+tv모아",
+    "raw_text": "아니 리모컨이 없어서 리모컨앱을 쓰려하는데 리모컨으로 옵션을 눌러야 앱을 쓸수있다면 누가0 리모컨앱을 사용하나요;;",
+    "collected_at": "2026-03-24T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "리모컨 앱 사용을 위해 실물 리모컨이 선행 필요한 구조적 모순",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "오류방지성",
+          "예측가능성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "리모컨 대체 앱 진입에 실물 리모컨 조작이 전제되어 있어 앱의 존재 목적이 무력화되는 플로우 모순",
+        "action_hint": "리모컨 없이 앱 단독 진입 플로우 설계"
+      }
+    ],
+    "overall_summary": "UX 도메인의 예측가능성·오류방지성 속성에서 치명적 플로우 모순이 발생했다. 실물 리모컨이 없는 상황에서 대체 수단으로 앱을 찾은 고객이 오히려 실물 리모컨을 필요로 하는 진입 조건에 막히는 구조로, 앱의 핵심 사용 맥락과 설계 전제가 완전히 어긋나 있다. UX기획 팀은 리모컨 앱의 독립 진입 경로를 최우선 스프린트 항목으로 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0084",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+tv모아",
+    "service": "U+tv모아",
+    "raw_text": "아이디 비번을 잘 입력해도 갑자기 로그인이 안됩니다. 비번찾기를 누르면, 비밀번호를 찾는 것이 아니라 강제로 비밀번호를 변경하게 만드네요. 매우 불쾌한 경험이었습니다. 3개월이 지났으니 비밀번호를 바꾸라는 안내가 뜨는 것도 아니고, 잘 되던 아이디 비번을 맞게 입력했을 때도, 로그인이 안됩니다.. 라고, 5회 이상 비번입력이 틀리면 사용할 수 없다는 안내만 나오는게 과연 맞습니까? //(추가) 그렇다면, 기존 비밀번호로 로그인이 제한되고 비밀번호 재설정이 필요하다고 안내를 해야죠. 아이디 비번 맞게 입력했는데도 로그인이 안된다고만 보여주는 건 무슨 배짱입니까? ㅡㅡ",
+    "collected_at": "2026-03-23T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "올바른 아이디/비밀번호 입력에도 로그인 실패",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "예측가능성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "정상 자격증명 입력에도 로그인이 차단되는 시스템 오류로 기본 신뢰가 붕괴됨",
+        "action_hint": "로그인 인증 로직 크래시 원인 즉시 점검"
+      },
+      {
+        "issue_summary": "비밀번호 찾기 클릭 시 안내 없이 강제 비밀번호 변경으로 이동",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "예측가능성",
+          "투명성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "'비밀번호 찾기'가 강제 변경 플로우로 연결되어 사용자 의도와 완전히 불일치함",
+        "action_hint": "비밀번호 찾기→재설정 플로우 레이블 및 UX 스프린트 수정"
+      },
+      {
+        "issue_summary": "로그인 실패 원인(비밀번호 재설정 필요 등)을 안내하지 않고 단순 오류 메시지만 노출",
+        "feedback_type": "시각·인지",
+        "domain": "UX",
+        "attributes": [
+          "투명성",
+          "오류방지성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "로그인 차단 사유를 명시하지 않아 고객이 스스로 원인을 파악할 수 없는 정보 공백 발생",
+        "action_hint": "로그인 오류 메시지에 차단 사유 및 다음 행동 안내 문구 삽입"
+      }
+    ],
+    "overall_summary": "U+tv모아 앱의 로그인 인증 시스템과 오류 안내 UX에서 시스템 안정성·예측가능성·투명성 속성이 동시에 충족되지 못하고 있다. 올바른 자격증명을 반복 입력해도 실패하는 상황에서 원인 안내조차 없어 고객 기대 대비 체감 낙차가 극단적으로 크며, 이미 강한 불쾌 감정이 누적된 상태다. 서비스개발팀은 로그인 인증 로직의 크래시 원인을 즉시 확인하고, UX기획팀은 오류 메시지 문구와 비밀번호 재설정 플로우의 레이블·유도 방식을 이번 스프린트 내 수정해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0085",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+tv모아",
+    "service": "U+tv모아",
+    "raw_text": "짜증나 리모컨 몇번 설정하냐",
+    "collected_at": "2026-03-22T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "리모컨 설정을 반복적으로 해야 하는 불편함",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "효율성",
+          "오류방지성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "리모컨 설정이 초기화되거나 재설정 요구가 반복 발생하여 사용자 인내 임계 초과",
+        "action_hint": "리모컨 설정 초기화 트리거 조건 점검 및 설정 유지 플로우 수정"
+      }
+    ],
+    "overall_summary": "U+tv모아 앱에서 리모컨 설정 반복 요구로 인해 사용편의 도메인의 효율성·오류방지성 속성에 심각한 Gap이 발생하고 있다. '몇 번'이라는 표현에서 반복 경험이 누적된 고객으로, 최초 설정 이후에도 재설정이 강요되는 구조적 문제가 기대치 낙차를 극대화한 것으로 보인다. UX기획·서비스개발팀은 리모컨 설정값 저장 로직 및 초기화 유발 조건을 우선 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0086",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+tv모아",
+    "service": "U+tv모아",
+    "raw_text": "셋탑 연결 되긴해요? 구형셋탑 안되는거 아닌가요? 셋탑에 음향버튼도 없어서 불편한데 어플마저 이꼬라지라니",
+    "collected_at": "2026-03-22T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "구형 셋탑 연결 가능 여부 불확실로 인한 혼란",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "구형 셋탑 호환 여부에 대한 안내가 부재하여 고객이 앱 사용 전부터 혼란을 겪고 있음",
+        "action_hint": "구형 셋탑 호환 기종 안내 문구 앱 내 게시"
+      },
+      {
+        "issue_summary": "셋탑 음향 버튼 부재로 인한 조작 불편",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "사용자 제어",
+          "효율성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "셋탑 물리 버튼 한계를 앱에서 보완하는 음향 제어 기능이 없어 사용자 제어 경험이 단절됨",
+        "action_hint": "앱 내 음향 제어 UI 플로우 스프린트 반영 검토"
+      },
+      {
+        "issue_summary": "U+tv모아 앱 전반 품질에 대한 극도의 실망",
+        "feedback_type": "감성",
+        "domain": "UX",
+        "attributes": [
+          "디자인 완성도",
+          "공감성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "셋탑 하드웨어 제약과 앱 품질 미흡이 겹치며 고객이 앱 전반에 대한 신뢰를 잃은 상태",
+        "action_hint": "앱 완성도 전반 UX 감사(Audit) 즉시 착수"
+      }
+    ],
+    "overall_summary": "UX 및 운영 도메인 전반에서 사용자 제어·투명성·디자인 완성도 속성의 복합 이슈가 동시에 발생하고 있다. 구형 셋탑 사용 환경이라는 하드웨어 제약 위에 앱 기능 공백과 호환 안내 부재가 겹쳐 기대 대비 낙차가 크게 벌어진 상황이다. 서비스운영팀은 구형 셋탑 호환 안내 문구를 즉시 앱 내에 게시하고, UX기획팀은 앱 내 음향 제어 기능 추가 여부를 차기 스프린트에서 우선 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0087",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+tv모아",
+    "service": "U+tv모아",
+    "raw_text": "이런 쓰레기같은 어플은 만들지 말자.",
+    "collected_at": "2026-03-01T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "앱 전반에 대한 극단적 부정 평가 및 존재 자체 부정",
+        "feedback_type": "브랜드 체감",
+        "domain": "UX",
+        "attributes": [
+          "디자인 완성도",
+          "공감성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "앱 사용 경험 전반에 걸쳐 누적된 불만이 극단적 거부감으로 표출된 상태로, 특정 기능 개선이 아닌 앱 품질의 총체적 신뢰 붕괴로 해석됨",
+        "action_hint": "U+tv모아 앱 전반 UX 크래시·플로우 긴급 점검 착수"
+      }
+    ],
+    "overall_summary": "U+tv모아 앱에 대해 존재 자체를 부정하는 수준의 극도의 감성 반응이 확인되며, UX 완성도와 브랜드 체감 품질 모두에서 심각한 기대 낙차가 발생한 상태다. 구체적 불편 사유가 명시되지 않았으나 별점 1점과 극단적 표현의 조합은 단순 일회성 불편이 아닌 복합적 누적 실패를 시사한다. UX기획·서비스개발 팀은 PlayStore 저점 리뷰 군집을 교차 분석하여 반복 실패 지점을 우선적으로 식별해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0088",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+tv모아",
+    "service": "U+tv모아",
+    "raw_text": "앱 켜고 처음에는 리모컨 작동하는데 시간 조금만 지나도 안 됩니다. 앱 종료하고 다시 들어와야 작동합니다.",
+    "collected_at": "2026-02-22T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "앱 실행 후 일정 시간 경과 시 리모컨 기능 작동 불가",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "앱 세션 유지 중 리모컨 연결이 끊기는 반복 장애로, 매번 재실행이 강제되는 우회 패턴이 확인됨",
+        "action_hint": "세션 타임아웃 후 리모컨 연결 유지 로직 핫픽스"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 시스템 안정성 속성의 결함이 확인되었으며, 앱 세션 유지 중 리모컨 연결이 주기적으로 끊기는 반복 장애가 핵심이다. 특별한 고객 맥락 없이도 기대 수준 대비 20점의 낙차가 발생하고 있어, 일반 사용자 전반에서 체감 불편이 누적될 가능성이 높다. 서비스개발팀은 앱 백그라운드 세션 유지 및 리모컨 연결 복구 로직을 우선 점검하고 핫픽스 여부를 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0089",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+자녀폰지킴이",
+    "service": "U+자녀폰지킴이",
+    "raw_text": "쓰레기 앱입니다. 알려진 것과는 달리 알뜰폰 사용자는 무료버전은 아예 사용불가, 유료로만 사용 가능. 설치 후 그 사실을 알게 되어 삭제시도했으나 자녀 폰에서 앱 삭제 불가능하고 고객센터 통해서 하랍니다. 아침부터 고객센터 전화해서 요청했고 부가서비스 자체는 해지 되었다고 함. 그런데 앱 삭제는 여전히 안됨. 고객센터는 유플러스에 물어보거나 대리점 가서 초기화하라고 함. 유플러스에서는 당연히 고객정보가 없어서 도와줄게 없다고 함. 문제는 다른 이 앱이 기기관리자 권한을 가지고 다른 앱 설치 자체를 못하게 막음ㅋㅋㅋㅋ 통신사 이동한지 이틀짼데, 열받아서 SK 알뜰폰으로 다시 이동하려고 합니다. + 기기관리자 권한도 수정이 안되어 알림 등 기타 권한부터 하나씩 하나씩 해제한 후에 기기관리자 권한 빼앗음. 이 과정에서 1초에 한번씩 권한 다시 내놓으라는 팝업 메시지 떠서 한 열번씩 새로고침 한 후에 간신히 삭제함. 이건 무슨 새로운 악성코드인가요?",
+    "collected_at": "2026-03-04T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "알뜰폰 사용자 무료버전 사용 불가 사전 미고지",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": -80,
+        "status": "Gap",
+        "diagnosis": "알뜰폰 제한 조건이 설치 전 노출되지 않아 고객이 기만당한 것으로 인식",
+        "action_hint": "알뜰폰 제한 조건 앱스토어 및 설치 전 화면에 선제 고지"
+      },
+      {
+        "issue_summary": "자녀 폰에서 앱 삭제 불가 및 CS 책임 전가로 해결 무산",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "처리 정확성",
+          "지원 신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": -80,
+        "status": "Gap",
+        "diagnosis": "CS·유플러스·대리점 간 책임 핑퐁으로 고객 문제가 끝내 해소되지 않음",
+        "action_hint": "알뜰폰 고객 앱 삭제 CS 단일 처리 스크립트 수립"
+      },
+      {
+        "issue_summary": "기기관리자 권한 강제 점유로 타 앱 설치 차단",
+        "feedback_type": "사용편의",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "보안성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "기기관리자 권한이 해지 후에도 유지되어 기기 전반을 사실상 장악, 악성코드 수준의 사용자 경험 유발",
+        "action_hint": "부가서비스 해지 시 기기관리자 권한 자동 해제 핫픽스 배포"
+      },
+      {
+        "issue_summary": "권한 해제 시 1초 간격 팝업 반복 노출로 삭제 극도로 곤란",
+        "feedback_type": "사용편의",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "권한 회수를 막으려는 팝업 루프가 정상적 앱 삭제 경로를 사실상 봉쇄",
+        "action_hint": "권한 해제 팝업 루프 크래시 재현 후 즉시 핫픽스 배포"
+      },
+      {
+        "issue_summary": "불편 해소 실패 후 SK 알뜰폰으로 통신사 이탈 의사 표명",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": -80,
+        "status": "Gap",
+        "diagnosis": "통신사 이동 이틀 만에 누적 불신이 경쟁사 이탈 결정으로 직결",
+        "action_hint": "신규 알뜰폰 이탈 위험 세그먼트 즉시 선제 리텐션 인바운드 설계"
+      }
+    ],
+    "overall_summary": "U+자녀폰지킴이 앱에서 알뜰폰 제한 조건 미고지, 기기관리자 권한 강제 점유, CS 채널 간 책임 전가까지 운영·기술 전 영역에 걸친 복합 결함이 동시에 발생했습니다. 통신사 이동 이틀 차 신규 고객이라는 점에서 기대치 낙차가 극대화되었고, 어떤 채널에서도 문제가 해결되지 않은 경험이 이탈 결정을 촉발했습니다. 서비스개발팀은 부가서비스 해지 시 권한 자동 해제 핫픽스를 즉시 배포하고, 고객지원팀은 알뜰폰 고객 전용 삭제 처리 프로세스를 단일화해야 합니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0090",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+자녀폰지킴이",
+    "service": "U+자녀폰지킴이",
+    "raw_text": "자녀 위치 추적 여러번 눌러도 계속 같은 시간과 같은위치만 나오고, 잠금설정하면 카톡도 열고 싶은데 방법 알려주세요. 그리고 아래분들이 문제점 올리는거 지킴이 답변자는 앵무새처럼 컨트롤c+v만 하시나요? 업글개발자한테는 전달을 안하시나요? sk ZEM은 무료인데 이것보다 좋아요. 어쩔 수 없이 쓰는 1인 입니다.",
+    "collected_at": "2026-02-21T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "위치 추적 반복 요청 시 동일 시간·위치만 반복 표시",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "위치 데이터 갱신 미작동으로 실시간 추적 기능 자체가 무력화된 상태",
+        "action_hint": "위치 갱신 API 응답 실패 구간 핫픽스 배포"
+      },
+      {
+        "issue_summary": "잠금 설정 중 카카오톡 허용 방법 불명확",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "학습용이성",
+          "정보구조화"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "앱별 예외 허용 플로우가 직관적으로 노출되지 않아 사용자가 방법을 찾지 못하는 상태",
+        "action_hint": "잠금 예외 앱 설정 온보딩 플로우 가시화 스프린트"
+      },
+      {
+        "issue_summary": "CS 답변이 복붙 수준으로 동일 반복, 개발팀 전달 의지 없음",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "처리 정확성",
+          "투명성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "복붙 CS 응대가 누적 고객 불만을 방치하고 있으며 VOC→개발 피드백 루프가 단절된 것으로 고객이 인식",
+        "action_hint": "리뷰 CS 스크립트 개편 및 VOC→개발 전달 프로세스 점검"
+      },
+      {
+        "issue_summary": "SK ZEM 대비 기능·가격 열위로 이탈 고려 및 비자발적 사용 표명",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "가격 합리성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "무료 경쟁 서비스 대비 유료 가치를 체감하지 못해 이탈 직전의 비자발적 잔류 상태",
+        "action_hint": "자녀폰지킴이 유료 차별 혜택 세그먼트 재설계 검토"
+      }
+    ],
+    "overall_summary": "기술·UX·운영·전략 전 도메인에서 동시다발적 이슈가 확인되며, 위치 추적 미갱신과 잠금 플로우 불명확이 핵심 기능 신뢰를 훼손하고 있다. 반복적인 복붙 CS 응대가 불만을 해소하지 못한 채 누적된 결과, 고객은 무료 경쟁 서비스와 직접 비교하며 비자발적 사용을 선언하는 이탈 임박 상태에 놓여 있다. 서비스개발팀은 위치 갱신 API 장애를 우선 핫픽스하고, 고객지원팀은 VOC→개발 전달 프로세스를 즉시 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0091",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+자녀폰지킴이",
+    "service": "U+자녀폰지킴이",
+    "raw_text": "도대체 이걸 왜 까라고 하는거임? 의무적으로 설치하라고 하더니 유료래. 지우려고 봤더니 안지워져. 하..결국 상담원 통화하고 지움..",
+    "collected_at": "2026-01-08T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "의무 설치 안내 후 유료 과금 발생으로 기만감 호소",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "투명성",
+          "혜택 체감성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "의무 설치를 안내하면서 유료임을 사전 고지하지 않아 고객이 기만당했다고 인식",
+        "action_hint": "의무설치 안내에 유료 여부 필수 고지 반영"
+      },
+      {
+        "issue_summary": "앱 삭제가 불가능하여 상담원 통화를 통해 우회 삭제",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "사용자 제어",
+          "효율성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "앱 삭제 플로우가 차단되어 있어 고객이 CS 채널을 통해 우회해야 하는 불필요한 마찰 발생",
+        "action_hint": "앱 내 자체 삭제 플로우 또는 명확한 해지 경로 제공"
+      }
+    ],
+    "overall_summary": "전략 도메인의 정보 투명성과 UX 도메인의 사용자 제어 속성에서 동시에 심각한 이슈가 발생하고 있다. 의무 설치라는 강제적 맥락에서 유료 고지 누락과 삭제 불가 경험이 겹쳐 고객의 기대 낙차가 극단적으로 크다. 상품전략팀은 의무 설치 안내 문구에 유료 여부 고지를 즉시 반영하고, UX기획팀은 앱 내 삭제 또는 서비스 해지 진입점을 스프린트 우선순위로 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0092",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+우리집지킴이",
+    "service": "U+우리집지킴이",
+    "raw_text": "접속 도중 네트워크 상태가 나빠지면 접속 안되면 그만이지 매번 전화 인증을 다시 받게 만드네요. 가뜩이나 인증도 두 번 연속 진행해야 돼서 번거롭기 짝이 없는데. 어이없습니다.",
+    "collected_at": "2026-03-23T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "네트워크 불안정 시 전화 인증 재요구 발생",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "오류방지성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "네트워크 단절 후 세션 복구 실패로 인증 상태가 초기화되어 매번 재인증을 강제함",
+        "action_hint": "네트워크 복구 시 세션 유지 로직 핫픽스 적용"
+      },
+      {
+        "issue_summary": "전화 인증을 두 번 연속 진행해야 하는 구조적 번거로움",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "효율성",
+          "간결성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "2단계 연속 전화 인증 플로우가 인증 단계를 과도하게 늘려 사용자 이탈 요인으로 작용함",
+        "action_hint": "2회 연속 인증 플로우 단일화 스프린트 검토"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성과 UX 도메인의 인증 플로우 효율성 두 축에서 동시에 Gap이 발생한 VoC다. 네트워크 불안정 상황에서 세션이 유지되지 않아 반복 재인증을 유발하고, 기본 인증 구조 자체도 2회 연속 진행이 필요해 불편이 중첩되고 있다. 서비스개발팀은 네트워크 복구 시 세션 유지 로직을 우선 점검하고, UX기획팀은 인증 단계 축소 방안을 병행 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0093",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+우리집지킴이",
+    "service": "U+우리집지킴이",
+    "raw_text": "업뎃이후 카메라로 말하면 지지직 잡음이 엄청크게 들려서 말소리가 안들립니다 어떻게 하면 되요?",
+    "collected_at": "2026-03-23T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "업데이트 이후 카메라 음성 통화 시 심한 잡음 발생으로 말소리 불청취",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "앱 업데이트 후 오디오 처리 로직 변경으로 카메라 투어크 기능 잡음 크래시 발생, 핵심 기능 동작 불가 수준",
+        "action_hint": "업데이트 빌드 오디오 크래시 핫픽스 배포"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 시스템 안정성 속성의 회귀 결함이 확인된다. 업데이트 직후 발생한 이슈로, 신규 빌드에 대한 기대치가 있는 고객 맥락에서 핵심 기능(음성 통신)이 완전히 무력화되어 기대-경험 낙차가 크다. 서비스개발팀은 해당 업데이트 빌드의 오디오 스택 변경 이력을 즉시 점검하고 핫픽스 배포 일정을 수립해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0094",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+우리집지킴이",
+    "service": "U+우리집지킴이",
+    "raw_text": "영상을틀면 어플이 계속튕겨요 개선도안되고 요금매달 내면서 계속써야하나 고민입니다 너무 불편해요",
+    "collected_at": "2026-03-05T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "영상 재생 시 앱 반복 크래시 발생",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "영상 재생 기능의 반복 크래시가 지속 미해결 상태로, 핵심 서비스 이용 자체가 불가한 수준",
+        "action_hint": "영상 재생 크래시 핫픽스 즉시 배포"
+      },
+      {
+        "issue_summary": "지속 불편에도 요금 납부 지속 여부 고민 중 - 이탈 가능성",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "가격 합리성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "기능 오류 미해결 상태에서 유료 요금 납부를 지속해야 하는 상황이 서비스 가치 자체에 대한 회의로 이어짐",
+        "action_hint": "이탈 위험 고객 대상 CS 프로액티브 인바운드 설계"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성과 전략 도메인의 혜택 체감성에서 동시에 심각한 Gap이 발생한 VoC다. 유료 요금을 납부하는 일반 고객이 핵심 기능인 영상 재생 자체가 반복적으로 불가능한 상황을 장기간 방치당하면서 기대 대비 낙차가 극단적으로 크다. 서비스개발팀은 영상 재생 크래시 원인을 즉시 추적·핫픽스 해야 하며, 고객지원팀은 동일 증상 리포트 고객을 세그먼트로 추출해 선제적 보상 또는 해지 방어 스크립트를 적용해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0095",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+우리집지킴이",
+    "service": "U+우리집지킴이",
+    "raw_text": "이거 왜 자꾸 감지영상 촬영이 안되나요 옆집 옆옆집 발 아래부분 찍힌건 잘 나오면서 정작 우리집 현관문앞에 택배기사님이나 타인 지나가는건 하나도 안 찍히네요 원래 잘됐는데 껐다가 켜보기도하고 와이파이 문제인가싶어 재연결도 해봤는데 안되네요 끈질긴 가입권유로 인해 마지못해 설득당해서 설치한건데 갈수록 별로입니다",
+    "collected_at": "2026-03-04T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "감지영상 촬영 기능이 작동하지 않음 (현관문 앞 동작 미감지)",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "핵심 기능인 감지 촬영이 특정 구역에서 반복 미작동하며, 재연결·재부팅 우회 시도에도 해소되지 않아 제품 신뢰도 붕괴 수준의 기능 장애",
+        "action_hint": "감지영역 설정 및 모션 감지 트리거 로직 핫픽스 우선 검토"
+      },
+      {
+        "issue_summary": "끈질긴 가입 권유로 인해 비자발적으로 설치하게 됨",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "맥락 적합성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "고압적 권유로 형성된 낮은 초기 수용성이, 제품 불만과 결합되어 브랜드 전반에 대한 부정 감정으로 확산된 구조",
+        "action_hint": "가입 권유 스크립트 및 영업 프로세스 세그먼트별 재설계"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성과 전략 도메인의 가입 유도 방식 양측에서 동시에 심각한 이슈가 발생했다. 자발적 가입 의사 없이 설득·설치된 고객이 핵심 기능 장애까지 겪으면서 기대-경험 낙차가 극대화된 상태로, 이탈 리스크가 매우 높다. 서비스개발팀은 감지 영역별 모션 감지 로직의 이상 여부를 즉시 점검하고, 영업·상품전략팀은 비자발적 가입 유도 프로세스가 장기 이탈률에 미치는 영향을 세그먼트 단위로 분석해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0096",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+우리집지킴이",
+    "service": "U+우리집지킴이",
+    "raw_text": "왜 어플자체가 열리지 않는건가요.",
+    "collected_at": "2026-03-04T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "앱 실행 자체가 되지 않는 실행 불가 오류",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "앱 진입 자체가 차단되는 크래시 또는 실행 불가 상태로, 서비스 접근성이 완전히 무너진 상황",
+        "action_hint": "앱 실행 크래시 로그 즉시 확인"
+      }
+    ],
+    "overall_summary": "U+우리집지킴이 앱에서 실행 자체가 되지 않는 기술 도메인의 시스템 안정성 이슈가 발생하고 있다. 홈 보안 서비스 특성상 고객은 언제든 앱을 열 수 있다는 기본 전제를 가지고 있어, 실행 불가 상황은 기대치 낙차가 크게 나타난다. 서비스개발팀은 해당 OS 버전 및 기기 환경별 앱 크래시 로그를 우선 점검하고 핫픽스 배포 여부를 즉시 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0097",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+우리집지킴이",
+    "service": "U+우리집지킴이",
+    "raw_text": "도대체 왜자꾸 저장공간부족 알림을 보내요? 어쩌라고요? 그만 보내라 좀..",
+    "collected_at": "2026-03-02T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "저장공간 부족 알림이 반복 발송되어 고객 불쾌감 유발",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 20,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "저장공간 부족 알림이 중복·반복 발송되어 고객이 제어 불가 상태로 인식하고 있음",
+        "action_hint": "중복 알림 발송 로직 핫픽스 적용"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 알림 발송 로직의 시스템 안정성 이슈가 확인된다. 별도 조치 없이 동일 알림이 반복 수신되는 상황으로 고객의 기대 대비 경험 낙차가 매우 크며, 격앙된 감성 표현이 동반되어 앱 이탈 위험이 높다. 서비스개발팀은 U+우리집지킴이 알림 트리거 조건과 발송 횟수 제한 로직을 즉시 점검하고, 동일 조건에서 중복 발송이 차단되도록 핫픽스를 우선 배포해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0098",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+one",
+    "service": "U+one",
+    "raw_text": "V30 업데이트 이후 어플이 실행이 안됩니다 VIP 혜택 사용하고 싶은데 구형폰도 사용할 수 있게 해주세요",
+    "collected_at": "2026-03-29T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "V30 업데이트 이후 앱 실행 불가",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "특정 기기(V30) 업데이트 후 앱 크래시 발생으로 VIP 고객이 서비스 자체에 접근 불가한 최고 심각도 장애",
+        "action_hint": "V30 기기 업데이트 충돌 핫픽스 즉시 배포"
+      },
+      {
+        "issue_summary": "구형 기기 미지원으로 VIP 혜택 이용 불가",
+        "feedback_type": "사용편의",
+        "domain": "전략",
+        "attributes": [
+          "기능 보편성",
+          "혜택 체감성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "VIP 고객임에도 구형 기기 미지원 정책으로 인해 혜택 체감 자체가 차단되어 브랜드 신뢰 훼손 위험",
+        "action_hint": "구형 기기 VIP 혜택 접근 플로우 대안 세그먼트 검토"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성과 전략 도메인의 기능 보편성·혜택 체감성에서 동시에 심각한 이슈가 확인된다. VIP 고객이 특정 기기 업데이트 이후 앱 자체를 실행하지 못해 혜택 접근이 완전히 차단된 상황으로, 장기 충성 고객의 기대치 낙차가 극단적으로 크다. 서비스개발팀은 V30 환경에서의 크래시 원인을 즉시 분석해 핫픽스를 배포하고, 상품전략팀은 구형 기기 사용 VIP 고객을 위한 혜택 이용 대체 채널을 단기 과제로 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0099",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+one",
+    "service": "U+one",
+    "raw_text": "며칠 전에 업데이트 비슷한걸 한 이 후로.. 실행 도 안됩니다. 앱을 누르면 랙 같은게 생기면서 핸드폰 사용을 할 수 없을 정도로 랙이 걸립니다. 재부팅 해야 다시 핸드폰 사용이 가능해집니다. v30 이고...사용한 데이터 확인도 불가능하고...결제 상황 확인도 불가능 합니다.",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "업데이트 이후 앱 실행 시 기기 전체 프리즈 발생",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "업데이트 배포 후 특정 기기(V30)에서 앱 기동 시 시스템 전체가 멈추는 치명적 크래시가 발생하며, 재부팅 없이는 복구 불가능한 수준의 안정성 결함",
+        "action_hint": "V30 타깃 크래시 로그 분석 후 핫픽스 배포"
+      },
+      {
+        "issue_summary": "앱 미실행으로 데이터 사용량 및 결제 현황 확인 불가",
+        "feedback_type": "사용편의",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "채널 접근성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "앱 크래시로 인해 데이터 잔량·결제 정보 등 핵심 자가 서비스 기능 전체가 차단된 상태로, 고객의 기본 권리인 요금 확인이 불가능한 운영 공백 발생",
+        "action_hint": "앱 장애 시 웹 대체 경로 CS 안내 스크립트 즉시 배포"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 시스템 안정성과 채널 접근성이 동시에 붕괴된 복합 장애 상황으로, 업데이트 후 특정 구형 기기(V30)에서 앱 자체가 기기를 멈추는 치명적 크래시가 재현되고 있다. 기본 요금·데이터 확인조차 불가한 상태는 고객의 최소 기대 수준을 크게 하회하며 이탈 리스크로 직결된다. 서비스개발팀은 해당 업데이트 버전과 V30 환경 간 호환성 충돌을 우선 분석하고, 고객지원팀은 앱 대체 접근 경로를 즉시 인바운드 스크립트에 반영해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0100",
+    "source": "app_store_aos",
+    "channel_detail": "Google Play - U+one",
+    "service": "U+one",
+    "raw_text": "2026년도 3월 25일 수요일 업데이트 해주세요 개발자님 죄송합니다\"\n---",
+    "collected_at": "2026-03-25T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "U+one 앱 업데이트 미진행으로 인한 불만",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "고객이 특정 날짜를 명시하며 업데이트를 요청하고 있어, 앱 버전 미갱신 또는 기능 미작동 상태가 지속되고 있는 것으로 판단됨",
+        "action_hint": "U+one 앱 최신 버전 배포 상태 즉시 점검"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 U+one 앱의 업데이트 미반영에 따른 시스템 안정성 이슈가 확인된다. 고객이 날짜를 특정하여 업데이트를 요청한 점은 해당 버전에서 기능 오류 또는 누락이 체감되고 있을 가능성을 시사하며, 낮은 별점(1점)은 기대 대비 실제 경험 낙차가 유의미함을 나타낸다. 서비스개발팀은 해당 날짜 기준 PlayStore 배포 버전 및 업데이트 이력을 즉시 확인하고, 필요 시 핫픽스 배포 일정을 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0101",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "LG 유플 인터넷 단독 3년 만기 끝났습니다\n100M + 알뜰폰 결합 15,000원에 사용중이었고\n500M로 변경할까",
+    "collected_at": "2026-03-31T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "인터넷 단독 3년 만기 후 요금제 유지 또는 업그레이드 고려",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "가격 합리성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 80,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "3년 장기고객의 만기 시점에서 재계약 혜택 체감이 부족해 타사 또는 요금제 변경 이탈 가능성 높음",
+        "action_hint": "장기고객 만기 세그먼트 대상 선제적 리텐션 오퍼 설계"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 혜택 체감성과 가격 합리성 이슈가 동시에 감지된다. 3년 장기고객이 만기 시점에 별도 혜택 없이 스스로 옵션을 탐색하는 상황으로, 재계약 유인 구조가 작동하지 않고 있다. 상품전략팀은 100M→500M 업그레이드 전환 고객군의 이탈률과 현행 장기고객 리텐션 오퍼 적용 실적을 우선 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0102",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "알닷에서 유심 교체 해준다는데 업데이트 만 해도 된다고 하네요",
+    "collected_at": "2026-03-31T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "알뜰폰(알닷) 유심 교체 없이 업데이트로 대응 가능하다는 정보 공유",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "처리 정확성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "유심 교체 정책 관련 고객 자발적 정보 공유로, 공식 안내 채널 외 커뮤니티를 통한 정보 확산이 이루어지고 있음",
+        "action_hint": "유심 교체·업데이트 안내 공식 채널 일원화 검토"
+      }
+    ],
+    "overall_summary": "운영 도메인의 투명성 및 처리 정확성 속성에서, 4월 13일 유심 교체 정책 관련 공식 안내가 고객에게 명확히 전달되지 않아 커뮤니티 내 비공식 정보 공유가 발생하고 있다. 특히 업데이트만으로 대응 가능한지 여부가 고객 사이에서 혼선이 생길 수 있는 상황으로, 고객이 직접 정보를 수집·검증하는 우회 행동이 나타나고 있다. 고객지원·서비스운영 부서는 유심 교체 대상 여부 및 업데이트 적용 기준을 명확히 구분한 공식 FAQ와 공지를 즉시 정비하고, 주요 커뮤니티 채널 모니터링을 강화할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0103",
+    "source": "community",
+    "channel_detail": "뽐뿌",
+    "service": null,
+    "raw_text": "유플러스 매장 가거나 홈플러스 매\"",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "매장 또는 홈플러스 방문 관련 발화가 중간에 끊김",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "본문이 미완성 상태로 유입되어 고객 의도 및 이슈 파악 불가",
+        "action_hint": "VoC 수집 채널 입력 완결성 점검"
+      }
+    ],
+    "overall_summary": "입력된 VoC 본문이 '유플러스 매장 가거나 홈플러스 매'에서 잘려 있어 고객의 실제 불만·요청 내용을 파악할 수 없는 상태이다. 오프라인 채널(매장·제휴처) 방문 맥락이 언급된 점으로 보아 운영 도메인의 채널 접근성 이슈일 가능성이 있으나, 현재로선 단정하기 어렵다. VoC 수집 시스템 담당자는 해당 건의 원문 복원 여부를 확인하고, 미완성 피드백 필터링 프로세스를 점검할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0104",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "LgU+ 알뜰폰 전 고객 무료 유심교체 서비스 시행한다네요유심에서 이심으로도, 이심에서 유심으로도 교체해",
+    "collected_at": "2026-03-31T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LGU+ 알뜰폰 고객 대상 무료 유심↔이심 교체 서비스 시행 정보 공유",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "기능 보편성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "알뜰폰 전 고객 대상 무료 유심 교체 혜택이 실질적 체감 가치로 긍정 인식되고 있으며, 커뮤니티 자발 확산으로 혜택 인지도가 형성 중",
+        "action_hint": "알뜰폰 세그먼트 혜택 확산 채널 확대 검토"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 혜택 체감성과 기능 보편성 측면의 긍정 신호가 감지된다. 알뜰폰 고객층이 유심↔이심 무료 교체라는 실질적 혜택을 인지하고 커뮤니티에서 자발적으로 공유하는 단계에 있어 기대 대비 경험 수준이 초과된 상태다. 상품전략·마케팅 부서는 해당 혜택의 공식 채널 홍보 커버리지를 점검하고, 알뜰폰 가입자 유지율 제고 수단으로 활용 가능성을 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0105",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "이거... 노가다인걸로 아는데\n아무리못해도 메가커피 아이스아메리카노 3잔이라도 바리 바리 싸들고",
+    "collected_at": "2026-03-31T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유심 초기화 10개 처리 시 과도한 수작업 소요",
+        "feedback_type": "사용편의",
+        "domain": "운영",
+        "attributes": [
+          "처리 정확성",
+          "지원 신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "다수 유심 초기화 처리가 건별 수작업 반복 구조로 운영되어 고객 및 현장 부담이 큼",
+        "action_hint": "유심 일괄 초기화 프로세스 도입 검토"
+      }
+    ],
+    "overall_summary": "운영 도메인의 처리 신속성·효율성 이슈로, 유심 초기화 작업이 건별 반복 수작업 방식으로 고착화되어 있다. 다수 건을 한 번에 처리해야 하는 고객 상황에서 기대 대비 실제 처리 부담이 크게 벌어지며, 현장 직원 리소스 낭비와 고객 불편이 동시에 발생하고 있다. 서비스운영 및 서비스개발 부서는 유심 초기화 일괄 처리 기능 또는 간소화된 배치 프로세스 도입 가능성을 우선 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0106",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "S26울트라 512기가 유플기변현완 56만115요금 6개월 부가 보험1개소노가입필수-비용X워치가입필수-비",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "S26 울트라 512GB 유플러스 기변 조건에 필수 부가서비스(워치, 보험) 가입 요구",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "지불 유연성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "필수 부가서비스 묶음 조건이 실질 기변 비용을 높여 혜택 체감을 저해하고 있음",
+        "action_hint": "기변 조건 내 필수 부가서비스 세그먼트별 구조 재검토"
+      },
+      {
+        "issue_summary": "115 요금제 6개월 유지 조건 부과로 요금 선택 유연성 제한",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "가격 합리성",
+          "지불 유연성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "고가 요금제 6개월 의무 유지 조건이 실구매 부담을 높여 가격 합리성 인식을 낮추고 있음",
+        "action_hint": "프리미엄 단말 기변 시 요금제 의무기간 조건 타당성 검토"
+      }
+    ],
+    "overall_summary": "뽐뿌 커뮤니티에서 S26 울트라 기변 조건을 조회하는 고객이 필수 부가서비스 묶음과 고가 요금제 의무 유지 조건에 부정적 반응을 보이고 있다. 단말 구매 시점에 비용 절감을 기대하는 기변 고객 특성상 조건 복잡성과 실질 부담이 기대치 낙차를 크게 유발하고 있다. 상품전략팀은 기변 프로모션 내 필수 부가서비스 구성 및 요금제 의무기간 조건이 경쟁사 대비 고객 이탈 요인으로 작용하는지 우선 점검할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0107",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "누구는 심 주고 누구는 업데이트 (사실 업데이트로 대부분 가능한",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "SIM 교환 방식 vs 업데이트 방식 간 고객별 처우 차이 불만",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "처리 정확성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "동일 이슈에 대해 고객마다 다른 해결 방식이 적용되며 처우 형평성에 대한 불신이 발생함",
+        "action_hint": "SIM 교환·업데이트 분기 기준 고객 안내 스크립트 통일"
+      },
+      {
+        "issue_summary": "업데이트로 해결 가능한 경우에도 SIM 교체 쿠폰 제공 정책 존재",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "업데이트 유도 시 3년 내 SIM 교체 쿠폰을 제공하는 정책이 혜택으로 인식될 수 있으나, 형평성 논란과 맞물려 가치 체감이 희석됨",
+        "action_hint": "SIM 쿠폰 제공 조건·대상 세그먼트 기준 재정비"
+      }
+    ],
+    "overall_summary": "운영 도메인의 투명성·처리 정확성 속성에서 고객별 상이한 SIM 처리 방식으로 인한 형평성 불만이 확인된다. 업데이트로 대부분 해결 가능한 상황임에도 일부 고객에게만 SIM 교환이 적용되는 기준이 불명확하게 운영되고 있어, 동일 문의 고객 간 처우 낙차가 불신을 키우고 있다. 고객지원·서비스운영 부서는 SIM 교환과 업데이트 분기 판단 기준을 명문화하고 CS 스크립트에 반영해 응대 일관성을 확보해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0108",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "인터넷 100메가 + TV1삼년전에는 1,100원 할인받아 월요금 29,590원에 상품권 43받고 재약정했는데이래저래",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "인터넷+TV 재약정 조건(요금·상품권 혜택) 대비 현재 해지방어 조건의 체감 메리트 부족",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "가격 합리성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 40,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "3년 전 재약정 혜택(월 1,100원 할인 + 상품권 43만원)을 기준점으로 삼는 장기고객이 현재 해지방어 제안의 혜택 수준에 실망해 이탈을 검토 중",
+        "action_hint": "장기고객 해지방어 혜택 세그먼트 재설계"
+      }
+    ],
+    "overall_summary": "전략 도메인의 혜택 체감성·가격 합리성 이슈가 핵심으로, 인터넷+TV 결합 장기고객이 과거 재약정 조건을 기준점으로 현재 해지방어 제안을 평가하면서 기대치 낙차가 매우 크게 발생하고 있다. 3년 전 혜택 수준을 내재화한 고객일수록 현재 제안이 상대적으로 열위하게 느껴져 실질적 이탈 의사로 이어질 위험이 높다. 상품전략·사업기획 부서는 동일 결합 유형 장기고객의 재약정 이력 데이터를 검토하고, 해지방어 상담 스크립트에 적용되는 혜택 상한선이 고객 기대 수준에 부합하는지 즉시 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0109",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "2222 6396777B 8AAA",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "해독 불가 암호형 텍스트로 VoC 내용 파악 불가",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "본문이 숫자·기호 나열로 구성되어 고객 의도 및 불만 내용을 식별할 수 없음",
+        "action_hint": "원문 재수집 또는 작성자 의도 확인 요청"
+      }
+    ],
+    "overall_summary": "해당 VoC는 '2222 6396777B 8AAA' 등 의미를 파악할 수 없는 문자열로만 구성되어 있어 실질적인 고객 경험 분석이 불가능한 상태입니다. 번호놀이·은어·암호화된 커뮤니티 표현일 가능성이 있으나, 현재 제공된 맥락만으로는 어떤 도메인의 이슈인지 특정하기 어렵습니다. 운영팀은 해당 게시글의 원문 전후 맥락 및 커뮤니티 스레드를 추가 수집한 뒤 재분류 여부를 판단하시기 바랍니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0110",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "sk에서 lg 번이 s26u 256\n32만원, 부가서비스3개미가입시 18만원 109요금 6갤유지\n총합 50만원\n&n",
+    "collected_at": "2026-03-29T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "번호이동 단말 구매 조건의 혜택 체감 수준 확인 요청",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "가격 합리성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "SK→LG 번이 조건(지원금+부가서비스 조건+요금제+유지기간)의 실구매가 타당성을 커뮤니티에서 검증하려는 정보 탐색 단계로, 불만보다 구매 결정 전 비교 욕구가 핵심",
+        "action_hint": "번이 지원금 조건 세그먼트별 경쟁력 점검"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 번호이동 단말 혜택 체감성과 가격 합리성에 대한 이슈가 확인된다. 고객은 SK에서 LGU+로 번호이동 시 제시된 지원금·부가서비스 조건·요금제·유지기간의 총합 비용이 시장 대비 적정한지 판단하지 못해 외부 커뮤니티에서 검증을 시도하는 상황으로, 자사 채널 내 조건 비교 정보가 충분히 제공되지 않고 있음을 시사한다. 상품전략 및 사업기획 담당자는 해당 번호이동 조건의 시장 경쟁력 수준을 점검하고, 고객이 공식 채널에서 혜택을 직관적으로 비교할 수 있도록 정보 노출 체계를 보완할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0111",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "유플러스 기변 S26 256요금제 6개월무부가할부원금 10만원오랫만에 하려니 조건이 괜찮은지 잘 모르",
+    "collected_at": "2026-03-29T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "S26 기변 조건의 합리성 판단 어려움",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "가격 합리성",
+          "정보구조화"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "오랜 공백 후 기변 시도 고객이 현재 조건의 시장 경쟁력을 스스로 판단하지 못해 외부 커뮤니티에서 검증을 시도하는 상태",
+        "action_hint": "기변 조건 비교 가이드 콘텐츠 기획"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 가격 합리성과 정보 구조화 속성 이슈가 동시에 나타나고 있다. 오랜만에 기변을 시도하는 고객일수록 현재 조건이 시장 평균 대비 적절한지 판단할 기준이 없어, 자사 채널 이탈 후 외부 커뮤니티에서 검증하는 패턴이 반복될 수 있다. 상품전략팀은 기변 고객 대상 요금제·할부 조건 비교 정보를 자사 앱·웹 내에서 직접 확인할 수 있도록 노출 구조를 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0112",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "�� �p���������ص� ������ �ʱ�ȭ�� �ʼ���� ����µ� ���������̸� ���� �ʿ����������?\n�ٲ�ǰ���>",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "기기 재사용 시 초기화 필요 여부에 대한 정보 불명확",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "처리 정확성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "초기화 없이 재사용 가능 여부에 대한 고객 간 정보 혼선이 발생하고 있으며, 공식 안내가 부재한 상황",
+        "action_hint": "기기 재사용 절차 공식 FAQ 등록"
+      }
+    ],
+    "overall_summary": "본 VoC는 원문 인코딩 오류로 본문 내용을 직접 해석할 수 없으나, 제목을 기반으로 LGU+ 기기 재사용 시 초기화 필요 여부에 대한 정보 불명확 이슈로 판단된다. 커뮤니티 내 사용자 간 엇갈린 정보가 유통되는 상황으로, 공식 채널의 안내 공백이 원인으로 보인다. 고객지원·서비스운영 부서는 기기 재사용 관련 프로세스를 명확히 정의하고 공식 FAQ 및 상담 스크립트에 반영할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0113",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "번이: 이야기 유플망  A모바일 유플망\n유심: u8800 일반유심 (스마텔)",
+    "collected_at": "2026-03-28T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "알뜰폰 유플망 유심 재활용(초기화 없이) 성공 경험 공유",
+        "feedback_type": "사용편의",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "기능 보편성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "알뜰폰 유플망 간 유심 재활용이 초기화 없이 가능함을 고객이 직접 검증·공유한 긍정 사례로, 유심 호환성 운용 품질이 기대를 상회함",
+        "action_hint": "유플망 알뜰 유심 호환 스펙 공식 문서화"
+      }
+    ],
+    "overall_summary": "기술 도메인의 유심 호환성(시스템 안정성·기능 보편성) 측면에서 고객이 긍정 경험을 자발적으로 커뮤니티에 공유한 사례다. 별도 초기화 없이 알뜰 유플망 간 유심 재활용이 가능하다는 점이 일반 기대 수준을 초과하는 편의로 작용하고 있다. 서비스개발·인프라 팀은 해당 유심 모델(u8800)의 호환 조건을 공식 가이드로 정리해 유사 문의 시 CS 스크립트에 반영할 것을 권고한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0114",
+    "source": "community",
+    "channel_detail": "뽐뿌",
+    "service": null,
+    "raw_text": "유플망은 유심 초기화\"",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플러스 망 이용 시 유심 초기화 발생",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "보안성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "망 연결 과정에서 유심 초기화가 발생하는 심각한 기술 결함으로, 고객 기본 이용 환경 자체가 훼손된 상태",
+        "action_hint": "유심 초기화 트리거 로그 즉시 분석"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 시스템 안정성과 보안성에 직결된 유심 초기화 이슈가 확인되었다. 별도 맥락 없이 발생한 사안임에도 체감 낙차가 매우 크며, 이는 기본 통신 서비스 신뢰를 직접 위협하는 수준이다. 서비스개발 및 인프라 팀이 해당 단말·망 조합에서의 유심 초기화 발생 조건을 긴급 점검하고 재현 여부를 확인해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0115",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "이번 유플 사전예약 셀로 중고보상 신청하신분들 확인해보세요방금문자왔네요.&nb",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플러스 셀로 중고보상 사전예약 확인 문자 수신",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "지원 신속성",
+          "투명성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 5,
+        "status": "Alignment",
+        "diagnosis": "사전예약 셀로 중고보상 신청 후 확인 문자가 정상 발송되어 고객이 긍정적으로 공유한 상황으로, 운영 프로세스가 기대 수준에 부합하게 작동 중",
+        "action_hint": "셀로 보상 안내 문자 발송 타이밍 및 도달률 모니터링"
+      }
+    ],
+    "overall_summary": "운영 도메인의 투명성·지원 신속성 측면에서 셀로 중고보상 확인 문자가 적시에 발송되어 고객이 커뮤니티에 긍정적으로 공유한 사례다. 사전예약 직후 보상 프로세스 진행 여부를 확인하려는 고객 맥락에서 문자 알림이 기대 수준을 충족하고 있어 큰 낙차는 없다. 서비스운영팀은 해당 문자의 전체 발송 완료율과 미수신 이탈 케이스를 점검해 동일 이벤트 참여자 전원에게 일관된 안내가 이루어지고 있는지 확인할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0116",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "29일 만료 입니다.이틀 남았는데 궁금해서 채팅 상담만 했습니다.현재 500M + TV 일반형(?) +",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "만료 이틀 전 해지방어 조건 확인을 위해 채팅 상담 시도",
+        "feedback_type": "사용편의",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성",
+          "투명성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 80,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "계약 만료 직전 고객이 해지방어 조건을 채팅으로 탐색 중이며, 이탈 가능성이 높은 임계 시점에 진입한 상태",
+        "action_hint": "만료 D-2 이탈 고객 CS 선제 인바운드 대응"
+      }
+    ],
+    "overall_summary": "운영 도메인의 채널 접근성·투명성 이슈로, 계약 만료 이틀 전 고객이 해지방어 혜택 정보를 자발적으로 탐색하는 상황이 감지되었다. 장기 결합 상품 이용 고객임에도 이탈 검토 단계에서 충분한 정보를 받지 못했다는 기대 낙차가 크게 작용하고 있다. 고객지원·서비스운영 부서는 만료 D-2 시점 고객을 대상으로 해지방어 스크립트와 선제적 아웃바운드 채널을 즉시 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0117",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "에이모바일 공지사항에 나온 LGU+ 유심 교체안내입니다.",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "에이모바일 공지사항을 통한 LGU+ 유심 교체 안내 정보 공유",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "LGU+ 유심 교체 안내가 자사 채널이 아닌 제3자(에이모바일) 공지를 통해 고객에게 전달되고 있어 공식 안내 채널의 주도성 부재가 감지됨",
+        "action_hint": "공식 유심 교체 안내 채널 일원화 점검"
+      }
+    ],
+    "overall_summary": "운영 도메인의 투명성 및 채널 접근성 측면에서, LGU+ 유심 교체 관련 공식 안내가 자사 채널이 아닌 알뜰폰 MVNO 업체(에이모바일) 공지를 통해 고객에게 확산되고 있는 현상이 포착되었다. 이는 LGU+ 본사의 직접 고지 창구가 충분히 활성화되지 않아 고객이 제3자 경로에 의존하는 상황을 시사한다. 고객지원·서비스운영 부서는 유심 교체 안내의 공식 채널(앱, 문자, 홈페이지) 노출 현황을 즉시 점검하고, 고객이 자사 채널에서 먼저 정보를 접할 수 있도록 안내 흐름을 재정비할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0118",
+    "source": "community",
+    "channel_detail": "뽐뿌",
+    "service": null,
+    "raw_text": "결론적으로는 4월13일부터 교체는 하나\"",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "기기 교체 일정이 4월 13일로 확정되었음을 언급",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "처리 정확성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "교체 일정 확정 사실만 서술되어 있어 감정 신호 없이 사실 전달에 그침",
+        "action_hint": "교체 일정 확정 이후 고객 후속 만족도 확인"
+      }
+    ],
+    "overall_summary": "본 VoC는 기기 교체 일정(4월 13일) 확정 사실만을 단문으로 서술하고 있어 감성 신호나 불만 표현이 부재한 중립적 피드백이다. 다만 '결론적으로는'이라는 표현이 이전 과정에서 일정 조율 혹은 지연 경험이 있었음을 암시할 수 있어, 교체 과정에서 충분한 안내가 이루어졌는지 맥락 확인이 필요하다. 서비스운영 담당자는 해당 고객의 교체 사전 커뮤니케이션 이력을 점검하고, 완료 후 만족도 확인 접점을 마련하는 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0119",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "모빙U+\n통화 100분 문자 100건 / 4.5GB100원 (NFC 유심 무료) -12개월 할인",
+    "collected_at": "2026-03-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "모빙 U+ 요금제 조건 및 할인 혜택 정보 공유",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "가격 합리성",
+          "혜택 체감성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "타 MVNO(A모바일)에서 모빙 U+로 이동하며 요금·혜택 조건에 긍정 반응을 보임",
+        "action_hint": "모빙 U+ 유입 세그먼트 혜택 매력도 추적"
+      }
+    ],
+    "overall_summary": "고객이 타 MVNO에서 모빙 U+로 번호이동하며 통화·데이터·NFC 유심 무료 등 요금제 구성에 긍정적 반응을 나타냈다. MVNO 간 경쟁 구도에서 가격 합리성과 혜택 체감성이 유입 동인으로 작용한 사례로, 특별한 기대 맥락 없이도 기대치를 상회하는 만족 신호가 확인된다. 상품전략 담당은 해당 요금제의 유입 전환율 및 12개월 할인 종료 후 이탈률를 연계 모니터링할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0120",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "전에 sk 향기기에 유플알뜰 쓰고 있었는데 번호변경하고 수동나밍 안먹어서 포스개통 했",
+    "collected_at": "2026-03-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "SK 단말기에서 유플러스 알뜰폰 수동 나밍(APN 설정) 미적용으로 포스 개통 전환",
+        "feedback_type": "사용편의",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "연동성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "타사 단말기(SK향 기기)에서 유플러스 알뜰폰 수동 APN 설정이 정상 작동하지 않아 셀프개통 실패 후 포스(대리점) 개통으로 우회한 사례로, 단말 호환성 및 네트워크 설정 가이드 부재가 원인으로 추정됨",
+        "action_hint": "타사 단말 APN 수동 설정 호환성 핫픽스 검토"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 및 단말 연동성 이슈로, SK향 단말기에서 유플러스 알뜰폰 수동 APN 나밍이 적용되지 않는 문제가 발생했습니다. 셀프개통을 시도한 고객이 해결 실패 후 포스 개통으로 우회하는 부담을 감수해야 했으며, 표준 기대 수준 대비 실제 경험 낙차가 크게 나타납니다. 서비스개발·인프라 팀은 타사 단말 호환 APN 설정 로직을 점검하고, 알뜰폰 셀프개통 가이드 내 단말별 수동 설정 안내를 즉시 보강해야 합니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0121",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "오래된 모델인데, 그래도 현역이라고 생각하고.기변은 조건도 다 안좋은데. 공시지원금 기준&n",
+    "collected_at": "2026-03-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "하이마트 유플 기변 조건 불만족 (공시지원금 등 혜택 미흡)",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "가격 합리성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "오래된 모델임에도 공시지원금 등 기변 조건이 기대 수준에 미치지 못해 혜택 체감성 저하",
+        "action_hint": "구모델 기변 공시지원금 경쟁력 점검"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 혜택 체감성과 가격 합리성 이슈가 확인된다. 고객은 구형 단말 기변 시 합리적인 지원 혜택을 기대했으나 공시지원금 조건이 이를 충족하지 못해 낙차가 발생했다. 상품전략팀은 하이마트 채널 내 구모델 기변 공시지원금 수준을 타사 및 자사 기준과 비교 점검할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0122",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "85요금제 6개월 무부가 공시로 현24.7이면 괜찮나요?성지보면 차비도 있지만 11.5에 부가도 들어가있",
+    "collected_at": "2026-03-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "번이 조건(85요금제 6개월 무부가 공시 현24.7만원)의 가격 합리성 판단 요청",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "가격 합리성",
+          "혜택 체감성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "성지 조건(11.5만원+부가 포함)과 비교하며 현재 번이 오퍼의 가격 경쟁력을 확인하려는 단계로, 구매 결정 직전 비교 탐색 중",
+        "action_hint": "번이 오퍼 경쟁력 세그먼트별 모니터링"
+      }
+    ],
+    "overall_summary": "고객은 유플러스 번호이동 조건으로 아이폰17 구매를 검토하며, 85요금제 기준 현재가 24.7만원 오퍼와 성지(11.5만원+부가 포함) 조건을 비교하는 구매 전 탐색 단계에 있다. 성지 대비 약 13만원 이상의 가격 격차가 체감되고 있어, 공식 채널 오퍼의 가격 합리성 낙차가 이탈 트리거로 작용할 수 있다. 상품전략 및 유통정책 담당은 번이 공시 조건과 비공식 유통 채널 간 가격 갭을 점검하고, 공식 채널 경쟁력 확보 방안을 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0123",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "사기혜택이라고 불릴만한 엘지결합이 (구)가족무한사랑 클럽 할인인 것으로 아는데요.",
+    "collected_at": "2026-03-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LG유플러스 결합 할인 혜택이 '사기혜택'으로 불릴 만큼 실망스럽다는 인식",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "가격 합리성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "결합 할인 혜택이 '사기혜택'으로 명명될 만큼 체감 가치가 극도로 낮아 브랜드 신뢰 훼손 위험이 높음",
+        "action_hint": "구·신 가무사 혜택 차이 세그먼트별 재설계"
+      }
+    ],
+    "overall_summary": "전략 도메인의 혜택 체감성·가격 합리성 속성에서 결합 할인 상품에 대한 극도의 부정 인식이 확인된다. 장기 또는 가족결합 고객으로 추정되는 High 기대 맥락에서 실제 혜택 체감 수준이 기대에 크게 미치지 못해 낙차가 극대화되고 있다. 상품전략 및 사업기획 부서는 구 가족무한사랑 클럽 대비 현행 결합 혜택의 실질 혜택 격차를 긴급 점검하고, 고객 인지 개선을 위한 커뮤니케이션 전략을 재수립해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0124",
+    "source": "community",
+    "channel_detail": "뽐뿌",
+    "service": null,
+    "raw_text": "뽐뻐님들\"",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "의미 있는 피드백 내용 없음 — 호칭 단편어만 존재",
+        "feedback_type": "중립",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "분석 가능한 고객 경험 정보가 포함되지 않은 단편 발화로, 진단 불가",
+        "action_hint": "VoC 수집 채널 입력 가이드 보완"
+      }
+    ],
+    "overall_summary": "해당 VoC는 '뽐뻐님들'이라는 커뮤니티 호칭 단편어만 포함되어 있어 구체적인 서비스 경험이나 불만 내용을 식별할 수 없습니다. 본문 유실 또는 입력 오류 가능성이 높으며, 뽐뻐 커뮤니티 게시글이 원문 전체가 아닌 일부만 수집된 것으로 추정됩니다. VoC 수집 운영팀에서 원문 게시글 URL 또는 전체 본문 재수집 프로세스를 점검하시기 바랍니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0125",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "500M+TV베이직+참결합(1회선)",
+    "collected_at": "2026-03-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "해지방어 후기 게시 의도만 있고 실제 경험 내용 미기재",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "본문이 제목과 요금제 구성 정보만 있고 실제 해지방어 경험(혜택 제안, 응대 만족도 등)이 기술되지 않아 분석 가능한 VoC 내용 없음",
+        "action_hint": "원문 재수집 또는 크롤링 오류 점검"
+      }
+    ],
+    "overall_summary": "해당 VoC는 '500M+TV베이직+참결합(1회선)' 요금제 구성 정보만 포함되어 있으며, 해지방어 경험에 대한 실질적 서술이 누락된 상태입니다. 고객이 해지방어 맥락(장기고객, 결합상품 보유)에 있다는 점에서 기대 수준이 높을 가능성이 있으나, 현재 본문으로는 구체적인 감성·속성 분석이 불가합니다. 수집 채널 담당자는 원문 전체가 정상 수집되었는지 크롤링 파이프라인을 우선 점검하시기 바랍니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0126",
+    "source": "community",
+    "channel_detail": "뽐뿌",
+    "service": null,
+    "raw_text": "월납 30,700원",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "월 납부 금액(30,700원)만 단독 기재, 맥락 없음",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "감정·맥락 정보 없이 요금 수치만 기재되어 불만 여부 및 이슈 방향 판별 불가",
+        "action_hint": "추가 맥락 수집 후 재분류"
+      }
+    ],
+    "overall_summary": "본 VoC는 월 납부금액 숫자(30,700원)만 기재되어 있어 고객 의도·감정·이슈 유형을 특정할 수 없는 최소 정보 케이스입니다. 요금 과다 청구, 예상치 못한 금액 확인, 단순 내역 메모 등 다양한 맥락이 혼재할 수 있어 기대치 낙차 산정에 근거가 부족합니다. CS 채널을 통해 해당 고객의 청구 내역 및 문의 이력을 조회하여 정확한 이슈 방향을 확인한 뒤 재분류하시기 바랍니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0127",
+    "source": "community",
+    "channel_detail": "뽐뿌",
+    "service": null,
+    "raw_text": "혜택 55만원",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "혜택 55만원에 대한 단순 언급",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "감정 신호 없이 혜택 금액만 단독 언급되어 긍·부정 방향 판별 불가",
+        "action_hint": "혜택 인지 맥락 추가 수집 후 세그먼트 분석 착수"
+      }
+    ],
+    "overall_summary": "본 VoC는 '혜택 55만원'이라는 단편적 키워드만 포함되어 있어 전략 도메인의 혜택 체감성 속성과 연관되나, 긍정·부정 방향을 판단할 수 있는 감성 신호나 고객 맥락이 전무하다. 고객이 혜택 금액을 기대치로 인식하는지, 체감 부족으로 불만을 느끼는지, 혹은 단순 확인 목적인지 구분이 불가능한 상황이다. 사업기획·상품전략 담당자는 해당 고객의 채널·가입 이력 데이터를 확보하여 발화 맥락을 재구성한 후 분석을 재수행할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0128",
+    "source": "community",
+    "channel_detail": "뽐뿌",
+    "service": null,
+    "raw_text": "혜택 땡기다보니 희\"",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "혜택에 이끌려 행동하게 되는 긍정적 유인 체감",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "혜택 구성이 고객의 자발적 행동을 유도할 만큼 매력적으로 체감되고 있음",
+        "action_hint": "혜택 유인 요소 세그먼트별 효과 측정"
+      }
+    ],
+    "overall_summary": "전략 도메인의 혜택 체감성 측면에서 고객이 자발적 참여 의향을 보이는 긍정 신호가 감지된다. 특별한 장기고객 맥락 없이도 기대 수준을 상회하는 반응이 나타난 점에서 현재 혜택 설계의 유인력이 유효하게 작동 중임을 시사한다. 사업기획·상품전략 담당자는 해당 혜택의 어떤 요소(구성, 타이밍, 노출 방식)가 전환 행동을 촉발하는지 추적하여 확장 적용 여부를 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0129",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "22년 가입하고 25년에 재약정 안하고(귀찮아서 타이밍 놓침..) 26년 재약정 했어요",
+    "collected_at": "2026-03-25T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "재약정 타이밍 놓친 후 해지방어 프로세스 경험",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성",
+          "처리 정확성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "22년 가입 장기고객이 재약정 시점을 놓친 뒤 해지방어 채널을 직접 찾아 접촉한 상황으로, 고객 주도 재약정 유도 체계 부재가 낙차의 원인",
+        "action_hint": "장기고객 재약정 도래 시 선제 아웃바운드 CS 스크립트 운영"
+      }
+    ],
+    "overall_summary": "운영 도메인의 채널 접근성 및 처리 정확성 이슈로, 장기고객이 재약정 타이밍을 스스로 관리해야 하는 구조적 공백이 확인된다. 22년 가입 장기고객의 높은 기대 수준 대비 재약정 안내·유도 체계가 미흡하여 기대-경험 낙차가 발생하고 있다. 고객지원·서비스운영 부서는 장기고객 재약정 도래 전 선제 아웃바운드 안내 프로세스가 실제로 작동하고 있는지 점검이 필요하다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0130",
+    "source": "community",
+    "channel_detail": "뽐뿌",
+    "service": null,
+    "raw_text": "인터넷 단독 1\"",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "인터넷 단독 요금제에 대한 단편적 언급",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "가격 합리성",
+          "타겟 적합성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "감정·의도가 불명확한 단편 발화로 인터넷 단독 상품에 대한 인지 또는 관심 수준만 확인 가능",
+        "action_hint": "인터넷 단독 상품 세그먼트 수요 재확인"
+      }
+    ],
+    "overall_summary": "본 VoC는 '인터넷 단독'이라는 키워드만 존재하는 극히 단편적인 발화로, 불만·요청·칭찬 등 구체적인 피드백 유형을 특정하기 어렵다. 결합 상품 중심 포트폴리오 환경에서 인터넷 단독 가입을 원하는 고객의 니즈가 충분히 충족되지 않고 있을 가능성이 있으며, 해당 맥락에서 기대 낙차가 발생했을 여지가 있다. 상품전략 부서는 인터넷 단독 요금제의 노출 경로·가격 구조·타겟 고객 세그먼트를 점검하고, 추가 VoC 수집을 통해 의도를 구체화할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0131",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "현재 투게더 결합이용중이고고딩 아들 s22 사용중인데 발열이랑 탄내가 나서 바꿀려고 하는데 아는곳",
+    "collected_at": "2026-03-25T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "기기 발열·탄내로 인한 긴급 기변 필요 상황에서 적합한 조건 안내 채널 부재",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성",
+          "지원 신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 40,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "투게더 결합 장기고객이 기기 안전 이슈(발열·탄내)로 긴급 기변을 원하나 신뢰할 수 있는 안내 창구를 찾지 못한 상태",
+        "action_hint": "결합고객 긴급기변 CS 인바운드 스크립트 점검"
+      },
+      {
+        "issue_summary": "투게더 결합 유지 전제 하의 기변 혜택·조건 정보 접근 어려움",
+        "feedback_type": "사용편의",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "가족결합 이용 중인 고객이 결합 조건을 유지하면서 받을 수 있는 기변 혜택을 스스로 파악하기 어려워 외부 커뮤니티에서 정보 탐색 중",
+        "action_hint": "투게더 결합 기변 혜택 세그먼트별 안내 상품 정비"
+      }
+    ],
+    "overall_summary": "운영·전략 도메인에서 채널 접근성과 혜택 체감성 이슈가 동시에 발생하고 있다. 투게더 결합 장기고객이 기기 안전 문제(발열·탄내)라는 긴박한 상황임에도 공식 채널에서 적합한 기변 조건을 확인하지 못하고 외부 커뮤니티에 의존하고 있어 기대 낙차가 매우 크다. 고객지원팀은 결합고객 긴급기변 응대 스크립트를 즉시 점검하고, 상품전략팀은 투게더 결합 유지 시 기변 혜택을 명확히 안내할 수 있는 채널과 상품 구성을 재정비해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0132",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "이번이 여기서 한 4번째? 그랬던것 같네요",
+    "collected_at": "2026-03-25T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "4회 반복 해지방어 경험으로 인한 이탈 가능성",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "처리 정확성",
+          "투명성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 40,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "4회 반복 해지방어 이력은 단순 불만이 아닌 구조적 이탈 신호로, 장기고객 이탈 전환 위험이 매우 높음",
+        "action_hint": "반복 해지방어 고객 CS 스크립트 즉시 점검"
+      }
+    ],
+    "overall_summary": "운영 도메인의 처리 정확성·투명성 속성에서 반복적 해지방어 경험에 따른 심각한 고객 신뢰 훼손이 확인된다. 4회 해지방어 이력을 보유한 장기고객은 기대 수준이 높은 만큼 낙차가 크고, 이미 이탈 임계점에 근접한 상태로 판단된다. 고객지원·서비스운영 부서는 해당 고객의 반복 이력을 즉시 확인하고, 해지방어 프로세스의 혜택 적정성 및 응대 일관성을 재점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0133",
+    "source": "community",
+    "channel_detail": "뽐뿌",
+    "service": null,
+    "raw_text": "500m+tv 기본형 2대(UHD2) = 31.?\"",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "500M 인터넷+TV 기본형 2대 조합 요금 정보 불명확",
+        "feedback_type": "시각·인지",
+        "domain": "전략",
+        "attributes": [
+          "가격 합리성",
+          "투명성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "고객이 특정 결합 상품 조합의 최종 요금을 확인하려 했으나 정보가 누락되어 가격 확인 자체가 불완전한 상태",
+        "action_hint": "결합상품 요금 노출 항목 누락 여부 점검"
+      }
+    ],
+    "overall_summary": "고객이 500M 인터넷과 TV 기본형 2대(UHD2) 결합 시 월 요금을 확인하려 했으나 금액 정보가 '31.?' 형태로 잘려 있어 가격 합리성과 투명성 속성에서 이슈가 발생했다. 요금 조회 또는 안내 채널에서 결합 요금 정보가 정상 노출되지 않거나 고객이 정보를 찾지 못한 상황으로 보인다. 상품전략 및 서비스운영 담당 부서는 해당 결합 조합의 요금 고지 항목이 모든 채널에서 완전하게 표시되는지 즉시 확인해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0134",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "현재 46400에500메가 + TV 프리미엄 채널 + 와이파이쓰고 있습니다.약정은 오늘로 만료되는데&",
+    "collected_at": "2026-03-25T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "약정 만료 시점에 해지방어 조건에 대한 정보 및 협상 지원 요청",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 40,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -50,
+        "status": "Gap",
+        "diagnosis": "약정 만료 고객이 해지방어 혜택 정보를 자력으로 파악하지 못해 커뮤니티에 외부 도움을 요청하는 상황으로, 사전 안내 및 접점 채널 부재가 이탈 리스크를 높이고 있음",
+        "action_hint": "약정 만료 D-7 해지방어 오퍼 선제 발송 프로세스 점검"
+      }
+    ],
+    "overall_summary": "운영 도메인의 투명성·채널 접근성 이슈로, 약정 만료 시점 고객이 해지방어 조건을 공식 채널이 아닌 외부 커뮤니티에서 탐색하고 있다. 장기 결합 상품 이용 고객임에도 사전 안내가 부재하여 기대 대비 실제 경험 낙차가 매우 크고 이탈 가능성이 높은 상태다. 고객지원·서비스운영 부서는 약정 만료 고객 대상 선제적 오퍼 발송 프로세스와 인바운드 CS 스크립트의 적시성을 즉시 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0135",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "유플 인터넷 단독 신규가입 조건 공유.. 별로 인가요?",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "인터넷 단독 신규가입 조건에 대한 가치 체감 의문",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "가격 합리성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "신규가입 조건을 공유하며 경쟁력 여부를 타인에게 검증 요청 — 혜택 체감성이 자기 판단에 이르지 못한 상태",
+        "action_hint": "단독 인터넷 신규 혜택 경쟁력 세그먼트별 재검토"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 인터넷 단독 가입 혜택의 체감성과 가격 합리성에 대한 판단 유보가 관찰된다. 커뮤니티에서 타인의 평가를 구하는 행동은 LGU+ 조건 자체가 자기 확신을 주지 못했음을 의미하며, 경쟁사 대비 차별성이 충분히 전달되지 않은 상황으로 보인다. 상품전략 담당자는 인터넷 단독 신규가입 혜택 구성이 뽐뿌 등 비교 채널 이용자 세그먼트에게 직관적으로 우위로 읽히는지 점검할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0136",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "그럼 유플알뜰은 어디서 유심교체를 해주나요?",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플러스 알뜰폰 유심 교체 가능 채널을 알지 못함",
+        "feedback_type": "사용편의",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성",
+          "투명성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "유플러스 알뜰폰 고객이 유심 교체 채널 정보를 자력으로 찾지 못하고 외부 커뮤니티에서 질의하는 상황으로, 공식 안내 접근성이 부족함",
+        "action_hint": "알뜰폰 유심교체 가능 채널 안내 페이지 신설"
+      }
+    ],
+    "overall_summary": "운영 도메인의 채널 접근성·투명성 이슈로, 유플러스 알뜰폰 고객이 유심 교체를 위한 공식 채널 정보를 공식 경로에서 확인하지 못하고 외부 커뮤니티에 의존하고 있다. 알뜰폰은 MNO 직영 채널과 서비스 범위가 다를 수 있어 일반 고객의 기대 낙차가 발생하기 쉬운 영역이다. 고객지원·서비스운영 부서는 알뜰폰 전용 유심 교체 프로세스와 이용 가능 채널(대리점, 공식몰, 우편 등)을 FAQ·앱·챗봇에 명확히 노출하는지 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0137",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "인터넷+TV 약정이 다시 만료되어 세번째 해지방어를 진행했습니다.",
+    "collected_at": "2026-03-24T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "인터넷+TV 약정 만료 시 세 번째 해지방어 진행",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성",
+          "투명성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 80,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "장기 고객이 약정 만료마다 해지방어 협상을 반복적으로 수행해야 하는 구조적 관계 유지 문제",
+        "action_hint": "장기고객 선제적 혜택 제안 프로세스 수립"
+      }
+    ],
+    "overall_summary": "운영 도메인의 채널 접근성·투명성 속성에서, 고객이 능동적으로 해지방어를 세 차례 반복해야 하는 비대칭적 혜택 구조가 확인된다. 장기 결합 고객임에도 만료 시마다 이탈 의사를 표명해야만 혜택이 제공되는 방어적 CS 패턴이 고착화되어 기대 낙차가 크다. 고객지원·서비스운영 부서는 약정 만료 고객에 대한 선제적 리텐션 오퍼링 프로세스를 점검하고, 반복 해지방어 고객 세그먼트를 별도 관리 체계로 전환할 것을 권고한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0138",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "500�ް� ���ͳ� + TV ���� ����� �� ��� 35,000�� ���� ����\n���� ������ ���� ��û - 18��",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "해지방어 조건으로 인터넷+TV 결합 월 35,000원 수준의 요금 혜택 제공",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "가격 합리성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 90,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": 0,
+        "status": "Alignment",
+        "diagnosis": "해지 의사를 표명한 장기 결합 고객에게 가격 혜택이 제공되어 이탈이 방어되었으나, 혜택이 해지 시도 이후에만 제공되는 구조에 대한 불공정 인식 잠재",
+        "action_hint": "해지방어 혜택을 선제적 세그먼트 요금제로 전환 검토"
+      },
+      {
+        "issue_summary": "해지방어 혜택의 약정 조건이 18개월로 설정됨",
+        "feedback_type": "사용편의",
+        "domain": "전략",
+        "attributes": [
+          "지불 유연성",
+          "맥락 적합성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "혜택 수용 의사가 있는 고객에게 18개월 약정이 부과되어 장기 고객의 재약정 부담감이 기대 수준과 낙차를 만들 수 있음",
+        "action_hint": "해지방어 약정 기간 옵션 다양화 상품 전략 검토"
+      }
+    ],
+    "overall_summary": "이번 VoC는 해지 의사를 가진 결합 고객이 CS 채널을 통해 요금 혜택을 수령하고 잔류한 해지방어 성공 사례이나, 전략 도메인의 혜택 체감성과 지불 유연성 속성에서 구조적 한계가 확인된다. 혜택이 해지 시도 이후에만 발동되는 사후 대응 구조와 18개월 단일 약정 조건은 고객의 기대 수준 대비 낙차를 형성할 수 있다. 상품전략팀은 해지방어 혜택의 선제 제공 가능성과 약정 기간 다양화 옵션을 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0139",
+    "source": "community",
+    "channel_detail": "뽐뿌 - 휴대폰포럼",
+    "service": null,
+    "raw_text": "7777은 못봤고1등 010 5555 ABAA 졸업급 놓쳤네요.5555 5개인가8000 8개2222 1개6시 30\"\n---",
+    "collected_at": "2026-03-24T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "번호놀이 이벤트에서 원하는 희귀 번호(5555, 7777 등) 선점 실패",
+        "feedback_type": "감성",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성",
+          "투명성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "이벤트 인기 번호 조기 소진으로 고객이 원하는 번호를 확보하지 못해 아쉬움·박탈감 발생",
+        "action_hint": "희귀 번호 재고·오픈 일정 사전 안내 강화"
+      },
+      {
+        "issue_summary": "번호놀이 이벤트 자체에 대한 높은 관심과 참여 의지 표출",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "번호놀이 이벤트 자체의 희소성과 화제성이 고객 관심을 강하게 끌어 브랜드 체감 긍정 신호로 작용",
+        "action_hint": "번호놀이 이벤트 세그먼트 확대 검토"
+      }
+    ],
+    "overall_summary": "이번 VoC는 U+ 번호놀이 이벤트에서 운영 도메인의 채널 접근성·투명성 이슈와 전략 도메인의 혜택 체감성이 동시에 포착된 사례이다. 고객은 이벤트 참여 의지가 높았으나 희귀 번호 재고가 빠르게 소진되면서 기대 대비 체감 낙차가 발생, 아쉬움이 뚜렷하게 드러났다. 서비스운영팀은 인기 번호 재고 현황과 오픈 시각을 사전 공지하는 방안을 검토하고, 상품전략팀은 이벤트 수요 규모를 반영해 번호 풀 및 회차 확대 여부를 점검할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0140",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "alabama.06 26분 왓차, 유플러스, 웨이브로 보시는거 가능합니다 1 1\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-31T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플러스 제휴 OTT(왓챠·웨이브) 시청 가능 여부 공유",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "고객이 유플러스 제휴 OTT 혜택을 자발적으로 커뮤니티에 공유하며 긍정적 체험을 전파 중",
+        "action_hint": "제휴 OTT 혜택 바이럴 사례로 세그먼트 활용 검토"
+      }
+    ],
+    "overall_summary": "전략 도메인의 혜택 체감성 측면에서 긍정 신호가 감지된 VoC로, 고객이 유플러스 제휴 OTT(왓챠·웨이브) 시청 가능 여부를 커뮤니티에 자발적으로 알리며 혜택을 확산시키고 있다. 별도의 기대 맥락 없이 일반 고객 수준에서도 혜택 체감이 충분히 이루어졌음을 의미한다. 상품전략 담당은 해당 제휴 혜택의 인지도 제고 채널로 커뮤니티 바이럴 패턴을 모니터링하고 콘텐츠 마케팅 연계 가능성을 검토할 것을 권고한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0141",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "choiuni411 54분 다들 한달에 핸드폰 요금 얼마 나와? 나 LG유플러스 쓰는데 한달 55,000원 정도 나오고 기본 데이터 14GB야… 이거 적당한 건가?? 아님 이번 기회에 알뜰폰으로 바꿀까? 알뜰폰 쓰는 사람들은 데이터 어느정도고 한달 요금 얼마 정도 나오는지도 궁금해… 그리고 바꾸는 방법도 좀 알려줘.. 1 2\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-31T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "월 55,000원·14GB 요금제의 가격 합리성 의문",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "가격 합리성",
+          "혜택 체감성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "현재 요금 대비 데이터 제공량의 가성비를 체감하지 못해 알뜰폰 이탈을 검토 중인 상태",
+        "action_hint": "14GB 구간 요금제 경쟁력 재검토"
+      },
+      {
+        "issue_summary": "알뜰폰 전환 방법 정보 부재로 스스로 탐색 중",
+        "feedback_type": "사용편의",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성",
+          "투명성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "번호이동·전환 관련 안내 접점이 부족해 고객이 외부 커뮤니티에서 정보를 구하는 이탈 전 신호",
+        "action_hint": "번호이동 안내 CS 스크립트 및 채널 노출 강화"
+      }
+    ],
+    "overall_summary": "전략 도메인의 가격 합리성과 운영 도메인의 정보 투명성 두 축에서 동시에 Gap이 발생하고 있다. 특별한 장기 계약 맥락 없이 현재 요금제에 대한 가성비 의구심이 커진 고객이 외부 커뮤니티에서 전환 방법까지 탐색하고 있어 이탈 가능성이 높은 상태다. 상품전략팀은 55,000원 구간 요금제의 데이터 경쟁력을 점검하고, 고객지원팀은 번호이동 과정의 안내 접점을 선제적으로 강화할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0142",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "ja_in_school 취준꿀팁 16시간 🔥 전략② AI 데이터센터 냉각유 ChatGPT 한 번 쓸 때마다 서버에서 엄청난 열이 나거든!! AI 서버는 일반 서버보다 열이 10배 이상 나. 에어컨으로는 감당이 안 돼서 서버를 아예 특수한 기름에 담가서 식히는 기술이 생겼어. 이걸 \"액침냉각\"이라고 해 GS칼텍스가 여기서 뭘 했냐면 2023년에 국내 최초로 이 냉각 전용 기름 Kixx Immersion Fluid S를 만들었어! 왜 기름 회사가 이걸 잘 만드냐고? 원래 윤활유를 수십 년간 만들어온 회사거든 기름의 점도, 열전달, 안정성을 다루는 기술이 그대로 냉각유에 쓰여. 삼성SDS 데이터센터, LG유플러스 데이터센터에 실제로 납품해서 테스트까지 끝냈고, 미국 슈퍼마이크로컴퓨터랑도 협력 중이야! 이 시장이 2034년까지 72억달러(약 10조원)로 커질 거라는 전망이 나와 있어. → 영업, DX/AX 직무 지원자라면 이 내용을 활용해봐!  4 / 9 1 1\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LG유플러스 데이터센터의 액침냉각 기술 도입 및 GS칼텍스 납품 사례 언급",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "맥락 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "LG유플러스 데이터센터가 AI 인프라 고도화의 긍정적 사례로 제3자 채널에서 자발적으로 언급되며 브랜드 신뢰도에 기여하고 있음",
+        "action_hint": "액침냉각 도입 사례를 B2B 세그먼트 홍보 콘텐츠로 활용"
+      }
+    ],
+    "overall_summary": "이 VoC는 고객 불만이 아닌 취준생 커뮤니티(Threads)에서 LG유플러스 데이터센터가 AI 인프라 혁신 사례로 긍정적으로 언급된 제3자 발화다. 전략 도메인의 맥락 적합성 측면에서 기업 이미지가 자연스럽게 노출된 상황으로, 직접적인 고객 경험 낙차는 없으나 브랜드 연상 기회가 발생했다. 사업기획 및 B2B 마케팅 부서는 해당 언급을 DX/AX 세그먼트 대상 홍보 소재로 전환 가능한지 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0143",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "yaho___r 18시간 오늘자 한국경제 지난해 설비투자를 늘린기업은 하이닉스 에너지와 방산 분야 투자액이 조단위로 늘었고(초고압직류송전*HVDC)신재생발전시설) 한화에어로스페이스도 방산수출호조로 설비투자액 두배이상 증감(SMR) LG유플러스 데이터센터구축 추진 태광산업 동성제약 인수를 통한 제약사업 추진 대웅제약 태양관 발전 추가 두산그룹의 무형자산 설비투자 증감 석유화학쪽의 설비투자가 축소된것이 두드러짐 상장사의 현금배당금은 사상최대, 배당금을 늘린 기억은 129곳,금융,증권,반도체,조선,중공업 12월 결산법인은 4월 중하순에 배당지급 삼성전자,한국전력,SK하이닉스,HD한국조선해양,HD현대중공업 에이피알,크래프톤,포스코퓨처엠,에코프로머티리얼즈, 배당확대기업은 KB금융,신한지주,우리금융지주,하나금융지주,한국금융지주,MH투자증권,키움증권,삼성증권 국채WGBI편입, 전쟁이 단기간에 끝난다면 달러당 1400원 중반 아래로 환율이 내려갈 가능성 다만 전쟁장기화는 핵심변수  1 / 2 12 5 1\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LG유플러스 데이터센터 구축 추진 관련 외부 투자 정보 언급",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "맥락 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "고객 VoC가 아닌 금융·투자 정보 공유 게시물로, LG유플러스에 대한 직접적인 고객 경험 피드백이 포함되어 있지 않음",
+        "action_hint": "데이터센터 투자 관련 PR 모니터링 유지"
+      }
+    ],
+    "overall_summary": "해당 게시물은 한국경제 기사를 인용한 주식·투자 정보 공유 콘텐츠로, LG유플러스 데이터센터 구축 추진이 단순 사실로 나열되어 있을 뿐 고객의 직접 경험이나 불만·요청 사항이 담겨 있지 않다. 고객 VoC로서 분석 가능한 경험 데이터가 부재하여 품질 속성 기반의 Gap 진단을 적용하기 어려운 게시물이다. 전략 부서는 투자자·일반 대중이 LG유플러스 데이터센터 사업을 어떻게 인식하는지 브랜드 맥락에서 참고 자료로만 활용할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0144",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "suwon_christian_kimtaewoo5689 삼성 갤럭시 18시간 나는 갤럭시s24 fe(신형(2024년 11월 출시,갤럭시 s시리즈 플래그십 보급형 시리즈)유플러스(내가 지금 이용중인 통신사(이용한지 오늘로 10개월 27일(작년 5월 3일부터)ai전화앱 '익시오',후후앱(kt 전화앱(ai 기능도 약간 탑재) 이용중~ 작년 5월 3일 이전에는 skt '에이닷' 이용도 한적 있음~ AI 정보\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LGU+ 장기 이용 고객이 익시오(ai전화앱)를 경쟁사 앱과 병행 사용 중",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "약 11개월 장기 LGU+ 이용 고객이 자사 익시오 외 KT 후후, 전 통신사 SKT 에이닷까지 AI 전화앱을 혼용 중으로, 익시오 단독 사용을 유도할 차별 가치가 체감되지 않고 있음",
+        "action_hint": "익시오 전용 혜택 세그먼트 설계 검토"
+      },
+      {
+        "issue_summary": "LGU+ 가입 이전 SKT 에이닷 이용 이력 보유 — 타사 AI앱 비교 경험 고객",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "맥락 적합성",
+          "개인 맞춤화"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "SKT 에이닷 → LGU+ 익시오 전환 경험이 있는 비교군 고객으로, 타사 AI앱 대비 익시오의 차별점이 명확히 인식되지 않을 경우 재이탈 리스크 존재",
+        "action_hint": "전환 고객 대상 익시오 온보딩 플로우 점검"
+      }
+    ],
+    "overall_summary": "이번 VoC는 LGU+ 약 11개월 장기 이용 고객이 자사 AI전화앱 익시오와 함께 KT 후후, 전 이용사 SKT 에이닷까지 복수의 AI앱을 병행 사용하고 있다는 사실을 드러내며, 익시오의 브랜드 독점 체감력이 낮음을 시사한다. 타사 서비스를 직접 경험한 비교군 고객인 만큼 기대 수준이 높음에도 익시오만의 차별 가치가 충분히 전달되지 않아 기대-경험 간 낙차가 발생하고 있다. 상품전략 및 UX기획 부서는 장기·전환 고객 세그먼트를 대상으로 익시오 전용 혜택 설계와 온보딩 플로우 강화 방안을 우선 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0145",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "homeopen3301 21시간 서울사는 시민이라면 어딘지 한번쯤 가봤을것이다 # 근처 육교에서 전면으로 찍은건데 여기는 야경맛집이다 저녁이 되면 #남산서울타워 가 너무 멋있어서 저녁때도 가볼만한 곳이다 #LG유플러스 #한강대교북단 #강변북로 2\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LG유플러스 해시태그를 활용한 서울 야경 명소 홍보성 게시물",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "맥락 적합성",
+          "타겟 적합성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "브랜드 태그가 포함되어 있으나 LG유플러스 서비스·경험과 무관한 장소 홍보 콘텐츠로, 실질적인 고객 피드백 신호 없음",
+        "action_hint": "브랜드 태그 노이즈 필터링 기준 정비"
+      }
+    ],
+    "overall_summary": "해당 게시물은 '#LG유플러스' 해시태그를 포함하고 있으나, 서비스 경험·제품·혜택과 무관한 서울 야경 명소 소개 콘텐츠로 실질적인 VoC 신호를 담고 있지 않다. 브랜드 해시태그가 위치 태그 용도로 혼용된 사례로, 고객 기대치 낙차보다는 소셜 모니터링 데이터의 품질 오염 문제에 해당한다. 소셜 리스닝 담당 부서에서 브랜드 태그 필터링 기준을 재점검하여 유효 VoC 수집 정확도를 높일 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0146",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "homeopen3301 21시간 회사에서 퇴근하고 걷다보니 용산에도 벚꽃터널로 예쁘다 #용산역 #신용산역 #아모레퍼시픽 #lg유플러스 #한강대교북단 신용산역 1\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LG유플러스 관련 장소가 벚꽃 풍경과 함께 긍정적으로 언급됨",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "브랜드 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "LG유플러스 사옥 인근이 벚꽃 명소로 자연스럽게 브랜드와 연결되는 긍정적 감성 노출",
+        "action_hint": "브랜드 공간 연계 시즌 콘텐츠 기획 검토"
+      }
+    ],
+    "overall_summary": "이 VoC는 직접적인 서비스 불만이나 요청 없이, LG유플러스 사옥 주변 공간이 긍정적인 일상 감성 게시물에 자연스럽게 태그된 사례다. 특별한 서비스 경험보다 브랜드 공간 자체가 호감 맥락에 노출된 것으로, 기대 낙차 없이 초과 충족 상태다. 브랜드·마케팅 부서에서 용산 거점 공간을 활용한 시즌 감성 콘텐츠 또는 지역 연계 캠페인 기회로 검토할 수 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0147",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "nu_ya___ 렘피카 23시간 뮤지컬 렘피카 3/31 내일!! 유플러스 전관 회차 표 1장만 간절하게 구해봅니다🥹 들어갈 수 있다면 자리 어디든 상관 없습니다! 제세공과금도 지불할게요!!\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플러스 전관 뮤지컬 렘피카 티켓 구하기 어려움",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성",
+          "혜택 체감성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 40,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": -40,
+        "status": "Gap",
+        "diagnosis": "유플러스 전관 혜택 티켓 수요 대비 공급 부족으로 고객이 외부 중고거래까지 나선 심각한 접근성 Gap",
+        "action_hint": "전관 티켓 배분 물량 및 오픈 채널 재검토"
+      }
+    ],
+    "overall_summary": "운영 도메인의 채널 접근성·혜택 체감성 이슈로, 유플러스 전관 뮤지컬 티켓을 공식 채널에서 확보하지 못한 고객이 SNS 중고거래로 이탈하는 상황이 확인된다. 공연 당일 전날이라는 긴박한 맥락에서 기대 낙차가 크고, 수요 대비 공급 설계 미흡이 근본 원인으로 보인다. 서비스운영 및 상품전략 담당자는 전관 티켓 배분 물량·오픈 방식·잔여 티켓 안내 프로세스를 즉시 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0148",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "u.jeans_ 자기소개 2일 지난달 중앙대(제1전공 영화, 제2전공 창업학)를 졸업하고, 행사와 관련된 각종 서비스를 개발중인 스타트업의 공동창업자로 일을 시작했어. 대학시절 행사에 관한 일들을 많이 해오다보니, 더 나은 행사를 만드는 것과 기획/운영에서 바꾸어 나가야 할 지점들에 대해 많이 고민해왔어. 현재는 우리 서비스 기획과 더불어서 각종 마라톤 행사 기획 등에도 실무진으로 참여하고 있어🏃‍♂️ 어려운 길을 선택한 만큼 그 속에서 재밌는 얘기들, 고민거리들 나눠보고 싶어서 스레드도 시작했어! 행사ㆍ이벤트 관련 소식도 덤으로ㅎ 또래 친구든 진로 고민이 많은 후배님들이든 인생 선배님이든, 모두 스친 환영해!! 인스타에선 중앙대 관련 릴스 만들어오고 있는데 중대생이라면 팔로우 부탁해🫡 (2-지난주 LG유플러스 \"유쓰피릿\" 대상으로 행사관련 특강 진행 / 3 - 졸업 스냅) 27 2 2 2\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-28T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유쓰피릿 특강 진행자가 긍정적 경험을 외부 채널에 자발적으로 공유",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "브랜드 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "MZ 청년 창업자가 유쓰피릿 특강 경험을 Threads에 자발 공유하며 브랜드 접점을 자연 확산하는 긍정 신호",
+        "action_hint": "유쓰피릿 강연자 UGC 확산 채널 모니터링 강화"
+      },
+      {
+        "issue_summary": "졸업·창업 배경의 청년 타겟에게 유쓰 브랜드 연결성 체감",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "맥락 적합성",
+          "개인 맞춤화"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "행사·이벤트 실무 경력의 청년 창업자 페르소나가 유쓰피릿 프로그램과 자연스럽게 정렬되어 타겟 적합성이 높게 체감됨",
+        "action_hint": "청년 창업자 세그먼트 대상 유쓰 프로그램 확장 검토"
+      }
+    ],
+    "overall_summary": "이번 VoC는 불만이 아닌 자발적 긍정 확산 사례로, 유쓰피릿 프로그램이 졸업·창업 전환기 MZ 청년이라는 타겟 세그먼트에 맥락적으로 맞아떨어진 결과다. 특강 참여 경험이 개인 SNS(Threads)를 통해 자연 유통되며 브랜드 인지 확산 효과를 만들고 있어, 기획 의도와 수혜자 페르소나 간 정렬이 잘 된 케이스로 볼 수 있다. 유쓰 사업전략팀은 해당 강연자 및 유사 청년 창업자 풀을 앰배서더 프로그램으로 연계하는 방안을 검토하고, 소셜 UGC 모니터링 체계를 통해 자발적 확산 콘텐츠를 적시에 포착·활용할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0149",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "fqueen81 2일 @gukdae_sungji님에게 남긴 답글 아 그래요? 유플은 별룬데 ㅜㅜ 그대로 써야하나 1 1\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-28T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LGU+ 서비스에 대한 전반적 낮은 만족도 표현",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "타인의 통신사 경험에 반응하며 LGU+ 서비스 전반에 부정적 체감을 드러냄. 이탈 고민과 함께 현 서비스의 차별 가치를 느끼지 못하는 상태",
+        "action_hint": "이탈 위험 세그먼트 혜택 리텐션 점검"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 브랜드 체감 및 혜택 체감성에 대한 부정 신호가 감지된다. 타인의 경험과 비교하는 맥락에서 LGU+ 서비스의 차별적 가치를 체감하지 못한 고객이 이탈 여부를 고민하는 상황으로, 기대 대비 실제 경험의 낙차가 명확하다. 상품전략·사업기획 팀은 유사 이탈 고민 고객군의 세그먼트를 점검하고, 잔류 유인 혜택 메시지 노출 시점과 내용을 재검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0150",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "gukdae_sungji 2일 유플러스 안쓰려면 걍 KT기변으로~ 1\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-28T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LGU+ 이탈 의사 표명 및 KT 기변 고려",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "LGU+ 사용 자체를 거부하며 타사(KT) 기변을 대안으로 명시, 브랜드 이탈 의사가 극명하게 드러남",
+        "action_hint": "이탈 세그먼트 대상 잔류 요금제·혜택 긴급 점검"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 브랜드 체감 및 혜택 차별성 부재로 인한 극단적 이탈 의사가 확인된다. 구체적인 불만 사유가 명시되지 않았으나 'LGU+를 쓰지 않겠다'는 단호한 표현과 KT 기변 언급은 장기적 잔류 동기가 소진된 상태임을 시사한다. 사업기획·상품전략 부서는 해당 고객 세그먼트의 이탈 패턴과 타사 전환 유인을 분석하여 차별화 혜택 보강 여부를 즉시 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0151",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "lhw6634 3일 #유플러스 #슈피겐 #갤럭시 #폴드7 #폴드6 폴드6내부액정 파손으로 서비스센터 방문후 부품수급 문제로 3일이후 부품교체가능하다하여 예약후 폴드7구매후 3일후 폴드6 수리완료후 보험접수과정에서 ... 기기변경시 파손보험이 자동해지 된다는말에... 당황스러웠지만 다행히 서비스센타 방문내역이 있어 70% 보험료를 받을수있었다 . 기변시 참고하세요 무상수리가 불가했던이유 .... 힌지모서리 진짜 콩알만한 찍힘으로 불가 ... 내부액정 보호테잎중앙 박리되서 그냥띠고 사용하자싶어 띠다가.. 액정이 나갔는데 ...믿으실지... 실화임.. 이번엔 힌지를 완벽보호하고자 폴드7이랑 폴드6 케이스 예전에 아이폰사용시 슈피겐이나 엘라고만 사용했었고 매우만족했던지라 이번에 큰 맘먹고 슈피겐으로 구매 역시 명불허전 완벽하다 폴드6 보관후 현임이 휴대폰 플립5 상태가 영안좋아 고장발생시 사용 하는걸로 폴드6은 금고에 보관하는 걸로\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-28T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "기기변경 시 파손보험 자동해지 사전 안내 부재",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "처리 정확성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "기기변경 시 파손보험이 자동해지된다는 핵심 정책이 사전에 안내되지 않아 고객이 보험 처리 과정에서 당황하는 상황 발생",
+        "action_hint": "기변 시 보험해지 안내 스크립트 필수화"
+      },
+      {
+        "issue_summary": "힌지 미세 찍힘으로 인한 무상수리 거부 기준 불명확",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "처리 정확성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "콩알만한 힌지 찍힘으로 무상수리가 거부된 사례로, 고객 입장에서 수리 가능 기준이 모호하고 납득하기 어렵게 느껴짐",
+        "action_hint": "무상수리 판정 기준 고객 공개 검토"
+      },
+      {
+        "issue_summary": "내부 액정 보호테이프 박리로 인한 액정 파손 발생",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "보호테이프 박리를 직접 제거한 뒤 액정이 파손된 경험으로, 제품 내구성 및 사용자 경고 안내 부재 문제가 동시에 드러남",
+        "action_hint": "보호테이프 임의제거 경고 문구 강화"
+      },
+      {
+        "issue_summary": "슈피겐 폴드 케이스에 대한 높은 만족감 표현",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": 0,
+        "status": "Alignment",
+        "diagnosis": "아이폰 시절부터 슈피겐을 애용해온 장기 팬 고객이 폴드7 케이스에서도 동일한 만족감을 확인, 브랜드 충성도 지속 유지",
+        "action_hint": "슈피겐 협력 폴드 액세서리 프로모션 검토"
+      }
+    ],
+    "overall_summary": "이번 VoC는 운영 도메인의 투명성·처리 정확성 속성에서 복수의 이슈가 집중 발생하였다. 서비스센터 방문과 기기변경을 병행하는 복합 고객 여정 속에서 보험 자동해지 미안내·무상수리 기준 불명확이 겹쳐 신뢰 낙차가 크게 나타났으며, 내부 보호테이프 관련 경고 부재까지 더해져 제품 관리 정보 공백이 확인된다. 고객지원·서비스운영 부서는 기기변경 프로세스 내 보험 해지 안내 의무화와 무상수리 판정 기준의 고객 가시화를 우선 점검할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0152",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "sugarlemon0413 3일 #유플러스멤버십혜택 #유플러스vip혜택 #유플러스vip이벤트 #화담숲🌳 이번 이벤트는. 내 생일날!!! 하네 지인이랑 같이 가서 봄을 만끽하고 오고 싶다. 당첨 되랏 얍얍!! buly.kr/EI5Lp…\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "생일 당일 VIP 이벤트 당첨 기대 및 화담숲 혜택 체감 anticipation",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 5,
+        "status": "Alignment",
+        "diagnosis": "VIP 이벤트 일정이 고객의 생일과 겹치며 개인적 의미 부여로 브랜드 호감도가 자연 증폭된 상태",
+        "action_hint": "VIP 이벤트 시즌성·생애주기 세그먼트 연계 강화 검토"
+      }
+    ],
+    "overall_summary": "전략 도메인의 혜택 체감성 측면에서 긍정 신호가 포착된 VoC로, VIP 이벤트 일정이 고객의 생일과 우연히 맞물리며 감성적 몰입도가 높아진 사례다. 장기 충성 고객이 아닌 일반 VIP 고객임에도 기대 수준과 실제 체감이 균형을 이루고 있어 당장의 불만 리스크는 낮다. 상품전략 팀은 이벤트 시즌 기획 시 고객 생애주기(생일·기념일) 데이터와의 연계 가능성을 검토해 혜택 개인화 접점을 확대할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0153",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "cc_sundae 대전 청춘순대 3일 청춘순대 월평동 영업중입니다! 김치순대는 거의 떨어져가네요 .. 오늘도 인기많은 김치 미리연락주시면 포장 해드려요 위치는 월평동 아랫둔지미 네거리에 유플러스 앞입니다 !📣📣🐷🐷 10 1\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LGU+ 매장이 타 업체 위치 안내 랜드마크로 언급됨",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "맥락 적합성",
+          "타겟 적합성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "LGU+ 매장이 지역 랜드마크로 자연스럽게 언급된 사례로, 브랜드 인지도 관점에서는 긍정적이나 서비스·제품 관련 VoC는 아님",
+        "action_hint": "랜드마크 언급 매장 오프라인 노출 현황 파악"
+      }
+    ],
+    "overall_summary": "해당 게시물은 순대 가게의 영업 안내 게시글로, LGU+ 매장이 위치 설명의 랜드마크로 언급된 것 외에 실질적인 고객 서비스 경험이나 불만은 포함되어 있지 않다. LGU+ 브랜드에 대한 직접적인 감성이나 기대치 낙차가 존재하지 않아 서비스 품질 진단 대상으로 보기 어렵다. 마케팅·오프라인전략 담당자가 해당 매장의 지역 내 랜드마크 인지도를 오프라인 집객 관점에서 참고 자료로 활용하는 수준의 검토가 적절하다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0154",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "luvshuffle 3일 시간의숲 아닐런지요? 왓챠랑 유플러스 가능하다 나오네요! 1 1\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "왓챠·유플러스 제휴 혜택으로 '시간의 숲' 이벤트 참여 가능성 기대",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 5,
+        "status": "Alignment",
+        "diagnosis": "왓챠-유플러스 제휴 혜택이 실제 이벤트 참여 욕구를 자극하는 긍정적 체감 신호",
+        "action_hint": "왓챠 제휴 혜택 이벤트 연계 홍보 강화"
+      }
+    ],
+    "overall_summary": "전략 도메인의 혜택 체감성 측면에서 왓챠-유플러스 제휴 혜택이 고객의 이벤트 참여 동기를 긍정적으로 자극하고 있는 신호가 확인된다. 특정 이벤트 맥락(3일 한정 '시간의 숲')과 제휴 혜택이 맞물리면서 고객 기대를 자연스럽게 충족하는 수준으로, 기대-경험 낙차는 거의 없다. 상품전략 및 파트너십 담당은 해당 제휴 혜택의 이벤트 연계 노출 빈도와 참여 전환율을 점검하여 유사 콜라보 기획 시 참고 데이터로 활용할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0155",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "suwon_christian_kimtaewoo5689 유플러스 4일 . AI 정보\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플러스 AI 관련 정보 단편 언급",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "단편적 키워드 나열로 구체적 불만·요청 의도 파악 불가, 실질적 진단 신호 없음",
+        "action_hint": "Threads 원문 재확인 및 맥락 추적"
+      }
+    ],
+    "overall_summary": "본 VoC는 '유플러스', '4일', 'AI 정보'라는 단편적 키워드만 포함되어 있어 구체적인 경험 또는 불만 신호를 식별하기 어렵다. 수집 과정에서 원문이 잘리거나 누락되었을 가능성이 높아, 실제 고객 발화 맥락이 충분히 반영되지 않은 상태이다. 데이터 수집 담당자는 Threads 원문 URL을 재확인하여 전체 발화 내용을 복원한 후 재분석을 진행하는 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0156",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "qkswlsdlek 자영업자이야기 4일 자영업 하면 제일 먼저 빠져나가는 돈 뭐냐 월세 관리비 통신비 매출 나오기도 전에 이미 돈은 다 빠짐 이게 진짜 스트레스임 근데 문제는 이걸 줄이기가 쉽지 않다는 거 그래서 요즘은 아끼는 게 아니라 👉 결제 방식을 바꾸는 흐름임 LG유플러스 × 렌탈페이 자영업자 상생 프로젝트로 통신비 줄이고 매장 운영비 부담도 낮춰주는 구조 나옴 렌탈페이 뭐냐면 월세, 관리비를 👉 카드로 낼 수 있음 이게 포인트임 왜 좋냐면 카드 실적 채우고 포인트 쌓이고 할부까지 가능함 그동안 그냥 빠져나가던 돈이 다시 돌아오는 구조 자영업은 결국 매출 싸움이 아니라 👉 고정비 싸움임 이거 한 번 바꾸면 생각보다 체감 큼 해볼 사람은 해보고 안 해볼 사람은 계속 현금 내면 됨 😎 #렌탈페이 #LG유플러스 #엘지유플러스 #자영업자 #자영업자상생 #소상공인 #자영업자고정비 #통신비절감 #월세카드결제 #매장운영비 #사장님필수\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "자영업자 고정비(월세·통신비) 부담 완화 수단으로 LGU+ 렌탈페이 혜택 체감",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "자영업자 고정비 절감 니즈에 렌탈페이 혜택이 직접 맞닿아 긍정 공명 발생",
+        "action_hint": "자영업 세그먼트 대상 렌탈페이 혜택 소구 강화"
+      },
+      {
+        "issue_summary": "카드 결제 전환으로 포인트·실적·할부 등 실질 리워드 구조 체감 긍정 평가",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "지불 유연성",
+          "맥락 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "고정비를 카드 실적·포인트로 환원하는 구조가 실질 절감 감각을 자극해 공감대 형성",
+        "action_hint": "할부·포인트 적립 혜택을 온보딩 메시지에 전면 노출"
+      }
+    ],
+    "overall_summary": "이번 VoC는 자영업자 고정비 절감이라는 명확한 니즈 맥락에서 LGU+ 렌탈페이의 혜택 체감성과 지불 유연성이 긍정적으로 작동한 사례다. 별도의 불만 신호 없이 두 속성 모두 기대 대비 상회하는 결과를 보이나, 이는 특정 세그먼트(자영업자·소상공인)에 한정된 공명으로 확산성이 관건이다. 상품전략·마케팅 담당은 해당 세그먼트 내 유사 발화 볼륨을 모니터링하고, 렌탈페이 자영업 혜택 패키지의 상품 소구 메시지를 소상공인 접점 채널에 집중 배치하는 방향을 검토할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0157",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "suwon_christian_kimtaewoo5689 LGU+ 20시간 나는 갤럭시s24 fe(신형(2024년 11월 출시,갤럭시 s시리즈 플래그십 보급형 시리즈)유플러스(내가 지금 이용중인 통신사(이용한지 오늘로 10개월 27일(작년 5월 3일부터)ai전화앱 '익시오',후후앱(kt 전화앱(ai 기능도 약간 탑재) 이용중~ 작년 5월 3일 이전에는 skt '에이닷' 이용도 한적 있음~ AI 정보\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-30T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LGU+ 익시오 앱과 타사 후후 앱을 병행 사용 중 (자발적 다중 앱 이용)",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "기능 보편성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "LGU+ 가입 10개월 이상 장기 이용 고객이 자사 AI 전화앱(익시오) 외 KT 후후 앱을 병행 사용 중으로, 익시오의 기능 만족도가 단독 사용을 이끌어내지 못하고 있음",
+        "action_hint": "익시오-후후 기능 격차 분석 후 차별 세그먼트 전략 수립"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 자사 AI 전화앱의 타겟 적합성과 기능 보편성 이슈가 확인된다. LGU+ 가입 10개월 이상 된 고관여 고객이 익시오를 사용하면서도 타사(KT) 앱을 병행하고 있어, 익시오가 단독 사용 동기를 충분히 제공하지 못하는 상황이다. 상품전략·AI서비스 기획 부서는 익시오 미충족 기능 영역을 진단하고, 장기 고객 대상 익시오 단독 전환을 유도할 차별화 혜택 또는 기능 강화 방향을 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0158",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "suwon_christian_kimtaewoo5689 LGU+ 4일 . AI 정보\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LGU+ AI 정보 관련 단편적 언급",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "맥락 적합성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "발화가 극도로 단편적이어서 구체적 이슈 식별 불가, 분석 신뢰도 매우 낮음",
+        "action_hint": "원문 재수집 및 맥락 보완 요청"
+      }
+    ],
+    "overall_summary": "해당 VoC는 'LGU+ 4일 . AI 정보'라는 단편적 키워드만 포함되어 있어 고객이 경험한 구체적 이슈나 감성을 식별하기 어렵습니다. 원문 자체가 불완전하게 수집된 것으로 보이며, 고객이 AI 관련 정보를 4일간 경험한 어떤 맥락인지 전혀 추론할 수 없어 기대-경험 낙차 분석이 불가합니다. 데이터 수집 채널 담당자가 원문 전체를 재확인하거나 작성자에게 추가 맥락을 확보한 후 재분석을 수행하길 권장합니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0159",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "nguyendung5630 LGU+ 4일 # chương trình khuyến mãi ĐẶC BIỆT chỉ có ở lgu dk sim hoặc chuyển mạng nhận máy S25edge miễn phí # trả góp 0W cho tất cả các dòng iPhone Samsung với cước siêu rẻ   번역하기\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LGU+ 관련 베트남어 홍보성 게시물 노출 (스팸/어뷰징 의심)",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "처리 정확성",
+          "투명성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "LGU+ 키워드를 활용한 베트남어 홍보성 게시물로, 실제 고객 피드백이 아닌 어뷰징·스팸 콘텐츠로 판단됨",
+        "action_hint": "Threads 채널 스팸 게시물 모니터링 강화"
+      }
+    ],
+    "overall_summary": "해당 게시물은 LGU+ 브랜드명을 포함하고 있으나 베트남어로 작성된 비정상 홍보성 콘텐츠로, 실질적인 고객 경험 피드백으로 분류하기 어렵습니다. SNS 채널에서 브랜드 키워드를 악용한 스팸·어뷰징 게시물이 유통되고 있는 상황으로, 브랜드 이미지 훼손 및 고객 혼란 유발 가능성이 있습니다. 소셜 모니터링 담당 부서는 Threads 내 LGU+ 키워드 기반 비정상 게시물 필터링 기준을 점검하고 플랫폼 신고 프로세스를 정비할 필요가 있습니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0160",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "suwon_christian_kimtaewoo5689 LGU+ 2026-03-21 나는 갤럭시s24 fe(신형(2024년 11월 출시,갤럭시 s시리즈 플래그십 보급형 시리즈)유플러스(내가 지금 이용중인 통신사(이용한지 오늘로 10개월 18일(작년 5월 3일부터)ai전화앱 '익시오',후후앱(kt 전화앱(ai 기능도 약간 탑재) 이용중~ 작년 5월 3일 이전에는 skt '에이닷' 이용도 한적 있음~ AI 정보\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-21T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LGU+ 장기 이용 고객이 익시오·후후 등 AI 전화앱 복수 사용 현황 공유",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "개인 맞춤화"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "10개월 이상 장기 이용 고객이 LGU+ 자체 AI 앱(익시오) 외에 타사 AI 앱(후후, 에이닷)까지 병행 사용 중으로, 익시오 단독 충족도가 낮을 가능성 시사",
+        "action_hint": "익시오 단독 충족률 세그먼트 분석 착수"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 타겟 적합성·개인 맞춤화 속성의 잠재 이슈가 감지된다. 10개월 이상 LGU+ 이용 고객임에도 경쟁사 AI 앱(KT 후후, SKT 에이닷)을 병행 사용하고 있어, 익시오가 장기 고객의 AI 전화 니즈를 온전히 충족하지 못하고 있을 가능성이 높다. 상품전략팀은 익시오 장기 이용자 대상 앱 전환·병행 사용 패턴을 분석하고, 단독 사용 전환을 유도할 차별화 기능 로드맵을 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0161",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "suwon_christian_kimtaewoo5689 LGU+ 2026-03-19 . AI 정보\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-19T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LGU+ AI 정보 관련 단순 언급 (내용 불명확)",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "구체적 불만·칭찬 없이 'AI 정보'만 단편 언급되어 진단 가능한 실질 내용 부재",
+        "action_hint": "원문 맥락 추가 수집 후 재분류"
+      }
+    ],
+    "overall_summary": "본 VoC는 'LGU+ AI 정보'라는 키워드만 포함된 단편 게시물로, 특정 도메인의 품질 속성을 진단하기에 정보가 불충분하다. 고객의 감정·경험·맥락이 모두 생략되어 있어 기대치 낙차를 측정할 근거가 없다. 운영팀은 해당 계정의 후속 게시물 또는 원본 스레드 맥락을 추가 수집하여 재분류하는 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0162",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "etf_seeker 내 번호가 곧 해킹 통로? LGU+ 유심 보안 비상 2026-03-17 🚨 내 번호가 곧 해킹 통로? LGU+ 유심 보안 비상 ​LG유플러스 유심의 가입자 식별번호(IMSI)가 휴대폰 번호와 연동된 사실이 드러났습니다. 번호를 알면 망 접속 ID를 쉽게 유추할 수 있어 위치 추적 및 신원 노출 위험이 제기되었습니다. 과거 2G에서 4G로 직행하며 옛 표준을 유지한 결과입니다. 이에 LGU+는 4월 13일부터 전 고객을 대상으로 유심 무상 교체 및 재설정을 지원합니다. 알뜰폰 가입자도 포함되니 대상 여부를 꼭 확인하세요. ​① 4G 직행 과정에서 IMSI에 전화번호 반영하는 구식 보안 체계 유지 ② 개인 식별 및 위치 추적 가능성 제기되어 보안 리스크 부각 ③ 4월 13일부터 일반·알뜰폰 가입자 포함 전면 무상 교체 실시 14 2 5\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-17T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "IMSI와 전화번호 연동으로 위치 추적·신원 노출 보안 리스크 제기",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "보안성",
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "2G→4G 직행 과정에서 구식 IMSI 체계를 유지한 결과, 전화번호만으로 망 접속 ID 유추 및 위치 추적이 가능한 구조적 보안 취약점이 외부에 노출됨",
+        "action_hint": "IMSI 랜덤화 적용 여부 긴급 점검 및 로드맵 수립"
+      },
+      {
+        "issue_summary": "4월 13일부터 전 고객 대상 유심 무상 교체·재설정 지원 공지",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "보안 사고 대응으로 무상 교체를 발표했으나, 알뜰폰 포함 여부 등 안내 정보가 SNS 2차 전파에 의존하고 있어 공식 CS 채널의 선제적 인바운드 대응 체계 점검이 필요함",
+        "action_hint": "유심 교체 대상·절차 CS 스크립트 선제 배포"
+      }
+    ],
+    "overall_summary": "기술 도메인의 보안성 속성에서 구조적 취약점이 외부에 공개되며 브랜드 신뢰에 직접적 타격이 발생한 사안이다. 장기 가입 고객 기준의 높은 기대 수준 대비 실제 경험 점수 낙차가 극단적으로 크며, 특히 '해킹 통로'라는 표현이 확산되는 만큼 이탈 심리를 자극할 수 있다. 서비스개발·인프라 부서는 IMSI 랜덤화 전환 일정을 즉시 확정하고, 고객지원 부서는 유심 교체 인바운드 폭증에 대비한 응대 스크립트와 채널별 안내 체계를 4월 13일 이전에 완비해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0163",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "suwon_christian_kimtaewoo5689 LGU+ 2026-03-08 . AI 정보\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-08T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LGU+ AI 정보 관련 단순 언급 (내용 불명확)",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "AI 정보 관련 단순 키워드 나열로 실질적 고객 의도 및 불만 내용을 파악할 수 없음",
+        "action_hint": "원문 재수집 후 내용 재분류"
+      }
+    ],
+    "overall_summary": "해당 VoC는 'LGU+ AI 정보'라는 단편적 키워드만 포함되어 있어 고객의 실제 경험이나 불만 맥락을 식별하기 어렵다. 원문이 불완전하게 수집되었거나 의미 있는 피드백이 누락되었을 가능성이 높아 기대치 낙차 분석 자체가 유의미하지 않다. 데이터 수집 채널 담당자는 해당 게시물의 원문 전체를 재확인하고, 충분한 맥락이 확보된 경우에만 재분류를 진행해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0164",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "suwon_christian_kimtaewoo5689 LGU+ 2026-03-05 @samsungnewsroom  유플러스(skt 에서 유플러스(유플러스 AI 전화앱 '익시오' 도 이용 중~ㅎ)로 이동)이용한지 오늘로 9개월 25일 째 이용중(작년 5월3일(내 생일)에 개통(갤럭시s24 fe(2024년 11월 출시,갤럭시 s시리즈 플래그십 보급형) 갤럭시 ai기능도 지금 이용중(나우바,나우브리프 등)~ AI 정보\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-05T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "SKT에서 LGU+로 이동 후 9개월 25일 장기 이용 중이며 익시오 AI 전화앱을 사용 중",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 5,
+        "status": "Alignment",
+        "diagnosis": "타사에서 전환 후 약 10개월간 이탈 없이 LGU+ 서비스를 유지하며 AI 앱까지 능동 활용 중인 긍정 체험",
+        "action_hint": "전환 고객 AI앱 활성 세그먼트 리텐션 혜택 설계"
+      },
+      {
+        "issue_summary": "갤럭시 AI 기능(나우바, 나우브리프 등)과 익시오를 병행 사용하며 AI 서비스 활용 중",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "맥락 적합성",
+          "개인 맞춤화"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "디바이스 AI와 통신사 AI 앱을 자발적으로 병행 사용하며 LGU+ AI 생태계에 자연스럽게 편입된 고관여 고객",
+        "action_hint": "갤럭시 AI 연동 익시오 크로스 혜택 상품 기획"
+      }
+    ],
+    "overall_summary": "이 VoC는 전략 도메인에서 AI 서비스 맥락 적합성과 혜택 체감성 관련 긍정 신호가 확인된 사례다. SKT 이탈 후 약 10개월간 LGU+를 유지하며 익시오·갤럭시 AI를 자발적으로 병행 사용하는 고관여 고객으로, 기대 수준 대비 실제 체험이 충족된 상태다. 상품전략팀은 해당 고객 프로파일을 AI 앱 활성 전환 고객 세그먼트로 분류하고, 갤럭시 AI 연동 기반의 리텐션 혜택 설계 및 유사 세그먼트 확대 전략을 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0165",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "person_al__ LGU+ 2026-03-02 통신사 혜택 구하는 사람들 나 말고도 많은가? lg유플러스 통신사 장기 고객인 사람? 이번에 U+ 멤버십 장기 고객 대상으로 이벤트 진행하던데 나는 통신사가 달라서 신청 자격이 안돼ㅠ 뮤덕인데 뮤지컬 렘피카 공연이 저 이벤트 전관으로 잡혀있어서.. 돈 내고 가겠다해도 막는 현실;; 나 같이 데려가줄 스친이나 갈 수 있게 도와줄 스친 있을까?🙏 지나가던 유플 통신사 스친들 응모 한 번씩만 부탁해\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-01T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "장기 고객 전용 뮤지컬 이벤트가 타사 고객에게 완전히 폐쇄되어 관심 고객이 접근 불가",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "맥락 적합성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "LGU+ 장기 고객 전용 혜택이 외부 관심층에게 브랜드 진입 장벽으로 작용하며, 오히려 '혜택 박탈감'을 유발하는 역효과 발생",
+        "action_hint": "비가입자 유입 연계 혜택 세그먼트 설계 검토"
+      },
+      {
+        "issue_summary": "이벤트 수혜 불가로 SNS에서 대리 응모 요청 등 우회 행동 발생",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "채널 접근성",
+          "투명성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "이벤트 참여 자격 제한이 SNS 내 대리 응모 요청 확산으로 이어지며, 이벤트 운영 신뢰성 및 형평성 리스크 발생",
+        "action_hint": "이벤트 자격 우회 응모 모니터링 및 운영 정책 재점검"
+      }
+    ],
+    "overall_summary": "이번 VoC는 U+ 멤버십 장기 고객 전용 뮤지컬 이벤트에서 타겟 적합성과 채널 접근성 이슈가 동시에 나타난 사례다. 고객은 LGU+ 비가입자임에도 이벤트 콘텐츠(렘피카 전관)에 높은 관심을 보였으나, 가입자 전용 구조로 인해 완전히 배제되며 SNS 내 대리 응모 요청이라는 우회 행동으로 이어졌다. 전략팀은 잠재 고객 유입 접점으로 활용 가능한 '비가입자 연계 혜택' 구조를 검토하고, 운영팀은 SNS 내 대리 응모 확산에 따른 이벤트 공정성 리스크를 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0166",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "suwon_christian_kimtaewoo5689 LGU+ 2026-03-01 @samsungnewsroom  유플러스(skt 에서 유플러스 로 이동)이용한지 오늘로 9개월 25일 째 이용중(작년 5월3일(내 생일)에 개통(갤럭시s24 fe(2024년 11월 출시,갤럭시 s시리즈 플래그십 보급형) 갤럭시 ai기능도 지금 이용중(나우바,나우브리프 등)~ AI 정보\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-01T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "SKT에서 LGU+로 이동 후 약 10개월 이용 중이며 갤럭시 AI 기능을 긍정적으로 활용 중",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 5,
+        "status": "Alignment",
+        "diagnosis": "타사에서 유입된 고객이 약 10개월 유지 중이며, 단말 AI 기능을 통해 서비스 체감 만족이 이어지고 있는 상태",
+        "action_hint": "타사 유입 고객 AI 혜택 연계 세그먼트 강화"
+      }
+    ],
+    "overall_summary": "이 VoC는 SKT 이탈 후 LGU+ 전환 고객이 갤럭시 AI 기능을 적극 활용하며 자발적으로 긍정 경험을 공유한 사례로, 브랜드 체감 측면에서 유의미한 전환 유지 신호다. 생일에 개통했다는 맥락과 단말 AI 기능 언급은 감성적 유대와 기능 만족이 공존하는 Mid 기대 고객군임을 시사한다. 상품전략 부서는 해당 고객군(타사 유입·10개월 전후)을 대상으로 갤럭시 AI 연계 혜택 유지 프로그램을 점검해 장기 이탈 방어 시점을 선제 관리할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0167",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "gooddeagun 1일 2026 티빙 야구 중계 요금제 모르면 생돈 월 1.7만원 날림 🚨 1. 광고형 요금제 5,500원 ⚾ 커피 한 잔 값에 1080p 고화질. 경기 중 광고 없음. 2. 통신사 혜택 0원 시청 📱 KT '티빙 초이스'나 LG U+ '유독' 쓰면 공짜나 반값. 3. 네이버 멤버십 종료 ⚠️ 이제 네이버로 야구 못 봄. 헛수고 말고 요금제 갈아타. 4. 2인 동시 접속 개이득 👥 둘이 나누면 인당 2,750원꼴. 친구랑 같이 결제해. 5. 스마트 TV 완벽 지원 📺 5,500원 요금제도 큰 화면으로 생생하게 시청 가능함. 6. 티빙 할인 및 무료 혜택 🔗 아래 링크에서 통신사 할인이나 제휴 카드 바로 확인해. 👇 티빙 야구 무료 시청 및 할인 신청 m.site.naver.com/24cuS 남들 2천 원대에 야구 볼 때 정가 다 내면 진짜 바보임. 모르면 손해. 1\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-29T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LG U+ '유독' 혜택을 활용하면 티빙 야구 중계를 공짜 또는 반값에 시청 가능",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "유독 혜택이 티빙 야구 중계 절감 수단으로 자발적으로 홍보되며 경쟁사 대비 가성비 차별점이 부각됨",
+        "action_hint": "유독-티빙 야구 혜택 시즌 마케팅 강화"
+      },
+      {
+        "issue_summary": "통신사 혜택 미인지 시 월 1.7만원 정가 지불 가능성 경고",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "혜택 존재 자체는 우수하나 고객이 자력으로 찾지 않으면 인지하기 어려운 정보 접근성 문제가 잠재됨",
+        "action_hint": "유독 혜택 가입 시 티빙 안내 온보딩 추가"
+      }
+    ],
+    "overall_summary": "이번 VoC는 LG U+ '유독' 혜택이 티빙 야구 중계 비용 절감 수단으로 외부 사용자에 의해 자발적으로 확산되는 긍정적 신호를 담고 있으나, 혜택을 모르면 정가를 낼 수 있다는 정보 비대칭 문제도 함께 지적하고 있다. 혜택 인지율이 낮은 고객 세그먼트의 경우 가입 후 체감 가치가 현저히 낮을 수 있어 유독 온보딩 접점에서의 안내 부재가 기대-경험 낙차의 원인이 된다. 서비스운영팀은 유독 가입 직후 티빙 야구 혜택을 명시적으로 안내하는 인앱 또는 알림 플로우를 점검하고, 마케팅팀은 야구 시즌 진입 시 혜택 인지 캠페인 타이밍을 앞당길 것을 권고한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0168",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "haneul_zzii 2026-03-19 스타벅스 별 15개, 화담숲 초대권… 이번 3월, LG유플러스 멤버십 혜택이 한층 강력해졌습니다. 새 학기와 봄 나들이를 맞아, 단순 할인 이상으로 ‘경험형 혜택’이 대거 추가됐는데요. 특히 통합 앱 ‘U+one’ 도입으로 사용도 훨씬 간편해졌습니다. 혜택 일정과 꿀팁까지 정리해둔 이 정보를 놓치지 마세요. 👇 여기서 확인해보세요. infoarounds.com/2025… infoarounds.com LG유플러스 '유플투쁠' 3월 혜택 총정리: 스타벅스 별 15개와 화담숲 초대권까지!\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-18T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LG유플러스 3월 멤버십 혜택(스타벅스 별, 화담숲 초대권) 긍정 언급",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "단순 할인을 넘어 경험형 혜택 확대가 고객 체감 가치를 긍정적으로 견인하고 있음",
+        "action_hint": "경험형 혜택 세그먼트 확대 검토"
+      },
+      {
+        "issue_summary": "통합 앱 'U+one' 도입으로 혜택 사용 편의성 향상 긍정 평가",
+        "feedback_type": "사용편의",
+        "domain": "UX",
+        "attributes": [
+          "효율성",
+          "간결성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "앱 통합으로 사용 흐름이 단순화되어 고객이 체감하는 편의성이 기대 이상으로 올라섰음",
+        "action_hint": "U+one 온보딩 플로우 지속 최적화"
+      }
+    ],
+    "overall_summary": "이번 VoC는 전략 도메인의 혜택 체감성과 UX 도메인의 사용 편의성 모두에서 긍정 신호가 동시에 포착된 사례다. 새 학기·봄 시즌이라는 맥락에 맞는 경험형 혜택 구성과 U+one 앱 통합이 고객 기대를 상회하는 요인으로 작용하고 있다. 상품전략팀은 경험형 혜택의 지속 가능한 라인업을 점검하고, UX기획팀은 U+one 신규 유입 사용자의 온보딩 완료율을 모니터링하여 긍정 체감을 이탈 없이 유지할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0169",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "g.un_1517 폰요금제 4일 아니 만 19~34세 분들 엘지 통신사 쓰는 분들 꼭 유쓰 요금제 쓰세욤..!!¡!!!! 돈 같은데 데이터를 더 쥬ㅓ요!!!!! 2\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유쓰 요금제가 동일 가격 대비 데이터를 더 많이 제공해 만족",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "가격 합리성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "동일 요금 대비 데이터 혜택 우위가 19~34세 타겟 세그먼트에서 강한 긍정 구전을 유발하고 있음",
+        "action_hint": "유쓰 요금제 혜택 소구 콘텐츠 확대 집행"
+      }
+    ],
+    "overall_summary": "유쓰 요금제의 가격 대비 데이터 혜택이 타겟 연령층에서 자발적 추천 행동을 이끌어내는 긍정 신호가 포착됐다. 특히 '같은 돈에 더 많은 데이터'라는 명확한 가치 비교 인식이 SNS 구전으로 확산되고 있어 기대 이상의 혜택 체감이 발생한 상황이다. 상품전략 및 마케팅 부서는 해당 메시지를 핵심 소구 포인트로 삼아 20~30대 채널 중심의 캠페인 강화를 검토할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0170",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "_soymin_ 2026-03-21 #유쓰 #삼성전자 #최고의 26을 원해 갤럭시 S26 미친 기능 두가지✌️ 1. 슈퍼 스테디 기능 : 손 떨려도 수평 잡아주는 슈퍼 스테디 기능↔️ 2. 포토 어시스트 기능 : 내 사진 내 맘대로 새롭게 바꿔보자📷 - LG유플러스 고객이라면 무료 이용 가능한 AI 통화앱 익시오🤖 - 갤럭시 AI 구독클럽🚨 - 구글 원팩 요금제🚁 ​ uth_official_ samsungkorea ​ LG유플러스 대학생 앰배서더 ’유쓰피릿‘이 제작한 영상입니다. ​ #LG유플러스 #유플러스 #유쓰피릿 #유쓰피릿_갤럭시S26 #삼성전자 #갤럭시 #갤럭시S26 #유플러스갤럭시S26 1 1\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-21T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유쓰피릿 앰배서더가 갤럭시 S26 주요 기능과 LGU+ 혜택을 긍정적으로 소개",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 20,
+        "status": "Exceeding",
+        "diagnosis": "대학생 타깃 앰배서더 채널을 통해 익시오·구독클럽 등 LGU+ 혜택이 자발적·긍정적으로 노출되며 브랜드 체감 가치가 효과적으로 전달됨",
+        "action_hint": "유쓰피릿 콘텐츠 혜택 노출 패턴 정례 모니터링"
+      },
+      {
+        "issue_summary": "익시오(AI 통화앱)가 LGU+ 고객 무료 혜택으로 자연스럽게 언급·홍보됨",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "갤럭시 S26 AI 기능 소개 맥락에서 익시오 무료 혜택이 자연스럽게 연결되어 대학생 세그먼트 대상 혜택 인지도 제고에 기여함",
+        "action_hint": "익시오 대학생 세그먼트 혜택 메시지 확산 전략 수립"
+      }
+    ],
+    "overall_summary": "이번 VoC는 LGU+ 대학생 앰배서더 '유쓰피릿'이 갤럭시 S26 출시 맥락에서 익시오·갤럭시 AI 구독클럽 등 LGU+ 혜택을 자발적으로 노출한 긍정 콘텐츠로, 브랜드 혜택 체감성과 대학생 타깃 맥락 적합성 모두 기대를 상회하고 있다. 특히 제품 기능(슈퍼 스테디·포토 어시스트)과 통신사 혜택을 자연스럽게 연결한 구성이 대학생 세그먼트의 혜택 인지 낙차를 줄이는 데 효과적으로 작동하고 있다. 상품전략·유쓰 마케팅 담당은 해당 콘텐츠 패턴을 분석해 익시오 및 구독형 혜택의 대학생 대상 확산 메시지에 적극 반영할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0171",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "narimgeum 2026-03-05 K-POP학과 학생이 대기업 앰버서더를 한다고? ​ 안녕하세요 유쓰피릿 17기 금나림입니다! ​ 너무 재밌어서 시간 가는 줄 몰랐던 유쓰피릿 17기 발대식 현장을 여러분과 공유해보았는데요, 앞으로 5개월 동안 활동할 유쓰피릿 17기로서의 금나림도 많이 기대해주세요🩷 ​ ​ uth_official_ #유쓰피릿 #유쓰 #LG유플러스 #유플러스유쓰 #대외활동\"\n작성자 후속: \"없음",
+    "collected_at": "2026-03-05T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유쓰피릿 17기 발대식 참여 후 브랜드 앰버서더 활동에 대한 긍정적 기대감 표현",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "브랜드 체감성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "대학생 앰버서더가 발대식 경험을 자발적으로 공유하며 브랜드 참여 몰입도가 높게 형성됨",
+        "action_hint": "유쓰피릿 콘텐츠 자발적 확산 사례로 세그먼트 전략 반영"
+      }
+    ],
+    "overall_summary": "이번 VoC는 유쓰피릿 17기 앰버서더가 발대식 현장을 자발적으로 SNS에 공유하며 브랜드 참여 경험에 대한 강한 긍정 감성을 표출한 사례다. K-POP학과 재학생이라는 타겟 정체성과 '대기업 앰버서더'라는 키워드가 맞물려 브랜드 체감성이 기대 이상으로 작동하고 있다. 유쓰 브랜드 전략팀은 이 자발적 확산 패턴을 17기 활동 전반의 콘텐츠 세그먼트 전략에 적극 반영할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0172",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "rich_foryou2 2026-02-23 유플투쁠 유쓰, 20대의 혜택을 꽉 채우는 특별한 방법 m.blog.naver.com/trend… blog.naver.com 유플투쁠 유쓰, 20대의 혜택을 꽉 채우는 특별한 방법\"\n작성자 후속: \"없음",
+    "collected_at": "2026-02-23T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플투쁠 유쓰 20대 혜택 콘텐츠 블로그 링크 공유",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "20대 타겟 혜택 콘텐츠가 자발적으로 확산되고 있으나 감성적 반응이나 실사용 후기 없이 링크 재공유에 그쳐 실질 체감도 확인 불가",
+        "action_hint": "유쓰 혜택 콘텐츠 확산 채널 및 반응 지표 모니터링"
+      }
+    ],
+    "overall_summary": "이번 VoC는 유플투쁠 유쓰 혜택 콘텐츠가 Threads에서 블로그 링크 형태로 재공유된 사례로, 전략 도메인의 타겟 적합성·혜택 체감성 속성이 확인된다. 별도의 감정 표현이나 사용 경험 없이 단순 링크 공유에 그쳐 20대 타겟 고객의 실질적 혜택 체감 여부는 판단하기 어렵다. 상품전략·마케팅 부서는 해당 콘텐츠의 2차 확산 패턴과 클릭·전환 지표를 점검해 유쓰 세그먼트의 혜택 인지율을 실질적으로 검증할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0173",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "madi.pul 2026-02-01 ‘나다움 복수전공’자 김태리입니다! 대학생이 된 후 ’나다움은 무엇일까?‘ 고민만 하지 않고 해보고 싶은 건 전부 행동으로 옮겼어요 스쿼시 동아리에서 운동으로 많은 사람들과 하나 되고, 유튜브 동아리에서 영상 제작을 꾸준히 연습했으며, 외국에서 살아보고 싶다는 생각에 호주로 교환학생도 다녀왔어요 근데 이 경험들을 추억으로만 두고 싶지 않았어요 그래서 제 일상을 릴스로 기록하기 시작했어요 제 콘텐츠가 사람들에게 많은 공감을 받고 도움이 되었다는 사실에 콘텐츠를 만드는 모습이 진짜 ‘나다움’이라고 깨달았어요 그럼에도 저는 아직 완성된 사람이 아니기에 경험의 폭을 더 넓히고 싶습니다 열정적인 20대들과 더 많이 소통하고 경험 쌓는 과정을 제 방식으로 기록하며 유쓰피릿과 함께 ‘나다움’을 더 뚜렷하게 그려가는 20대가 되겠습니다! #lg유플러스 #유쓰 #유쓰피릿17기 #유쓰피릿17기모집 uth_official_\"\n작성자 후속: \"없음",
+    "collected_at": "2026-02-01T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유쓰피릿 프로그램이 20대 대학생의 자기 정체성 탐색 여정과 강하게 연결되며 브랜드 공감 유발",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "개인 맞춤화"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "유쓰 브랜드가 20대 타겟의 자기표현·성장 서사와 자연스럽게 동일시되며 브랜드 정체성이 체감 수준으로 내재화됨",
+        "action_hint": "유쓰피릿 성장 서사 콘텐츠 세그먼트 확장"
+      },
+      {
+        "issue_summary": "릴스·유튜브 등 자체 콘텐츠 제작 경험을 유쓰 활동과 연결하며 플랫폼 외부 확산 효과 자발적 발생",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "맥락 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "참여자가 자발적으로 Threads·해시태그로 확산하며 유쓰 브랜드의 바이럴 생태계가 실증됨",
+        "action_hint": "자발적 SNS 확산 사례 앰배서더 풀 편입 검토"
+      }
+    ],
+    "overall_summary": "유쓰피릿 17기 모집 캠페인에서 20대 타겟의 자기 정체성·성장 서사가 브랜드 메시지와 높은 수준으로 정렬되며 자발적 콘텐츠 확산이 발생했습니다. 다년간 다양한 활동을 병행한 대학생 페르소나가 '나다움'이라는 유쓰 키워드를 체화한 사례로, 타겟 적합성과 맥락 적합성 모두 기대치를 상회하는 구조입니다. 전략·브랜드 담당은 이 참여자를 앰배서더 레퍼런스로 확보하고, 유사 페르소나 대상 콘텐츠 세그먼트를 확대하여 브랜드 자산화 여부를 검토할 것을 권장합니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0174",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "seojininusa 2026-02-01 대학생때만 할 수 있는 대외활동, 유쓰피릿 지원합니다 마지막이 될 수도 있는 대학생 생활에서 유쓰피릿을 꼭 한번 해보고 싶습니다 uth_official_ . . . . #LG유플러스 #lg유플러스 #유쓰 #유쓰피릿17기 #유쓰피릿17기모집 1\"\n작성자 후속: \"없음",
+    "collected_at": "2026-01-31T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "대학생 대상 유쓰피릿 활동에 자발적 지원 의사 표명",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "브랜드 체감성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "대학생 타겟 브랜드 프로그램 유쓰피릿이 참여 욕구를 자발적으로 유발하며 타겟 적합성이 높게 작동 중",
+        "action_hint": "유쓰피릿 대학생 모집 채널 확대 검토"
+      }
+    ],
+    "overall_summary": "이번 VoC는 LG유플러스 대학생 브랜드 프로그램 '유쓰피릿'에 대한 자발적 참여 의사 표명으로, 타겟 적합성과 브랜드 체감 측면에서 긍정 신호가 확인된다. 대학생 생활의 마지막 기회로 인식할 만큼 프로그램에 대한 기대와 의미 부여가 크며, 이는 유쓰 브랜드가 해당 세그먼트에서 유의미하게 자리잡고 있음을 시사한다. 브랜드·상품전략 담당은 SNS 자발 언급 사례를 모집 홍보 자산으로 활용하고 유입 채널 다각화 여부를 검토할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0175",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "orange0__1 2026-01-31 유쓰피릿17기! 웃음과 긍정 에너지로 함께하고 싶어!💕 #LG유플러스 #유쓰 #유쓰피릿17기 #유쓰피릿17기모집 uth_official_ 용산구 Yongsangu, Seoul Korea\"\n작성자 후속: \"없음",
+    "collected_at": "2026-01-31T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유쓰피릿17기 모집에 대한 긍정적 참여 의사 표현",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "브랜드 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "유쓰피릿 17기 모집 캠페인이 타깃 고객층(청년)의 자발적 참여 의사와 긍정 감성을 이끌어내며 브랜드 친밀도 형성에 기여하고 있음",
+        "action_hint": "유쓰피릿 세그먼트 참여 전환율 트래킹"
+      }
+    ],
+    "overall_summary": "이번 VoC는 유쓰피릿17기 모집 캠페인에 대한 청년 타깃 고객의 자발적 긍정 반응으로, 브랜드 체감성과 타깃 적합성 측면에서 높은 공감대가 형성된 사례다. 해시태그 기반의 자발적 확산 행동이 동반되어 캠페인 기대치를 상회하는 수준의 참여 몰입도를 보이고 있다. 상품전략·브랜드팀은 해당 모집 시즌의 참여 전환율과 자발적 콘텐츠 생성량을 모니터링해 다음 기수 캠페인 설계에 반영할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0176",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "narimgeum 2026-01-31 13초 안에 자기 PR하기 도전해보았어효 13-second self-PR challenge #LG유플러스 #유쓰 #유쓰피릿17기 #유쓰피릿17기모집 South Korea\"\n작성자 후속: \"없음",
+    "collected_at": "2026-01-31T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유쓰 브랜드 챌린지 콘텐츠 자발적 참여 및 긍정 노출",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "브랜드 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": 5,
+        "status": "Alignment",
+        "diagnosis": "유쓰피릿 모집 챌린지에 자발적으로 참여하며 브랜드 해시태그를 확산시키는 긍정적 UGC 신호",
+        "action_hint": "유쓰 챌린지 UGC 확산 세그먼트 모니터링"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 브랜드 체감성과 타겟 적합성이 긍정적으로 작동하고 있는 사례이다. 유쓰 브랜드의 Z세대 타겟 캠페인이 자발적 콘텐츠 생산으로 이어지는 고관여 반응으로, 기대 수준과 실제 경험이 균형을 이루고 있다. 브랜드전략 및 소셜마케팅 담당자는 해당 UGC 패턴을 트래킹하여 챌린지 확산 효과와 17기 모집 전환율 간 연관성을 점검할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0177",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "ga_eun_160 2026-01-31 #LG유플러스 #유쓰 #유쓰피릿17기 #유쓰피릿17기모집 #유쓰피릿지원 34 3 3 6\"\n작성자 후속: \"없음",
+    "collected_at": "2026-01-31T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유쓰피릿 17기 모집 관련 해시태그 게시물 작성",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "브랜드 체감성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "유쓰피릿 17기 모집 캠페인에 대한 자발적 해시태그 확산으로, 브랜드 캠페인 인지 및 참여 의지가 확인되나 감성적 발화가 없어 체감 온도 판단은 불가",
+        "action_hint": "유쓰피릿 지원자 세그먼트 반응 모니터링 강화"
+      }
+    ],
+    "overall_summary": "해당 VoC는 LG유플러스 유쓰 브랜드 캠페인인 유쓰피릿 17기 모집에 관한 해시태그 중심의 단순 게시물로, 명확한 감성 발화나 서비스 경험 서술이 부재하다. 수치로 보이는 '34 3 3 6'의 맥락이 불명확하여 구체적인 기대 낙차 분석이 어렵고, 이슈 진단보다는 캠페인 확산 신호로 해석하는 것이 적절하다. 유쓰 브랜드 담당 부서는 해당 계정의 후속 발화 및 동일 해시태그 확산 추이를 모니터링하여 캠페인 체감도를 보완 측정할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0178",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "koko.index 2025-12-25 2026 20대 트렌드 키워드 5 LG유플러스의 20대 전용 브랜드 '유쓰(Uth')가 빅데이터 분석과 대학생 조사·워크숍을 통해 2026년 대학생 트렌드 키워드 5가지를 발표했다. 이번 키워드는 약 2천만 건의 데이터 분석과 실제 대학생 설문·심층 워크숍을 거쳐 도출됐다. 불확실한 시대 속 대학생들은 하나의 정체성에 머무르지 않는다. 본전공, 복수전공, 대외활동, 취향과 라이프스타일까지 여러 개의 ‘나다움’을 동시에 실험하며 조금씩 더 나아지는 나를 만들어간다. “불안의 시대, 대학생은 ‘나다움’을 복수전공한다.” #대학생트렌드 #20대라이프 #나다움 #요즘생각 #트렌드리포트\"\n작성자 후속: \"없음",
+    "collected_at": "2025-12-25T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유쓰 브랜드의 2026 대학생 트렌드 리포트 발행에 대한 긍정적 반응",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "맥락 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "유쓰 브랜드가 빅데이터 기반 트렌드 리포트를 통해 20대 타겟층과의 맥락적 접점을 형성하며 브랜드 정체성을 효과적으로 전달하고 있음",
+        "action_hint": "유쓰 트렌드 콘텐츠 시리즈 확장 기획"
+      }
+    ],
+    "overall_summary": "이번 VoC는 불만이 아닌, LG유플러스 유쓰 브랜드의 콘텐츠 마케팅 활동이 외부 채널(Threads)에서 자발적으로 공유·소개된 긍정 신호다. 20대 전용 브랜드로서 빅데이터 기반 트렌드 리포트가 타겟 세그먼트의 라이프스타일 언어와 맞닿아 있어 기대 이상의 브랜드 공감대를 형성하고 있다. 전략·브랜드 담당 부서는 해당 콘텐츠 포맷의 확산 패턴을 분석하고, 트렌드 리포트를 유쓰 브랜드 차별화 자산으로 정례화하는 방향을 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0179",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "주말부부 친구는 애들 어릴때 lg유플 아이들나라 틀어주고 안방에서 어른들나라 갔다던데ㅋㅋㅋ\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "아이들나라 콘텐츠가 자녀 독립 시청을 가능하게 해 부부 개인 시간 확보에 활용됨",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "맥락 적합성",
+          "타겟 적합성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "아이들나라가 자녀 몰입 콘텐츠로 기능하며 주말부부 라이프스타일 맥락에서 자연스러운 긍정 바이럴로 이어짐",
+        "action_hint": "주말부부·육아세대 세그먼트 타겟 캠페인에 활용"
+      }
+    ],
+    "overall_summary": "아이들나라 서비스가 유아 자녀를 둔 주말부부 세그먼트의 실생활 니즈에 맞닿아 있음을 보여주는 긍정적 자연 바이럴 사례다. 별도의 마케팅 없이도 '아이 독립 시청 → 부부 시간 확보'라는 구체적 맥락에서 서비스 가치가 체감되고 있어 기대치를 상회하는 경험을 제공하고 있다. 상품전략·브랜드 마케팅 부서는 해당 라이프스타일 장면을 육아 세대 타겟 크리에이티브 소재로 적극 검토할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0180",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "11시 유플 다이소 안됐다 생각해보니 11시 정각에 들어가니까 안되는거임,, 에잇 10초남기고 들어가야게따\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "이벤트 정각 접속 시 참여 불가",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "예측가능성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "이벤트 오픈 정각 트래픽 집중으로 접속이 차단되어 고객이 참여 타이밍을 스스로 조정하는 우회 행동 유발",
+        "action_hint": "이벤트 오픈 직후 트래픽 스파이크 핫픽스 적용"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 이벤트 정각 접속 시 시스템 안정성과 예측가능성 이슈가 동시에 발생했다. 이벤트 당일 참여를 시도한 고객이 '10초 전 입장'이라는 우회 방법을 스스로 체득해야 했을 만큼, 오픈 순간 기대 대비 경험 낙차가 크다. 서비스개발·인프라 팀은 이벤트 오픈 시점 트래픽 집중 구간의 처리 용량과 큐잉 로직을 우선 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0181",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "편하게 쓰던 Grok, Gemini 기간만료... 저렴히 구독할 방법 검색중... LG유플 장기고객이라 Gemini는 그쪽으로 알아보는중~\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LG유플 장기고객으로서 Gemini 구독 혜택 제공 여부 확인 중",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "장기고객임을 인식하고 Gemini 혜택을 LGU+를 통해 기대하지만, 혜택 존재 여부 자체를 직접 검색해야 하는 상황으로 혜택 인지·전달 경로가 부재함",
+        "action_hint": "장기고객 AI구독 혜택 세그먼트 푸시 기획"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 장기고객 대상 AI 구독 혜택의 인지 가능성과 접근성 이슈가 확인된다. 고객이 스스로 혜택을 검색해야 하는 상황은 장기고객일수록 기대 낙차가 크며, 혜택이 있어도 전달되지 않으면 없는 것과 동일한 체감을 준다. 상품전략 및 CRM 담당 부서는 Gemini 제휴 혜택의 장기고객 타겟 노출 경로와 프로액티브 안내 시점을 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0182",
+    "source": "threads",
+    "channel_detail": "Threads",
+    "service": null,
+    "raw_text": "공신폰 생각 중인데 skt망 써야 해서 비용이 싸지 않아 고민이야. 난 유플 쓰고 있고 유플 무너폰2로 사주고 데이터 차단할지 고민이야.\"\n작성자 후속: 없음\n---",
+    "collected_at": "2026-03-27T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "공신폰 사용 시 SKT망 전용으로 인한 비용 부담 고민",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "가격 합리성",
+          "타겟 적합성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "공신폰 에코시스템이 SKT망에 종속되어 있어, 유플 기존 고객이 자녀 학습폰 도입 시 타사 요금 부담을 감수하거나 유플 내 대안을 직접 모색해야 하는 선택 갈등 발생",
+        "action_hint": "학습폰 세그먼트 대상 유플 요금제 결합 상품 검토"
+      },
+      {
+        "issue_summary": "유플 무너폰2를 자녀 공신폰 대안으로 고려 중이나 데이터 차단 기능 가능 여부 불확실",
+        "feedback_type": "사용편의",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "고객이 무너폰2의 데이터 차단 기능 지원 여부를 명확히 인지하지 못한 채 구매 의사결정 중으로, 기능 안내 정보의 접근성 부족이 이탈 가능성을 높임",
+        "action_hint": "무너폰2 데이터 차단 기능 안내 페이지 전면 노출"
+      }
+    ],
+    "overall_summary": "기존 유플 고객이 자녀 학습폰 도입을 검토하는 과정에서 경쟁사 망 종속 서비스로 인한 비용 갈등과 유플 자사 단말의 기능 정보 부재가 동시에 구매 의사결정을 방해하고 있다. 유플을 유지하면서도 자녀 폰을 합리적으로 운영하고 싶다는 명확한 니즈가 있음에도, 무너폰2의 기능 정보가 충분히 전달되지 않아 고객 스스로 우회 방안을 탐색하는 상황이다. 상품전략팀은 학습폰·자녀폰 세그먼트 대상 결합 요금제 경쟁력을 점검하고, 고객지원팀은 무너폰2 상세 페이지 내 데이터 차단 기능 안내 노출을 우선 확인해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0183",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "엘지유플에는 사이버보안팀이 없어??? IMSI에 가입자 번호 사용이라니… 이게 말이야 방구야\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-19T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "IMSI에 가입자 번호 사용으로 인한 사이버보안 취약점 지적",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "보안성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "IMSI에 실제 가입자 번호를 사용하는 구조적 보안 설계가 고객에게 인지되어 신뢰 붕괴 수준의 부정 반응 유발",
+        "action_hint": "IMSI 식별자 익명화 설계 긴급 검토"
+      }
+    ],
+    "overall_summary": "기술 도메인의 보안성 속성에서 심각한 신뢰 훼손 이슈가 발생했다. IMSI에 실제 가입자 번호를 그대로 사용하는 설계 방식이 외부에 노출되면서, 통신 보안에 대한 기본 기대치조차 충족되지 않는다는 인식이 형성된 상황이다. 서비스개발 및 인프라 보안팀은 IMSI 식별자 할당 구조를 즉시 점검하고, 가입자 실번호 노출 여부 및 익명화 적용 범위를 확인해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0184",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "유플 제작사가 아니라 아예 관련 사업 자체를 접는 거였어??? 우리 애들 고향이 있었는데요 없었습니다\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-26T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플 관련 사업 종료로 인한 콘텐츠(서비스) 폐지에 대한 충격과 상실감",
+        "feedback_type": "감성",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "사업 철수 수준의 서비스 종료로 충성 이용자의 감정적 이탈이 발생하며, 브랜드 신뢰에 직접적 타격을 입히는 상황",
+        "action_hint": "사업 종료 고객 대상 대체 혜택 세그먼트 긴급 설계"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 서비스 사업 철수로 인한 타겟 적합성 및 혜택 체감성 이슈가 동시에 발생하였다. 해당 서비스에 장기적 애착을 형성한 핵심 이용자군에서 기대 낙차가 극단적으로 크며, '애들 고향'이라는 표현에서 단순 불편을 넘어 정체성 상실 수준의 감정 반응이 감지된다. 상품전략 및 브랜드 담당 부서는 종료 서비스 이용자 이탈 방어를 위한 대체 콘텐츠·혜택 구성과 사전 커뮤니케이션 방식을 즉시 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0185",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "2025년에 갓작을 남겨놓고 사라진… 정말 미스터리 걸스릴러 제작사 답다\"\n작성자 후속: 없음",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "콘텐츠 제작사(갓작)가 작품을 미완 상태로 방치한 것에 대한 불만",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "콘텐츠가 완결되지 않은 채 방치되어 플랫폼 콘텐츠 신뢰도 및 브랜드 체감이 하락한 상태",
+        "action_hint": "미완결 콘텐츠 후속 제작 일정 공지 확인"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 콘텐츠 완결성 및 혜택 체감 속성의 이슈가 감지된다. 작품 미완 방치에 대한 고객 불만으로, 콘텐츠 구독 가치에 대한 기대와 실제 제공 간 낙차가 발생한 맥락이다. 콘텐츠 사업기획 부서는 해당 IP의 후속 제작 계획 또는 종료 여부를 확인하고 고객 공지 방안을 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0186",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "유플 전체가 관념적 미니관이 되어버림\"\n작성자 후속: 없음",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LGU+ 브랜드 전체가 폐쇄적·획일적 정체성으로 느껴짐",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "개인 맞춤화"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "브랜드 전반이 특정 세계관·취향에 갇혀 다양한 고객층의 공감을 잃고 있다는 인식",
+        "action_hint": "브랜드 세그먼트별 공감 접점 점검"
+      }
+    ],
+    "overall_summary": "고객은 LGU+ 브랜드 전체가 특정 소수 취향('미니관')에 편향된 관념적 정체성으로 굳어가고 있다는 비판적 인식을 드러냈다. 특별한 장기고객·VIP 맥락 없이도 브랜드 체감 기대치를 하회하고 있어, 폭넓은 고객층과의 정서적 단절이 진행 중임을 시사한다. 브랜드전략·상품기획 부서는 현행 캠페인·혜택 구성이 특정 타겟에 과집중되지 않는지 세그먼트 다양성 관점에서 즉시 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0187",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "유플 사업 접는다? 왓챠 인수한다고 했다가 정보만 빼먹은 놈들이 발전할 수가 있겠냐\"\n작성자 후속: 없음",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "왓챠 인수 철회로 인한 LGU+ 사업 신뢰성 불신 및 브랜드 비난",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "브랜드 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "왓챠 인수 불발이 '정보 탈취 후 철수'로 인식되며 브랜드 기만감으로 전이된 극단적 신뢰 붕괴 상태",
+        "action_hint": "인수 철회 경위 공식 입장 수립"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 브랜드 신뢰성과 사업 진정성에 대한 극단적 불신 이슈가 발생하였다. 왓챠 인수 추진 후 철회 과정이 고객에게 '정보만 착취하고 이탈한 기만 행위'로 해석되면서 기대 대비 낙차가 극대화된 상황이다. 사업전략 및 브랜드커뮤니케이션 부서는 해당 인수 추진·철회 경위에 대한 공식 입장과 대외 메시지를 긴급 점검하고, 유사 사업 파트너십 발표 시 리스크 관리 프로세스를 재설계해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0188",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "요금제 LG유플 쓰는 레이디 있냐??\"\n작성자 후속: 없음",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "LG유플러스 요금제 사용 여부를 묻는 동료 탐색 발화",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "특정 성별(여성) 사용자 기반에 대한 궁금증으로, 브랜드의 타겟 적합성 및 여성 고객 커뮤니티 내 인지도를 간접적으로 시사하는 탐색 발화",
+        "action_hint": "여성 세그먼트 요금제 인지도 현황 점검"
+      }
+    ],
+    "overall_summary": "해당 VoC는 명시적 불만이나 칭찬 없이, X(트위터) 상에서 LG유플러스 요금제를 사용하는 여성 사용자를 찾는 동료 탐색형 발화다. 후속 맥락이 없어 구체적 니즈는 확인되지 않으나, 특정 성별 커뮤니티 내 LG유플러스 사용자 기반이 희소하거나 가시화되지 않았을 가능성을 시사한다. 전략 부서는 여성 타겟 요금제·혜택의 SNS 상 인지도와 커뮤니티 내 존재감을 점검할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0189",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "네이버 멤버십 + 넷플릭스 공짜로 얻는 법 (유플 VIP 관련)\"\n작성자 후속: 없음",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플 VIP 혜택을 통해 네이버 멤버십·넷플릭스를 무료로 이용하는 방법 공유",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "개인 맞춤화"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -5,
+        "status": "Alignment",
+        "diagnosis": "VIP 혜택 활용법을 스스로 탐색·공유하는 적극 고객층이 존재하나, 혜택 조합 인지 경로가 공식 채널이 아닌 SNS 자발 확산에 의존하고 있음",
+        "action_hint": "VIP 혜택 조합 공식 콘텐츠 기획"
+      }
+    ],
+    "overall_summary": "전략 도메인의 혜택 체감성 측면에서, VIP 고객이 네이버 멤버십·넷플릭스 무료 혜택을 긍정적으로 인식하고 자발적으로 확산하는 신호가 포착되었다. 다만 이 정보가 공식 채널이 아닌 X(구 트위터) 등 SNS를 통해 유통되고 있어, VIP 고객의 높은 기대 수준 대비 혜택 인지 경로가 체계화되지 않은 상태다. 상품전략·마케팅 부서는 VIP 혜택 조합 안내 콘텐츠를 공식화하고, 앱 내 온보딩 또는 혜택 허브 페이지를 통해 자발 확산 효과를 내재화하는 방안을 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0190",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "원래 LG유플 쓰다가 폰 바꾸면서 SKT로 옮겼는데… 하루에 최소 3번씩 스팸 전화 옴. 유플 쓸 때는 이런 적 없었는데\"\n작성자 후속: 없음",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "SKT 전환 후 하루 3회 이상 스팸 전화 수신 — LGU+ 대비 체감 불만",
+        "feedback_type": "브랜드 체감",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "처리 정확성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "타사 이동 후 반복 스팸 경험을 LGU+ 시절과 직접 대비하며 LGU+의 스팸 차단 품질을 암묵적으로 긍정 평가하는 역설적 이탈 VoC",
+        "action_hint": "LGU+ 스팸차단 운영 기준 경쟁사 비교 분석"
+      }
+    ],
+    "overall_summary": "운영 도메인의 스팸 차단 품질 관련 투명성·처리 정확성 이슈로, 고객이 타사 이동 후 반복적인 스팸 전화를 경험하며 LGU+ 재직 시와 명시적으로 비교하고 있다. 특별한 충성 신호 없이도 LGU+의 스팸 관리 수준이 기준점으로 소환되고 있어 기대-경험 낙차가 크게 나타났다. 서비스운영 및 고객지원 부서는 LGU+의 스팸 차단 운영 정책을 경쟁사 대비 강점으로 명시화하고, 재유치 메시지나 복귀 혜택 설계 시 해당 경험 차이를 소구 포인트로 활용할 것을 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0191",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "유플 앱은 없고 티비는 나오네\"\n작성자 후속: 없음",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플 앱은 안 되는데 TV는 정상 작동",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "앱 서비스만 선택적으로 장애가 발생해 동일 네트워크 내 TV와의 가용성 불일치가 고객에게 체감됨",
+        "action_hint": "앱 장애 구간 트래픽 로그 점검"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 앱 서비스의 시스템 안정성 이슈가 확인된다. TV는 정상 작동하는 상황에서 앱만 불통인 불일치 경험이 고객의 기대 낙차를 키우고 있다. 서비스개발·인프라 팀이 해당 시점의 앱 서버 상태 및 장애 범위를 우선 확인해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0192",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "유플 3관에서 서정가 받아먹으면서…\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-20T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플 3관 서비스(혜택) 무임승차 또는 부당 수혜 암시",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "'유플 3관'에서 서정가(할인/혜택) 수혜를 언급하는 발화로, 고객이 혜택을 긍정적으로 누리고 있거나 타인의 부당 수혜를 풍자하는 맥락이나 원문 단편만으로는 의도 확정 불가",
+        "action_hint": "3관 혜택 수혜 자격 기준 점검"
+      }
+    ],
+    "overall_summary": "본 VoC는 'LGU+ 3관(결합 또는 시네마 서비스)에서 할인/서비스 혜택을 누린다'는 단편 발화로, 긍정적 체험 공유인지 혜택 형평성에 대한 풍자인지 맥락이 불충분하다. 후속 발화나 추가 맥락이 없어 고객 의도 파악에 한계가 있으며, 기대 낙차보다는 혜택 적용 범위의 인식 차이가 잠재 이슈로 작용할 수 있다. 상품전략 담당 부서에서 '유플 3관' 혜택 적용 대상 및 자격 요건의 고객 인지 현황을 점검하고, 추가 원문 수집을 통해 맥락을 보완할 것을 권장한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0193",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "유플러스 유독 사용하는 사람 있나.. 리디 도서 멤버십 월정액인데 한달 다 되니 내가 갱신해야 하는게 좀 어이없음\"\n작성자 후속: 없음",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "리디 도서 멤버십 갱신을 고객이 수동으로 해야 하는 구조에 대한 불만",
+        "feedback_type": "사용편의",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "맥락 적합성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "유독 멤버십 혜택이 자동 연장이 아닌 수동 갱신 방식으로 설계되어, 고객이 혜택 구조를 납득하지 못하고 이탈 가능성 있음",
+        "action_hint": "유독 제휴 혜택 갱신 플로우 자동화 검토"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 유독 제휴 혜택(리디 도서 멤버십)의 갱신 방식에 대한 혜택 체감성 이슈가 발생하고 있다. 멤버십 혜택은 자동으로 유지될 것이라는 고객의 일반적 기대와 달리 수동 갱신이 요구되면서 기대 낙차가 발생하고 있으며, '어이없다'는 표현에서 신뢰 저하로 이어질 우려가 있다. 상품전략 담당은 유독 제휴 혜택의 갱신 구조(자동화 가능 여부)를 점검하고, 불가피한 경우 갱신 안내 UX를 선제적으로 강화할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0194",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "유플러스 전관 양도 구합니다\"\n작성자 후속: 없음",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플러스 전관 양도 매물 구인 게시",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "고객이 공식 채널이 아닌 SNS를 통해 전관 양도를 직접 구하고 있어, 혜택 승계 관련 공식 안내 경로가 부재하거나 인지되지 않고 있음",
+        "action_hint": "전관 양도 공식 안내 채널 및 프로세스 점검"
+      }
+    ],
+    "overall_summary": "고객이 유플러스 전관 양도 매물을 SNS에서 직접 구인하고 있어, 전략 도메인의 혜택 체감성 및 타겟 적합성 측면에서 공식 경로 부재 신호가 감지된다. 공식 혜택 승계 절차나 안내가 고객에게 충분히 전달되지 않아 비공식 거래 시도로 이어지고 있을 가능성이 높다. 상품전략 및 고객지원팀은 전관 양도 관련 공식 프로세스 안내 강화 여부와 해당 수요 규모를 확인할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0195",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "유플러스 모바일로는 안 돼?? 겨우 본가 계정 연결했는데 검색 안됨\"\n작성자 후속: 없음",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플러스 모바일 환경에서 검색 기능 미작동",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "기능 보편성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Mid",
+        "score_exp": 80,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "본가 계정 연결이라는 선행 과정을 완료했음에도 핵심 기능인 검색이 모바일 환경에서 동작하지 않아 이탈 직전 좌절 경험 발생",
+        "action_hint": "모바일 환경 검색 기능 크래시 재현 후 핫픽스 배포"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 이슈로, 유플러스 모바일 환경에서만 검색 기능이 작동하지 않는 환경 종속적 결함이 확인된다. 본가 계정 연결이라는 번거로운 선행 과정을 거친 직후 기능 오류를 마주한 상황이라 기대 낙차가 크고 좌절감이 증폭된 맥락이다. 서비스개발팀은 유플러스 모바일 네트워크 및 계정 연결 상태에서의 검색 API 호출 로그를 우선 점검하여 재현 조건을 파악해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0196",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "KT 와이파이는 계속 있는데 유플러스는 지하철 타면 끊김\"\n작성자 후속: 없음",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "지하철 환경에서 유플러스 와이파이 연결 끊김 반복",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "KT 대비 지하철 와이파이 유지율 열위가 고객에게 직접 체감되고 있음",
+        "action_hint": "지하철 구간 와이파이 핸드오버 안정성 점검"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 이슈로, 지하철 이동 중 와이파이 연결이 반복적으로 끊기는 현상이 확인된다. 고객이 KT와 직접 비교하며 불만을 표출하고 있어 경쟁사 대비 품질 열위가 명확히 체감되는 상황이다. 인프라팀은 지하철 구간별 AP 핸드오버 로그를 분석하고, 취약 구간의 커버리지 및 로밍 전환 안정성을 우선 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0197",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "확 보였다 확 사라졌다 반복 (통신 품질 불안정)\"\n작성자 후속: 없음",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "통신 신호가 나타났다 사라지는 불안정 반복 현상",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "통신 신호 단속 현상이 반복 발생하여 기본 서비스 품질 자체에 대한 신뢰가 훼손된 상태",
+        "action_hint": "해당 지역 기지국 트래픽·핑퐁 이슈 점검"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 속성에서 통신 신호 단속 반복이라는 핵심 품질 이슈가 확인된다. 특별한 고객 맥락 없이도 기본 기대치(Standard 70점)를 20점 이상 하회하고 있어, 일상적 서비스 기대조차 충족되지 못하는 낙차가 크다. 서비스개발·인프라 담당은 해당 고객의 접속 위치 및 시간대를 기반으로 기지국 핑퐁·커버리지 음영 여부를 우선 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0198",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "아이폰에서 유플러스 쓰는데 통신사 자체 통화앱으로 녹취함\"\n작성자 후속: 없음",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "아이폰에서 통신사 자체 통화앱을 통한 통화 녹취 가능",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "기능 보편성",
+          "타겟 적합성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "아이폰 환경에서 통화 녹취 미지원 한계를 통신사 자체 앱으로 해소한 사례로, 차별화 기능으로 인식될 가능성 있음",
+        "action_hint": "아이폰 통화녹취 기능 세그먼트 홍보 강화"
+      }
+    ],
+    "overall_summary": "아이폰 사용자가 LGU+ 자체 통화앱을 통해 통화 녹취를 수행한 경험을 공유한 사례로, 기능 보편성 측면에서 긍정적 신호를 포함하고 있습니다. iOS 플랫폼 특성상 통화 녹취가 제한되는 환경에서 통신사 앱이 실질적 대안으로 기능했다는 점에서 기대치를 소폭 상회하는 구조입니다. 상품전략 및 마케팅 부서는 해당 기능을 아이폰 사용 고객 세그먼트 대상 차별화 포인트로 적극 활용하는 방안을 검토할 필요가 있습니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0199",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "스팸 전화 매일 2통씩 온다. 유플인데 방법 없나?\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-23T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "스팸 전화가 매일 반복적으로 수신됨",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "보안성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "반복·우회",
+        "severity_multiplier": 1.5,
+        "score_reality": 50,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -20,
+        "status": "Gap",
+        "diagnosis": "매일 반복되는 스팸 수신이 해결 수단 없이 지속되며 기본 통신 품질 신뢰를 훼손하고 있음",
+        "action_hint": "스팸 차단 기능 노출 경로 점검 및 푸시 안내 트리거 설정"
+      }
+    ],
+    "overall_summary": "기술 도메인의 보안성·시스템 안정성 속성에서 스팸 차단 기능이 고객에게 제대로 인지되지 않는 문제가 확인된다. 특별한 고객 맥락 없이도 매일 반복되는 피해를 호소하고 있어 기본 서비스 신뢰에 대한 기대 낙차가 크다. 서비스개발 및 고객지원 부서는 스팸 차단 서비스(U+스팸차단 등)의 가입 유도 노출 시점과 CS 인바운드 대응 스크립트를 즉시 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0200",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "KT인데 잘 안됐던거 보면 유플러스가 나았던 듯\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-23T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "타사(KT) 대비 유플러스 서비스 품질 상대적 우위 체감",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "타겟 적합성",
+          "혜택 체감성"
+        ],
+        "sentiment": "긍정",
+        "sentiment_score": 5,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 85,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 15,
+        "status": "Exceeding",
+        "diagnosis": "KT 경험과의 비교를 통해 유플러스 서비스가 상대적으로 낫다는 긍정적 인식이 형성된 상태",
+        "action_hint": "비교 우위 세그먼트 중심 전환 소구 강화"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 브랜드 체감 측면의 긍정 신호가 확인된다. 해당 고객은 타사 경험과의 직접 비교를 통해 유플러스에 대한 상대적 만족감을 표출하고 있어, 명시적 극찬보다는 소극적 호감 형태임에 주의가 필요하다. 사업기획 및 상품전략 부서는 KT 이탈 고객군 내 유사 인식 패턴을 확인하고, 전환 유도 메시지 및 혜택 설계에 해당 비교 우위 요소를 적극 반영할 것을 권고한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0201",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "벨링/컬러링 아직 구간설정만 가능\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-23T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "벨링·컬러링 구간설정 외 추가 기능 부재",
+        "feedback_type": "사용편의",
+        "domain": "전략",
+        "attributes": [
+          "기능 보편성",
+          "개인 맞춤화"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "벨링·컬러링 서비스가 구간설정 기능에만 머물러 있어 고객의 기본 기능 기대치를 충족하지 못하고 있음",
+        "action_hint": "벨링·컬러링 상품 기능 스펙 확장 검토"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 벨링·컬러링 서비스의 기능 보편성과 개인 맞춤화 속성에 Gap이 확인된다. 구간설정 외의 세부 편집·맞춤 기능을 기대하는 고객 수요 대비 현재 서비스 기능이 제한적으로 운영되고 있어 낙차가 발생하고 있다. 사업기획·상품전략 부서는 타 사업자의 벨링·컬러링 기능 범위와 비교하여 추가 기능 로드맵 수립 여부를 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0202",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "유플 유심 쓰는 사람 4월 13일부터 무상 교체… IMSI 관련 이슈\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-22T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플 유심 무상 교체 공지 (IMSI 관련 이슈)",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "투명성",
+          "채널 접근성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "고객이 IMSI 관련 유심 무상 교체 일정을 외부 채널(X)에서 인지한 정보 전달 구조로, 공식 안내 투명성 점검이 필요한 상황",
+        "action_hint": "공식 채널 대상 유심 교체 안내 선제 발송"
+      }
+    ],
+    "overall_summary": "운영 도메인의 투명성·채널 접근성 속성에서 IMSI 관련 유심 무상 교체 이슈가 포착되었다. 고객이 공식 LGU+ 채널이 아닌 소셜 플랫폼(X)을 통해 해당 사실을 인지한 정황으로, 사전 고지 범위와 속도에 낙차가 있을 가능성이 있다. 고객지원·서비스운영팀은 4월 13일 시행 전 SMS·앱 푸시 등 공식 채널을 통한 대상 고객 직접 안내 여부를 즉시 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0203",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "장기 이용 고객인데 어디서나 끊김 없이 잘 됨\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-22T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "장기 고객이 어디서나 끊김 없는 통신 품질 경험",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "신속성"
+        ],
+        "sentiment": "매우 긍정",
+        "sentiment_score": 10,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 90,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": 0,
+        "status": "Alignment",
+        "diagnosis": "장기 고객의 높은 기대 수준에 부합하는 통신 안정성을 제공하며 기대치를 정확히 충족",
+        "action_hint": "장기 고객 안정성 유지 구간 모니터링 강화"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 속성에서 긍정 신호가 확인된 VoC로, 끊김 없는 통신 품질에 대한 만족이 핵심이다. 장기 이용 고객 특성상 기대 수준이 높게 형성되어 있음에도 실제 경험이 이를 정확히 충족하는 Alignment 상태이다. 인프라팀은 해당 고객이 주로 이용하는 지역·시간대의 안정성 지표를 지속 추적하여 긍정 경험이 이탈 방어 자산으로 이어지도록 관리해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0204",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "인터넷 전화기 세금계산서 122장 날아왔다… 유플러스 왜 이럼\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-05T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "인터넷 전화기 세금계산서 122장 대량 발송",
+        "feedback_type": "운영 품질",
+        "domain": "운영",
+        "attributes": [
+          "처리 정확성",
+          "투명성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "세금계산서 122장 중복 발송은 단순 오류를 넘어 고객 신뢰와 업무 혼란을 유발하는 운영 품질 심각 이슈",
+        "action_hint": "세금계산서 중복 발송 원인 즉시 확인 및 회수 조치"
+      }
+    ],
+    "overall_summary": "운영 도메인의 처리 정확성 및 투명성 속성에서 세금계산서 대량 중복 발송이라는 치명적 오류가 발생했다. 고객은 별도 맥락 없이 일반 이용 중 해당 상황을 겪었음에도 기대 수준 대비 극심한 낙차를 경험했으며, 발송 시스템의 오작동 가능성이 높다. 서비스운영 및 청구 시스템 담당 부서는 해당 고객의 발송 이력을 즉시 점검하고 중복 발송 원인을 파악해 재발 방지 조치를 수행해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0205",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "IMSI는 외부에서 거의 불일이 없는데… 중간자 공격 가능성 때문에 문제\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-17T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "IMSI 외부 노출 구조로 인한 중간자 공격 보안 취약 우려",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "보안성",
+          "시스템 안정성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "IMSI 평문 노출 구조가 중간자 공격(MITM) 벡터로 지목되며, 네트워크 계층 보안 설계에 대한 신뢰도 저하 발생",
+        "action_hint": "IMSI 노출 경로 및 MITM 취약 구간 즉시 점검"
+      }
+    ],
+    "overall_summary": "이번 VoC는 기술 도메인의 보안성 속성에서 IMSI 식별자 외부 노출에 따른 중간자 공격 가능성 이슈가 제기된 사례다. 고객이 네트워크 보안 구조에 대한 전문적 이해를 바탕으로 발화한 만큼, 실제 위협 시나리오로 전환될 경우 신뢰 낙차가 클 수 있다. 서비스개발 및 인프라 팀은 IMSI 전송 구간의 암호화 적용 여부와 가짜 기지국(IMSI Catcher) 대응 체계를 우선적으로 점검할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0206",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "첨부 용량 3MB 이상이면 발송 실패할 수 있음\"\n작성자 후속: 없음",
+    "collected_at": "2026-02-06T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "첨부 파일 3MB 초과 시 발송 실패 가능성",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성",
+          "오류방지성"
+        ],
+        "sentiment": "부정",
+        "sentiment_score": -20,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 60,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -10,
+        "status": "Gap",
+        "diagnosis": "첨부 용량 제한 기준(3MB)이 발송 실패로 이어지는 구조적 결함이 있으며, 사용자에게 사전 안내 없이 실패를 경험하게 함",
+        "action_hint": "3MB 초과 시 사전 경고 알림 핫픽스 적용"
+      }
+    ],
+    "overall_summary": "기술 도메인에서 첨부 파일 용량 제한(3MB)으로 인한 발송 실패 이슈가 확인된다. 별도 사전 안내 없이 실패가 발생하는 구조로, 일반 사용자 기대치 대비 경험 낙차가 발생하고 있다. 서비스개발팀은 용량 초과 시 즉시 사용자에게 경고를 노출하는 인터랙션 처리를 우선 점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0207",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "고객센터 앱 이름 '당신의 U+'에서 'U+ONE'으로 바뀜\"\n작성자 후속: 없음",
+    "collected_at": "2026-02-16T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "고객센터 앱 명칭이 '당신의 U+'에서 'U+ONE'으로 변경됨",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "브랜드 정체성과 차별성 관련 → 맥락 적합성",
+          "기능 보편성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "앱 명칭 변경 사실을 감정 없이 단순 서술한 중립적 관찰 피드백으로, 브랜드 리네이밍 인지 단계에 해당",
+        "action_hint": "리네이밍 고객 인지 반응 모니터링 강화"
+      }
+    ],
+    "overall_summary": "이번 VoC는 고객센터 앱의 브랜드명 변경(당신의 U+ → U+ONE)을 단순 사실로 기록한 중립적 발화로, 감성적 불만이나 찬사 없이 변화를 관찰하는 수준에 머물러 있다. 브랜드 리네이밍 초기 단계에서 고객이 변화를 인지하되 별다른 감정 반응을 보이지 않는 상황은, 새 명칭의 의미·혜택이 아직 고객에게 체감되지 않고 있음을 시사한다. 브랜드전략 및 마케팅 부서는 U+ONE 명칭 변경에 대한 고객 인지도와 긍·부정 반응 추이를 추적하여 리네이밍 메시지 전달 효과를 점검할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0208",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "이제 더이상 당신의 유플러스가 아니군요\"\n작성자 후속: 없음",
+    "collected_at": "2026-02-16T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "브랜드 정체성 상실에 대한 이탈 선언적 감성 표현",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "브랜드 정체성",
+          "타겟 적합성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "High",
+        "score_exp": 90,
+        "gap": -90,
+        "status": "Gap",
+        "diagnosis": "오랜 유대감을 전제로 한 발화로, 브랜드가 더 이상 '나의 것'이 아니라는 정서적 이탈 선언이며 심각한 충성도 붕괴 신호",
+        "action_hint": "장기고객 이탈 세그먼트 긴급 모니터링"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 브랜드 정체성 및 타겟 적합성 속성의 심각한 균열이 감지된다. '당신의 유플러스'라는 소유적 표현의 부정은 단순 불만이 아닌, 과거 높은 유대감을 가졌던 고객이 브랜드와의 심리적 계약이 파기됐음을 선언하는 것으로 기대 낙차가 극단적으로 크다. 사업기획·상품전략 부서는 해당 발화 시점 전후의 요금제 개편, 혜택 축소, 서비스 정책 변경 이력을 교차 분석해 이탈 트리거를 즉시 특정해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0209",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "유플러스 도움되는거 1도 없다\"\n작성자 후속: 없음",
+    "collected_at": "2026-02-17T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플러스 서비스 전반에 대한 무용감 표출",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "혜택 체감성",
+          "타겟 적합성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "서비스·혜택 전반에서 체감 가치를 전혀 느끼지 못하는 극단적 브랜드 괴리 상태",
+        "action_hint": "혜택 체감 세그먼트별 인지 갭 긴급 점검"
+      }
+    ],
+    "overall_summary": "전략 도메인에서 혜택 체감성과 타겟 적합성 속성이 동시에 무너진 상태로, 고객은 유플러스 서비스 전체를 자신에게 무의미한 것으로 인식하고 있다. 특별한 장기 고객 맥락 없이도 기대 대비 실제 경험 낙차가 30점에 달해, 기본적인 가치 전달 자체가 실패하고 있음을 시사한다. 상품전략팀은 해당 고객 세그먼트를 특정하여 어떤 혜택·기능이 인지되지 않고 있는지 고객 여정 전반을 재점검해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0210",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "<현재 충격적인 LG유플 유심상태> IMSI 문패 비유… 랜덤 코드로 교체\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-17T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "IMSI 노출 가능성에 대한 보안 불안 및 충격 표현",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "보안성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "이탈·기만",
+        "severity_multiplier": 2.0,
+        "score_reality": 0,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -70,
+        "status": "Gap",
+        "diagnosis": "IMSI가 문패처럼 외부에 노출된다는 표현으로, 유심 식별자 보안 구조에 대한 극도의 불신과 위협 인식이 확인됨",
+        "action_hint": "유심 IMSI 노출 경로 즉시 점검 및 핫픽스 검토"
+      }
+    ],
+    "overall_summary": "기술 도메인의 보안성 속성에서 유심 IMSI 식별자 노출에 대한 고객의 극단적 불안 반응이 감지되었다. '충격적'이라는 표현과 문패 비유는 개인정보 보호에 대한 기대치 낙차가 매우 크며, 이탈·불신으로 이어질 수 있는 신호다. 서비스개발 및 인프라 담당 부서는 IMSI 노출 가능 경로와 랜덤 코드 교체 처리 현황을 즉시 확인하고, 고객 커뮤니케이션 방안을 검토해야 한다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0211",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "집 인터넷/TV/와이파이 전부 안됨… 유플러스!!!\"\n작성자 후속: 없음",
+    "collected_at": "2026-03-11T00:00:00+09:00",
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "인터넷·TV·와이파이 전체 서비스 동시 불통",
+        "feedback_type": "운영 품질",
+        "domain": "기술",
+        "attributes": [
+          "시스템 안정성"
+        ],
+        "sentiment": "매우 부정",
+        "sentiment_score": -40,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 40,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": -30,
+        "status": "Gap",
+        "diagnosis": "가정 내 인터넷·TV·와이파이가 동시에 완전 불통되어 기본 서비스 가용성이 붕괴된 상태",
+        "action_hint": "전국·지역 장애 여부 즉시 확인 후 핫픽스 대응"
+      }
+    ],
+    "overall_summary": "기술 도메인의 시스템 안정성 속성에서 가정용 유선·무선 서비스 전체가 동시에 불통되는 치명적 이슈가 발생했습니다. 별도 후속 발화나 우회 행동 없이 브랜드명과 함께 격앙된 감정을 표출한 것으로 보아 고객의 즉각적 분노 수위가 높고, 업체 답변도 부재한 상황이어서 불만이 증폭될 위험이 있습니다. 서비스개발·인프라팀은 해당 고객의 국사·광케이블 구간 장애 여부를 우선 확인하고, 고객지원팀은 미응대 상태를 즉시 해소해야 합니다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  },
+  {
+    "id": "voc-0212",
+    "source": "x",
+    "channel_detail": "X (트위터)",
+    "service": null,
+    "raw_text": "유플러스 티비/모바일tv로 트윈픽스 시청 가능\"\n작성자 후속: 없음\n---",
+    "collected_at": null,
+    "author_context": null,
+    "issues": [
+      {
+        "issue_summary": "유플러스 TV/모바일 TV에서 트윈픽스 시청 가능 여부 확인",
+        "feedback_type": "브랜드 체감",
+        "domain": "전략",
+        "attributes": [
+          "기능 보편성",
+          "맥락 적합성"
+        ],
+        "sentiment": "중립",
+        "sentiment_score": 0,
+        "severity": "일반",
+        "severity_multiplier": 1.0,
+        "score_reality": 80,
+        "expectation_level": "Standard",
+        "score_exp": 70,
+        "gap": 10,
+        "status": "Exceeding",
+        "diagnosis": "콘텐츠 가용 여부를 단순 사실로 서술한 중립 피드백으로, 감정 신호 없이 정보 공유 성격이 강함",
+        "action_hint": "트윈픽스 콘텐츠 라인업 노출 강화 검토"
+      }
+    ],
+    "overall_summary": "이번 VoC는 유플러스 TV 및 모바일 TV 플랫폼에서 특정 콘텐츠(트윈픽스) 시청 가능 여부를 단순 언급한 중립적 발화로, 불만이나 요청보다는 정보 공유에 가깝다. 콘텐츠 경쟁력에 관심 있는 고객이 플랫폼 내 콘텐츠 라인업을 탐색하는 맥락으로 해석되며, 이탈·기대 낙차 신호는 없다. 콘텐츠전략 담당은 해당 타이틀의 검색·노출 경로가 실제로 유효한지 확인하고, 니치 콘텐츠 큐레이션 접점을 강화하는 방향을 검토할 필요가 있다.",
+    "diagnosed_at": "2026-04-02T17:00:00+09:00"
+  }
+];

@@ -1,0 +1,6 @@
+build: /root/.nvm/versions/node/v22.22.2/bin/node /workspace/simply-uplus/node_modules/.bin/vite
+  build
+build_path: /workspace/simply-uplus/dist
+dev: /root/.nvm/versions/node/v22.22.2/bin/node /workspace/simply-uplus/node_modules/.bin/vite
+  --port 3002 --host
+install: cd /workspace/simply-uplus && /root/.nvm/versions/node/v22.22.2/bin/npm install
