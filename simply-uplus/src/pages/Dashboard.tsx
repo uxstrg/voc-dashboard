@@ -326,7 +326,7 @@ function DomainCard({
   const statusColor = getStatusColor(score)
   const domainColor = DOMAIN_COLORS[domain]
   const topAttrs = useMemo(() => getTopNegativeAttributes(issues, domain, 2), [issues, domain])
-  const aiTrigger = DOMAIN_AI_TRIGGERS_MAP[domain]
+  const aiTrigger = DOMAIN_AI_TRIGGERS[domain]
 
   const prevScore = useMemo(() => score + Math.round((Math.random() * 10 - 5)), [score])
   const diff = score - prevScore
