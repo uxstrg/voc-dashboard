@@ -8,7 +8,14 @@ import {
 
 const API_BASE = 'https://voc-api-production.up.railway.app'
 
-const PLATFORMS = ['AppStore', 'PlayStore', 'Threads', 'dcinside', 'ppomppu'] as const
+const PLATFORM_MAP: Record<string, string> = {
+  '앱스토어 iOS': 'AppStore',
+  '구글 플레이': 'PlayStore',
+  '스레드': 'Threads',
+  'DC인사이드': 'DC인사이드',
+  '뽐뿌': '뽐뿌',
+}
+const PLATFORM_LABELS = Object.keys(PLATFORM_MAP)
 const DOMAINS = ['전체', '전략', 'UX', '운영', '기술'] as const
 
 // platform → source 필드 정규화
@@ -117,18 +124,21 @@ export default function VocFeed() {
             >
               전체
             </button>
-            {PLATFORMS.map(s => (
-              <button
-                key={s}
-                onClick={() => setSourceFilter(s)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                  sourceFilter === s ? 'text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-                style={sourceFilter === s ? { backgroundColor: SOURCE_COLORS[s] } : {}}
-              >
-                {SOURCE_LABELS[s]}
-              </button>
-            ))}
+            {PLATFORM_LABELS.map(label => {
+              const value = PLATFORM_MAP[label]
+              return (
+                <button
+                  key={value}
+                  onClick={() => setSourceFilter(value)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                    sourceFilter === value ? 'text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  }`}
+                  style={sourceFilter === value ? { backgroundColor: SOURCE_COLORS[value] ?? '#9CA3AF' } : {}}
+                >
+                  {label}
+                </button>
+              )
+            })}
           </div>
         </div>
 

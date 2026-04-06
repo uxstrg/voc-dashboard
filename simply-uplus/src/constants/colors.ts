@@ -56,6 +56,8 @@ export const SOURCE_LABELS: Record<string, string> = {
   'AppStore': '앱스토어 iOS',
   'PlayStore': '구글 플레이',
   'Threads': '스레드',
+  'DC인사이드': 'DC인사이드',
+  '뽐뿌': '뽐뿌',
   'dcinside': 'DC인사이드',
   'ppomppu': '뽐뿌',
   // legacy keys (fallback)
@@ -70,6 +72,8 @@ export const SOURCE_COLORS: Record<string, string> = {
   'AppStore': '#3B82F6',
   'PlayStore': '#22C55E',
   'Threads': '#6366F1',
+  'DC인사이드': '#F97316',
+  '뽐뿌': '#EF4444',
   'dcinside': '#F97316',
   'ppomppu': '#EF4444',
   // legacy keys (fallback)
