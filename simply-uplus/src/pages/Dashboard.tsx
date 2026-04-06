@@ -11,32 +11,9 @@ import {
   getRadarData, generate4WeekTrend, getPriorityLevel,
 } from '../utils/analysisUtils'
 import { DOMAIN_COLORS, SOURCE_LABELS, SOURCE_COLORS, SENTIMENT_COLORS, SENTIMENT_BG } from '../constants/colors'
+import { DOMAINS, DOMAIN_ATTRIBUTES, DOMAIN_AI_TRIGGERS, type Domain } from '../constants/platforms'
 
 const API_BASE = 'https://voc-api-production.up.railway.app'
-
-const DOMAINS = ['전략', 'UX', '운영', '기술'] as const
-type Domain = typeof DOMAINS[number]
-
-const DOMAIN_ATTRIBUTES: Record<Domain, string[]> = {
-  '전략': ['가격 합리성', '혜택 체감성', '지불 유연성', '기능 보편성', '타겟 적합성', '맥락 적합성', '개인 맞춤화'],
-  'UX': ['효율성', '간결성', '오류방지성', '연동성', '사용자 제어', '학습용이성', '정보가독성', '일관성', '정보구조화', '예측가능성', '시각적 조화성', '디자인 완성도', '공감성', '유희성', '의외성'],
-  '운영': ['지원 신속성', '처리 정확성', '채널 접근성', '투명성'],
-  '기술': ['시스템 안정성', '보안성', '신속성'],
-}
-
-const DOMAIN_AI_TRIGGERS: Record<Domain, string> = {
-  '전략': '가격·혜택 불만 집중 구간',
-  'UX': '탐색 흐름 단절 반복',
-  '운영': 'CS 응답 지연 클레임',
-  '기술': '앱 안정성 이슈 누적',
-}
-
-const DOMAIN_AI_TRIGGERS_MAP: Record<Domain, string> = {
-  '전략': '가격·혜택 불만 집중 구간',
-  'UX': '탐색 흐름 단절 반복',
-  '운영': 'CS 응답 지연 클레임',
-  '기술': '앱 안정성 이슈 누적',
-}
 
 interface SummaryData {
   total_voc: number

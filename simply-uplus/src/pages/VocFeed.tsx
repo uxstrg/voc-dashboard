@@ -5,18 +5,11 @@ import {
   DOMAIN_COLORS, SOURCE_LABELS, SOURCE_COLORS,
   SENTIMENT_COLORS, SENTIMENT_BG, GAP_STATUS_COLORS,
 } from '../constants/colors'
+import { PLATFORM_MAP, PLATFORMS, DOMAINS } from '../constants/platforms'
 
 const API_BASE = 'https://voc-api-production.up.railway.app'
 
-const PLATFORM_MAP: Record<string, string> = {
-  '앱스토어 iOS': 'AppStore',
-  '구글 플레이': 'PlayStore',
-  '스레드': 'Threads',
-  'DC인사이드': 'DC인사이드',
-  '뽐뿌': '뽐뿌',
-}
-const PLATFORM_LABELS = Object.keys(PLATFORM_MAP)
-const DOMAINS = ['전체', '전략', 'UX', '운영', '기술'] as const
+const DOMAIN_FILTERS = ['전체', ...DOMAINS] as const
 
 // platform → source 필드 정규화
 function normalizeVoC(raw: Record<string, unknown>): DiagnosedVoC {
@@ -124,21 +117,18 @@ export default function VocFeed() {
             >
               전체
             </button>
-            {PLATFORM_LABELS.map(label => {
-              const value = PLATFORM_MAP[label]
-              return (
-                <button
-                  key={value}
-                  onClick={() => setSourceFilter(value)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                    sourceFilter === value ? 'text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                  }`}
-                  style={sourceFilter === value ? { backgroundColor: SOURCE_COLORS[value] ?? '#9CA3AF' } : {}}
-                >
-                  {label}
-                </button>
-              )
-            })}
+            {PLATFORMS.map(p => (
+              <button
+                key={p}
+                onClick={() => setSourceFilter(p)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                  sourceFilter === p ? 'text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+                style={sourceFilter === p ? { backgroundColor: SOURCE_COLORS[p] ?? '#9CA3AF' } : {}}
+              >
+                {PLATFORM_MAP[p] ?? p}
+              </button>
+            ))}
           </div>
         </div>
 
@@ -148,7 +138,7 @@ export default function VocFeed() {
         <div className="flex items-center gap-2">
           <span className="text-xs text-gray-500 font-medium shrink-0">도메인</span>
           <div className="flex gap-1.5">
-            {DOMAINS.map(d => (
+            {DOMAIN_FILTERS.map(d => (
               <button
                 key={d}
                 onClick={() => setDomainFilter(d)}
