@@ -1,11 +1,32 @@
+import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import { VOC_DATA } from '../data/vocData'
 
-const totalVoC = VOC_DATA.length
-const totalIssues = VOC_DATA.reduce((sum, v) => sum + v.issues.length, 0)
-const baseDate = '2026.04.02'
+const API_BASE = 'https://voc-api-production.up.railway.app'
+
+interface SummaryData {
+  total_voc: number
+  total_issues: number
+  last_diagnosed_at: string | null
+}
 
 export default function GNB() {
+  const [summary, setSummary] = useState<SummaryData | null>(null)
+
+  useEffect(() => {
+    fetch(`${API_BASE}/api/summary`)
+      .then(res => res.json())
+      .then(data => setSummary(data))
+      .catch(() => {})
+  }, [])
+
+  const totalVoC = summary?.total_voc ?? 0
+  const totalIssues = summary?.total_issues ?? 0
+  const baseDate = summary?.last_diagnosed_at
+    ? new Date(summary.last_diagnosed_at).toLocaleDateString('ko-KR', {
+        year: 'numeric', month: '2-digit', day: '2-digit',
+      }).replace(/\. /g, '.').replace(/\.$/, '')
+    : '-'
+
   return (
     <header
       className="sticky top-0 z-50 bg-white border-b border-gray-200"
