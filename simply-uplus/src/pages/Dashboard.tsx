@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   RadarChart, Radar, PolarGrid, PolarAngleAxis, ResponsiveContainer,
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceArea,
 } from 'recharts'
 import { DiagnosedVoC, DiagnosisIssue } from '../types'
 import {
@@ -105,18 +105,37 @@ export default function Dashboard() {
   }, [summary, allIssues])
 
   const trendData = useMemo(() => {
-    if (summary?.weekly_scores && summary.weekly_scores.length > 0) {
-      return summary.weekly_scores.map(w => ({
-        week: w.week as string,
-        전략: (w['전략'] as number) ?? 80,
-        UX: (w['UX'] as number) ?? 80,
-        운영: (w['운영'] as number) ?? 80,
-        기술: (w['기술'] as number) ?? 80,
-      }))
+    const labels = ['3주 전', '2주 전', '1주 전', '이번 주'] as const
+    // 최근 4주의 월요일 날짜 계산
+    const now = new Date()
+    const thisMonday = new Date(now)
+    thisMonday.setDate(now.getDate() - now.getDay() + 1)
+    const weekStarts = Array.from({ length: 4 }, (_, i) => {
+      const d = new Date(thisMonday)
+      d.setDate(d.getDate() - (3 - i) * 7)
+      return `${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`
+    })
+
+    const scoresMap = new Map<string, Record<string, number>>()
+    if (summary?.weekly_scores) {
+      for (const w of summary.weekly_scores) {
+        scoresMap.set(w.week as string, w as Record<string, number>)
+      }
     }
-    // 폴백: 현재 점수만 1개 포인트
-    return [{ week: '이번 주', 전략: domainScores['전략'] ?? 80, UX: domainScores['UX'] ?? 80, 운영: domainScores['운영'] ?? 80, 기술: domainScores['기술'] ?? 80 }]
-  }, [summary, domainScores])
+
+    return weekStarts.map((weekKey, i) => {
+      const data = scoresMap.get(weekKey)
+      const hasData = !!data
+      return {
+        week: labels[i],
+        전략: hasData ? (data['전략'] ?? null) : null,
+        UX: hasData ? (data['UX'] ?? null) : null,
+        운영: hasData ? (data['운영'] ?? null) : null,
+        기술: hasData ? (data['기술'] ?? null) : null,
+        _noData: !hasData,
+      }
+    })
+  }, [summary])
 
   const urgentIssues = useMemo(() =>
     [...allIssues]
@@ -722,9 +741,22 @@ function ChannelSentimentChart({ data }: { data: ReturnType<typeof calcChannelSe
 function DomainTrendChart({
   data, domainScores
 }: {
-  data: { week: string; 전략: number; UX: number; 운영: number; 기술: number }[]
+  data: { week: string; 전략: number | null; UX: number | null; 운영: number | null; 기술: number | null; _noData?: boolean }[]
   domainScores: Record<Domain, number>
 }) {
+  // 데이터 없는 구간 찾기
+  const noDataRanges: { x1: string; x2: string }[] = []
+  for (let i = 0; i < data.length; i++) {
+    if (data[i]._noData) {
+      const start = data[i].week
+      let end = start
+      while (i + 1 < data.length && data[i + 1]._noData) {
+        end = data[++i].week
+      }
+      noDataRanges.push({ x1: start, x2: end })
+    }
+  }
+
   return (
     <div className="bg-white rounded-xl border border-gray-200 p-5">
       <h3 className="text-sm font-semibold text-gray-700 mb-4">도메인 점수 추이 (최근 4주)</h3>
@@ -736,9 +768,19 @@ function DomainTrendChart({
             <YAxis domain={[40, 100]} tick={{ fontSize: 11, fill: '#9CA3AF' }} />
             <Tooltip
               contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #E5E7EB' }}
-              formatter={(value: number, name: string) => [`${value}점`, name]}
+              formatter={(value: number | null, name: string) => value != null ? [`${value}점`, name] : ['데이터 없음', name]}
             />
             <Legend formatter={(value) => <span style={{ fontSize: 12, color: '#6B7280' }}>{value}</span>} />
+            {noDataRanges.map((range, i) => (
+              <ReferenceArea
+                key={i}
+                x1={range.x1}
+                x2={range.x2}
+                fill="#F3F4F6"
+                fillOpacity={0.8}
+                label={{ value: '데이터 없음', fontSize: 10, fill: '#9CA3AF' }}
+              />
+            ))}
             {DOMAINS.map(d => (
               <Line
                 key={d}
@@ -748,6 +790,7 @@ function DomainTrendChart({
                 strokeWidth={2}
                 dot={{ r: 4, fill: DOMAIN_COLORS[d] }}
                 activeDot={{ r: 6 }}
+                connectNulls={false}
               />
             ))}
           </LineChart>
