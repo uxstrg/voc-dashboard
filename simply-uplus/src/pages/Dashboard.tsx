@@ -24,6 +24,7 @@ interface SummaryData {
   positive_rate: number
   last_diagnosed_at: string | null
   earliest_collected_at: string | null
+  weekly_scores: { week: string; [domain: string]: string | number }[]
 }
 
 type VoCWithPlatform = DiagnosedVoC & { platform?: string; channel_detail?: string }
@@ -104,20 +105,18 @@ export default function Dashboard() {
   }, [summary, allIssues])
 
   const trendData = useMemo(() => {
-    const trends: Record<Domain, number[]> = {
-      '전략': generate4WeekTrend(domainScores['전략'] ?? 0),
-      'UX': generate4WeekTrend(domainScores['UX'] ?? 0),
-      '운영': generate4WeekTrend(domainScores['운영'] ?? 0),
-      '기술': generate4WeekTrend(domainScores['기술'] ?? 0),
+    if (summary?.weekly_scores && summary.weekly_scores.length > 0) {
+      return summary.weekly_scores.map(w => ({
+        week: w.week as string,
+        전략: (w['전략'] as number) ?? 80,
+        UX: (w['UX'] as number) ?? 80,
+        운영: (w['운영'] as number) ?? 80,
+        기술: (w['기술'] as number) ?? 80,
+      }))
     }
-    return ['3주 전', '2주 전', '1주 전', '이번 주'].map((week, i) => ({
-      week,
-      전략: trends['전략'][i],
-      UX: trends['UX'][i],
-      운영: trends['운영'][i],
-      기술: trends['기술'][i],
-    }))
-  }, [domainScores])
+    // 폴백: 현재 점수만 1개 포인트
+    return [{ week: '이번 주', 전략: domainScores['전략'] ?? 80, UX: domainScores['UX'] ?? 80, 운영: domainScores['운영'] ?? 80, 기술: domainScores['기술'] ?? 80 }]
+  }, [summary, domainScores])
 
   const urgentIssues = useMemo(() =>
     [...allIssues]
@@ -341,7 +340,7 @@ function DomainCard({
   const topAttrs = useMemo(() => getTopNegativeAttributes(issues, domain, 2), [issues, domain])
   const aiTrigger = DOMAIN_AI_TRIGGERS[domain]
 
-  const prevScore = useMemo(() => score + Math.round((Math.random() * 10 - 5)), [score])
+  const prevScore = score // 주간 추이는 트렌드 차트에서 확인
   const diff = score - prevScore
 
   return (
