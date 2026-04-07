@@ -127,7 +127,7 @@ export function getTopNegativeAttributes(issues: DiagnosisIssue[], domain: strin
     }
   }
   return Object.entries(attrCount)
-    .filter(([, v]) => v.neg > 0)
+    .filter(([attr, v]) => v.neg > 0 && attr.length >= 3)
     .sort((a, b) => (b[1].neg / b[1].total) - (a[1].neg / a[1].total))
     .slice(0, topN)
     .map(([attr]) => attr);
