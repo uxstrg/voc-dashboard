@@ -22,6 +22,8 @@ interface SummaryData {
   domain_scores: Record<string, number>
   status_counts: Record<string, number>
   positive_rate: number
+  last_diagnosed_at: string | null
+  earliest_collected_at: string | null
 }
 
 type VoCWithPlatform = DiagnosedVoC & { platform?: string; channel_detail?: string }
@@ -178,6 +180,7 @@ export default function Dashboard() {
         totalVoC={summary?.total_voc ?? vocData.length}
         totalIssues={summary?.total_issues ?? allIssues.length}
         lastDiagnosedAt={summary?.last_diagnosed_at ?? null}
+        earliestCollectedAt={summary?.earliest_collected_at ?? null}
         urgentIssues={urgentIssues}
         onUrgentClick={(domain) => {
           setOpenDomain(domain as Domain)
@@ -228,23 +231,24 @@ export default function Dashboard() {
 
 // ─── [A] 진단 헤더 ───────────────────────────────────────────────────────────
 function DiagnosisHeader({
-  overallScore, positiveRate, totalVoC, totalIssues, lastDiagnosedAt, urgentIssues, onUrgentClick
+  overallScore, positiveRate, totalVoC, totalIssues, lastDiagnosedAt, earliestCollectedAt, urgentIssues, onUrgentClick
 }: {
   overallScore: number
   positiveRate: number
   totalVoC: number
   totalIssues: number
   lastDiagnosedAt: string | null
+  earliestCollectedAt: string | null
   urgentIssues: DiagnosisIssue[]
   onUrgentClick: (domain: string) => void
 }) {
   const statusLabel = getStatusLabel(overallScore)
   const statusColor = getStatusColor(overallScore)
 
-  // 분석 기간: 최근 7일 (last_diagnosed_at 기준)
+  // 분석 기간: 가장 오래된 수집일 ~ 가장 최근 진단일
   const endDate = lastDiagnosedAt ? new Date(lastDiagnosedAt) : new Date()
-  const startDate = new Date(endDate)
-  startDate.setDate(startDate.getDate() - 7)
+  const startDate = earliestCollectedAt ? new Date(earliestCollectedAt) : new Date(endDate)
+  const diffDays = Math.max(1, Math.round((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)))
   const fmt = (d: Date) => `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`
   const periodText = `${fmt(startDate)} – ${fmt(endDate).slice(5)}`
 
@@ -252,7 +256,7 @@ function DiagnosisHeader({
     <section className="rounded-xl border border-gray-200 overflow-hidden bg-white">
       {/* 상단 메타 행 */}
       <div className="bg-[#F9FAFB] border-b border-gray-200 px-6 py-3 flex items-center gap-6 text-sm text-gray-600">
-        <span><span className="text-gray-400">분석 기간</span> <strong className="text-gray-800">{periodText}</strong> · 7일</span>
+        <span><span className="text-gray-400">분석 기간</span> <strong className="text-gray-800">{periodText}</strong> · {diffDays}일</span>
         <span className="text-gray-300">|</span>
         <span><span className="text-gray-400">수집 VoC</span> <strong className="text-gray-800">{totalVoC}건</strong></span>
         <span className="text-gray-300">|</span>
