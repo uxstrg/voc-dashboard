@@ -787,7 +787,7 @@ function DomainTrendChart({
               }}
               height={45}
             />
-            <YAxis domain={[40, 100]} tick={{ fontSize: 11, fill: '#9CA3AF' }} />
+            <YAxis domain={[0, 100]} tick={{ fontSize: 11, fill: '#9CA3AF' }} />
             <Tooltip
               contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #E5E7EB' }}
               formatter={(value: number | null, name: string) => value != null ? [`${value}점`, name] : ['데이터 없음', name]}
@@ -800,7 +800,7 @@ function DomainTrendChart({
                 x2={range.x2}
                 fill="#F3F4F6"
                 fillOpacity={0.8}
-                label={{ value: '데이터 없음', fontSize: 10, fill: '#9CA3AF' }}
+                label={undefined}
               />
             ))}
             {DOMAINS.map(d => (
