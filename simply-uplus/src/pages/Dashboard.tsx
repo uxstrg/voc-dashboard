@@ -105,16 +105,24 @@ export default function Dashboard() {
   }, [summary, allIssues])
 
   const trendData = useMemo(() => {
-    const labels = ['3주 전', '2주 전', '1주 전', '이번 주'] as const
-    // 최근 4주의 월요일 날짜 계산
+    const labels = ['2주 전', '1주 전', '이번 주', '다음 주'] as const
     const now = new Date()
     const thisMonday = new Date(now)
     thisMonday.setDate(now.getDate() - now.getDay() + 1)
-    const weekStarts = Array.from({ length: 4 }, (_, i) => {
+    const pad = (n: number) => String(n).padStart(2, '0')
+    const fmtRange = (mon: Date) => {
+      const sun = new Date(mon)
+      sun.setDate(mon.getDate() + 6)
+      return `${pad(mon.getMonth() + 1)}.${pad(mon.getDate())}~${pad(sun.getMonth() + 1)}.${pad(sun.getDate())}`
+    }
+
+    // 2주 전, 1주 전, 이번 주, 다음 주의 월요일
+    const weekMondays = Array.from({ length: 4 }, (_, i) => {
       const d = new Date(thisMonday)
-      d.setDate(d.getDate() - (3 - i) * 7)
-      return `${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`
+      d.setDate(d.getDate() + (i - 2) * 7)
+      return d
     })
+    const weekKeys = weekMondays.map(d => `${pad(d.getMonth() + 1)}.${pad(d.getDate())}`)
 
     const scoresMap = new Map<string, Record<string, number>>()
     if (summary?.weekly_scores) {
@@ -123,11 +131,13 @@ export default function Dashboard() {
       }
     }
 
-    return weekStarts.map((weekKey, i) => {
-      const data = scoresMap.get(weekKey)
-      const hasData = !!data
+    return weekMondays.map((mon, i) => {
+      const key = weekKeys[i]
+      const data = scoresMap.get(key)
+      const isNext = i === 3
+      const hasData = !!data && !isNext
       return {
-        week: labels[i],
+        week: `${labels[i]}\n${fmtRange(mon)}`,
         전략: hasData ? (data['전략'] ?? null) : null,
         UX: hasData ? (data['UX'] ?? null) : null,
         운영: hasData ? (data['운영'] ?? null) : null,
@@ -764,7 +774,19 @@ function DomainTrendChart({
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#F3F4F6" />
-            <XAxis dataKey="week" tick={{ fontSize: 11, fill: '#9CA3AF' }} />
+            <XAxis
+              dataKey="week"
+              tick={({ x, y, payload }: { x: number; y: number; payload: { value: string } }) => {
+                const [label, range] = (payload.value || '').split('\n')
+                return (
+                  <g transform={`translate(${x},${y})`}>
+                    <text x={0} y={0} dy={12} textAnchor="middle" fontSize={11} fill="#6B7280" fontWeight={500}>{label}</text>
+                    <text x={0} y={0} dy={26} textAnchor="middle" fontSize={9} fill="#9CA3AF">{range}</text>
+                  </g>
+                )
+              }}
+              height={45}
+            />
             <YAxis domain={[40, 100]} tick={{ fontSize: 11, fill: '#9CA3AF' }} />
             <Tooltip
               contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #E5E7EB' }}
