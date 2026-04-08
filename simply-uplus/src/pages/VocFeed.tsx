@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react'
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 import { DiagnosedVoC, DiagnosisIssue } from '../types'
 import { getGapDisplayLabel, getGapStatusColor } from '../utils/analysisUtils'
 import minerLoaderGif from '../assets/image-1.gif'
