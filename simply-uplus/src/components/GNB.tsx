@@ -31,15 +31,15 @@ export default function GNB() {
 
   return (
     <header
-      className="sticky top-0 z-50 bg-white border-b border-gray-200"
+      className="sticky top-0 z-50 bg-surface border-b border-surface-border"
       style={{ minWidth: 1280 }}
     >
       <div className="max-w-[1600px] mx-auto px-6 h-14 flex items-center justify-between gap-6">
         {/* 좌: 로고 */}
         <div className="flex items-center gap-2 shrink-0">
           <div className="flex flex-col leading-tight">
-            <span className="text-base font-bold text-gray-900 tracking-tight">언더그라운드</span>
-            <span className="text-[10px] text-gray-400 leading-none">수면 아래 진짜 보이스 탐지기</span>
+            <span className="text-base font-bold text-txt-primary tracking-tight">언더그라운드</span>
+            <span className="text-[10px] text-txt-muted leading-none">수면 아래 전략 보이스 탐지기</span>
           </div>
         </div>
 
@@ -49,10 +49,10 @@ export default function GNB() {
             to="/"
             end
             className={({ isActive }) =>
-              `px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              `px-4 py-2 text-sm font-medium transition-colors border-b-2 ${
                 isActive
-                  ? 'bg-gray-100 text-gray-900'
-                  : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
+                  ? 'text-accent-green border-accent-green'
+                  : 'text-txt-muted border-transparent hover:text-txt-primary'
               }`
             }
           >
@@ -61,10 +61,10 @@ export default function GNB() {
           <NavLink
             to="/voc-feed"
             className={({ isActive }) =>
-              `px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              `px-4 py-2 text-sm font-medium transition-colors border-b-2 ${
                 isActive
-                  ? 'bg-gray-100 text-gray-900'
-                  : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
+                  ? 'text-accent-green border-accent-green'
+                  : 'text-txt-muted border-transparent hover:text-txt-primary'
               }`
             }
           >
@@ -73,10 +73,10 @@ export default function GNB() {
           <NavLink
             to="/guide"
             className={({ isActive }) =>
-              `px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              `px-4 py-2 text-sm font-medium transition-colors border-b-2 ${
                 isActive
-                  ? 'bg-gray-100 text-gray-900'
-                  : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
+                  ? 'text-accent-green border-accent-green'
+                  : 'text-txt-muted border-transparent hover:text-txt-primary'
               }`
             }
           >
@@ -85,20 +85,21 @@ export default function GNB() {
         </nav>
 
         {/* 우: 전체 지표 */}
-        <div className="flex items-center gap-4 shrink-0 text-sm text-gray-500">
+        <div className="flex items-center gap-4 shrink-0 text-sm text-txt-muted">
           <div className="flex items-center gap-1">
-            <span className="text-gray-400">VoC</span>
-            <span className="font-semibold text-gray-800">{totalVoC.toLocaleString()}건</span>
+            <span className="text-accent-green">●</span>
+            <span>VoC</span>
+            <span className="font-mono font-semibold text-txt-primary">{totalVoC.toLocaleString()}건</span>
           </div>
-          <div className="w-px h-4 bg-gray-200" />
+          <div className="w-px h-4 bg-surface-border" />
           <div className="flex items-center gap-1">
-            <span className="text-gray-400">이슈</span>
-            <span className="font-semibold text-gray-800">{totalIssues.toLocaleString()}건</span>
+            <span>이슈</span>
+            <span className="font-mono font-semibold text-txt-primary">{totalIssues.toLocaleString()}건</span>
           </div>
-          <div className="w-px h-4 bg-gray-200" />
+          <div className="w-px h-4 bg-surface-border" />
           <div className="flex items-center gap-1">
-            <span className="text-gray-400">기준</span>
-            <span className="font-semibold text-gray-800">{baseDate}</span>
+            <span>기준</span>
+            <span className="font-mono font-semibold text-txt-primary">{baseDate}</span>
           </div>
         </div>
       </div>

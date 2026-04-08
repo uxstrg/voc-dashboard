@@ -1,54 +1,45 @@
-// 도메인 컬러
+// 도메인 컬러 (1.5항)
 export const DOMAIN_COLORS: Record<string, string> = {
-  '전략': '#3B82F6',
-  'UX': '#F97316',
-  '운영': '#22C55E',
-  '기술': '#6366F1',
+  '전략': '#18D0FE',
+  'UX': '#BE49FF',
+  '운영': '#E7B80C',
+  '기술': '#4F45E4',
 };
 
-// 상태 컬러
+// 상태 컬러 — Signal 컬러 (1.6항)
 export const STATUS_COLORS: Record<string, string> = {
+  '탁월': '#0D77EE',
+  '보통': '#5EE86A',
+  '주의': '#F97316',
   '위험': '#EF4444',
-  '주의': '#F59E0B',
-  '보통': '#3B82F6',
-  '양호': '#22C55E',
 };
 
-// Gap 상태 컬러
+// Gap 상태 컬러 (1.8항)
 export const GAP_STATUS_COLORS: Record<string, string> = {
-  'Exceeding': '#22C55E',
-  'Alignment': '#EAB308',
+  '기대 초과': '#0D77EE',
+  '기대 충족': '#5EE86A',
+  '기대 이하': '#EF4444',
+  // API 값 호환
+  'Exceeding': '#0D77EE',
+  'Alignment': '#5EE86A',
   'Gap': '#EF4444',
 };
 
-// 우선순위 배경색
-export const PRIORITY_BG: Record<string, string> = {
-  'High': '#FEE2E2',
-  'Mid': '#FEF3C7',
-  'Low': '#F3F4F6',
-};
-
-export const PRIORITY_TEXT: Record<string, string> = {
-  'High': '#DC2626',
-  'Mid': '#D97706',
-  'Low': '#6B7280',
-};
-
-// 감성 컬러
+// 감성 컬러 — 3단계 (1.7항, 2.3항)
 export const SENTIMENT_COLORS: Record<string, string> = {
-  '매우 긍정': '#16A34A',
-  '긍정': '#22C55E',
-  '중립': '#6B7280',
+  '매우 긍정': '#5EE86A',
+  '긍정': '#5EE86A',
+  '중립': '#8A9980',
   '부정': '#EF4444',
-  '매우 부정': '#B91C1C',
+  '매우 부정': '#EF4444',
 };
 
 export const SENTIMENT_BG: Record<string, string> = {
-  '매우 긍정': '#DCFCE7',
-  '긍정': '#F0FDF4',
-  '중립': '#F3F4F6',
-  '부정': '#FEE2E2',
-  '매우 부정': '#FEE2E2',
+  '매우 긍정': 'rgba(94,232,106,0.15)',
+  '긍정': 'rgba(94,232,106,0.15)',
+  '중립': 'rgba(74,85,64,0.3)',
+  '부정': 'rgba(239,68,68,0.15)',
+  '매우 부정': 'rgba(239,68,68,0.15)',
 };
 
 // 출처 레이블
@@ -58,28 +49,12 @@ export const SOURCE_LABELS: Record<string, string> = {
   'Threads': '스레드',
   'DC인사이드': 'DC인사이드',
   '뽐뿌': '뽐뿌',
-  'dcinside': 'DC인사이드',
-  'ppomppu': '뽐뿌',
-  // legacy keys (fallback)
-  'app_store_ios': 'iOS',
-  'app_store_aos': 'AOS',
-  'x': 'X',
-  'community': '커뮤니티',
-  'manual': '수동입력',
 };
 
 export const SOURCE_COLORS: Record<string, string> = {
-  'AppStore': '#3B82F6',
-  'PlayStore': '#22C55E',
-  'Threads': '#6366F1',
-  'DC인사이드': '#F97316',
-  '뽐뿌': '#EF4444',
-  'dcinside': '#F97316',
-  'ppomppu': '#EF4444',
-  // legacy keys (fallback)
-  'app_store_ios': '#3B82F6',
-  'app_store_aos': '#22C55E',
-  'x': '#111827',
-  'community': '#F97316',
-  'manual': '#9CA3AF',
+  'AppStore': '#8A9980',
+  'PlayStore': '#8A9980',
+  'Threads': '#8A9980',
+  'DC인사이드': '#8A9980',
+  '뽐뿌': '#8A9980',
 };
