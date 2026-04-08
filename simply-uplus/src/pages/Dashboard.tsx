@@ -25,6 +25,14 @@ interface SummaryData {
   last_diagnosed_at: string | null
   earliest_collected_at: string | null
   weekly_scores: { week: string; [domain: string]: string | number }[]
+  domain_detail: Record<string, {
+    score: number | null
+    prev_score: number | null
+    diff: number | null
+    pos: number
+    neg: number
+    pos_rate: number
+  }>
 }
 
 type VoCWithPlatform = DiagnosedVoC & { platform?: string; channel_detail?: string }
@@ -227,6 +235,7 @@ export default function Dashboard() {
             domain={domain}
             score={domainScores[domain] ?? 0}
             counts={domainCounts[domain]}
+            detail={summary?.domain_detail?.[domain] ?? null}
             issues={allIssues}
             isOpen={openDomain === domain}
             onToggle={() => handleDomainToggle(domain)}
@@ -354,11 +363,12 @@ function DiagnosisHeader({
 
 // ─── [B] 도메인 카드 ─────────────────────────────────────────────────────────
 function DomainCard({
-  domain, score, counts, issues, isOpen, onToggle
+  domain, score, counts, detail, issues, isOpen, onToggle
 }: {
   domain: Domain
   score: number
   counts: { pos: number; neg: number; total: number }
+  detail: { score: number | null; prev_score: number | null; diff: number | null; pos: number; neg: number; pos_rate: number } | null
   issues: DiagnosisIssue[]
   isOpen: boolean
   onToggle: () => void
@@ -369,8 +379,7 @@ function DomainCard({
   const topAttrs = useMemo(() => getTopNegativeAttributes(issues, domain, 2), [issues, domain])
   const aiTrigger = DOMAIN_AI_TRIGGERS[domain]
 
-  const prevScore = score // 주간 추이는 트렌드 차트에서 확인
-  const diff = score - prevScore
+  const diff = detail?.diff ?? null
 
   return (
     <div
@@ -396,12 +405,12 @@ function DomainCard({
         <div className="flex items-end gap-2">
           <span className="text-[28px] font-bold text-gray-900 leading-none">{score}</span>
           <span className="text-sm text-gray-400 mb-0.5">점</span>
-          {diff !== 0 && (
+          {diff != null && diff !== 0 && (
             <span
               className="text-xs font-semibold mb-0.5"
               style={{ color: diff > 0 ? '#22C55E' : '#EF4444' }}
             >
-              {diff > 0 ? '▲' : '▼'}{Math.abs(diff)}pt
+              전주 대비 {diff > 0 ? '▲' : '▼'}{Math.abs(diff)}pt
             </span>
           )}
         </div>
@@ -435,8 +444,9 @@ function DomainCard({
         {/* 하단 카운트 + 탐색 버튼 */}
         <div className="flex items-center justify-between pt-1 border-t border-gray-100">
           <div className="flex items-center gap-2 text-xs">
-            <span className="text-green-600 font-medium">↑{counts.pos}</span>
-            <span className="text-red-500 font-medium">↓{counts.neg}</span>
+            <span className="text-green-600 font-medium">긍정 {detail?.pos ?? counts.pos}건</span>
+            <span className="text-red-500 font-medium">부정 {detail?.neg ?? counts.neg}건</span>
+            <span className="text-gray-400">(긍정 {detail?.pos_rate ?? (counts.pos + counts.neg > 0 ? Math.round(counts.pos / (counts.pos + counts.neg) * 100) : 0)}%)</span>
           </div>
           <button
             onClick={onToggle}
