@@ -1,6 +1,8 @@
 import { useState, useMemo, useEffect } from 'react'
+import { motion } from 'motion/react'
 import { DiagnosedVoC, DiagnosisIssue } from '../types'
 import { getGapDisplayLabel, getGapStatusColor } from '../utils/analysisUtils'
+import minerLoaderGif from '../assets/image-1.gif'
 import {
   DOMAIN_COLORS, SOURCE_LABELS, SOURCE_COLORS,
   SENTIMENT_COLORS, SENTIMENT_BG,
@@ -67,12 +69,40 @@ export default function VocFeed() {
 
   if (loading) {
     return (
-      <main className="max-w-[1600px] mx-auto px-6 py-6 flex items-center justify-center" style={{ minHeight: 400 }}>
-        <div className="flex flex-col items-center gap-3 text-txt-muted">
-          <div className="w-8 h-8 border-2 border-surface-border border-t-accent-green rounded-full animate-spin" />
-          <span className="text-sm">VoC 데이터를 불러오는 중...</span>
-        </div>
-      </main>
+      <div className="size-full flex flex-col items-center justify-center min-h-[400px] bg-[#221c1c]">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.64 }}
+          animate={{ opacity: 1, scale: 0.8 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="flex flex-col items-center gap-0"
+        >
+          <div className="relative">
+            <svg width="312" height="312" viewBox="0 0 312 312" fill="none"
+              className="absolute inset-0 z-0">
+              <path d="M 12 36 Q 132 24 252 36 Q 264 108 252 180 Q 132 192 12 180 Q 0 108 12 36 Z"
+                stroke="rgba(94, 232, 106, 0.3)" strokeWidth="2" fill="#000000"/>
+            </svg>
+            <div className="relative z-10 flex items-center justify-center"
+              style={{ width: 264, height: 216 }}>
+              <img src={minerLoaderGif} alt="Loading"
+                className="w-[160px] h-[120px] object-contain ml-[18px]"
+                style={{ imageRendering: "pixelated" }}/>
+            </div>
+          </div>
+          <motion.div className="flex items-center gap-2 -mt-[6px]"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}>
+            <span className="text-[#5EE86A] text-[18px] font-mono tracking-wider">
+              진짜 보이스 채굴 중
+            </span>
+            <motion.span className="text-[#5EE86A] text-[18px] font-mono"
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}>
+              ...
+            </motion.span>
+          </motion.div>
+        </motion.div>
+      </div>
     )
   }
 
