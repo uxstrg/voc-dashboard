@@ -69,7 +69,7 @@ export default function VocFeed() {
 
   if (loading) {
     return (
-      <div className="size-full flex flex-col items-center justify-center min-h-[400px] bg-[#221c1c]">
+      <div className="size-full flex flex-col items-center justify-center min-h-[400px]">
         <motion.div
           initial={{ opacity: 0, scale: 0.64 }}
           animate={{ opacity: 1, scale: 0.8 }}
