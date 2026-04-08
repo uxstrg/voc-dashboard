@@ -1,6 +1,6 @@
 import { DiagnosisIssue } from '../types';
 import { STATUS_COLORS, GAP_STATUS_COLORS } from '../constants/colors';
-import { PLATFORMS } from '../constants/platforms';
+import { PLATFORMS, DOMAIN_ATTRIBUTES } from '../constants/platforms';
 
 // 10항: 도메인 점수 집계
 export function calcDomainScore(issues: DiagnosisIssue[], domain: string): number {
@@ -98,9 +98,11 @@ export function calcChannelSentiment(vocData: { source: string; platform?: strin
 // 도메인별 핵심 속성 (부정 비율 높은 속성 1~2개)
 export function getTopNegativeAttributes(issues: DiagnosisIssue[], domain: string, topN = 2): string[] {
   const domainIssues = issues.filter(i => i.domain === domain);
+  const allowedAttrs = DOMAIN_ATTRIBUTES[domain as keyof typeof DOMAIN_ATTRIBUTES] ?? [];
   const attrCount: Record<string, { neg: number; total: number }> = {};
   for (const issue of domainIssues) {
     for (const attr of issue.attributes) {
+      if (allowedAttrs.length > 0 && !allowedAttrs.includes(attr)) continue;
       if (!attrCount[attr]) attrCount[attr] = { neg: 0, total: 0 };
       attrCount[attr].total++;
       if (issue.sentiment === '부정' || issue.sentiment === '매우 부정') {
