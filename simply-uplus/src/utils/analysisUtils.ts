@@ -1,5 +1,6 @@
 import { DiagnosisIssue } from '../types';
 import { STATUS_COLORS, GAP_STATUS_COLORS } from '../constants/colors';
+import { PLATFORMS } from '../constants/platforms';
 
 // 10항: 도메인 점수 집계
 export function calcDomainScore(issues: DiagnosisIssue[], domain: string): number {
@@ -75,8 +76,7 @@ export function calcPositiveRate(issues: DiagnosisIssue[]): number {
 
 // 채널별 감성 분포
 export function calcChannelSentiment(vocData: { source: string; platform?: string; issues: DiagnosisIssue[] }[]) {
-  const { PLATFORMS } = require('../constants/platforms');
-  return PLATFORMS.map((platform: string) => {
+  return PLATFORMS.map((platform) => {
     const items = vocData.filter(v => ((v as any).platform ?? v.source) === platform);
     const allIssues = items.flatMap(v => v.issues);
     const total = allIssues.length;
