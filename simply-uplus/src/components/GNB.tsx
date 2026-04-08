@@ -22,9 +22,11 @@ export default function GNB() {
   const totalVoC = summary?.total_voc ?? 0
   const totalIssues = summary?.total_issues ?? 0
   const baseDate = summary?.last_diagnosed_at
-    ? new Date(summary.last_diagnosed_at).toLocaleDateString('ko-KR', {
-        year: 'numeric', month: '2-digit', day: '2-digit',
-      }).replace(/\. /g, '.').replace(/\.$/, '')
+    ? (() => {
+        const d = new Date(summary.last_diagnosed_at)
+        const pad = (n: number) => String(n).padStart(2, '0')
+        return `${d.getFullYear()}.${pad(d.getMonth() + 1)}.${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`
+      })()
     : '-'
 
   return (
