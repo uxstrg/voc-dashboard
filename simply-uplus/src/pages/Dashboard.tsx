@@ -505,10 +505,18 @@ function DomainDetailPanel({
 
   const renderCustomLabel = ({ x, y, payload }: { x: number; y: number; payload: { value: string } }) => {
     const text = payload.value
-    const short = text.length > 5 ? text.slice(0, 5) + '…' : text
+    const words = text.split(' ')
+    if (words.length > 1) {
+      return (
+        <text x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize={9} fill="#6B7280">
+          <tspan x={x} dy="-0.4em">{words[0]}</tspan>
+          <tspan x={x} dy="1.1em">{words.slice(1).join(' ')}</tspan>
+        </text>
+      )
+    }
     return (
-      <text x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize={10} fill="#6B7280">
-        {short}
+      <text x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize={9} fill="#6B7280">
+        {text}
       </text>
     )
   }
