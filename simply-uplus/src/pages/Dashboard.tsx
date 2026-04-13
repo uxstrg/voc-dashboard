@@ -13,7 +13,7 @@ import {
   getRadarData, generate4WeekTrend, getGapDisplayLabel, getGapStatusColor,
 } from '../utils/analysisUtils'
 import { DOMAIN_COLORS, SOURCE_LABELS, SOURCE_COLORS, SENTIMENT_COLORS, SENTIMENT_BG } from '../constants/colors'
-import { DOMAINS, DOMAIN_ATTRIBUTES, DOMAIN_AI_TRIGGERS, type Domain } from '../constants/platforms'
+import { DOMAINS, DOMAIN_ATTRIBUTES, type Domain } from '../constants/platforms'
 
 const API_BASE = 'https://voc-api-production.up.railway.app'
 
@@ -27,6 +27,7 @@ interface SummaryData {
   last_diagnosed_at: string | null
   earliest_collected_at: string | null
   weekly_scores: { week: string; [domain: string]: string | number }[]
+  domain_insights: Record<string, { insight: string; top_attributes: string[] }>
   domain_detail: Record<string, {
     score: number | null
     prev_score: number | null
@@ -266,6 +267,7 @@ export default function Dashboard() {
             score={domainScores[domain] ?? 0}
             counts={domainCounts[domain]}
             detail={summary?.domain_detail?.[domain] ?? null}
+            insight={summary?.domain_insights?.[domain]?.insight ?? ''}
             issues={allIssues}
             isOpen={openDomain === domain}
             onToggle={() => handleDomainToggle(domain)}
@@ -280,7 +282,7 @@ export default function Dashboard() {
           issues={allIssues}
           vocData={vocData}
           attributes={DOMAIN_ATTRIBUTES[openDomain]}
-          aiTrigger={DOMAIN_AI_TRIGGERS[openDomain]}
+          aiTrigger={summary?.domain_insights?.[openDomain]?.insight ?? ''}
           expandedIssueIdx={expandedIssueIdx}
           onExpandIssue={setExpandedIssueIdx}
           onNavigateToFeed={() => navigate('/voc-feed')}
@@ -393,12 +395,13 @@ function DiagnosisHeader({
 
 // ─── [B] 도메인 카드 ─────────────────────────────────────────────────────────
 function DomainCard({
-  domain, score, counts, detail, issues, isOpen, onToggle
+  domain, score, counts, detail, insight, issues, isOpen, onToggle
 }: {
   domain: Domain
   score: number
   counts: { pos: number; neg: number; total: number }
   detail: { score: number | null; prev_score: number | null; diff: number | null; pos: number; neg: number; pos_rate: number } | null
+  insight: string
   issues: DiagnosisIssue[]
   isOpen: boolean
   onToggle: () => void
@@ -407,7 +410,7 @@ function DomainCard({
   const statusColor = getStatusColor(score)
   const domainColor = DOMAIN_COLORS[domain]
   const topAttrs = useMemo(() => getTopNegativeAttributes(issues, domain, 2), [issues, domain])
-  const aiTrigger = DOMAIN_AI_TRIGGERS[domain]
+  const aiTrigger = insight
 
   const diff = detail?.diff ?? null
 
