@@ -31,6 +31,7 @@ export default function VocFeed() {
   const [sourceFilter, setSourceFilter] = useState<string>('all')
   const [domainFilter, setDomainFilter] = useState<string>('전체')
   const [searchQuery, setSearchQuery] = useState('')
+  const [sortBy, setSortBy] = useState<'default' | 'latest'>('default')
   const [selectedVoC, setSelectedVoC] = useState<DiagnosedVoC | null>(null)
 
   useEffect(() => {
@@ -52,7 +53,7 @@ export default function VocFeed() {
   }, [])
 
   const filtered = useMemo(() => {
-    return vocData.filter(v => {
+    const list = vocData.filter(v => {
       const platform = (v as DiagnosedVoC & { platform?: string }).platform ?? v.source
       if (sourceFilter !== 'all' && platform !== sourceFilter) return false
       if (domainFilter !== '전체') {
@@ -65,7 +66,15 @@ export default function VocFeed() {
       }
       return true
     })
-  }, [vocData, sourceFilter, domainFilter, searchQuery])
+    if (sortBy === 'latest') {
+      list.sort((a, b) => {
+        const da = (a as any).post_date || (a as any).diagnosed_at || ''
+        const db = (b as any).post_date || (b as any).diagnosed_at || ''
+        return db.localeCompare(da)
+      })
+    }
+    return list
+  }, [vocData, sourceFilter, domainFilter, searchQuery, sortBy])
 
   if (loading) {
     return (
@@ -194,6 +203,25 @@ export default function VocFeed() {
             onChange={e => setSearchQuery(e.target.value)}
             className="w-full px-3 py-1.5 text-sm border border-surface-border rounded-lg focus:outline-none focus:border-accent-green/50 bg-surface text-txt-primary placeholder:text-txt-muted"
           />
+        </div>
+
+        <div className="w-px h-6 bg-surface-border" />
+
+        {/* 정렬 */}
+        <div className="flex items-center gap-1.5 shrink-0">
+          {([['default', '진단순'], ['latest', '최신순']] as const).map(([key, label]) => (
+            <button
+              key={key}
+              onClick={() => setSortBy(key)}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                sortBy === key
+                  ? 'bg-surface-card text-accent-green border border-accent-green/30'
+                  : 'bg-surface-border text-txt-muted'
+              }`}
+            >
+              {label}
+            </button>
+          ))}
         </div>
 
         <span className="text-xs text-txt-muted shrink-0 font-mono">{filtered.length}건</span>
