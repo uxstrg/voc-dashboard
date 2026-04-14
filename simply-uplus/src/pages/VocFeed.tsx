@@ -163,18 +163,11 @@ export default function VocFeed() {
       return true
     })
 
+    const getDate = (v: any) => v.post_date || v.diagnosed_at || v.collected_at || ''
     if (sortBy === 'latest') {
-      list.sort((a, b) => {
-        const da = (a as any).post_date || ''
-        const db = (b as any).post_date || ''
-        return db.localeCompare(da)
-      })
+      list.sort((a, b) => getDate(b).localeCompare(getDate(a)))
     } else {
-      list.sort((a, b) => {
-        const da = (a as any).post_date || ''
-        const db = (b as any).post_date || ''
-        return da.localeCompare(db)
-      })
+      list.sort((a, b) => getDate(a).localeCompare(getDate(b)))
     }
     return list
   }, [vocData, sourcesChecked, sentimentChecked, searchQuery, domainFilter, sortBy])
