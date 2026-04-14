@@ -102,7 +102,7 @@ export default function VocFeed() {
             initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}>
             <span className="text-[#5EE86A] text-[18px] font-mono tracking-wider">
-              진짜 보이스 채굴 중
+              {['진짜 보이스 채굴 중', '지하 깊은 곳까지 탐색중', '묻힌 보이스 수집중'][Math.floor(Math.random() * 3)]}
             </span>
             <motion.span className="text-[#5EE86A] text-[18px] font-mono"
               animate={{ opacity: [0, 1, 0] }}
