@@ -186,7 +186,7 @@ export default function Dashboard() {
 
   if (loading) {
     return (
-      <div className="size-full flex flex-col items-center justify-center min-h-[400px]">
+      <div className="size-full flex flex-col items-center justify-center min-h-screen">
         <motion.div
           initial={{ opacity: 0, scale: 0.64 }}
           animate={{ opacity: 1, scale: 0.8 }}
