@@ -266,7 +266,7 @@ export default function VocFeed() {
       {/* Page title */}
       <div className="mb-6">
         <h1 className="text-3xl font-bold" style={{ color: '#E8EDE0' }}>VoC 피드</h1>
-        <p className="text-sm font-mono mt-1" style={{ color: '#8A9980' }}>총 <span className="font-mono">{vocData.length}</span>건</p>
+        <p className="text-sm font-mono mt-1" style={{ color: '#8A9980' }}>총 <span className="font-mono">{vocData.length.toLocaleString()}</span>건</p>
       </div>
 
       {/* 2-column layout */}
