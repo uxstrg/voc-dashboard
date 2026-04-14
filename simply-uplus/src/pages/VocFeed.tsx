@@ -77,7 +77,7 @@ export default function VocFeed() {
   })
   const [domainFilter, setDomainFilter] = useState<string>('전체')
   const [searchQuery, setSearchQuery] = useState('')
-  const [sortBy, setSortBy] = useState<'default' | 'latest'>('default')
+  const [sortBy, setSortBy] = useState<'default' | 'latest'>('latest')
   const [selectedVoC, setSelectedVoC] = useState<DiagnosedVoC | null>(null)
   const [currentPage, setCurrentPage] = useState(1)
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -165,9 +165,15 @@ export default function VocFeed() {
 
     if (sortBy === 'latest') {
       list.sort((a, b) => {
-        const da = (a as any).post_date || (a as any).diagnosed_at || ''
-        const db = (b as any).post_date || (b as any).diagnosed_at || ''
+        const da = (a as any).post_date || ''
+        const db = (b as any).post_date || ''
         return db.localeCompare(da)
+      })
+    } else {
+      list.sort((a, b) => {
+        const da = (a as any).post_date || ''
+        const db = (b as any).post_date || ''
+        return da.localeCompare(db)
       })
     }
     return list
@@ -365,7 +371,7 @@ export default function VocFeed() {
 
               {/* Sort buttons - right side */}
               <div className="ml-auto flex items-center gap-1.5 pb-1">
-                {([['default', '진단순'], ['latest', '최신순']] as const).map(([key, label]) => (
+                {([['latest', '최신순'], ['default', '오래된순']] as const).map(([key, label]) => (
                   <button
                     key={key}
                     onClick={() => setSortBy(key)}
