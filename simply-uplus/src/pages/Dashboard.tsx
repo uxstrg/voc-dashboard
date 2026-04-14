@@ -347,7 +347,7 @@ function DiagnosisHeader({
         </span>
         <span style={{ color: '#2E3329' }}>|</span>
         <span>
-          <span style={{ color: '#8A9980' }}>분해 이슈</span>{' '}
+          <span style={{ color: '#8A9980' }}>진단 이슈</span>{' '}
           <strong className="font-mono" style={{ color: '#5EE86A' }}>{totalIssues}건</strong>
         </span>
         <span style={{ color: '#2E3329' }}>|</span>
@@ -360,9 +360,7 @@ function DiagnosisHeader({
       {/* 하단 3칸 */}
       <div className="grid grid-cols-3 divide-x divide-[#2E3329]">
         {/* 좌: 종합 점수 */}
-        <div
-          className="px-6 py-5 flex flex-col gap-2 relative"
-        >
+        <div className="p-6 relative overflow-hidden">
           {/* dot-grid overlay */}
           <div
             className="absolute inset-0 opacity-40 pointer-events-none"
@@ -371,31 +369,33 @@ function DiagnosisHeader({
               backgroundSize: '16px 16px',
             }}
           />
-          <span className="text-sm font-medium font-bold relative z-10" style={{ color: '#8A9980' }}>종합 점수</span>
-          <div className="flex items-center gap-3 relative z-10">
-            <span className="text-5xl font-bold font-mono" style={{ color: '#E8EDE0' }}>{overallScore}</span>
-            <div className="flex flex-col gap-1">
-              <span className="text-lg" style={{ color: '#8A9980' }}>/ 100</span>
+          <div className="relative z-10">
+            <h3 className="text-sm font-medium font-bold mb-4" style={{ color: '#8A9980' }}>종합 점수</h3>
+            <div className="flex items-baseline gap-3 mb-2">
+              <div className="text-5xl font-bold font-mono" style={{ color: '#E8EDE0' }}>{overallScore}</div>
+              <div className="text-lg" style={{ color: '#8A9980' }}>/ 100</div>
+            </div>
+            <div className="mb-3">
               <StatusBadge status={statusLabel as '탁월' | '보통' | '주의' | '위험'} />
             </div>
+            <p className="text-sm" style={{ color: '#8A9980' }}>4개 도메인 가중 평균 기준</p>
           </div>
-          <p className="text-xs mt-1 relative z-10" style={{ color: '#8A9980' }}>4개 도메인 가중 평균 기준</p>
         </div>
 
-        {/* 중: 이번 주 전체 패턴 */}
-        <div className="px-6 py-5 flex flex-col gap-2">
-          <span className="text-sm font-medium font-bold" style={{ color: '#8A9980' }}>이번 주 전체 패턴</span>
-          <p className="text-sm font-semibold leading-relaxed" style={{ color: '#E8EDE0' }}>
-            UX 탐색 불편이 운영 CS 유입으로 연결되는 연쇄 패턴 감지
-          </p>
-          <p className="text-xs leading-relaxed" style={{ color: '#8A9980' }}>
+        {/* 중: 이번 주 진짜 패턴 */}
+        <div className="p-6">
+          <h3 className="text-sm font-medium font-bold mb-4" style={{ color: '#8A9980' }}>이번 주 진짜 패턴</h3>
+          <h4 className="font-medium mb-3" style={{ color: '#E8EDE0' }}>
+            UX 영역 불만이 연쇄 CS 유입으로 연결돼 운영 체감 압박 급상
+          </h4>
+          <p className="text-sm leading-relaxed" style={{ color: '#8A9980' }}>
             앱 내 정보 구조 혼란 → 고객센터 문의 증가 → 처리 지연 불만으로 이어지는 도메인 간 연쇄 신호가 반복되고 있습니다. UX·운영 담당팀 공동 대응이 필요합니다.
           </p>
         </div>
 
         {/* 우: 지금 당장 */}
-        <div className="px-6 py-5 flex flex-col gap-2">
-          <span className="text-sm font-medium font-bold" style={{ color: '#8A9980' }}>지금 당장</span>
+        <div className="p-6">
+          <h3 className="text-sm font-medium font-bold mb-4" style={{ color: '#8A9980' }}>지금 당장</h3>
           <div className="flex flex-col gap-2">
             {urgentIssues.map((issue, i) => (
               <button
