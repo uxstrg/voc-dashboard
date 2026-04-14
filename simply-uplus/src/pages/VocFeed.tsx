@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { DiagnosedVoC, DiagnosisIssue } from '../types'
 import { getGapDisplayLabel, getGapStatusColor } from '../utils/analysisUtils'
@@ -12,6 +12,10 @@ import { PLATFORM_MAP, PLATFORMS, DOMAINS } from '../constants/platforms'
 const API_BASE = 'https://voc-api-production.up.railway.app'
 
 const DOMAIN_FILTERS = ['전체', ...DOMAINS] as const
+const ITEMS_PER_PAGE = 10
+
+const SENTIMENT_GROUPS = ['긍정', '중립', '부정'] as const
+type SentimentGroup = typeof SENTIMENT_GROUPS[number]
 
 // platform → source 필드 정규화
 function normalizeVoC(raw: Record<string, unknown>): DiagnosedVoC {
@@ -23,16 +27,65 @@ function normalizeVoC(raw: Record<string, unknown>): DiagnosedVoC {
   } as DiagnosedVoC
 }
 
+function getSentimentGroup(voc: DiagnosedVoC): SentimentGroup {
+  let pos = 0, neu = 0, neg = 0
+  for (const issue of voc.issues) {
+    if (issue.sentiment === '긍정' || issue.sentiment === '매우 긍정') pos++
+    else if (issue.sentiment === '중립') neu++
+    else neg++
+  }
+  // Tied: worst wins (negative > neutral > positive)
+  if (neg >= pos && neg >= neu) return '부정'
+  if (neu >= pos && neu >= neg) return '중립'
+  return '긍정'
+}
+
+function getVocFinalSentiment(voc: DiagnosedVoC): string {
+  const group = getSentimentGroup(voc)
+  return group
+}
+
+function formatDate(dateStr: string | null | undefined): string {
+  if (!dateStr) return ''
+  const d = new Date(dateStr)
+  if (isNaN(d.getTime())) return ''
+  const pad = (n: number) => String(n).padStart(2, '0')
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`
+}
+
+function isAppOrPlayStore(platform: string): boolean {
+  return platform === 'AppStore' || platform === 'PlayStore'
+}
+
 export default function VocFeed() {
   const [vocData, setVocData] = useState<DiagnosedVoC[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  const [sourceFilter, setSourceFilter] = useState<string>('all')
+  const [sourcesChecked, setSourcesChecked] = useState<Record<string, boolean>>(() => {
+    const init: Record<string, boolean> = {}
+    PLATFORMS.forEach(p => { init[p] = true })
+    return init
+  })
+  const [sentimentChecked, setSentimentChecked] = useState<Record<string, boolean>>({
+    '긍정': true, '중립': true, '부정': true,
+  })
   const [domainFilter, setDomainFilter] = useState<string>('전체')
   const [searchQuery, setSearchQuery] = useState('')
   const [sortBy, setSortBy] = useState<'default' | 'latest'>('default')
   const [selectedVoC, setSelectedVoC] = useState<DiagnosedVoC | null>(null)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [showScrollTop, setShowScrollTop] = useState(false)
+
+  const contentRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     const fetchVoc = async () => {
@@ -52,20 +105,59 @@ export default function VocFeed() {
     fetchVoc()
   }, [])
 
+  // All sources unchecked?
+  const allSourcesUnchecked = useMemo(() => PLATFORMS.every(p => !sourcesChecked[p]), [sourcesChecked])
+
+  // Source "전체" checkbox state
+  const allSourcesChecked = useMemo(() => PLATFORMS.every(p => sourcesChecked[p]), [sourcesChecked])
+  const someSourcesChecked = useMemo(() => PLATFORMS.some(p => sourcesChecked[p]) && !allSourcesChecked, [sourcesChecked, allSourcesChecked])
+
+  const toggleSource = useCallback((platform: string) => {
+    setSourcesChecked(prev => ({ ...prev, [platform]: !prev[platform] }))
+    setCurrentPage(1)
+  }, [])
+
+  const toggleAllSources = useCallback(() => {
+    const newVal = !allSourcesChecked
+    setSourcesChecked(() => {
+      const next: Record<string, boolean> = {}
+      PLATFORMS.forEach(p => { next[p] = newVal })
+      return next
+    })
+    setCurrentPage(1)
+  }, [allSourcesChecked])
+
+  const toggleSentiment = useCallback((group: string) => {
+    setSentimentChecked(prev => ({ ...prev, [group]: !prev[group] }))
+    setCurrentPage(1)
+  }, [])
+
+  // Filtering
   const filtered = useMemo(() => {
     const list = vocData.filter(v => {
+      // 1. Source filter
       const platform = (v as DiagnosedVoC & { platform?: string }).platform ?? v.source
-      if (sourceFilter !== 'all' && platform !== sourceFilter) return false
-      if (domainFilter !== '전체') {
-        const hasDomain = v.issues.some(i => i.domain === domainFilter)
-        if (!hasDomain) return false
-      }
+      if (!sourcesChecked[platform]) return false
+
+      // 2. Sentiment filter
+      const group = getSentimentGroup(v)
+      if (!sentimentChecked[group]) return false
+
+      // 3. Search
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase()
         if (!v.raw_text.toLowerCase().includes(q)) return false
       }
+
+      // 4. Domain filter
+      if (domainFilter !== '전체') {
+        const hasDomain = v.issues.some(i => i.domain === domainFilter)
+        if (!hasDomain) return false
+      }
+
       return true
     })
+
     if (sortBy === 'latest') {
       list.sort((a, b) => {
         const da = (a as any).post_date || (a as any).diagnosed_at || ''
@@ -74,7 +166,37 @@ export default function VocFeed() {
       })
     }
     return list
-  }, [vocData, sourceFilter, domainFilter, searchQuery, sortBy])
+  }, [vocData, sourcesChecked, sentimentChecked, searchQuery, domainFilter, sortBy])
+
+  // Domain tab counts (filtered by source + sentiment + search, but NOT by domain)
+  const domainCounts = useMemo(() => {
+    const baseFiltered = vocData.filter(v => {
+      const platform = (v as DiagnosedVoC & { platform?: string }).platform ?? v.source
+      if (!sourcesChecked[platform]) return false
+      const group = getSentimentGroup(v)
+      if (!sentimentChecked[group]) return false
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase()
+        if (!v.raw_text.toLowerCase().includes(q)) return false
+      }
+      return true
+    })
+    const counts: Record<string, number> = { '전체': baseFiltered.length }
+    for (const d of DOMAINS) {
+      counts[d] = baseFiltered.filter(v => v.issues.some(i => i.domain === d)).length
+    }
+    return counts
+  }, [vocData, sourcesChecked, sentimentChecked, searchQuery])
+
+  // Pagination
+  const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE))
+  const safePage = Math.min(currentPage, totalPages)
+  const paginatedItems = filtered.slice((safePage - 1) * ITEMS_PER_PAGE, safePage * ITEMS_PER_PAGE)
+
+  // Reset page when filters change
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [searchQuery, domainFilter, sortBy])
 
   if (loading) {
     return (
@@ -135,116 +257,199 @@ export default function VocFeed() {
 
   return (
     <main className="max-w-[1600px] mx-auto px-6 py-6" style={{ minWidth: 1280 }}>
+      {/* Page title */}
       <div className="mb-6">
-        <h1 className="text-xl font-bold text-txt-primary">VoC 원문 피드</h1>
-        <p className="text-sm text-txt-muted mt-1">진단 완료된 VoC 원문 전체 열람 · <span className="font-mono">{vocData.length}</span>건</p>
+        <h1 className="text-xl font-bold text-txt-primary">VoC 피드</h1>
+        <p className="text-sm text-txt-muted mt-1">총 <span className="font-mono">{vocData.length}</span>건</p>
       </div>
 
-      {/* 필터 바 */}
-      <div className="bg-surface-card rounded-xl border border-surface-border p-4 mb-5 flex items-center gap-4 flex-wrap">
-        {/* 출처 필터 */}
-        <div className="flex items-center gap-2">
-          <span className="text-xs text-txt-muted font-medium shrink-0">출처</span>
-          <div className="flex gap-1.5">
-            <button
-              onClick={() => setSourceFilter('all')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                sourceFilter === 'all' ? 'bg-surface-card text-accent-green border border-accent-green/30' : 'bg-surface-border text-txt-muted hover:opacity-80'
-              }`}
-            >
-              전체
-            </button>
-            {PLATFORMS.map(p => (
-              <button
-                key={p}
-                onClick={() => setSourceFilter(p)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                  sourceFilter === p ? 'text-white' : 'bg-surface-border text-txt-muted hover:opacity-80'
-                }`}
-                style={sourceFilter === p ? { backgroundColor: SOURCE_COLORS[p] ?? '#9CA3AF' } : {}}
-              >
-                {PLATFORM_MAP[p] ?? p}
-              </button>
-            ))}
+      {/* 2-column layout */}
+      <div className="flex gap-6">
+        {/* Left: Filter panel */}
+        <div className="w-[240px] shrink-0">
+          <div className="sticky top-6">
+            <div className="bg-surface-card rounded-xl border border-surface-border p-4">
+              <p className="text-xs uppercase tracking-wide text-txt-muted mb-4">Filters</p>
+
+              {/* Source section */}
+              <div className="mb-5">
+                <p className="text-xs font-semibold text-txt-muted mb-2">출처</p>
+                <label className="flex items-center gap-2 py-1 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={allSourcesChecked}
+                    ref={el => {
+                      if (el) el.indeterminate = someSourcesChecked
+                    }}
+                    onChange={toggleAllSources}
+                    className="accent-[#5EE86A] w-3.5 h-3.5"
+                  />
+                  <span className="text-sm text-txt-primary">전체</span>
+                </label>
+                {PLATFORMS.map(p => (
+                  <label key={p} className="flex items-center gap-2 py-1 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={!!sourcesChecked[p]}
+                      onChange={() => toggleSource(p)}
+                      className="accent-[#5EE86A] w-3.5 h-3.5"
+                    />
+                    <span className="text-sm text-txt-primary">{PLATFORM_MAP[p] ?? p}</span>
+                  </label>
+                ))}
+              </div>
+
+              {/* Sentiment section */}
+              <div>
+                <p className="text-xs font-semibold text-txt-muted mb-2">감성</p>
+                {SENTIMENT_GROUPS.map(g => (
+                  <label key={g} className="flex items-center gap-2 py-1 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={!!sentimentChecked[g]}
+                      onChange={() => toggleSentiment(g)}
+                      className="accent-[#5EE86A] w-3.5 h-3.5"
+                    />
+                    <span className="text-sm text-txt-primary">{g}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="w-px h-6 bg-surface-border" />
-
-        {/* 도메인 필터 */}
-        <div className="flex items-center gap-2">
-          <span className="text-xs text-txt-muted font-medium shrink-0">도메인</span>
-          <div className="flex gap-1.5">
-            {DOMAIN_FILTERS.map(d => (
-              <button
-                key={d}
-                onClick={() => setDomainFilter(d)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                  domainFilter === d
-                    ? d === '전체' ? 'bg-surface-card text-accent-green border border-accent-green/30' : 'text-white'
-                    : 'bg-surface-border text-txt-muted hover:opacity-80'
-                }`}
-                style={domainFilter === d && d !== '전체' ? { backgroundColor: DOMAIN_COLORS[d] } : {}}
-              >
-                {d}
-              </button>
-            ))}
+        {/* Right: Content area */}
+        <div className="flex-1 min-w-0" ref={contentRef}>
+          {/* Search bar - sticky */}
+          <div className="sticky top-0 z-20 pb-2 bg-surface">
+            <input
+              type="text"
+              placeholder="원문 검색..."
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              className="w-full px-4 py-2 text-sm border border-surface-border rounded-lg focus:outline-none focus:border-accent-green/50 bg-surface text-txt-primary placeholder:text-txt-muted"
+            />
           </div>
+
+          {/* Domain tab bar - sticky below search */}
+          <div className="sticky top-[44px] z-20 bg-surface pb-2">
+            <div className="flex items-center border-b border-surface-border">
+              {DOMAIN_FILTERS.map(d => {
+                const isActive = domainFilter === d
+                return (
+                  <button
+                    key={d}
+                    onClick={() => setDomainFilter(d)}
+                    className={`px-4 py-2 text-sm font-medium transition-colors relative ${
+                      isActive
+                        ? 'text-accent-green border-b-2 border-accent-green'
+                        : 'text-txt-muted hover:text-txt-primary'
+                    }`}
+                  >
+                    {d} <span className="font-mono text-xs ml-1">{domainCounts[d] ?? 0}</span>
+                  </button>
+                )
+              })}
+
+              {/* Sort buttons - right side */}
+              <div className="ml-auto flex items-center gap-1.5 pb-1">
+                {([['default', '진단순'], ['latest', '최신순']] as const).map(([key, label]) => (
+                  <button
+                    key={key}
+                    onClick={() => setSortBy(key)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                      sortBy === key
+                        ? 'bg-surface-card text-accent-green border border-accent-green/30'
+                        : 'bg-surface-border text-txt-muted'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Empty states */}
+          {allSourcesUnchecked ? (
+            <div className="text-center py-16 text-txt-muted">
+              <p className="text-sm">수신 채널 없음. 출처를 선택하십시오</p>
+            </div>
+          ) : paginatedItems.length === 0 ? (
+            <div className="text-center py-16 text-txt-muted">
+              <p className="text-sm">탐지된 VoC 없음. 키워드 또는 필터를 재조정하십시오</p>
+            </div>
+          ) : (
+            <>
+              {/* Feed cards - 1 column */}
+              <div className="flex flex-col gap-3 mt-2">
+                {paginatedItems.map(v => (
+                  <VocCard
+                    key={v.id}
+                    voc={v}
+                    onClick={() => setSelectedVoC(v)}
+                  />
+                ))}
+              </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex items-center justify-center gap-2 mt-6 mb-2">
+                  {safePage > 1 && (
+                    <>
+                      <button
+                        onClick={() => setCurrentPage(1)}
+                        className="px-2 py-1 rounded bg-surface-border text-txt-muted text-sm hover:opacity-80"
+                      >
+                        &laquo;
+                      </button>
+                      <button
+                        onClick={() => setCurrentPage(safePage - 1)}
+                        className="px-2 py-1 rounded bg-surface-border text-txt-muted text-sm hover:opacity-80"
+                      >
+                        &lsaquo;
+                      </button>
+                    </>
+                  )}
+                  <span className="text-sm font-mono">
+                    Page <span className="text-accent-green">{safePage}</span> of {totalPages}
+                  </span>
+                  {safePage < totalPages && (
+                    <>
+                      <button
+                        onClick={() => setCurrentPage(safePage + 1)}
+                        className="px-2 py-1 rounded bg-surface-border text-txt-muted text-sm hover:opacity-80"
+                      >
+                        &rsaquo;
+                      </button>
+                      <button
+                        onClick={() => setCurrentPage(totalPages)}
+                        className="px-2 py-1 rounded bg-surface-border text-txt-muted text-sm hover:opacity-80"
+                      >
+                        &raquo;
+                      </button>
+                    </>
+                  )}
+                </div>
+              )}
+            </>
+          )}
         </div>
-
-        <div className="w-px h-6 bg-surface-border" />
-
-        {/* 검색 */}
-        <div className="flex-1 min-w-48">
-          <input
-            type="text"
-            placeholder="원문 검색..."
-            value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
-            className="w-full px-3 py-1.5 text-sm border border-surface-border rounded-lg focus:outline-none focus:border-accent-green/50 bg-surface text-txt-primary placeholder:text-txt-muted"
-          />
-        </div>
-
-        <div className="w-px h-6 bg-surface-border" />
-
-        {/* 정렬 */}
-        <div className="flex items-center gap-1.5 shrink-0">
-          {([['default', '진단순'], ['latest', '최신순']] as const).map(([key, label]) => (
-            <button
-              key={key}
-              onClick={() => setSortBy(key)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                sortBy === key
-                  ? 'bg-surface-card text-accent-green border border-accent-green/30'
-                  : 'bg-surface-border text-txt-muted'
-              }`}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-
-        <span className="text-xs text-txt-muted shrink-0 font-mono">{filtered.length}건</span>
       </div>
 
-      {/* VoC 카드 리스트 */}
-      <div className="grid grid-cols-2 gap-4">
-        {filtered.map(v => (
-          <VocCard
-            key={v.id}
-            voc={v}
-            onClick={() => setSelectedVoC(v)}
-          />
-        ))}
-        {filtered.length === 0 && (
-          <div className="col-span-2 text-center py-16 text-txt-muted">
-            <p className="text-lg">검색 결과가 없습니다</p>
-            <p className="text-sm mt-1">필터 조건을 변경해 보세요</p>
-          </div>
-        )}
-      </div>
+      {/* Scroll-to-top button */}
+      {showScrollTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full bg-surface-border text-txt-muted flex items-center justify-center hover:text-accent-green transition-colors shadow-lg"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M8 14V2M2 8l6-6 6 6"/>
+          </svg>
+        </button>
+      )}
 
-      {/* 드릴다운 패널 */}
+      {/* Drilldown panel */}
       {selectedVoC && (
         <DrilldownPanel
           voc={selectedVoC}
@@ -257,50 +462,54 @@ export default function VocFeed() {
 
 function VocCard({ voc, onClick }: { voc: DiagnosedVoC; onClick: () => void }) {
   const domains = [...new Set(voc.issues.map(i => i.domain))]
-  const negCount = voc.issues.filter(i => i.sentiment === '부정' || i.sentiment === '매우 부정').length
   const platform = (voc as DiagnosedVoC & { platform?: string }).platform ?? voc.source
   const channelDetail = (voc as DiagnosedVoC & { channel_detail?: string }).channel_detail
+  const dateStr = (voc as any).post_date || (voc as any).diagnosed_at || voc.collected_at
+
+  // Issue sentiment counts
+  const posCount = voc.issues.filter(i => i.sentiment === '긍정' || i.sentiment === '매우 긍정').length
+  const neuCount = voc.issues.filter(i => i.sentiment === '중립').length
+  const negCount = voc.issues.filter(i => i.sentiment === '부정' || i.sentiment === '매우 부정').length
+
+  // Final sentiment
+  const finalSentiment = getVocFinalSentiment(voc)
+
+  // Map group to a display sentiment key for coloring
+  const sentimentColorKey = finalSentiment === '긍정' ? '긍정' : finalSentiment === '부정' ? '부정' : '중립'
 
   return (
     <button
       onClick={onClick}
-      className="bg-surface-card rounded-xl border border-surface-border p-5 text-left hover:border-accent-green/30 hover:shadow-sm transition-all group"
+      className="bg-surface-card rounded-xl border border-surface-border p-4 text-left hover:border-accent-green/30 hover:shadow-sm transition-all group w-full"
     >
-      {/* 헤더 */}
-      <div className="flex items-center justify-between mb-3">
+      {/* Top row */}
+      <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2 flex-wrap">
-          <span
-            className="px-2 py-0.5 rounded text-xs font-bold text-white"
-            style={{ backgroundColor: SOURCE_COLORS[platform] ?? '#9CA3AF' }}
-          >
-            {SOURCE_LABELS[platform] ?? platform}
+          {/* Source tag - muted chip */}
+          <span className="bg-surface-border text-txt-muted rounded px-2 py-0.5 text-xs">
+            {PLATFORM_MAP[platform] ?? platform}
           </span>
-          {channelDetail && (
-            <span className="text-xs text-txt-muted bg-surface-border px-2 py-0.5 rounded">
+          {/* Service name + rating for AppStore/PlayStore */}
+          {isAppOrPlayStore(platform) && channelDetail && (
+            <span className="text-xs text-txt-muted">
               {channelDetail}
             </span>
           )}
-          {voc.collected_at && (
-            <span className="text-xs text-txt-muted">
-              {new Date(voc.collected_at).toLocaleDateString('ko-KR', {
-                month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit'
-              })}
-            </span>
-          )}
         </div>
-        <div className="flex items-center gap-2 text-xs text-txt-muted">
-          <span>이슈 <span className="font-mono">{voc.issues.length}</span>건</span>
-          {negCount > 0 && <span className="text-red-500">부정 <span className="font-mono">{negCount}</span></span>}
-        </div>
+        {/* Date right-aligned */}
+        <span className="text-xs text-txt-muted font-mono shrink-0">
+          {formatDate(dateStr)}
+        </span>
       </div>
 
-      {/* 원문 */}
-      <p className="text-sm text-txt-primary leading-relaxed line-clamp-3 mb-3">
+      {/* Body - raw text 2 lines */}
+      <p className="text-sm text-txt-primary leading-relaxed line-clamp-2 mb-3">
         {voc.raw_text}
       </p>
 
-      {/* 도메인 뱃지 */}
-      <div className="flex items-center gap-1.5 flex-wrap">
+      {/* Bottom row */}
+      <div className="flex items-center gap-2 flex-wrap">
+        {/* Domain tags - solid chip */}
         {domains.map(d => (
           <span
             key={d}
@@ -310,6 +519,32 @@ function VocCard({ voc, onClick }: { voc: DiagnosedVoC; onClick: () => void }) {
             {d}
           </span>
         ))}
+        {/* Final sentiment tag - tinted chip */}
+        <span
+          className="px-2 py-0.5 rounded text-xs font-medium"
+          style={{
+            backgroundColor: SENTIMENT_BG[sentimentColorKey],
+            color: SENTIMENT_COLORS[sentimentColorKey],
+          }}
+        >
+          {finalSentiment}
+        </span>
+
+        <span className="text-txt-muted text-xs mx-1">|</span>
+
+        {/* Issue counts */}
+        <span className="font-mono text-xs text-txt-muted">
+          이슈 {voc.issues.length}건
+        </span>
+        <span className="font-mono text-xs" style={{ color: SENTIMENT_COLORS['긍정'] }}>
+          긍정{posCount}
+        </span>
+        <span className="font-mono text-xs" style={{ color: SENTIMENT_COLORS['중립'] }}>
+          중립{neuCount}
+        </span>
+        <span className="font-mono text-xs" style={{ color: SENTIMENT_COLORS['부정'] }}>
+          부정{negCount}
+        </span>
       </div>
     </button>
   )
@@ -318,35 +553,34 @@ function VocCard({ voc, onClick }: { voc: DiagnosedVoC; onClick: () => void }) {
 function DrilldownPanel({ voc, onClose }: { voc: DiagnosedVoC; onClose: () => void }) {
   const platform = (voc as DiagnosedVoC & { platform?: string }).platform ?? voc.source
   const channelDetail = (voc as DiagnosedVoC & { channel_detail?: string }).channel_detail
+  const dateStr = (voc as any).post_date || (voc as any).diagnosed_at || voc.collected_at
 
   return (
     <div className="fixed inset-0 z-50 flex">
-      {/* 배경 오버레이 */}
+      {/* Overlay */}
       <div
         className="flex-1 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       />
-      {/* 슬라이드 패널 */}
+      {/* Slide panel */}
       <div className="w-[560px] bg-surface-card shadow-2xl overflow-y-auto flex flex-col">
-        {/* 헤더 */}
+        {/* Meta area (no title) */}
         <div className="sticky top-0 bg-surface-card border-b border-surface-border px-6 py-4 flex items-center justify-between z-10">
           <div className="flex items-center gap-2 flex-wrap">
-            <span
-              className="px-2 py-0.5 rounded text-xs font-bold text-white"
-              style={{ backgroundColor: SOURCE_COLORS[platform] ?? '#9CA3AF' }}
-            >
-              {SOURCE_LABELS[platform] ?? platform}
+            {/* Source tag - muted chip */}
+            <span className="bg-surface-border text-txt-muted rounded px-2 py-0.5 text-xs">
+              {PLATFORM_MAP[platform] ?? platform}
             </span>
-            {channelDetail && (
-              <span className="text-xs text-txt-muted bg-surface-border px-2 py-0.5 rounded">
+            {/* Service + rating conditional */}
+            {isAppOrPlayStore(platform) && channelDetail && (
+              <span className="text-xs text-txt-muted">
                 {channelDetail}
               </span>
             )}
-            {voc.collected_at && (
-              <span className="text-xs text-txt-muted">
-                {new Date(voc.collected_at).toLocaleString('ko-KR')}
-              </span>
-            )}
+            {/* Date */}
+            <span className="text-xs text-txt-muted font-mono">
+              {formatDate(dateStr)}
+            </span>
           </div>
           <button
             onClick={onClose}
@@ -357,18 +591,18 @@ function DrilldownPanel({ voc, onClose }: { voc: DiagnosedVoC; onClose: () => vo
         </div>
 
         <div className="p-6 flex flex-col gap-6">
-          {/* 원문 */}
+          {/* VoC 원문 */}
           <div>
-            <h3 className="text-xs font-semibold text-txt-muted uppercase tracking-wide mb-2">원문</h3>
+            <h3 className="text-xs font-semibold text-txt-muted uppercase tracking-wide mb-2">VoC 원문</h3>
             <p className="text-sm text-txt-primary leading-relaxed whitespace-pre-wrap bg-surface rounded-xl p-4 border border-surface-border">
               {voc.raw_text}
             </p>
           </div>
 
-          {/* 분해 이슈 목록 */}
+          {/* 이슈 분석 */}
           <div>
             <h3 className="text-xs font-semibold text-txt-muted uppercase tracking-wide mb-3">
-              분해 이슈 (<span className="font-mono">{voc.issues.length}</span>건)
+              이슈 분석 (<span className="font-mono">{voc.issues.length}</span>건)
             </h3>
             <div className="flex flex-col gap-2">
               {voc.issues.map((issue, idx) => (
@@ -421,11 +655,11 @@ function IssueRow({ issue }: { issue: DiagnosisIssue }) {
         >
           {issue.domain}
         </span>
-        {issue.attributes.map(attr => (
-          <span key={attr} className="px-2 py-0.5 rounded text-xs bg-surface-border text-txt-muted">
-            {attr}
+        {issue.attributes.length > 0 && (
+          <span className="text-xs text-txt-muted">
+            {issue.attributes.join(' · ')}
           </span>
-        ))}
+        )}
         <span
           className="px-2 py-0.5 rounded text-xs font-medium"
           style={{ backgroundColor: SENTIMENT_BG[issue.sentiment], color: SENTIMENT_COLORS[issue.sentiment] }}
@@ -437,12 +671,6 @@ function IssueRow({ issue }: { issue: DiagnosisIssue }) {
           style={{ backgroundColor: gapColor }}
         >
           {gapLabel}
-        </span>
-        <span
-          className="px-2 py-0.5 rounded text-xs font-medium text-white"
-          style={{ backgroundColor: gapColor }}
-        >
-          {issue.status}
         </span>
       </div>
       <p className="text-xs text-txt-primary">{issue.issue_summary}</p>
