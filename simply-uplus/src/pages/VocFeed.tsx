@@ -43,6 +43,13 @@ function getVocFinalSentiment(voc: DiagnosedVoC): string {
   return group
 }
 
+function formatServiceRating(channelDetail: string): string {
+  // "U+one / 별점: 2" → "U+one · ⭐️ 2"
+  const match = channelDetail.match(/^(.+?)\s*\/\s*별점:\s*(.+)$/)
+  if (match) return `${match[1].trim()} · ⭐️ ${match[2].trim()}`
+  return channelDetail
+}
+
 function formatDate(dateStr: string | null | undefined): string {
   if (!dateStr) return ''
   const d = new Date(dateStr)
@@ -494,57 +501,48 @@ function VocCard({ voc, onClick }: { voc: DiagnosedVoC; onClick: () => void }) {
       className="p-4 rounded-lg text-left hover:border-[#5EE86A]/25 transition-all group w-full"
       style={{ background: '#1A1D18', border: '1px solid #2E3329', boxShadow: '0 0 8px rgba(94, 232, 106, 0.08)' }}
     >
-      {/* Top row */}
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2 flex-wrap">
-          {/* Source tag - MutedChip solid */}
+      {/* Top: Meta */}
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center gap-2">
           <MutedChip label={PLATFORM_MAP[platform] ?? platform} variant="solid" />
-          {/* Service name + rating for AppStore/PlayStore */}
           {isAppOrPlayStore(platform) && channelDetail && (
             <span className="text-xs" style={{ color: '#8A9980' }}>
-              {channelDetail}
+              {formatServiceRating(channelDetail)}
             </span>
           )}
         </div>
-        {/* Date right-aligned */}
         <span className="text-xs font-mono shrink-0" style={{ color: '#8A9980' }}>
           {formatDate(dateStr)}
         </span>
       </div>
 
-      {/* Body - raw text 2 lines */}
-      <p className="text-sm leading-relaxed line-clamp-2 mb-3" style={{ color: '#E8EDE0' }}>
+      {/* Body: VoC Text */}
+      <p className="text-sm mb-3 line-clamp-2" style={{ color: '#E8EDE0' }}>
         {voc.raw_text}
       </p>
 
-      {/* Bottom row */}
-      <div className="flex items-center gap-2 flex-wrap">
-        {/* Domain tags */}
-        {domains.map(d => (
-          <DomainTag key={d} domain={d as any} />
-        ))}
-        {/* Final sentiment tag */}
-        <SentimentTag sentiment={finalSentiment as any} />
-
-        <span className="text-xs mx-1" style={{ color: '#8A9980' }}>|</span>
-
-        {/* Issue counts */}
-        <span className="font-mono text-xs">
-          <span style={{ color: '#8A9980' }}>이슈 </span>
-          <span style={{ color: '#E8EDE0' }}>{voc.issues.length}건</span>
-        </span>
-        <span className="font-mono text-xs">
-          <span style={{ color: '#8A9980' }}>긍정</span>
-          <span style={{ color: '#5EE86A' }}>{posCount}</span>
-        </span>
-        <span className="font-mono text-xs">
-          <span style={{ color: '#8A9980' }}>중립</span>
-          <span style={{ color: '#4A5540' }}>{neuCount}</span>
-        </span>
-        <span className="font-mono text-xs">
-          <span style={{ color: '#8A9980' }}>부정</span>
-          <span style={{ color: '#EF4444' }}>{negCount}</span>
-        </span>
+      {/* Bottom: Tags and Counts */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          {domains.map(d => (
+            <DomainTag key={d} domain={d as any} />
+          ))}
+          <SentimentTag sentiment={finalSentiment as any} />
+        </div>
+        <div className="flex items-center gap-3 text-xs font-mono">
+          <span style={{ color: '#8A9980' }}>
+            이슈 <span style={{ color: '#E8EDE0' }}>{voc.issues.length}건</span>
+          </span>
+          <span style={{ color: '#8A9980' }}>
+            긍정<span style={{ color: '#5EE86A' }}>{posCount}</span>
+          </span>
+          <span style={{ color: '#8A9980' }}>
+            중립<span style={{ color: '#4A5540' }}>{neuCount}</span>
+          </span>
+          <span style={{ color: '#8A9980' }}>
+            부정<span style={{ color: '#EF4444' }}>{negCount}</span>
+          </span>
+        </div>
       </div>
     </button>
   )
