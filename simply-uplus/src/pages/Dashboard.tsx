@@ -12,8 +12,11 @@ import {
   calcPositiveRate, calcChannelSentiment, getTopNegativeAttributes,
   getRadarData, generate4WeekTrend, getGapDisplayLabel, getGapStatusColor,
 } from '../utils/analysisUtils'
-import { DOMAIN_COLORS, SOURCE_LABELS, SOURCE_COLORS, SENTIMENT_COLORS, SENTIMENT_BG } from '../constants/colors'
+import { DOMAIN_COLORS, SOURCE_LABELS, SOURCE_COLORS } from '../constants/colors'
 import { DOMAINS, DOMAIN_ATTRIBUTES, type Domain } from '../constants/platforms'
+import { StatusBadge, DomainTag, SentimentTag, GapTag, MutedChip, HashAttributeTag } from '../components/tags'
+import { PixelBar } from '../components/pixel-bar'
+import { MultiSegmentPixelBar } from '../components/multi-segment-pixel-bar'
 
 const API_BASE = 'https://voc-api-production.up.railway.app'
 
@@ -224,12 +227,13 @@ export default function Dashboard() {
     return (
       <main className="max-w-[1600px] mx-auto px-6 py-6 flex items-center justify-center" style={{ minHeight: 400 }}>
         <div className="flex flex-col items-center gap-3 text-center">
-          <span className="text-4xl">⚠️</span>
-          <p className="text-sm font-semibold text-txt-primary">데이터 로드 실패</p>
-          <p className="text-xs text-txt-muted">{error}</p>
+          <span className="text-4xl">&#x26A0;&#xFE0F;</span>
+          <p className="text-sm font-semibold" style={{ color: '#E8EDE0' }}>데이터 로드 실패</p>
+          <p className="text-xs" style={{ color: '#8A9980' }}>{error}</p>
           <button
             onClick={() => window.location.reload()}
-            className="mt-2 px-4 py-2 bg-signal-blue text-white text-sm rounded-lg hover:brightness-110 transition-colors"
+            className="mt-2 px-4 py-2 text-white text-sm rounded-lg hover:brightness-110 transition-colors"
+            style={{ backgroundColor: '#0D77EE' }}
           >
             다시 시도
           </button>
@@ -312,7 +316,6 @@ function DiagnosisHeader({
   onUrgentClick: (domain: string) => void
 }) {
   const statusLabel = getStatusLabel(overallScore)
-  const statusColor = getStatusColor(overallScore)
 
   // 분석 기간: 가장 오래된 수집일 ~ 가장 최근 진단일
   const endDate = lastDiagnosedAt ? new Date(lastDiagnosedAt) : new Date()
@@ -322,66 +325,89 @@ function DiagnosisHeader({
   const periodText = `${fmt(startDate)} – ${fmt(endDate).slice(5)}`
 
   return (
-    <section className="rounded-xl border border-surface-border overflow-hidden bg-surface-card">
+    <section
+      className="rounded-lg overflow-hidden"
+      style={{
+        backgroundColor: '#1A1D18',
+        border: '1px solid #2E3329',
+        boxShadow: '0 0 8px rgba(94, 232, 106, 0.08)',
+      }}
+    >
       {/* 상단 메타 행 */}
-      <div className="bg-surface border-b border-surface-border px-6 py-3 flex items-center gap-6 text-sm text-txt-muted">
-        <span><span className="text-txt-muted">분석 기간</span> <strong className="text-txt-primary">{periodText}</strong> · {diffDays}일</span>
-        <span className="text-surface-border">|</span>
-        <span><span className="text-txt-muted">수집 VoC</span> <strong className="text-txt-primary">{totalVoC}건</strong></span>
-        <span className="text-surface-border">|</span>
-        <span><span className="text-txt-muted">분해 이슈</span> <strong className="text-txt-primary">{totalIssues}건</strong></span>
-        <span className="text-surface-border">|</span>
-        <span><span className="text-txt-muted">긍정 반응</span> <strong className="text-txt-primary">{positiveRate}%</strong></span>
+      <div className="px-6 py-4 flex items-center gap-6 text-sm border-b border-[#2E3329]">
+        <span>
+          <span style={{ color: '#8A9980' }}>분석 기간</span>{' '}
+          <strong className="font-mono" style={{ color: '#5EE86A' }}>{periodText}</strong>
+          <span style={{ color: '#8A9980' }}> · {diffDays}일</span>
+        </span>
+        <span style={{ color: '#2E3329' }}>|</span>
+        <span>
+          <span style={{ color: '#8A9980' }}>수집 VoC</span>{' '}
+          <strong className="font-mono" style={{ color: '#5EE86A' }}>{totalVoC}건</strong>
+        </span>
+        <span style={{ color: '#2E3329' }}>|</span>
+        <span>
+          <span style={{ color: '#8A9980' }}>분해 이슈</span>{' '}
+          <strong className="font-mono" style={{ color: '#5EE86A' }}>{totalIssues}건</strong>
+        </span>
+        <span style={{ color: '#2E3329' }}>|</span>
+        <span>
+          <span style={{ color: '#8A9980' }}>긍정 반응</span>{' '}
+          <strong className="font-mono" style={{ color: '#5EE86A' }}>{positiveRate}%</strong>
+        </span>
       </div>
 
       {/* 하단 3칸 */}
-      <div className="grid grid-cols-3 divide-x divide-surface-border">
+      <div className="grid grid-cols-3 divide-x divide-[#2E3329]">
         {/* 좌: 종합 점수 */}
-        <div className="dot-grid-bg px-6 py-5 flex flex-col gap-2">
-          <span className="text-xs font-medium text-txt-muted uppercase tracking-wide">종합 점수</span>
-          <div className="flex items-center gap-3">
-            <span className="text-5xl font-bold font-mono text-txt-primary">{overallScore}</span>
+        <div
+          className="px-6 py-5 flex flex-col gap-2 relative"
+        >
+          {/* dot-grid overlay */}
+          <div
+            className="absolute inset-0 opacity-40 pointer-events-none"
+            style={{
+              backgroundImage: 'radial-gradient(circle, rgba(94,232,106,0.15) 1px, transparent 1px)',
+              backgroundSize: '16px 16px',
+            }}
+          />
+          <span className="text-sm font-medium font-bold relative z-10" style={{ color: '#8A9980' }}>종합 점수</span>
+          <div className="flex items-center gap-3 relative z-10">
+            <span className="text-5xl font-bold font-mono" style={{ color: '#E8EDE0' }}>{overallScore}</span>
             <div className="flex flex-col gap-1">
-              <span className="text-lg text-txt-muted font-light">/ 100</span>
-              <span
-                className="px-3 py-1 rounded-full text-sm font-bold text-white"
-                style={{ backgroundColor: statusColor }}
-              >
-                {statusLabel}
-              </span>
+              <span className="text-lg" style={{ color: '#8A9980' }}>/ 100</span>
+              <StatusBadge status={statusLabel as '탁월' | '보통' | '주의' | '위험'} />
             </div>
           </div>
-          <p className="text-xs text-txt-muted mt-1">4개 도메인 가중 평균 기준</p>
+          <p className="text-xs mt-1 relative z-10" style={{ color: '#8A9980' }}>4개 도메인 가중 평균 기준</p>
         </div>
 
         {/* 중: 이번 주 전체 패턴 */}
         <div className="px-6 py-5 flex flex-col gap-2">
-          <span className="text-xs font-medium text-txt-muted uppercase tracking-wide">이번 주 전체 패턴</span>
-          <p className="text-sm font-semibold text-txt-primary leading-relaxed">
+          <span className="text-sm font-medium font-bold" style={{ color: '#8A9980' }}>이번 주 전체 패턴</span>
+          <p className="text-sm font-semibold leading-relaxed" style={{ color: '#E8EDE0' }}>
             UX 탐색 불편이 운영 CS 유입으로 연결되는 연쇄 패턴 감지
           </p>
-          <p className="text-xs text-txt-muted leading-relaxed">
+          <p className="text-xs leading-relaxed" style={{ color: '#8A9980' }}>
             앱 내 정보 구조 혼란 → 고객센터 문의 증가 → 처리 지연 불만으로 이어지는 도메인 간 연쇄 신호가 반복되고 있습니다. UX·운영 담당팀 공동 대응이 필요합니다.
           </p>
         </div>
 
         {/* 우: 지금 당장 */}
         <div className="px-6 py-5 flex flex-col gap-2">
-          <span className="text-xs font-medium text-txt-muted uppercase tracking-wide">지금 당장</span>
+          <span className="text-sm font-medium font-bold" style={{ color: '#8A9980' }}>지금 당장</span>
           <div className="flex flex-col gap-2">
             {urgentIssues.map((issue, i) => (
               <button
                 key={i}
                 onClick={() => onUrgentClick(issue.domain)}
-                className="flex items-start gap-2 text-left hover:bg-surface-inner rounded-lg p-2 -mx-2 transition-colors group"
+                className="flex items-start gap-2 text-left rounded-lg p-2 -mx-2 transition-colors group"
+                style={{ backgroundColor: 'transparent' }}
+                onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#111410')}
+                onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'transparent')}
               >
-                <span
-                  className="shrink-0 mt-0.5 px-2 py-0.5 rounded text-xs font-bold text-white"
-                  style={{ backgroundColor: DOMAIN_COLORS[issue.domain] }}
-                >
-                  {issue.domain}
-                </span>
-                <span className="text-xs text-txt-muted leading-relaxed group-hover:text-txt-primary line-clamp-2">
+                <DomainTag domain={issue.domain as '전략' | 'UX' | '운영' | '기술'} />
+                <span className="text-xs leading-relaxed line-clamp-2" style={{ color: '#E8EDE0' }}>
                   {issue.issue_summary}
                 </span>
               </button>
@@ -407,7 +433,6 @@ function DomainCard({
   onToggle: () => void
 }) {
   const statusLabel = getStatusLabel(score)
-  const statusColor = getStatusColor(score)
   const domainColor = DOMAIN_COLORS[domain]
   const topAttrs = useMemo(() => getTopNegativeAttributes(issues, domain, 2), [issues, domain])
   const aiTrigger = insight
@@ -417,79 +442,75 @@ function DomainCard({
   return (
     <div
       id={`domain-card-${domain}`}
-      className={`bg-surface-card rounded-xl border transition-all ${
-        isOpen ? 'border-2 shadow-md' : 'border-surface-border hover:border-accent-green/30 hover:shadow-sm'
-      }`}
-      style={{ borderColor: isOpen ? domainColor : undefined }}
+      className="p-6 rounded-lg transition-all"
+      style={{
+        backgroundColor: '#1A1D18',
+        border: isOpen ? `1px solid ${domainColor}` : '1px solid #2E3329',
+        boxShadow: isOpen ? `0 0 8px ${domainColor}33` : '0 0 8px rgba(94, 232, 106, 0.08)',
+      }}
     >
-      <div className="p-4 flex flex-col gap-3">
+      <div className="flex flex-col gap-3">
         {/* 헤더 */}
         <div className="flex items-center justify-between">
-          <span className="text-sm font-bold text-txt-primary">{domain}</span>
-          <span
-            className="px-2.5 py-0.5 rounded-full text-xs font-bold text-white"
-            style={{ backgroundColor: statusColor }}
-          >
-            {statusLabel}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: domainColor }} />
+            <span className="text-lg font-bold" style={{ color: '#E8EDE0' }}>{domain}</span>
+          </div>
+          <StatusBadge status={statusLabel as '탁월' | '보통' | '주의' | '위험'} />
         </div>
 
         {/* 점수 + 등락 */}
         <div className="flex items-end gap-2">
-          <span className="text-[28px] font-bold font-mono text-txt-primary leading-none">{score}</span>
-          <span className="text-sm text-txt-muted mb-0.5">점</span>
+          <span className="text-3xl font-bold font-mono leading-none" style={{ color: '#E8EDE0' }}>{score}</span>
+          <span className="text-lg mb-0.5" style={{ color: '#8A9980' }}>점</span>
           {diff != null && diff !== 0 && (
-            <span
-              className="text-xs font-semibold mb-0.5"
-              style={{ color: diff > 0 ? '#22C55E' : '#EF4444' }}
-            >
-              전주 대비 {diff > 0 ? '▲' : '▼'}{Math.abs(diff)}pt
+            <span className="text-sm mb-0.5">
+              <span style={{ color: '#8A9980' }}>전주 대비 </span>
+              <span style={{ color: diff > 0 ? '#5EE86A' : '#EF4444' }}>
+                {diff > 0 ? '▲' : '▼'}{Math.abs(diff)}pt
+              </span>
             </span>
           )}
         </div>
 
-        {/* 바 게이지 */}
-        <div className="h-2 bg-surface-track rounded-full overflow-hidden">
-          <div
-            className="h-full rounded-full transition-all duration-500"
-            style={{ width: `${score}%`, backgroundColor: domainColor }}
-          />
-        </div>
+        {/* 픽셀 바 게이지 */}
+        <PixelBar value={score} color={domainColor} height={8} blockSize={12} gap={3} />
 
         {/* 속성 태그 */}
         <div className="flex flex-wrap gap-1.5">
           {topAttrs.map(attr => (
-            <span
-              key={attr}
-              className="px-2 py-0.5 rounded text-xs font-medium bg-surface-border text-txt-muted whitespace-nowrap"
-            >
-              #{attr.replace(/ /g, '')}↓
-            </span>
+            <HashAttributeTag key={attr} attribute={attr.replace(/ /g, '')} direction="down" />
           ))}
           {topAttrs.length === 0 && (
-            <span className="text-xs text-txt-muted">주요 부정 속성 없음</span>
+            <span className="text-xs" style={{ color: '#8A9980' }}>주요 부정 속성 없음</span>
           )}
         </div>
 
         {/* AI 트리거 */}
-        <p className="text-xs text-txt-muted italic truncate">{aiTrigger}</p>
+        <p
+          className="p-3 rounded text-sm font-medium truncate"
+          style={{ backgroundColor: '#111410', color: '#E8EDE0' }}
+        >
+          {aiTrigger}
+        </p>
 
         {/* 하단 카운트 + 탐색 버튼 */}
-        <div className="flex items-center justify-between pt-1 border-t border-surface-border">
-          <div className="flex items-center gap-2 text-xs">
-            <span className="text-[#5EE86A] font-medium">긍정 {detail?.pos ?? counts.pos}건</span>
-            <span className="text-signal-red font-medium">부정 {detail?.neg ?? counts.neg}건</span>
-            <span className="text-txt-muted">(긍정 {detail?.pos_rate ?? (counts.pos + counts.neg > 0 ? Math.round(counts.pos / (counts.pos + counts.neg) * 100) : 0)}%)</span>
+        <div className="flex items-center justify-between pt-1 border-t border-[#2E3329]">
+          <div className="flex items-center gap-2 text-sm font-mono">
+            <span style={{ color: '#8A9980' }}>긍정</span>
+            <span style={{ color: '#5EE86A' }}>{detail?.pos ?? counts.pos}건</span>
+            <span style={{ color: '#8A9980' }}>부정</span>
+            <span style={{ color: '#EF4444' }}>{detail?.neg ?? counts.neg}건</span>
+            <span style={{ color: '#5EE86A' }}>
+              ({detail?.pos_rate ?? (counts.pos + counts.neg > 0 ? Math.round(counts.pos / (counts.pos + counts.neg) * 100) : 0)}%)
+            </span>
           </div>
           <button
             onClick={onToggle}
-            className="flex items-center gap-1 text-xs font-medium px-3 py-1.5 rounded-lg transition-colors"
-            style={{
-              backgroundColor: isOpen ? domainColor : '#2E3329',
-              color: isOpen ? '#fff' : '#E8EDE0',
-            }}
+            className="flex items-center gap-1 text-sm font-medium"
+            style={{ color: '#5EE86A' }}
           >
-            {isOpen ? '▲ 닫기' : '▼ 탐색'}
+            {isOpen ? '접기 ▲' : '탐색 ▼'}
           </button>
         </div>
       </div>
@@ -541,10 +562,17 @@ function DomainDetailPanel({
     )
   }
 
+  // Helper to get gap type from gap number
+  const getGapType = (gap: number): '기대 초과' | '기대 충족' | '기대 이하' => {
+    if (gap > 5) return '기대 초과'
+    if (gap >= -5) return '기대 충족'
+    return '기대 이하'
+  }
+
   return (
     <div
-      className="mt-4 rounded-xl border-2 overflow-hidden bg-surface-card"
-      style={{ borderColor: domainColor }}
+      className="mt-4 rounded-b-lg overflow-hidden border-x border-b border-[#2E3329]"
+      style={{ backgroundColor: '#111410' }}
     >
       {/* 패널 헤더 */}
       <div
@@ -555,13 +583,13 @@ function DomainDetailPanel({
           className="w-3 h-3 rounded-full"
           style={{ backgroundColor: domainColor }}
         />
-        <span className="text-sm font-bold text-txt-primary">{domain} 도메인 상세 분석</span>
+        <span className="text-sm font-bold" style={{ color: '#E8EDE0' }}>{domain} 도메인 상세 분석</span>
       </div>
 
-      <div className="grid grid-cols-[40%_60%]">
+      <div className="grid grid-cols-2 gap-6">
         {/* C-1: 레이더 차트 */}
-        <div className="border-r border-surface-border p-5 flex flex-col gap-4">
-          <h3 className="text-sm font-semibold text-txt-primary">속성별 기대치 vs 실제 경험</h3>
+        <div className="p-5 flex flex-col gap-4">
+          <h3 className="text-sm font-semibold" style={{ color: '#E8EDE0' }}>속성별 기대치 vs 실제 경험</h3>
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart data={radarData} margin={{ top: 10, right: 30, bottom: 10, left: 30 }}>
@@ -583,7 +611,7 @@ function DomainDetailPanel({
                   fillOpacity={0.2}
                 />
                 <Legend
-                  formatter={(value) => <span className="text-xs text-txt-muted">{value}</span>}
+                  formatter={(value) => <span className="text-xs" style={{ color: '#8A9980' }}>{value}</span>}
                 />
               </RadarChart>
             </ResponsiveContainer>
@@ -593,17 +621,18 @@ function DomainDetailPanel({
             className="rounded-lg px-4 py-3 text-sm font-medium bg-[rgba(94,232,106,0.08)] border border-[rgba(94,232,106,0.15)]"
             style={{ color: domainColor }}
           >
-            💡 {aiTrigger}
+            {aiTrigger}
           </div>
         </div>
 
         {/* C-2: VoC 이슈 테이블 */}
         <div className="p-5 flex flex-col gap-3">
           <div className="flex items-center justify-between">
-            <h3 className="text-sm font-semibold text-txt-primary">VoC 이슈 목록 (상위 7건)</h3>
+            <h3 className="text-sm font-semibold" style={{ color: '#E8EDE0' }}>VoC 이슈 목록 (상위 7건)</h3>
             <button
               onClick={onNavigateToFeed}
-              className="text-xs text-accent-green hover:brightness-110 font-medium"
+              className="text-xs font-medium"
+              style={{ color: '#8A9980' }}
             >
               전체 보기 →
             </button>
@@ -613,60 +642,57 @@ function DomainDetailPanel({
             {domainIssues.map((issue, idx) => {
               const isExpanded = expandedIssueIdx === idx
               const vocItem = vocData.find(v => v.issues.includes(issue))
-              const gapLabel = getGapDisplayLabel(issue.gap)
-              const gapColor = getGapStatusColor(issue.gap)
+              const gapType = getGapType(issue.gap)
 
               return (
-                <div key={idx} className="rounded-lg border border-surface-border overflow-hidden">
+                <div
+                  key={idx}
+                  className="rounded border overflow-hidden transition-colors"
+                  style={{
+                    backgroundColor: '#1A1D18',
+                    borderColor: '#2E3329',
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(94,232,106,0.25)')}
+                  onMouseLeave={e => (e.currentTarget.style.borderColor = '#2E3329')}
+                >
                   <button
                     onClick={() => onExpandIssue(isExpanded ? null : idx)}
-                    className="w-full flex items-center gap-2 px-3 py-2.5 hover:bg-surface-inner transition-colors text-left"
+                    className="w-full flex items-center gap-2 p-3 transition-colors text-left"
                   >
                     {/* Gap 표시 */}
-                    <span
-                      className="shrink-0 px-2 py-0.5 rounded text-xs font-bold"
-                      style={{
-                        backgroundColor: gapColor + '20',
-                        color: gapColor,
-                      }}
-                    >
-                      {gapLabel}
-                    </span>
+                    <GapTag type={gapType} value={issue.gap} />
                     {/* 속성명 */}
-                    <span className="shrink-0 text-xs text-txt-muted w-16 truncate">
-                      {issue.attributes[0]}
-                    </span>
+                    <MutedChip label={issue.attributes[0]} />
                     {/* 감성 뱃지 */}
-                    <span
-                      className="shrink-0 px-1.5 py-0.5 rounded text-xs font-medium"
-                      style={{
-                        backgroundColor: SENTIMENT_BG[issue.sentiment],
-                        color: SENTIMENT_COLORS[issue.sentiment],
-                      }}
-                    >
-                      {issue.sentiment}
-                    </span>
+                    <SentimentTag sentiment={issue.sentiment as '매우 긍정' | '긍정' | '중립' | '부정' | '매우 부정'} />
                     {/* 핵심 내용 */}
-                    <span className="flex-1 text-xs text-txt-muted truncate">
+                    <span className="flex-1 text-xs truncate" style={{ color: '#E8EDE0' }}>
                       {issue.issue_summary}
                     </span>
-                    <span className="shrink-0 text-txt-muted text-xs">{isExpanded ? '▲' : '▼'}</span>
+                    <span className="shrink-0 text-xs" style={{ color: '#8A9980' }}>{isExpanded ? '▲' : '▼'}</span>
                   </button>
 
                   {isExpanded && vocItem && (
-                    <div className="px-4 py-3 bg-surface-inner border-t border-surface-border flex flex-col gap-2">
-                      <p className="text-xs text-txt-primary leading-relaxed whitespace-pre-wrap">
+                    <div
+                      className="px-4 py-3 flex flex-col gap-2"
+                      style={{ borderTop: '1px dashed #2E3329' }}
+                    >
+                      <span className="text-xs" style={{ color: '#8A9980' }}>원본 VoC</span>
+                      <p className="text-xs leading-relaxed whitespace-pre-wrap" style={{ color: '#E8EDE0' }}>
                         {vocItem.raw_text}
                       </p>
-                      <div className="flex items-center gap-3 text-xs text-txt-muted flex-wrap">
-                        <span>출처: <strong>{getPlatformLabel(vocItem)}</strong></span>
+                      <div className="flex items-center gap-3 text-xs flex-wrap" style={{ color: '#8A9980' }}>
+                        <span>출처: <MutedChip label={getPlatformLabel(vocItem)} variant="outline" /></span>
                         {vocItem.channel_detail && (
-                          <span>채널: <strong>{vocItem.channel_detail}</strong></span>
+                          <span>채널: <MutedChip label={vocItem.channel_detail} variant="outline" /></span>
                         )}
-                        {vocItem.service && <span>서비스: <strong>{vocItem.service}</strong></span>}
+                        {vocItem.service && <span>서비스: <MutedChip label={vocItem.service} variant="outline" /></span>}
                       </div>
-                      <div className="text-xs text-txt-primary bg-[rgba(13,119,238,0.1)] border border-[rgba(13,119,238,0.2)] rounded px-3 py-2">
-                        💼 {issue.action_hint}
+                      <div
+                        className="text-xs p-3 rounded"
+                        style={{ backgroundColor: '#0E0F0E', color: '#E8EDE0' }}
+                      >
+                        {issue.action_hint}
                       </div>
                     </div>
                   )}
@@ -679,42 +705,34 @@ function DomainDetailPanel({
 
       {/* C-3: 대표 보이스 */}
       {representativeVoices.length > 0 && (
-        <div className="border-t border-surface-border px-6 py-4 bg-surface">
-          <h3 className="text-xs font-semibold text-txt-muted uppercase tracking-wide mb-3">
+        <div className="px-6 py-4 border-t border-[#2E3329]">
+          <h3 className="text-xs font-semibold uppercase tracking-wide mb-3" style={{ color: '#8A9980' }}>
             이번 주 대표 보이스
           </h3>
           <div className="grid grid-cols-2 gap-4">
             {representativeVoices.map(v => (
-              <blockquote
+              <div
                 key={v.id}
-                className="bg-surface-card rounded-xl border border-surface-border px-5 py-4 relative"
+                className="rounded-lg px-5 py-4"
+                style={{
+                  backgroundColor: '#1A1D18',
+                  border: '1px solid #2E3329',
+                  borderLeft: '2px solid #5EE86A',
+                }}
               >
-                <span
-                  className="absolute top-3 left-4 text-4xl leading-none font-serif"
-                  style={{ color: domainColor, opacity: 0.3 }}
-                >
-                  "
-                </span>
-                <p className="text-sm text-txt-muted leading-relaxed pl-4 pt-2 line-clamp-3">
+                <p className="text-sm leading-relaxed line-clamp-3" style={{ color: '#E8EDE0' }}>
                   {v.raw_text}
                 </p>
-                <div className="mt-2 flex items-center gap-2 text-xs text-txt-muted flex-wrap">
-                  <span
-                    className="px-2 py-0.5 rounded text-xs font-medium text-white"
-                    style={{ backgroundColor: getPlatformColor(v) }}
-                  >
-                    {getPlatformLabel(v)}
-                  </span>
+                <div className="mt-2 flex items-center gap-2 text-xs flex-wrap" style={{ color: '#8A9980' }}>
+                  <MutedChip label={getPlatformLabel(v)} variant="outline" />
                   {v.channel_detail && (
-                    <span className="bg-surface-border text-txt-muted px-2 py-0.5 rounded">
-                      {v.channel_detail}
-                    </span>
+                    <MutedChip label={v.channel_detail} variant="outline" />
                   )}
                   {v.collected_at && (
                     <span>{new Date(v.collected_at).toLocaleDateString('ko-KR')}</span>
                   )}
                 </div>
-              </blockquote>
+              </div>
             ))}
           </div>
         </div>
@@ -727,60 +745,41 @@ function DomainDetailPanel({
 function ChannelSentimentChart({ data }: { data: ReturnType<typeof calcChannelSentiment> }) {
   const visibleData = data.filter(item => item.vocCount > 0)
   return (
-    <div className="bg-surface-card rounded-xl border border-surface-border p-5">
-      <h3 className="text-sm font-semibold text-txt-primary mb-4">채널별 감성 분포</h3>
-      <div className="flex flex-col gap-3">
+    <div
+      className="rounded-lg p-5"
+      style={{
+        backgroundColor: '#1A1D18',
+        border: '1px solid #2E3329',
+        boxShadow: '0 0 8px rgba(94, 232, 106, 0.08)',
+      }}
+    >
+      <h3 className="text-sm font-semibold mb-4" style={{ color: '#E8EDE0' }}>채널별 감성 분포</h3>
+      <div className="flex flex-col gap-4">
         {visibleData.map(item => (
-          <div key={item.source} className="flex flex-col gap-1">
-            <div className="flex items-center justify-between text-xs text-txt-muted">
-              <div className="flex items-center gap-1.5">
-                <span
-                  className="w-2.5 h-2.5 rounded-full shrink-0"
-                  style={{ backgroundColor: SOURCE_COLORS[item.source] ?? '#9CA3AF' }}
-                />
-                <span className="font-medium">{SOURCE_LABELS[item.source] ?? item.source}</span>
-              </div>
-              <span className="text-txt-muted">{item.vocCount}건</span>
+          <div key={item.source} className="flex flex-col gap-1.5">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium" style={{ color: '#E8EDE0' }}>
+                {SOURCE_LABELS[item.source] ?? item.source}
+              </span>
+              <span className="text-xs font-mono" style={{ color: '#8A9980' }}>{item.vocCount}건</span>
             </div>
-            <div className="flex h-5 rounded-full overflow-hidden bg-[#2A2E25]">
-              {item.positive > 0 && (
-                <div
-                  className="h-full flex items-center justify-center text-[10px] text-white font-medium"
-                  style={{ width: `${item.positive}%`, backgroundColor: '#5EE86A' }}
-                >
-                  {item.positive >= 10 ? `${item.positive}%` : ''}
-                </div>
-              )}
-              {item.neutral > 0 && (
-                <div
-                  className="h-full flex items-center justify-center text-[10px] text-white font-medium"
-                  style={{ width: `${item.neutral}%`, backgroundColor: '#4A5540' }}
-                >
-                  {item.neutral >= 10 ? `${item.neutral}%` : ''}
-                </div>
-              )}
-              {item.negative > 0 && (
-                <div
-                  className="h-full flex items-center justify-center text-[10px] text-white font-medium"
-                  style={{ width: `${item.negative}%`, backgroundColor: '#EF4444' }}
-                >
-                  {item.negative >= 10 ? `${item.negative}%` : ''}
-                </div>
-              )}
-            </div>
-            <div className="flex gap-3 text-[10px]">
-              <span className="text-[#5EE86A]">긍정 {item.positive}%</span>
-              <span className="text-txt-muted">중립 {item.neutral}%</span>
-              <span className="text-signal-red">부정 {item.negative}%</span>
+            <MultiSegmentPixelBar
+              segments={[
+                { value: item.positive, color: '#5EE86A' },
+                { value: item.neutral, color: '#4A5540' },
+                { value: item.negative, color: '#EF4444' },
+              ]}
+              height={24}
+              blockSize={8}
+              gap={2}
+            />
+            <div className="flex gap-3 text-xs font-mono">
+              <span><span style={{ color: '#8A9980' }}>긍정 </span><span style={{ color: '#5EE86A' }}>{item.positive}%</span></span>
+              <span><span style={{ color: '#8A9980' }}>중립 </span><span style={{ color: '#4A5540' }}>{item.neutral}%</span></span>
+              <span><span style={{ color: '#8A9980' }}>부정 </span><span style={{ color: '#EF4444' }}>{item.negative}%</span></span>
             </div>
           </div>
         ))}
-      </div>
-      {/* 범례 */}
-      <div className="mt-4 flex items-center gap-4 text-xs text-txt-muted">
-        <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-sm bg-[#5EE86A] inline-block" />긍정</span>
-        <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-sm bg-[#4A5540] inline-block" />중립</span>
-        <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-sm bg-signal-red inline-block" />부정</span>
       </div>
     </div>
   )
@@ -807,12 +806,19 @@ function DomainTrendChart({
   }
 
   return (
-    <div className="bg-surface-card rounded-xl border border-surface-border p-5">
-      <h3 className="text-sm font-semibold text-txt-primary mb-4">도메인 점수 추이 (최근 4주)</h3>
-      <div className="h-52">
+    <div
+      className="rounded-lg p-5"
+      style={{
+        backgroundColor: '#1A1D18',
+        border: '1px solid #2E3329',
+        boxShadow: '0 0 8px rgba(94, 232, 106, 0.08)',
+      }}
+    >
+      <h3 className="text-sm font-semibold mb-4" style={{ color: '#E8EDE0' }}>도메인 점수 추이 (최근 4주)</h3>
+      <div className="h-52 rounded" style={{ backgroundColor: '#111410' }}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#2E3329" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#1E2218" />
             <XAxis
               dataKey="week"
               tick={({ x, y, payload }: { x: number; y: number; payload: { value: string } }) => {
@@ -828,7 +834,13 @@ function DomainTrendChart({
             />
             <YAxis domain={[0, 100]} tick={{ fontSize: 11, fill: '#8A9980' }} />
             <Tooltip
-              contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #2E3329', backgroundColor: '#1A1D18', color: '#E8EDE0' }}
+              contentStyle={{
+                fontSize: 12,
+                borderRadius: 8,
+                border: '1px solid #2E3329',
+                backgroundColor: '#1A1D18',
+                color: '#E8EDE0',
+              }}
               formatter={(value: number | null, name: string) => value != null ? [`${value}점`, name] : ['데이터 없음', name]}
             />
             <Legend formatter={(value) => <span style={{ fontSize: 12, color: '#8A9980' }}>{value}</span>} />
@@ -862,17 +874,15 @@ function DomainTrendChart({
         {DOMAINS.map(d => {
           const score = domainScores[d] ?? 0
           const statusLabel = getStatusLabel(score)
-          const statusColor = getStatusColor(score)
           return (
-            <div key={d} className="flex flex-col items-center gap-1 p-2 rounded-lg bg-surface-inner">
-              <span className="text-xs text-txt-muted">{d}</span>
-              <span className="text-lg font-bold font-mono text-txt-primary">{score}</span>
-              <span
-                className="px-2 py-0.5 rounded-full text-[10px] font-bold text-white"
-                style={{ backgroundColor: statusColor }}
-              >
-                {statusLabel}
-              </span>
+            <div
+              key={d}
+              className="flex flex-col items-center gap-1 p-2 rounded-lg"
+              style={{ backgroundColor: '#111410' }}
+            >
+              <span className="text-xs" style={{ color: '#8A9980' }}>{d}</span>
+              <span className="text-lg font-bold font-mono" style={{ color: '#E8EDE0' }}>{score}</span>
+              <StatusBadge status={statusLabel as '탁월' | '보통' | '주의' | '위험'} />
             </div>
           )
         })}
