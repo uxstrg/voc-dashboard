@@ -5,6 +5,10 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      mono: ['"IBM Plex Mono"', '"Space Mono"', 'monospace'],
+      sans: ['Pretendard', '"Noto Sans KR"', '-apple-system', 'sans-serif'],
+    },
     extend: {
       colors: {
         surface: {
@@ -25,10 +29,6 @@ module.exports = {
           orange: '#F97316',
           red: '#EF4444',
         },
-      },
-      fontFamily: {
-        mono: ['"IBM Plex Mono"', '"Space Mono"', 'monospace'],
-        sans: ['Pretendard', '"Noto Sans KR"', '-apple-system', 'sans-serif'],
       },
     },
   },
