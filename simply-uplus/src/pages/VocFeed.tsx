@@ -3,11 +3,9 @@ import { motion } from 'framer-motion'
 import { DiagnosedVoC, DiagnosisIssue } from '../types'
 import { getGapDisplayLabel, getGapStatusColor } from '../utils/analysisUtils'
 import minerLoaderGif from '../assets/image-1.gif'
-import {
-  DOMAIN_COLORS, SOURCE_LABELS, SOURCE_COLORS,
-  SENTIMENT_COLORS, SENTIMENT_BG,
-} from '../constants/colors'
+import { SOURCE_LABELS } from '../constants/colors'
 import { PLATFORM_MAP, PLATFORMS, DOMAINS } from '../constants/platforms'
+import { DomainTag, SentimentTag, GapTag, MutedChip } from '../components/tags'
 
 const API_BASE = 'https://voc-api-production.up.railway.app'
 
@@ -200,7 +198,7 @@ export default function VocFeed() {
 
   if (loading) {
     return (
-      <div className="size-full flex flex-col items-center justify-center min-h-[400px]">
+      <div className="size-full flex flex-col items-center justify-center min-h-[400px]" style={{ background: '#0E0F0E' }}>
         <motion.div
           initial={{ opacity: 0, scale: 0.64 }}
           animate={{ opacity: 1, scale: 0.8 }}
@@ -239,14 +237,15 @@ export default function VocFeed() {
 
   if (error) {
     return (
-      <main className="max-w-[1600px] mx-auto px-6 py-6 flex items-center justify-center" style={{ minHeight: 400 }}>
+      <main className="max-w-[1600px] mx-auto px-6 py-6 flex items-center justify-center" style={{ minHeight: 400, background: '#0E0F0E' }}>
         <div className="flex flex-col items-center gap-3 text-center">
-          <span className="text-4xl">⚠️</span>
-          <p className="text-sm font-semibold text-txt-primary">데이터 로드 실패</p>
-          <p className="text-xs text-txt-muted">{error}</p>
+          <span className="text-4xl">&#9888;&#65039;</span>
+          <p className="text-sm font-semibold" style={{ color: '#E8EDE0' }}>데이터 로드 실패</p>
+          <p className="text-xs" style={{ color: '#8A9980' }}>{error}</p>
           <button
             onClick={() => window.location.reload()}
-            className="mt-2 px-4 py-2 bg-signal-blue text-white text-sm rounded-lg hover:opacity-90 transition-colors"
+            className="mt-2 px-4 py-2 text-white text-sm rounded-lg hover:opacity-90 transition-colors"
+            style={{ background: '#5EE86A', color: '#0E0F0E' }}
           >
             다시 시도
           </button>
@@ -256,24 +255,24 @@ export default function VocFeed() {
   }
 
   return (
-    <main className="max-w-[1600px] mx-auto px-6 py-6" style={{ minWidth: 1280 }}>
+    <main className="max-w-[1600px] mx-auto px-6 py-6" style={{ minWidth: 1280, background: '#0E0F0E' }}>
       {/* Page title */}
       <div className="mb-6">
-        <h1 className="text-xl font-bold text-txt-primary">VoC 피드</h1>
-        <p className="text-sm text-txt-muted mt-1">총 <span className="font-mono">{vocData.length}</span>건</p>
+        <h1 className="text-3xl font-bold" style={{ color: '#E8EDE0' }}>VoC 피드</h1>
+        <p className="text-sm font-mono mt-1" style={{ color: '#8A9980' }}>총 <span className="font-mono">{vocData.length}</span>건</p>
       </div>
 
       {/* 2-column layout */}
-      <div className="flex gap-6">
+      <div className="grid gap-6" style={{ gridTemplateColumns: '280px 1fr' }}>
         {/* Left: Filter panel */}
-        <div className="w-[240px] shrink-0">
+        <div className="shrink-0">
           <div className="sticky top-6">
-            <div className="bg-surface-card rounded-xl border border-surface-border p-4">
-              <p className="text-xs uppercase tracking-wide text-txt-muted mb-4">Filters</p>
+            <div className="rounded-lg p-4" style={{ background: '#1A1D18', border: '1px solid #2E3329', boxShadow: '0 0 8px rgba(94, 232, 106, 0.08)' }}>
+              <p className="text-sm font-bold mb-4" style={{ color: '#E8EDE0' }}>Filters</p>
 
               {/* Source section */}
               <div className="mb-5">
-                <p className="text-xs font-semibold text-txt-muted mb-2">출처</p>
+                <p className="text-xs font-medium mb-2" style={{ color: '#8A9980' }}>출처</p>
                 <label className="flex items-center gap-2 py-1 cursor-pointer">
                   <input
                     type="checkbox"
@@ -282,9 +281,10 @@ export default function VocFeed() {
                       if (el) el.indeterminate = someSourcesChecked
                     }}
                     onChange={toggleAllSources}
-                    className="accent-[#5EE86A] w-3.5 h-3.5"
+                    className="accent-[#5EE86A] w-4 h-4 rounded"
+                    style={{ borderColor: '#2E3329', backgroundColor: '#111410' }}
                   />
-                  <span className="text-sm text-txt-primary">전체</span>
+                  <span className="text-sm" style={{ color: '#E8EDE0' }}>전체</span>
                 </label>
                 {PLATFORMS.map(p => (
                   <label key={p} className="flex items-center gap-2 py-1 cursor-pointer">
@@ -292,25 +292,27 @@ export default function VocFeed() {
                       type="checkbox"
                       checked={!!sourcesChecked[p]}
                       onChange={() => toggleSource(p)}
-                      className="accent-[#5EE86A] w-3.5 h-3.5"
+                      className="accent-[#5EE86A] w-4 h-4 rounded"
+                      style={{ borderColor: '#2E3329', backgroundColor: '#111410' }}
                     />
-                    <span className="text-sm text-txt-primary">{PLATFORM_MAP[p] ?? p}</span>
+                    <span className="text-sm" style={{ color: '#E8EDE0' }}>{PLATFORM_MAP[p] ?? p}</span>
                   </label>
                 ))}
               </div>
 
               {/* Sentiment section */}
               <div>
-                <p className="text-xs font-semibold text-txt-muted mb-2">감성</p>
+                <p className="text-xs font-medium mb-2" style={{ color: '#8A9980' }}>감성</p>
                 {SENTIMENT_GROUPS.map(g => (
                   <label key={g} className="flex items-center gap-2 py-1 cursor-pointer">
                     <input
                       type="checkbox"
                       checked={!!sentimentChecked[g]}
                       onChange={() => toggleSentiment(g)}
-                      className="accent-[#5EE86A] w-3.5 h-3.5"
+                      className="accent-[#5EE86A] w-4 h-4 rounded"
+                      style={{ borderColor: '#2E3329', backgroundColor: '#111410' }}
                     />
-                    <span className="text-sm text-txt-primary">{g}</span>
+                    <span className="text-sm" style={{ color: '#E8EDE0' }}>{g}</span>
                   </label>
                 ))}
               </div>
@@ -321,32 +323,35 @@ export default function VocFeed() {
         {/* Right: Content area */}
         <div className="flex-1 min-w-0" ref={contentRef}>
           {/* Search bar - sticky */}
-          <div className="sticky top-0 z-20 pb-2 bg-surface">
+          <div className="sticky top-0 z-20 pb-2" style={{ background: '#0E0F0E' }}>
             <input
               type="text"
               placeholder="원문 검색..."
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-2 text-sm border border-surface-border rounded-lg focus:outline-none focus:border-accent-green/50 bg-surface text-txt-primary placeholder:text-txt-muted"
+              className="w-full px-4 py-2 text-sm rounded-lg focus:outline-none focus:border-[#5EE86A]/50"
+              style={{ background: '#1A1D18', border: '1px solid #2E3329', color: '#E8EDE0' }}
             />
           </div>
 
           {/* Domain tab bar - sticky below search */}
-          <div className="sticky top-[44px] z-20 bg-surface pb-2">
-            <div className="flex items-center border-b border-surface-border">
+          <div className="sticky top-[44px] z-20 pb-2" style={{ background: '#0E0F0E' }}>
+            <div className="flex items-center gap-6" style={{ borderBottom: '1px solid #2E3329' }}>
               {DOMAIN_FILTERS.map(d => {
                 const isActive = domainFilter === d
                 return (
                   <button
                     key={d}
                     onClick={() => setDomainFilter(d)}
-                    className={`px-4 py-2 text-sm font-medium transition-colors relative ${
-                      isActive
-                        ? 'text-accent-green border-b-2 border-accent-green'
-                        : 'text-txt-muted hover:text-txt-primary'
-                    }`}
+                    className="px-0 py-2 text-sm font-medium transition-colors relative"
+                    style={{ color: isActive ? '#5EE86A' : '#8A9980' }}
+                    onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLButtonElement).style.color = '#E8EDE0' }}
+                    onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLButtonElement).style.color = '#8A9980' }}
                   >
                     {d} <span className="font-mono text-xs ml-1">{domainCounts[d] ?? 0}</span>
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5" style={{ background: '#5EE86A' }} />
+                    )}
                   </button>
                 )
               })}
@@ -359,9 +364,13 @@ export default function VocFeed() {
                     onClick={() => setSortBy(key)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                       sortBy === key
-                        ? 'bg-surface-card text-accent-green border border-accent-green/30'
-                        : 'bg-surface-border text-txt-muted'
+                        ? 'border'
+                        : ''
                     }`}
+                    style={sortBy === key
+                      ? { background: '#1A1D18', color: '#5EE86A', borderColor: 'rgba(94, 232, 106, 0.3)' }
+                      : { background: '#2E3329', color: '#8A9980' }
+                    }
                   >
                     {label}
                   </button>
@@ -372,11 +381,11 @@ export default function VocFeed() {
 
           {/* Empty states */}
           {allSourcesUnchecked ? (
-            <div className="text-center py-16 text-txt-muted">
+            <div className="text-center py-16" style={{ color: '#8A9980' }}>
               <p className="text-sm">수신 채널 없음. 출처를 선택하십시오</p>
             </div>
           ) : paginatedItems.length === 0 ? (
-            <div className="text-center py-16 text-txt-muted">
+            <div className="text-center py-16" style={{ color: '#8A9980' }}>
               <p className="text-sm">탐지된 VoC 없음. 키워드 또는 필터를 재조정하십시오</p>
             </div>
           ) : (
@@ -399,32 +408,36 @@ export default function VocFeed() {
                     <>
                       <button
                         onClick={() => setCurrentPage(1)}
-                        className="px-2 py-1 rounded bg-surface-border text-txt-muted text-sm hover:opacity-80"
+                        className="px-2 py-1 rounded text-sm hover:opacity-80"
+                        style={{ background: '#2E3329', color: '#8A9980' }}
                       >
                         &laquo;
                       </button>
                       <button
                         onClick={() => setCurrentPage(safePage - 1)}
-                        className="px-2 py-1 rounded bg-surface-border text-txt-muted text-sm hover:opacity-80"
+                        className="px-2 py-1 rounded text-sm hover:opacity-80"
+                        style={{ background: '#2E3329', color: '#8A9980' }}
                       >
                         &lsaquo;
                       </button>
                     </>
                   )}
-                  <span className="text-sm font-mono">
-                    Page <span className="text-accent-green">{safePage}</span> of {totalPages}
+                  <span className="text-sm font-mono" style={{ color: '#8A9980' }}>
+                    Page <span style={{ color: '#E8EDE0' }}>{safePage}</span> of {totalPages}
                   </span>
                   {safePage < totalPages && (
                     <>
                       <button
                         onClick={() => setCurrentPage(safePage + 1)}
-                        className="px-2 py-1 rounded bg-surface-border text-txt-muted text-sm hover:opacity-80"
+                        className="px-2 py-1 rounded text-sm hover:opacity-80"
+                        style={{ background: '#2E3329', color: '#8A9980' }}
                       >
                         &rsaquo;
                       </button>
                       <button
                         onClick={() => setCurrentPage(totalPages)}
-                        className="px-2 py-1 rounded bg-surface-border text-txt-muted text-sm hover:opacity-80"
+                        className="px-2 py-1 rounded text-sm hover:opacity-80"
+                        style={{ background: '#2E3329', color: '#8A9980' }}
                       >
                         &raquo;
                       </button>
@@ -441,7 +454,8 @@ export default function VocFeed() {
       {showScrollTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full bg-surface-border text-txt-muted flex items-center justify-center hover:text-accent-green transition-colors shadow-lg"
+          className="fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full flex items-center justify-center transition-colors shadow-lg"
+          style={{ background: '#1A1D18', border: '1px solid #2E3329', color: '#5EE86A' }}
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M8 14V2M2 8l6-6 6 6"/>
@@ -474,76 +488,62 @@ function VocCard({ voc, onClick }: { voc: DiagnosedVoC; onClick: () => void }) {
   // Final sentiment
   const finalSentiment = getVocFinalSentiment(voc)
 
-  // Map group to a display sentiment key for coloring
-  const sentimentColorKey = finalSentiment === '긍정' ? '긍정' : finalSentiment === '부정' ? '부정' : '중립'
-
   return (
     <button
       onClick={onClick}
-      className="bg-surface-card rounded-xl border border-surface-border p-4 text-left hover:border-accent-green/30 hover:shadow-sm transition-all group w-full"
+      className="p-4 rounded-lg text-left hover:border-[#5EE86A]/25 transition-all group w-full"
+      style={{ background: '#1A1D18', border: '1px solid #2E3329', boxShadow: '0 0 8px rgba(94, 232, 106, 0.08)' }}
     >
       {/* Top row */}
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2 flex-wrap">
-          {/* Source tag - muted chip */}
-          <span className="bg-surface-border text-txt-muted rounded px-2 py-0.5 text-xs">
-            {PLATFORM_MAP[platform] ?? platform}
-          </span>
+          {/* Source tag - MutedChip solid */}
+          <MutedChip label={PLATFORM_MAP[platform] ?? platform} variant="solid" />
           {/* Service name + rating for AppStore/PlayStore */}
           {isAppOrPlayStore(platform) && channelDetail && (
-            <span className="text-xs text-txt-muted">
+            <span className="text-xs" style={{ color: '#8A9980' }}>
               {channelDetail}
             </span>
           )}
         </div>
         {/* Date right-aligned */}
-        <span className="text-xs text-txt-muted font-mono shrink-0">
+        <span className="text-xs font-mono shrink-0" style={{ color: '#8A9980' }}>
           {formatDate(dateStr)}
         </span>
       </div>
 
       {/* Body - raw text 2 lines */}
-      <p className="text-sm text-txt-primary leading-relaxed line-clamp-2 mb-3">
+      <p className="text-sm leading-relaxed line-clamp-2 mb-3" style={{ color: '#E8EDE0' }}>
         {voc.raw_text}
       </p>
 
       {/* Bottom row */}
       <div className="flex items-center gap-2 flex-wrap">
-        {/* Domain tags - solid chip */}
+        {/* Domain tags */}
         {domains.map(d => (
-          <span
-            key={d}
-            className="px-2 py-0.5 rounded text-xs font-medium text-white"
-            style={{ backgroundColor: DOMAIN_COLORS[d] }}
-          >
-            {d}
-          </span>
+          <DomainTag key={d} domain={d as any} />
         ))}
-        {/* Final sentiment tag - tinted chip */}
-        <span
-          className="px-2 py-0.5 rounded text-xs font-medium"
-          style={{
-            backgroundColor: SENTIMENT_BG[sentimentColorKey],
-            color: SENTIMENT_COLORS[sentimentColorKey],
-          }}
-        >
-          {finalSentiment}
-        </span>
+        {/* Final sentiment tag */}
+        <SentimentTag sentiment={finalSentiment as any} />
 
-        <span className="text-txt-muted text-xs mx-1">|</span>
+        <span className="text-xs mx-1" style={{ color: '#8A9980' }}>|</span>
 
         {/* Issue counts */}
-        <span className="font-mono text-xs text-txt-muted">
-          이슈 {voc.issues.length}건
+        <span className="font-mono text-xs">
+          <span style={{ color: '#8A9980' }}>이슈 </span>
+          <span style={{ color: '#E8EDE0' }}>{voc.issues.length}건</span>
         </span>
-        <span className="font-mono text-xs" style={{ color: SENTIMENT_COLORS['긍정'] }}>
-          긍정{posCount}
+        <span className="font-mono text-xs">
+          <span style={{ color: '#8A9980' }}>긍정</span>
+          <span style={{ color: '#5EE86A' }}>{posCount}</span>
         </span>
-        <span className="font-mono text-xs" style={{ color: SENTIMENT_COLORS['중립'] }}>
-          중립{neuCount}
+        <span className="font-mono text-xs">
+          <span style={{ color: '#8A9980' }}>중립</span>
+          <span style={{ color: '#4A5540' }}>{neuCount}</span>
         </span>
-        <span className="font-mono text-xs" style={{ color: SENTIMENT_COLORS['부정'] }}>
-          부정{negCount}
+        <span className="font-mono text-xs">
+          <span style={{ color: '#8A9980' }}>부정</span>
+          <span style={{ color: '#EF4444' }}>{negCount}</span>
         </span>
       </div>
     </button>
@@ -563,45 +563,47 @@ function DrilldownPanel({ voc, onClose }: { voc: DiagnosedVoC; onClose: () => vo
         onClick={onClose}
       />
       {/* Slide panel */}
-      <div className="w-[560px] bg-surface-card shadow-2xl overflow-y-auto flex flex-col">
+      <div className="w-[560px] shadow-2xl overflow-y-auto flex flex-col" style={{ background: '#1A1D18' }}>
         {/* Meta area (no title) */}
-        <div className="sticky top-0 bg-surface-card border-b border-surface-border px-6 py-4 flex items-center justify-between z-10">
+        <div className="sticky top-0 px-6 py-4 flex items-center justify-between z-10" style={{ background: '#1A1D18', borderBottom: '1px solid #2E3329' }}>
           <div className="flex items-center gap-2 flex-wrap">
-            {/* Source tag - muted chip */}
-            <span className="bg-surface-border text-txt-muted rounded px-2 py-0.5 text-xs">
-              {PLATFORM_MAP[platform] ?? platform}
-            </span>
+            {/* Source tag - MutedChip solid */}
+            <MutedChip label={PLATFORM_MAP[platform] ?? platform} variant="solid" />
             {/* Service + rating conditional */}
             {isAppOrPlayStore(platform) && channelDetail && (
-              <span className="text-xs text-txt-muted">
+              <span className="text-xs" style={{ color: '#8A9980' }}>
                 {channelDetail}
               </span>
             )}
             {/* Date */}
-            <span className="text-xs text-txt-muted font-mono">
+            <span className="text-xs font-mono" style={{ color: '#8A9980' }}>
               {formatDate(dateStr)}
             </span>
           </div>
           <button
             onClick={onClose}
-            className="text-txt-muted hover:text-txt-primary text-xl leading-none"
+            className="text-xl leading-none hover:opacity-80"
+            style={{ color: '#8A9980' }}
           >
-            ✕
+            &#10005;
           </button>
         </div>
 
         <div className="p-6 flex flex-col gap-6">
           {/* VoC 원문 */}
           <div>
-            <h3 className="text-xs font-semibold text-txt-muted uppercase tracking-wide mb-2">VoC 원문</h3>
-            <p className="text-sm text-txt-primary leading-relaxed whitespace-pre-wrap bg-surface rounded-xl p-4 border border-surface-border">
+            <h3 className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#8A9980' }}>VoC 원문</h3>
+            <p className="text-sm leading-relaxed whitespace-pre-wrap rounded-lg p-4" style={{ color: '#E8EDE0', background: '#0E0F0E', border: '1px solid #2E3329' }}>
               {voc.raw_text}
             </p>
           </div>
 
+          {/* Section divider */}
+          <div style={{ borderTop: '1px dashed #2E3329' }} />
+
           {/* 이슈 분석 */}
           <div>
-            <h3 className="text-xs font-semibold text-txt-muted uppercase tracking-wide mb-3">
+            <h3 className="text-xs font-semibold uppercase tracking-wide mb-3" style={{ color: '#8A9980' }}>
               이슈 분석 (<span className="font-mono">{voc.issues.length}</span>건)
             </h3>
             <div className="flex flex-col gap-2">
@@ -611,27 +613,30 @@ function DrilldownPanel({ voc, onClose }: { voc: DiagnosedVoC; onClose: () => vo
             </div>
           </div>
 
+          {/* Section divider */}
+          <div style={{ borderTop: '1px dashed #2E3329' }} />
+
           {/* AI 종합 코멘트 */}
           <div>
-            <h3 className="text-xs font-semibold text-txt-muted uppercase tracking-wide mb-2">AI 종합 코멘트</h3>
-            <p className="text-sm text-txt-primary leading-relaxed bg-[rgba(94,232,106,0.08)] rounded-xl p-4 border border-[rgba(94,232,106,0.15)]">
+            <h3 className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#8A9980' }}>AI 종합 코멘트</h3>
+            <p className="text-sm leading-relaxed rounded-lg p-4" style={{ color: '#E8EDE0', background: 'rgba(94,232,106,0.08)', border: '1px solid rgba(94,232,106,0.15)' }}>
               {voc.overall_summary}
             </p>
           </div>
 
+          {/* Section divider */}
+          <div style={{ borderTop: '1px dashed #2E3329' }} />
+
           {/* 액션 힌트 */}
           <div>
-            <h3 className="text-xs font-semibold text-txt-muted uppercase tracking-wide mb-2">액션 힌트</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#8A9980' }}>액션 힌트</h3>
             <div className="flex flex-col gap-2">
               {voc.issues.filter(i => i.action_hint).map((issue, idx) => (
-                <div key={idx} className="flex items-start gap-2 text-sm bg-[rgba(13,119,238,0.1)] rounded-lg p-3 border border-[rgba(13,119,238,0.2)]">
-                  <span
-                    className="shrink-0 px-2 py-0.5 rounded text-xs font-bold text-white mt-0.5"
-                    style={{ backgroundColor: DOMAIN_COLORS[issue.domain] }}
-                  >
-                    {issue.domain}
+                <div key={idx} className="flex items-start gap-2 text-sm rounded-lg p-3" style={{ background: 'rgba(13,119,238,0.1)', border: '1px solid rgba(13,119,238,0.2)' }}>
+                  <span className="shrink-0 mt-0.5">
+                    <DomainTag domain={issue.domain as any} />
                   </span>
-                  <span className="text-signal-blue">{issue.action_hint}</span>
+                  <span style={{ color: '#0D77EE' }}>{issue.action_hint}</span>
                 </div>
               ))}
             </div>
@@ -643,37 +648,19 @@ function DrilldownPanel({ voc, onClose }: { voc: DiagnosedVoC; onClose: () => vo
 }
 
 function IssueRow({ issue }: { issue: DiagnosisIssue }) {
-  const gapColor = getGapStatusColor(issue.gap)
-  const gapLabel = getGapDisplayLabel(issue.gap)
+  const gapType = issue.gap > 5 ? '기대 초과' : issue.gap < -5 ? '기대 이하' : '기대 충족'
 
   return (
-    <div className="rounded-lg border border-surface-border p-3 flex flex-col gap-2">
+    <div className="rounded-lg p-3 flex flex-col gap-2" style={{ border: '1px solid #2E3329' }}>
       <div className="flex items-center gap-2 flex-wrap">
-        <span
-          className="px-2 py-0.5 rounded text-xs font-bold text-white"
-          style={{ backgroundColor: DOMAIN_COLORS[issue.domain] }}
-        >
-          {issue.domain}
-        </span>
-        {issue.attributes.length > 0 && (
-          <span className="text-xs text-txt-muted">
-            {issue.attributes.join(' · ')}
-          </span>
-        )}
-        <span
-          className="px-2 py-0.5 rounded text-xs font-medium"
-          style={{ backgroundColor: SENTIMENT_BG[issue.sentiment], color: SENTIMENT_COLORS[issue.sentiment] }}
-        >
-          {issue.sentiment}
-        </span>
-        <span
-          className="px-2 py-0.5 rounded text-xs font-bold text-white"
-          style={{ backgroundColor: gapColor }}
-        >
-          {gapLabel}
-        </span>
+        <DomainTag domain={issue.domain as any} />
+        {issue.attributes.length > 0 && issue.attributes.map((attr, idx) => (
+          <MutedChip key={idx} label={attr} variant="outline" />
+        ))}
+        <SentimentTag sentiment={issue.sentiment as any} />
+        <GapTag type={gapType} value={issue.gap} />
       </div>
-      <p className="text-xs text-txt-primary">{issue.issue_summary}</p>
+      <p className="text-xs" style={{ color: '#E8EDE0' }}>{issue.issue_summary}</p>
     </div>
   )
 }

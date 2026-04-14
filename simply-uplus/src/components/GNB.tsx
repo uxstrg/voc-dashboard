@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import logoImage from '../assets/logo.png'
 
 const API_BASE = 'https://voc-api-production.up.railway.app'
 
@@ -36,7 +37,8 @@ export default function GNB() {
     >
       <div className="max-w-[1600px] mx-auto px-6 h-14 flex items-center justify-between gap-6">
         {/* 좌: 로고 */}
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-3 shrink-0">
+          <img src={logoImage} alt="Underground Logo" className="w-10 h-10" />
           <div className="flex flex-col leading-tight">
             <span className="text-base font-bold text-txt-primary tracking-tight">언더그라운드</span>
             <span className="text-[10px] text-txt-muted leading-none">수면 아래 전략 보이스 탐지기</span>
