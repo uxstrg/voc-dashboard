@@ -59,52 +59,64 @@ export default function Guide() {
   })
 
   return (
-    <main className="max-w-[1600px] mx-auto px-6 py-6" style={{ minWidth: 1280 }}>
+    <main className="max-w-[1600px] mx-auto px-6 py-6" style={{ minWidth: 1280, backgroundColor: '#0E0F0E' }}>
       <div className="mb-6">
-        <h1 className="text-xl font-bold text-gray-900">분석 기준 가이드</h1>
-        <p className="text-sm text-gray-500 mt-1">스코어링 공식 및 29개 속성 정의</p>
+        <h1 className="text-3xl font-bold" style={{ color: '#E8EDE0' }}>분석 기준 가이드</h1>
+        <p className="text-sm mt-1" style={{ color: '#8A9980' }}>스코어링 공식 및 29개 속성 정의</p>
       </div>
 
       {/* 스코어링 공식 섹션 */}
-      <section className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
-        <h2 className="text-base font-bold text-gray-800 mb-5">스코어링 공식</h2>
+      <section
+        className="rounded-lg p-6 mb-6"
+        style={{ backgroundColor: '#1A1D18', border: '1px solid #2E3329', boxShadow: '0 0 8px rgba(94, 232, 106, 0.08)' }}
+      >
+        <h2 className="text-lg font-bold mb-5" style={{ color: '#E8EDE0' }}>스코어링 공식</h2>
         <div className="grid grid-cols-2 gap-6">
           {/* Score_reality 공식 */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">실제 경험 점수 (Score_reality)</h3>
-            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 font-mono text-sm text-center">
-              <span className="text-gray-800 font-bold">Score_reality</span>
-              <span className="text-gray-500"> = </span>
-              <span className="text-blue-600 font-bold">80</span>
-              <span className="text-gray-500"> + (</span>
-              <span className="text-green-600 font-bold">Sentiment</span>
-              <span className="text-gray-500"> × </span>
-              <span className="text-orange-600 font-bold">Severity</span>
-              <span className="text-gray-500">)</span>
+            <h3 className="text-sm font-bold mb-3" style={{ color: '#E8EDE0' }}>실제 경험 점수 (Score_reality)</h3>
+            <div
+              className="rounded-lg p-4 font-mono text-sm text-center"
+              style={{ backgroundColor: '#111410', border: '1px solid #2E3329' }}
+            >
+              <span className="font-bold" style={{ color: '#E8EDE0' }}>Score_reality</span>
+              <span style={{ color: '#8A9980' }}> = </span>
+              <span className="font-bold" style={{ color: '#0D77EE' }}>80</span>
+              <span style={{ color: '#8A9980' }}> + (</span>
+              <span className="font-bold" style={{ color: '#5EE86A' }}>Sentiment</span>
+              <span style={{ color: '#8A9980' }}> × </span>
+              <span className="font-bold" style={{ color: '#F97316' }}>Severity</span>
+              <span style={{ color: '#8A9980' }}>)</span>
             </div>
-            <div className="mt-3 text-xs text-gray-500 bg-gray-50 rounded-lg p-3">
-              <p className="font-medium text-gray-600 mb-1">계산 예시</p>
-              <p>"앱이 또 튕겼어요. 진짜 해지할까봐요"</p>
-              <p className="text-gray-400">→ 매우 부정(-40) × 이탈·기만(2.0) = -80</p>
-              <p className="text-gray-400">→ Score_reality = 80 + (-80) = <strong className="text-red-500">0점</strong></p>
+            <div
+              className="mt-3 text-xs rounded-lg p-3"
+              style={{ backgroundColor: '#111410', border: '1px solid #2E3329' }}
+            >
+              <p className="font-medium mb-1" style={{ color: '#E8EDE0' }}>계산 예시</p>
+              <p style={{ color: '#8A9980' }}>"앱이 또 튕겼어요. 진짜 해지할까봐요"</p>
+              <p style={{ color: '#8A9980' }}>→ 매우 부정(-40) × 이탈·기만(2.0) = -80</p>
+              <p style={{ color: '#8A9980' }}>→ Score_reality = 80 + (-80) = <strong style={{ color: '#EF4444' }}>0점</strong></p>
             </div>
           </div>
 
           {/* Gap 공식 */}
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Gap 분석</h3>
-            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 font-mono text-sm text-center">
-              <span className="text-gray-800 font-bold">Gap</span>
-              <span className="text-gray-500"> = </span>
-              <span className="text-blue-600 font-bold">Score_reality</span>
-              <span className="text-gray-500"> − </span>
-              <span className="text-orange-600 font-bold">Score_exp</span>
+            <h3 className="text-sm font-bold mb-3" style={{ color: '#E8EDE0' }}>Gap 분석</h3>
+            <div
+              className="rounded-lg p-4 font-mono text-sm text-center"
+              style={{ backgroundColor: '#111410', border: '1px solid #2E3329' }}
+            >
+              <span className="font-bold" style={{ color: '#E8EDE0' }}>Gap</span>
+              <span style={{ color: '#8A9980' }}> = </span>
+              <span className="font-bold" style={{ color: '#0D77EE' }}>Score_reality</span>
+              <span style={{ color: '#8A9980' }}> − </span>
+              <span className="font-bold" style={{ color: '#F97316' }}>Score_exp</span>
             </div>
             <div className="mt-3 grid grid-cols-3 gap-2">
               {[
-                { label: 'Exceeding', condition: 'Gap > 5', color: '#22C55E', desc: '기대 초과' },
-                { label: 'Alignment', condition: '-5 ≤ Gap ≤ 5', color: '#EAB308', desc: '기대 충족' },
-                { label: 'Gap', condition: 'Gap < -5', color: '#EF4444', desc: '기대 미달' },
+                { label: '기대 초과', condition: 'Gap > 5', color: '#0D77EE' },
+                { label: '기대 충족', condition: '-5 ≤ Gap ≤ 5', color: '#5EE86A' },
+                { label: '기대 이하', condition: 'Gap < -5', color: '#EF4444' },
               ].map(g => (
                 <div
                   key={g.label}
@@ -112,8 +124,7 @@ export default function Guide() {
                   style={{ backgroundColor: g.color + '15', border: `1px solid ${g.color}30` }}
                 >
                   <div className="font-bold" style={{ color: g.color }}>{g.label}</div>
-                  <div className="text-gray-500 mt-0.5">{g.condition}</div>
-                  <div className="text-gray-600 mt-0.5">{g.desc}</div>
+                  <div className="mt-0.5" style={{ color: '#8A9980' }}>{g.condition}</div>
                 </div>
               ))}
             </div>
@@ -123,31 +134,31 @@ export default function Guide() {
         {/* 감성 점수 테이블 */}
         <div className="mt-6 grid grid-cols-2 gap-6">
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">감성 점수 (Sentiment)</h3>
+            <h3 className="text-sm font-bold mb-3" style={{ color: '#E8EDE0' }}>감성 점수 (Sentiment)</h3>
             <table className="w-full text-xs border-collapse">
               <thead>
-                <tr className="bg-gray-50">
-                  <th className="text-left px-3 py-2 border border-gray-200 font-semibold text-gray-600">등급</th>
-                  <th className="text-center px-3 py-2 border border-gray-200 font-semibold text-gray-600">값</th>
-                  <th className="text-left px-3 py-2 border border-gray-200 font-semibold text-gray-600">판단 기준</th>
+                <tr style={{ backgroundColor: '#111410' }}>
+                  <th className="text-left px-3 py-2 text-xs font-medium" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>등급</th>
+                  <th className="text-center px-3 py-2 text-xs font-medium" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>값</th>
+                  <th className="text-left px-3 py-2 text-xs font-medium" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>판단 기준</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { grade: '매우 긍정', value: '+10', criteria: '극찬, 강한 만족 표현, 추천 의사', color: '#16A34A' },
-                  { grade: '긍정', value: '+5', criteria: '만족, 좋다는 표현, 기대 이상', color: '#22C55E' },
-                  { grade: '중립', value: '0', criteria: '사실 서술만, 감정 없음', color: '#6B7280' },
+                  { grade: '매우 긍정', value: '+10', criteria: '극찬, 강한 만족 표현, 추천 의사', color: '#5EE86A' },
+                  { grade: '긍정', value: '+5', criteria: '만족, 좋다는 표현, 기대 이상', color: '#5EE86A' },
+                  { grade: '중립', value: '0', criteria: '사실 서술만, 감정 없음', color: '#8A9980' },
                   { grade: '부정', value: '-20', criteria: '불만, 실망, 불편함 표현', color: '#EF4444' },
-                  { grade: '매우 부정', value: '-40', criteria: '욕설·격앙, 이탈 의사, 브랜드 비난', color: '#B91C1C' },
-                ].map(row => (
-                  <tr key={row.grade} className="hover:bg-gray-50">
-                    <td className="px-3 py-2 border border-gray-200">
+                  { grade: '매우 부정', value: '-40', criteria: '욕설·격앙, 이탈 의사, 브랜드 비난', color: '#EF4444' },
+                ].map((row, idx) => (
+                  <tr key={row.grade} style={{ backgroundColor: idx % 2 === 0 ? '#1A1D18' : '#111410' }}>
+                    <td className="px-3 py-2" style={{ border: '1px solid #2E3329' }}>
                       <span className="font-medium" style={{ color: row.color }}>{row.grade}</span>
                     </td>
-                    <td className="px-3 py-2 border border-gray-200 text-center font-mono font-bold" style={{ color: row.color }}>
+                    <td className="px-3 py-2 text-center font-mono font-bold" style={{ color: row.color, border: '1px solid #2E3329' }}>
                       {row.value}
                     </td>
-                    <td className="px-3 py-2 border border-gray-200 text-gray-600">{row.criteria}</td>
+                    <td className="px-3 py-2 text-sm" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>{row.criteria}</td>
                   </tr>
                 ))}
               </tbody>
@@ -155,13 +166,13 @@ export default function Guide() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">심각도 배수 (Severity)</h3>
+            <h3 className="text-sm font-bold mb-3" style={{ color: '#E8EDE0' }}>심각도 배수 (Severity)</h3>
             <table className="w-full text-xs border-collapse">
               <thead>
-                <tr className="bg-gray-50">
-                  <th className="text-left px-3 py-2 border border-gray-200 font-semibold text-gray-600">등급</th>
-                  <th className="text-center px-3 py-2 border border-gray-200 font-semibold text-gray-600">배수</th>
-                  <th className="text-left px-3 py-2 border border-gray-200 font-semibold text-gray-600">판단 기준</th>
+                <tr style={{ backgroundColor: '#111410' }}>
+                  <th className="text-left px-3 py-2 text-xs font-medium" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>등급</th>
+                  <th className="text-center px-3 py-2 text-xs font-medium" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>배수</th>
+                  <th className="text-left px-3 py-2 text-xs font-medium" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>판단 기준</th>
                 </tr>
               </thead>
               <tbody>
@@ -169,34 +180,34 @@ export default function Guide() {
                   { grade: '일반', value: '×1.0', criteria: '단순 불편 언급' },
                   { grade: '반복·우회', value: '×1.5', criteria: '"또", "계속", "몇 번째", 우회 시도 언급' },
                   { grade: '이탈·기만', value: '×2.0', criteria: '"해지할 것", "환불", "사기", "거짓말"' },
-                ].map(row => (
-                  <tr key={row.grade} className="hover:bg-gray-50">
-                    <td className="px-3 py-2 border border-gray-200 font-medium text-gray-700">{row.grade}</td>
-                    <td className="px-3 py-2 border border-gray-200 text-center font-mono font-bold text-orange-600">{row.value}</td>
-                    <td className="px-3 py-2 border border-gray-200 text-gray-600">{row.criteria}</td>
+                ].map((row, idx) => (
+                  <tr key={row.grade} style={{ backgroundColor: idx % 2 === 0 ? '#1A1D18' : '#111410' }}>
+                    <td className="px-3 py-2 font-medium" style={{ color: '#E8EDE0', border: '1px solid #2E3329' }}>{row.grade}</td>
+                    <td className="px-3 py-2 text-center font-mono font-bold" style={{ color: '#F97316', border: '1px solid #2E3329' }}>{row.value}</td>
+                    <td className="px-3 py-2 text-sm" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>{row.criteria}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
 
-            <h3 className="text-sm font-semibold text-gray-700 mt-4 mb-3">상태 판정 기준</h3>
+            <h3 className="text-sm font-bold mt-4 mb-3" style={{ color: '#E8EDE0' }}>상태 판정 기준</h3>
             <table className="w-full text-xs border-collapse">
               <thead>
-                <tr className="bg-gray-50">
-                  <th className="text-left px-3 py-2 border border-gray-200 font-semibold text-gray-600">상태</th>
-                  <th className="text-left px-3 py-2 border border-gray-200 font-semibold text-gray-600">점수 구간</th>
-                  <th className="text-left px-3 py-2 border border-gray-200 font-semibold text-gray-600">의미</th>
+                <tr style={{ backgroundColor: '#111410' }}>
+                  <th className="text-left px-3 py-2 text-xs font-medium" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>상태</th>
+                  <th className="text-left px-3 py-2 text-xs font-medium" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>점수 구간</th>
+                  <th className="text-left px-3 py-2 text-xs font-medium" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>의미</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { status: '양호', range: '75점 이상', meaning: '전반적으로 기대치 충족', color: '#22C55E' },
-                  { status: '보통', range: '60~74점', meaning: '일부 영역 개선 필요', color: '#3B82F6' },
-                  { status: '주의', range: '45~59점', meaning: '복수 영역 기대치 미달', color: '#F59E0B' },
+                  { status: '탁월', range: '75점 이상', meaning: '전반적으로 기대치 충족', color: '#0D77EE' },
+                  { status: '보통', range: '60~74점', meaning: '일부 영역 개선 필요', color: '#5EE86A' },
+                  { status: '주의', range: '45~59점', meaning: '복수 영역 기대치 미달', color: '#F97316' },
                   { status: '위험', range: '44점 이하', meaning: '전반적 브랜드 신뢰 하락 위험', color: '#EF4444' },
-                ].map(row => (
-                  <tr key={row.status} className="hover:bg-gray-50">
-                    <td className="px-3 py-2 border border-gray-200">
+                ].map((row, idx) => (
+                  <tr key={row.status} style={{ backgroundColor: idx % 2 === 0 ? '#1A1D18' : '#111410' }}>
+                    <td className="px-3 py-2" style={{ border: '1px solid #2E3329' }}>
                       <span
                         className="px-2 py-0.5 rounded-full text-xs font-bold text-white"
                         style={{ backgroundColor: row.color }}
@@ -204,8 +215,8 @@ export default function Guide() {
                         {row.status}
                       </span>
                     </td>
-                    <td className="px-3 py-2 border border-gray-200 font-mono text-gray-700">{row.range}</td>
-                    <td className="px-3 py-2 border border-gray-200 text-gray-600">{row.meaning}</td>
+                    <td className="px-3 py-2 font-mono" style={{ color: '#E8EDE0', border: '1px solid #2E3329' }}>{row.range}</td>
+                    <td className="px-3 py-2 text-sm" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>{row.meaning}</td>
                   </tr>
                 ))}
               </tbody>
@@ -215,15 +226,19 @@ export default function Guide() {
       </section>
 
       {/* 29개 속성 섹션 */}
-      <section className="bg-white rounded-xl border border-gray-200 p-6">
+      <section
+        className="rounded-lg p-6"
+        style={{ backgroundColor: '#1A1D18', border: '1px solid #2E3329', boxShadow: '0 0 8px rgba(94, 232, 106, 0.08)' }}
+      >
         <div className="flex items-center justify-between mb-5">
-          <h2 className="text-base font-bold text-gray-800">29개 품질 속성</h2>
+          <h2 className="text-lg font-bold" style={{ color: '#E8EDE0' }}>29개 품질 속성</h2>
           <input
             type="text"
             placeholder="속성 검색..."
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            className="px-3 py-1.5 text-sm border border-gray-200 rounded-lg focus:outline-none focus:border-blue-400 w-48"
+            className="px-3 py-1.5 text-sm rounded-lg focus:outline-none w-48"
+            style={{ backgroundColor: '#111410', border: '1px solid #2E3329', color: '#E8EDE0' }}
           />
         </div>
 
@@ -234,9 +249,8 @@ export default function Guide() {
               key={d}
               onClick={() => setActiveTab(d)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                activeTab === d ? 'text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                activeTab === d ? 'bg-[#2E3329] text-[#E8EDE0]' : 'text-[#8A9980] hover:text-[#E8EDE0]'
               }`}
-              style={activeTab === d ? { backgroundColor: DOMAIN_COLORS[d] } : {}}
             >
               {d} ({DOMAIN_ATTRIBUTES[d].length}개)
             </button>
@@ -246,17 +260,17 @@ export default function Guide() {
         {/* 속성 테이블 */}
         <table className="w-full text-sm border-collapse">
           <thead>
-            <tr className="bg-gray-50">
-              <th className="text-left px-4 py-3 border border-gray-200 font-semibold text-gray-600 w-28">속성명</th>
-              <th className="text-left px-4 py-3 border border-gray-200 font-semibold text-gray-600 w-24">체감 경험</th>
-              <th className="text-left px-4 py-3 border border-gray-200 font-semibold text-gray-600">정의</th>
-              <th className="text-left px-4 py-3 border border-gray-200 font-semibold text-gray-600">AI 판정 키워드 예시</th>
+            <tr style={{ backgroundColor: '#111410' }}>
+              <th className="text-left px-4 py-3 text-xs font-medium w-28" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>속성명</th>
+              <th className="text-left px-4 py-3 text-xs font-medium w-24" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>체감 경험</th>
+              <th className="text-left px-4 py-3 text-xs font-medium" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>정의</th>
+              <th className="text-left px-4 py-3 text-xs font-medium" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>AI 판정 키워드 예시</th>
             </tr>
           </thead>
           <tbody>
             {filteredAttrs.map((attr, idx) => (
-              <tr key={idx} className="hover:bg-gray-50 transition-colors">
-                <td className="px-4 py-3 border border-gray-200">
+              <tr key={idx} style={{ backgroundColor: idx % 2 === 0 ? '#1A1D18' : '#111410' }}>
+                <td className="px-4 py-3" style={{ border: '1px solid #2E3329' }}>
                   <span
                     className="font-semibold"
                     style={{ color: DOMAIN_COLORS[activeTab] }}
@@ -264,18 +278,18 @@ export default function Guide() {
                     {attr.name}
                   </span>
                 </td>
-                <td className="px-4 py-3 border border-gray-200">
-                  <span className="px-2 py-0.5 rounded bg-gray-100 text-gray-600 text-xs">
+                <td className="px-4 py-3" style={{ border: '1px solid #2E3329' }}>
+                  <span className="px-2 py-0.5 rounded bg-[#2E3329] text-[#8A9980] text-xs">
                     {attr.experience}
                   </span>
                 </td>
-                <td className="px-4 py-3 border border-gray-200 text-gray-700">{attr.definition}</td>
-                <td className="px-4 py-3 border border-gray-200 text-gray-500 text-xs">{attr.keywords}</td>
+                <td className="px-4 py-3 text-sm" style={{ color: '#E8EDE0', border: '1px solid #2E3329' }}>{attr.definition}</td>
+                <td className="px-4 py-3 text-xs" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>{attr.keywords}</td>
               </tr>
             ))}
             {filteredAttrs.length === 0 && (
               <tr>
-                <td colSpan={4} className="px-4 py-8 text-center text-gray-400 border border-gray-200">
+                <td colSpan={4} className="px-4 py-8 text-center" style={{ color: '#8A9980', border: '1px solid #2E3329' }}>
                   검색 결과가 없습니다
                 </td>
               </tr>
