@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { DiagnosedVoC, DiagnosisIssue } from '../types'
 import { getGapDisplayLabel, getGapStatusColor } from '../utils/analysisUtils'
 import minerLoaderGif from '../assets/image-1.gif'
+import emptyMinerImg from '../assets/empty-miner.png'
 import { SOURCE_LABELS } from '../constants/colors'
 import { PLATFORM_MAP, PLATFORMS, DOMAINS } from '../constants/platforms'
 import { DomainTag, SentimentTag, GapTag, MutedChip } from '../components/tags'
@@ -387,7 +388,8 @@ export default function VocFeed() {
 
           {/* Empty states */}
           {allSourcesUnchecked ? (
-            <div className="text-center py-16" style={{ color: '#8A9980' }}>
+            <div className="flex flex-col items-center justify-center py-16" style={{ color: '#8A9980' }}>
+              <img src={emptyMinerImg} alt="" className="w-48 h-auto mb-4 opacity-60" style={{ imageRendering: 'pixelated' }} />
               <p className="text-sm">수신 채널 없음. 출처를 선택하십시오</p>
             </div>
           ) : paginatedItems.length === 0 ? (
