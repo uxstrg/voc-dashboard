@@ -646,64 +646,67 @@ function DomainDetailPanel({
             </button>
           </div>
 
-          <div className="flex flex-col gap-1 overflow-y-auto" style={{ maxHeight: 320 }}>
+          <div className="space-y-2 w-full">
             {domainIssues.map((issue, idx) => {
               const isExpanded = expandedIssueIdx === idx
               const vocItem = vocData.find(v => v.issues.includes(issue))
               const gapType = getGapType(issue.gap)
 
               return (
-                <div
-                  key={idx}
-                  className="rounded border overflow-hidden transition-colors"
-                  style={{
-                    backgroundColor: '#1A1D18',
-                    borderColor: '#2E3329',
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(94,232,106,0.25)')}
-                  onMouseLeave={e => (e.currentTarget.style.borderColor = '#2E3329')}
-                >
-                  <button
+                <div key={idx} className="w-full" style={{ minWidth: 0 }}>
+                  <div
+                    className="p-3 rounded border cursor-pointer hover:border-[#5EE86A]/25 transition-colors w-full"
+                    style={{ background: '#1A1D18', borderColor: '#2E3329' }}
                     onClick={() => onExpandIssue(isExpanded ? null : idx)}
-                    className="w-full flex items-center gap-2 p-3 transition-colors text-left"
                   >
-                    {/* Gap 표시 */}
-                    <GapTag type={gapType} value={issue.gap} />
-                    {/* 속성명 */}
-                    <MutedChip label={issue.attributes[0]} />
-                    {/* 감성 뱃지 */}
-                    <SentimentTag sentiment={issue.sentiment as '매우 긍정' | '긍정' | '중립' | '부정' | '매우 부정'} />
-                    {/* 핵심 내용 */}
-                    <span className="flex-1 text-xs truncate" style={{ color: '#E8EDE0' }}>
-                      {issue.issue_summary}
-                    </span>
-                    <span className="shrink-0 text-xs" style={{ color: '#8A9980' }}>{isExpanded ? '▲' : '▼'}</span>
-                  </button>
-
-                  {isExpanded && vocItem && (
-                    <div
-                      className="px-4 py-3 flex flex-col gap-2"
-                      style={{ borderTop: '1px dashed #2E3329' }}
-                    >
-                      <span className="text-xs" style={{ color: '#8A9980' }}>원본 VoC</span>
-                      <p className="text-xs leading-relaxed whitespace-pre-wrap" style={{ color: '#E8EDE0' }}>
-                        {vocItem.raw_text}
+                    {/* Single Row Layout */}
+                    <div className="flex flex-row items-center gap-2 w-full" style={{ minWidth: 0 }}>
+                      <div className="flex-shrink-0">
+                        <MutedChip label={issue.attributes[0] || ''} variant="solid" />
+                      </div>
+                      <div className="flex-shrink-0">
+                        <SentimentTag sentiment={issue.sentiment as '매우 긍정' | '긍정' | '중립' | '부정' | '매우 부정'} />
+                      </div>
+                      <div className="flex-shrink-0">
+                        <GapTag type={gapType} value={issue.gap} />
+                      </div>
+                      <p className="text-sm flex-1 overflow-hidden text-ellipsis" style={{ color: '#E8EDE0', minWidth: 0 }}>
+                        {issue.issue_summary}
                       </p>
-                      <div className="flex items-center gap-3 text-xs flex-wrap" style={{ color: '#8A9980' }}>
-                        <span>출처: <MutedChip label={getPlatformLabel(vocItem)} variant="outline" /></span>
-                        {vocItem.channel_detail && (
-                          <span>채널: <MutedChip label={vocItem.channel_detail} variant="outline" /></span>
-                        )}
-                        {vocItem.service && <span>서비스: <MutedChip label={vocItem.service} variant="outline" /></span>}
-                      </div>
-                      <div
-                        className="text-xs p-3 rounded"
-                        style={{ backgroundColor: '#0E0F0E', color: '#E8EDE0' }}
+                      <svg
+                        className={`w-4 h-4 flex-shrink-0 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+                        style={{ color: '#8A9980' }}
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
                       >
-                        {issue.action_hint}
-                      </div>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
                     </div>
-                  )}
+
+                    {/* Expanded Content */}
+                    {isExpanded && vocItem && (
+                      <div className="mt-4 pt-4 space-y-3" style={{ borderTop: '1px dashed #2E3329' }}>
+                        <div>
+                          <div className="text-xs font-medium mb-1" style={{ color: '#8A9980' }}>원본 VoC</div>
+                          <p className="text-sm leading-relaxed whitespace-pre-wrap" style={{ color: '#E8EDE0' }}>
+                            {vocItem.raw_text}
+                          </p>
+                        </div>
+
+                        <div className="flex items-center gap-2 text-xs flex-wrap">
+                          <span style={{ color: '#8A9980' }}>출처:</span>
+                          <MutedChip label={getPlatformLabel(vocItem)} variant="outline" />
+                          {vocItem.channel_detail && (
+                            <MutedChip label={vocItem.channel_detail} variant="outline" />
+                          )}
+                        </div>
+
+                        <div className="p-3 rounded" style={{ background: '#0E0F0E' }}>
+                          <div className="text-xs font-medium mb-1" style={{ color: '#8A9980' }}>액션 힌트</div>
+                          <p className="text-sm" style={{ color: '#E8EDE0' }}>{issue.action_hint}</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               )
             })}
