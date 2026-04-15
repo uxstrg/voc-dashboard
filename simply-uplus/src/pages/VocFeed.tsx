@@ -4,6 +4,7 @@ import { DiagnosedVoC, DiagnosisIssue } from '../types'
 import { getGapDisplayLabel, getGapStatusColor } from '../utils/analysisUtils'
 import minerLoaderGif from '../assets/image-1.gif'
 import emptyMinerImg from '../assets/empty-miner.png'
+import emptySearchImg from '../assets/empty-search.png'
 import { SOURCE_LABELS } from '../constants/colors'
 import { PLATFORM_MAP, PLATFORMS, DOMAINS } from '../constants/platforms'
 import { DomainTag, SentimentTag, GapTag, MutedChip } from '../components/tags'
@@ -393,7 +394,8 @@ export default function VocFeed() {
               <p className="text-sm">수신 채널 없음. 출처를 선택하십시오</p>
             </div>
           ) : paginatedItems.length === 0 ? (
-            <div className="text-center py-16" style={{ color: '#8A9980' }}>
+            <div className="flex flex-col items-center justify-center py-16" style={{ color: '#8A9980' }}>
+              <img src={emptySearchImg} alt="" className="w-48 h-auto mb-4 opacity-60" style={{ imageRendering: 'pixelated' }} />
               <p className="text-sm">탐지된 VoC 없음. 키워드 또는 필터를 재조정하십시오</p>
             </div>
           ) : (
