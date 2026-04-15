@@ -41,7 +41,7 @@ export default function GNB() {
           <img src={logoImage} alt="Underground Logo" className="w-10 h-10" />
           <div className="flex flex-col leading-tight">
             <span className="text-base font-bold text-txt-primary tracking-tight">언더그라운드</span>
-            <span className="text-[10px] text-txt-muted leading-none">수면 아래 전략 보이스 탐지기</span>
+            <span className="text-[10px] text-txt-muted leading-none">수면 아래 진짜 보이스 탐지기</span>
           </div>
         </div>
 
