@@ -460,16 +460,16 @@ function DomainCard({
         </div>
 
         {/* 점수 + 등락 */}
-        <div className="flex items-end gap-2">
-          <span className="text-3xl font-bold font-mono leading-none" style={{ color: '#E8EDE0' }}>{score}</span>
-          <span className="text-lg mb-0.5" style={{ color: '#8A9980' }}>점</span>
+        <div className="flex items-baseline gap-2 mb-2">
+          <div className="text-3xl font-bold font-mono" style={{ color: '#E8EDE0' }}>{score}</div>
+          <div className="text-lg" style={{ color: '#8A9980' }}>점</div>
           {diff != null && diff !== 0 && (
-            <span className="text-sm mb-0.5">
-              <span style={{ color: '#8A9980' }}>전주 대비 </span>
+            <div className="text-sm" style={{ color: '#8A9980' }}>
+              전주 대비{' '}
               <span style={{ color: diff > 0 ? '#5EE86A' : '#EF4444' }}>
                 {diff > 0 ? '▲' : '▼'}{Math.abs(diff)}pt
               </span>
-            </span>
+            </div>
           )}
         </div>
 
@@ -495,22 +495,30 @@ function DomainCard({
         </p>
 
         {/* 하단 카운트 + 탐색 버튼 */}
-        <div className="flex items-center justify-between pt-1 border-t border-[#2E3329]">
-          <div className="flex items-center gap-2 text-sm font-mono">
-            <span style={{ color: '#8A9980' }}>긍정</span>
-            <span style={{ color: '#5EE86A' }}>{detail?.pos ?? counts.pos}건</span>
-            <span style={{ color: '#8A9980' }}>부정</span>
-            <span style={{ color: '#EF4444' }}>{detail?.neg ?? counts.neg}건</span>
-            <span style={{ color: '#5EE86A' }}>
-              ({detail?.pos_rate ?? (counts.pos + counts.neg > 0 ? Math.round(counts.pos / (counts.pos + counts.neg) * 100) : 0)}%)
+        <div className="flex flex-row items-center justify-between">
+          <div className="flex items-center gap-2 text-sm font-mono whitespace-nowrap">
+            <span style={{ color: '#8A9980' }}>
+              긍정 <span style={{ color: '#5EE86A' }}>{detail?.pos ?? counts.pos}건</span>
+            </span>
+            <span style={{ color: '#8A9980' }}>
+              부정 <span style={{ color: '#EF4444' }}>{detail?.neg ?? counts.neg}건</span>
+            </span>
+            <span style={{ color: '#8A9980' }}>
+              (긍정 <span style={{ color: '#5EE86A' }}>{detail?.pos_rate ?? (counts.pos + counts.neg > 0 ? Math.round(counts.pos / (counts.pos + counts.neg) * 100) : 0)}%</span>)
             </span>
           </div>
           <button
             onClick={onToggle}
-            className="flex items-center gap-1 text-sm font-medium"
+            className="flex items-center gap-1 text-sm font-medium whitespace-nowrap flex-shrink-0"
             style={{ color: '#5EE86A' }}
           >
-            {isOpen ? '접기 ▲' : '탐색 ▼'}
+            <span>{isOpen ? '접기' : '탐색'}</span>
+            <svg
+              className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
         </div>
       </div>
