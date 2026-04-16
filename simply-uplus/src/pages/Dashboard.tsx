@@ -881,7 +881,7 @@ function DomainTrendChart({
       </div>
       <div className="h-80 rounded" style={{ backgroundColor: '#111410' }}>
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={chartData} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+          <LineChart data={chartData} margin={{ top: 25, right: 20, left: 0, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#1E2218" />
             <XAxis
               dataKey="week"
@@ -965,9 +965,9 @@ function DomainTrendChart({
                   strokeOpacity={0.6}
                   label={{
                     value: emoji,
-                    position: 'top',
-                    fontSize: 16,
-                    offset: 5,
+                    position: 'insideTopRight',
+                    fontSize: 18,
+                    offset: 10,
                   }}
                 />
               )
