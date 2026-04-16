@@ -30,6 +30,7 @@ interface SummaryData {
   last_diagnosed_at: string | null
   earliest_collected_at: string | null
   weekly_scores: { week: string; [domain: string]: string | number }[]
+  daily_scores: { day: string; [domain: string]: string | number }[]
   domain_insights: Record<string, { insight: string; top_attributes: string[] }>
   weekly_pattern: { title: string; body: string } | null
   domain_detail: Record<string, {
@@ -297,7 +298,7 @@ export default function Dashboard() {
       {/* [D] 채널 + 트렌드 */}
       <section className="mt-6 grid grid-cols-[35%_65%] gap-4">
         <ChannelSentimentChart data={channelSentiment} />
-        <DomainTrendChart data={trendData} domainScores={domainScores as Record<Domain, number>} />
+        <DomainTrendChart data={trendData} dailyData={summary?.daily_scores ?? []} domainScores={domainScores as Record<Domain, number>} />
       </section>
     </main>
   )
@@ -800,21 +801,35 @@ function ChannelSentimentChart({ data }: { data: ReturnType<typeof calcChannelSe
 
 // ─── [D-2] 도메인 점수 추이 ──────────────────────────────────────────────────
 function DomainTrendChart({
-  data, domainScores
+  data, dailyData, domainScores
 }: {
   data: { week: string; 전략: number | null; UX: number | null; 운영: number | null; 기술: number | null; _noData?: boolean }[]
+  dailyData: { day: string; [domain: string]: string | number }[]
   domainScores: Record<Domain, number>
 }) {
-  // 데이터 없는 구간 찾기
+  const [mode, setMode] = useState<'week' | 'day'>('week')
+
+  const chartData = mode === 'week' ? data : dailyData.map(d => ({
+    week: d.day as string,
+    전략: (d['전략'] as number) ?? null,
+    UX: (d['UX'] as number) ?? null,
+    운영: (d['운영'] as number) ?? null,
+    기술: (d['기술'] as number) ?? null,
+    _noData: false,
+  }))
+
+  // 데이터 없는 구간 찾기 (주별만)
   const noDataRanges: { x1: string; x2: string }[] = []
-  for (let i = 0; i < data.length; i++) {
-    if (data[i]._noData) {
-      const start = data[i].week
-      let end = start
-      while (i + 1 < data.length && data[i + 1]._noData) {
-        end = data[++i].week
+  if (mode === 'week') {
+    for (let i = 0; i < chartData.length; i++) {
+      if (chartData[i]._noData) {
+        const start = chartData[i].week
+        let end = start
+        while (i + 1 < chartData.length && chartData[i + 1]._noData) {
+          end = data[++i].week
+        }
+        noDataRanges.push({ x1: start, x2: end })
       }
-      noDataRanges.push({ x1: start, x2: end })
     }
   }
 
@@ -827,23 +842,44 @@ function DomainTrendChart({
         boxShadow: '0 0 8px rgba(94, 232, 106, 0.08)',
       }}
     >
-      <h3 className="text-sm font-semibold mb-4" style={{ color: '#E8EDE0' }}>도메인 점수 추이 (최근 3주)</h3>
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-sm font-semibold" style={{ color: '#E8EDE0' }}>
+          도메인 점수 추이 ({mode === 'week' ? '최근 3주' : '최근 14일'})
+        </h3>
+        <div className="flex gap-1">
+          {([['day', '일'], ['week', '주']] as const).map(([key, label]) => (
+            <button
+              key={key}
+              onClick={() => setMode(key)}
+              className="px-3 py-1 rounded text-xs font-medium transition-colors"
+              style={{
+                backgroundColor: mode === key ? '#2E3329' : 'transparent',
+                color: mode === key ? '#5EE86A' : '#8A9980',
+              }}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
       <div className="h-80 rounded" style={{ backgroundColor: '#111410' }}>
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+          <LineChart data={chartData} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#1E2218" />
             <XAxis
               dataKey="week"
-              tick={({ x, y, payload }: { x: number; y: number; payload: { value: string } }) => {
-                const [label, range] = (payload.value || '').split('\n')
-                return (
-                  <g transform={`translate(${x},${y})`}>
-                    <text x={0} y={0} dy={12} textAnchor="middle" fontSize={11} fill="#8A9980" fontWeight={500}>{label}</text>
-                    <text x={0} y={0} dy={26} textAnchor="middle" fontSize={9} fill="#8A9980">{range}</text>
-                  </g>
-                )
-              }}
-              height={45}
+              tick={mode === 'day'
+                ? { fontSize: 11, fill: '#8A9980' }
+                : (({ x, y, payload }: { x: number; y: number; payload: { value: string } }) => {
+                    const [label, range] = (payload.value || '').split('\n')
+                    return (
+                      <g transform={`translate(${x},${y})`}>
+                        <text x={0} y={0} dy={12} textAnchor="middle" fontSize={11} fill="#8A9980" fontWeight={500}>{label}</text>
+                        <text x={0} y={0} dy={26} textAnchor="middle" fontSize={9} fill="#8A9980">{range}</text>
+                      </g>
+                    )
+                  }) as any}
+              height={mode === 'day' ? 30 : 45}
             />
             <YAxis domain={[0, 100]} tick={{ fontSize: 11, fill: '#8A9980' }} />
             <Tooltip
