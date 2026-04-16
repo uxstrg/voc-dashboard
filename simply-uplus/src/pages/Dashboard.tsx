@@ -31,6 +31,7 @@ interface SummaryData {
   earliest_collected_at: string | null
   weekly_scores: { week: string; [domain: string]: string | number }[]
   domain_insights: Record<string, { insight: string; top_attributes: string[] }>
+  weekly_pattern: { title: string; body: string } | null
   domain_detail: Record<string, {
     score: number | null
     prev_score: number | null
@@ -252,6 +253,7 @@ export default function Dashboard() {
         totalIssues={summary?.total_issues ?? allIssues.length}
         lastDiagnosedAt={summary?.last_diagnosed_at ?? null}
         earliestCollectedAt={summary?.earliest_collected_at ?? null}
+        weeklyPattern={summary?.weekly_pattern ?? null}
         urgentIssues={urgentIssues}
         onUrgentClick={(domain) => {
           setOpenDomain(domain as Domain)
@@ -304,7 +306,7 @@ export default function Dashboard() {
 
 // ─── [A] 진단 헤더 ───────────────────────────────────────────────────────────
 function DiagnosisHeader({
-  overallScore, positiveRate, totalVoC, totalIssues, lastDiagnosedAt, earliestCollectedAt, urgentIssues, onUrgentClick
+  overallScore, positiveRate, totalVoC, totalIssues, lastDiagnosedAt, earliestCollectedAt, weeklyPattern, urgentIssues, onUrgentClick
 }: {
   overallScore: number
   positiveRate: number
@@ -312,6 +314,7 @@ function DiagnosisHeader({
   totalIssues: number
   lastDiagnosedAt: string | null
   earliestCollectedAt: string | null
+  weeklyPattern: { title: string; body: string } | null
   urgentIssues: DiagnosisIssue[]
   onUrgentClick: (domain: string) => void
 }) {
@@ -386,10 +389,10 @@ function DiagnosisHeader({
         <div className="p-6">
           <h3 className="text-sm font-medium font-bold mb-4" style={{ color: '#8A9980' }}>이번 주 진짜 패턴</h3>
           <h4 className="font-medium mb-3" style={{ color: '#E8EDE0' }}>
-            UX 영역 불만이 연쇄 CS 유입으로 연결돼 운영 체감 압박 급상
+            {weeklyPattern?.title ?? '패턴 분석 대기 중'}
           </h4>
-          <p className="text-sm leading-relaxed" style={{ color: '#8A9980' }}>
-            앱 내 정보 구조 혼란 → 고객센터 문의 증가 → 처리 지연 불만으로 이어지는 도메인 간 연쇄 신호가 반복되고 있습니다. UX·운영 담당팀 공동 대응이 필요합니다.
+          <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: '#8A9980' }}>
+            {weeklyPattern?.body ?? '다음 진단 실행 시 자동으로 생성됩니다.'}
           </p>
         </div>
 
