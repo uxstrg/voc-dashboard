@@ -119,7 +119,7 @@ export default function Dashboard() {
   }, [summary, allIssues])
 
   const trendData = useMemo(() => {
-    const labels = ['2주 전', '1주 전', '이번 주', '다음 주'] as const
+    const labels = ['2주 전', '1주 전', '이번 주'] as const
     const now = new Date()
     const thisMonday = new Date(now)
     thisMonday.setDate(now.getDate() - now.getDay() + 1)
@@ -130,8 +130,8 @@ export default function Dashboard() {
       return `${pad(mon.getMonth() + 1)}.${pad(mon.getDate())}~${pad(sun.getMonth() + 1)}.${pad(sun.getDate())}`
     }
 
-    // 2주 전, 1주 전, 이번 주, 다음 주의 월요일
-    const weekMondays = Array.from({ length: 4 }, (_, i) => {
+    // 2주 전, 1주 전, 이번 주의 월요일
+    const weekMondays = Array.from({ length: 3 }, (_, i) => {
       const d = new Date(thisMonday)
       d.setDate(d.getDate() + (i - 2) * 7)
       return d
@@ -148,8 +148,7 @@ export default function Dashboard() {
     return weekMondays.map((mon, i) => {
       const key = weekKeys[i]
       const data = scoresMap.get(key)
-      const isNext = i === 3
-      const hasData = !!data && !isNext
+      const hasData = !!data
       return {
         week: `${labels[i]}\n${fmtRange(mon)}`,
         전략: hasData ? (data['전략'] ?? null) : null,
@@ -825,8 +824,8 @@ function DomainTrendChart({
         boxShadow: '0 0 8px rgba(94, 232, 106, 0.08)',
       }}
     >
-      <h3 className="text-sm font-semibold mb-4" style={{ color: '#E8EDE0' }}>도메인 점수 추이 (최근 4주)</h3>
-      <div className="h-52 rounded" style={{ backgroundColor: '#111410' }}>
+      <h3 className="text-sm font-semibold mb-4" style={{ color: '#E8EDE0' }}>도메인 점수 추이 (최근 3주)</h3>
+      <div className="h-80 rounded" style={{ backgroundColor: '#111410' }}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#1E2218" />
@@ -854,7 +853,7 @@ function DomainTrendChart({
               }}
               formatter={(value: number | null, name: string) => value != null ? [`${value}점`, name] : ['데이터 없음', name]}
             />
-            <Legend formatter={(value) => <span style={{ fontSize: 12, color: '#8A9980' }}>{value}</span>} />
+
             {noDataRanges.map((range, i) => (
               <ReferenceArea
                 key={i}
@@ -885,15 +884,21 @@ function DomainTrendChart({
         {DOMAINS.map(d => {
           const score = domainScores[d] ?? 0
           const statusLabel = getStatusLabel(score)
+          const color = DOMAIN_COLORS[d]
           return (
             <div
               key={d}
-              className="flex flex-col items-center gap-1 p-2 rounded-lg"
+              className="flex flex-col items-center gap-2 px-3 py-3 rounded-lg"
               style={{ backgroundColor: '#111410' }}
             >
-              <span className="text-xs" style={{ color: '#8A9980' }}>{d}</span>
-              <span className="text-lg font-bold font-mono" style={{ color: '#E8EDE0' }}>{score}</span>
-              <StatusBadge status={statusLabel as '탁월' | '보통' | '주의' | '위험'} />
+              <div className="flex items-center gap-1.5">
+                <span className="inline-block w-2.5 h-2.5 rounded-full" style={{ backgroundColor: color }} />
+                <span className="text-sm font-medium" style={{ color }}>{d}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-2xl font-bold font-mono" style={{ color: '#E8EDE0' }}>{score}</span>
+                <StatusBadge status={statusLabel as '탁월' | '보통' | '주의' | '위험'} size="sm" />
+              </div>
             </div>
           )
         })}
