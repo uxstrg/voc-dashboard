@@ -965,9 +965,9 @@ function DomainTrendChart({
                   strokeOpacity={0.6}
                   label={{
                     value: emoji,
-                    position: 'insideTopRight',
+                    position: 'insideTop',
                     fontSize: 18,
-                    offset: 10,
+                    offset: -22,
                   }}
                 />
               )
