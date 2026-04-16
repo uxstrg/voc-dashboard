@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import minerLoaderGif from '../assets/image-1.gif'
 import {
   RadarChart, Radar, PolarGrid, PolarAngleAxis, ResponsiveContainer,
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceArea,
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceArea, ReferenceLine,
 } from 'recharts'
 import { DiagnosedVoC, DiagnosisIssue } from '../types'
 import {
@@ -31,6 +31,15 @@ interface SummaryData {
   earliest_collected_at: string | null
   weekly_scores: { week: string; [domain: string]: string | number }[]
   daily_scores: { day: string; [domain: string]: string | number }[]
+  events: {
+    id: number
+    event_date: string
+    title: string
+    type: string
+    description: string
+    daily_impacts: Record<string, number>
+    weekly_impacts: Record<string, number>
+  }[]
   domain_insights: Record<string, { insight: string; top_attributes: string[] }>
   weekly_pattern: { title: string; body: string } | null
   domain_detail: Record<string, {
@@ -298,7 +307,7 @@ export default function Dashboard() {
       {/* [D] 채널 + 트렌드 */}
       <section className="mt-6 grid grid-cols-[35%_65%] gap-4">
         <ChannelSentimentChart data={channelSentiment} />
-        <DomainTrendChart data={trendData} dailyData={summary?.daily_scores ?? []} domainScores={domainScores as Record<Domain, number>} />
+        <DomainTrendChart data={trendData} dailyData={summary?.daily_scores ?? []} events={summary?.events ?? []} domainScores={domainScores as Record<Domain, number>} />
       </section>
     </main>
   )
@@ -800,11 +809,19 @@ function ChannelSentimentChart({ data }: { data: ReturnType<typeof calcChannelSe
 }
 
 // ─── [D-2] 도메인 점수 추이 ──────────────────────────────────────────────────
+const EVENT_EMOJI: Record<string, string> = {
+  '업데이트': '🔄',
+  '장애': '⚠️',
+  '프로모션': '📣',
+  '기타': '📌',
+}
+
 function DomainTrendChart({
-  data, dailyData, domainScores
+  data, dailyData, events, domainScores
 }: {
   data: { week: string; 전략: number | null; UX: number | null; 운영: number | null; 기술: number | null; _noData?: boolean }[]
   dailyData: { day: string; [domain: string]: string | number }[]
+  events: SummaryData['events']
   domainScores: Record<Domain, number>
 }) {
   const [mode, setMode] = useState<'week' | 'day'>('week')
@@ -891,8 +908,70 @@ function DomainTrendChart({
                 color: '#E8EDE0',
               }}
               formatter={(value: number | null, name: string) => value != null ? [`${value}점`, name] : ['데이터 없음', name]}
+              content={({ active, payload, label }) => {
+                if (!active || !payload) return null
+                const ed = new Date()
+                const matchedEvent = events.find(evt => {
+                  const evtDate = new Date(evt.event_date)
+                  const dayLabel = `${String(evtDate.getMonth() + 1).padStart(2, '0')}.${String(evtDate.getDate()).padStart(2, '0')}`
+                  if (mode === 'day') return label === dayLabel
+                  return (label || '').includes(dayLabel)
+                })
+                const impacts = matchedEvent ? (mode === 'day' ? matchedEvent.daily_impacts : matchedEvent.weekly_impacts) : null
+                return (
+                  <div style={{ backgroundColor: '#1A1D18', border: '1px solid #2E3329', borderRadius: 8, padding: '8px 12px', fontSize: 12, color: '#E8EDE0' }}>
+                    <div style={{ marginBottom: 4, color: '#8A9980' }}>{label}</div>
+                    {payload.filter(p => p.value != null).map((p: any) => (
+                      <div key={p.name} style={{ color: p.color }}>{p.name}: {p.value}점</div>
+                    ))}
+                    {matchedEvent && (
+                      <div style={{ marginTop: 6, paddingTop: 6, borderTop: '1px dashed #2E3329' }}>
+                        <div style={{ color: '#5EE86A', fontWeight: 600 }}>
+                          {EVENT_EMOJI[matchedEvent.type]} {matchedEvent.title}
+                        </div>
+                        {matchedEvent.description && (
+                          <div style={{ color: '#8A9980', marginTop: 2 }}>{matchedEvent.description}</div>
+                        )}
+                        {impacts && Object.keys(impacts).length > 0 && (
+                          <div style={{ marginTop: 4, color: '#8A9980' }}>
+                            영향: {Object.entries(impacts).map(([d, v]) => `${d} ${v > 0 ? '+' : ''}${v}`).join(', ')}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )
+              }}
             />
 
+            {/* 이벤트 마킹 */}
+            {events.map(evt => {
+              const ed = new Date(evt.event_date)
+              const dayLabel = `${String(ed.getMonth() + 1).padStart(2, '0')}.${String(ed.getDate()).padStart(2, '0')}`
+              // 주별: 해당 주의 week 라벨 매칭, 일별: dayLabel 직접 매칭
+              const xKey = mode === 'day' ? dayLabel : chartData.find(d => {
+                const range = (d.week || '').split('\n')[1] || ''
+                return range.includes(dayLabel)
+              })?.week
+              if (!xKey) return null
+              const impacts = mode === 'day' ? evt.daily_impacts : evt.weekly_impacts
+              const emoji = EVENT_EMOJI[evt.type] || '📌'
+              return (
+                <ReferenceLine
+                  key={evt.id}
+                  x={xKey}
+                  stroke="#5EE86A"
+                  strokeDasharray="4 4"
+                  strokeOpacity={0.6}
+                  label={{
+                    value: emoji,
+                    position: 'top',
+                    fontSize: 16,
+                    offset: 5,
+                  }}
+                />
+              )
+            })}
             {noDataRanges.map((range, i) => (
               <ReferenceArea
                 key={i}
