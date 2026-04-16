@@ -9,7 +9,7 @@ export function Footer() {
           {/* Left: Service Info */}
           <div className="flex items-center gap-4 text-sm">
             <span style={{ color: '#8A9980' }}>
-              언더그라운드 <span className="font-mono">v2.0</span> · 2026
+              언더그라운드 <span className="font-mono">v2.1</span> · 2026
             </span>
             <span style={{ color: '#2E3329' }}>·</span>
             <span style={{ color: '#8A9980' }}>

@@ -1,8 +1,10 @@
 // Variant A: Solid Pill - Status badges
 export function StatusBadge({
-  status
+  status,
+  size = 'md'
 }: {
   status: '탁월' | '보통' | '주의' | '위험'
+  size?: 'sm' | 'md'
 }) {
   const styles = {
     '탁월': 'bg-[#0D77EE] text-[#E8EDE0]',
@@ -11,8 +13,10 @@ export function StatusBadge({
     '위험': 'bg-[#EF4444] text-[#E8EDE0]',
   };
 
+  const sizeClass = size === 'sm' ? 'px-2 py-0.5 text-[10px]' : 'px-3 py-1 text-xs';
+
   return (
-    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${styles[status]}`}>
+    <span className={`inline-flex items-center rounded-full font-medium whitespace-nowrap ${sizeClass} ${styles[status]}`}>
       {status}
     </span>
   );
