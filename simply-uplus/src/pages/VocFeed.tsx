@@ -56,8 +56,9 @@ function formatDate(dateStr: string | null | undefined): string {
   if (!dateStr) return ''
   const d = new Date(dateStr)
   if (isNaN(d.getTime())) return ''
+  const kst = new Date(d.getTime() + 9 * 60 * 60 * 1000)
   const pad = (n: number) => String(n).padStart(2, '0')
-  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`
+  return `${kst.getUTCFullYear()}-${pad(kst.getUTCMonth() + 1)}-${pad(kst.getUTCDate())} ${pad(kst.getUTCHours())}:${pad(kst.getUTCMinutes())}`
 }
 
 function isAppOrPlayStore(platform: string): boolean {
@@ -165,7 +166,7 @@ export default function VocFeed() {
       return true
     })
 
-    const getDate = (v: any) => v.post_date || v.diagnosed_at || v.collected_at || ''
+    const getDate = (v: any) => v.post_date || v.collected_at || ''
     if (sortBy === 'latest') {
       list.sort((a, b) => getDate(b).localeCompare(getDate(a)))
     } else {
@@ -488,7 +489,7 @@ function VocCard({ voc, onClick }: { voc: DiagnosedVoC; onClick: () => void }) {
   const domains = [...new Set(voc.issues.map(i => i.domain))]
   const platform = (voc as DiagnosedVoC & { platform?: string }).platform ?? voc.source
   const channelDetail = (voc as DiagnosedVoC & { channel_detail?: string }).channel_detail
-  const dateStr = (voc as any).post_date || (voc as any).diagnosed_at || voc.collected_at
+  const dateStr = (voc as any).post_date || voc.collected_at
 
   // Issue sentiment counts
   const posCount = voc.issues.filter(i => i.sentiment === '긍정' || i.sentiment === '매우 긍정').length
@@ -554,7 +555,7 @@ function VocCard({ voc, onClick }: { voc: DiagnosedVoC; onClick: () => void }) {
 function DrilldownPanel({ voc, onClose }: { voc: DiagnosedVoC; onClose: () => void }) {
   const platform = (voc as DiagnosedVoC & { platform?: string }).platform ?? voc.source
   const channelDetail = (voc as DiagnosedVoC & { channel_detail?: string }).channel_detail
-  const dateStr = (voc as any).post_date || (voc as any).diagnosed_at || voc.collected_at
+  const dateStr = (voc as any).post_date || voc.collected_at
 
   return (
     <div className="fixed inset-0 z-50 flex">
