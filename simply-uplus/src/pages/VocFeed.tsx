@@ -57,7 +57,8 @@ function formatDate(dateStr: string | null | undefined): string {
   const d = new Date(dateStr)
   if (isNaN(d.getTime())) return ''
   const pad = (n: number) => String(n).padStart(2, '0')
-  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`
+  // DB에 KST가 UTC로 저장되어 있으므로 UTC 그대로 표시
+  return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())} ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}`
 }
 
 function isAppOrPlayStore(platform: string): boolean {
