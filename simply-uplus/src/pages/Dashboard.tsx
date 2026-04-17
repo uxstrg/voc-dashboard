@@ -341,14 +341,14 @@ function DiagnosisHeader({
   // N월 N주차 계산
   const now = new Date()
   const pad = (n: number) => String(n).padStart(2, '0')
-  const dayNames = ['일', '월', '화', '수', '목', '금', '토']
   const thisMonday = new Date(now)
   thisMonday.setDate(now.getDate() - ((now.getDay() + 6) % 7))
   const weekOfMonth = Math.ceil(thisMonday.getDate() / 7)
   const weekLabel = `${now.getMonth() + 1}월 ${weekOfMonth}주차 현황`
-  const mondayStr = `${pad(thisMonday.getMonth() + 1)}.${pad(thisMonday.getDate())}(${dayNames[thisMonday.getDay()]})`
-  const todayStr = `${pad(now.getMonth() + 1)}.${pad(now.getDate())}(${dayNames[now.getDay()]})`
-  const rangeStr = `${mondayStr} ~ ${todayStr}`
+  const diffDays = Math.floor((now.getTime() - thisMonday.getTime()) / (1000 * 60 * 60 * 24)) + 1
+  const fmtFull = (d: Date) => `${d.getFullYear()}.${pad(d.getMonth() + 1)}.${pad(d.getDate())}`
+  const fmtShort = (d: Date) => `${pad(d.getMonth() + 1)}.${pad(d.getDate())}`
+  const rangeStr = `${fmtFull(thisMonday)} – ${fmtShort(now)} · ${diffDays}일`
 
   // 이번 주 수치
   const wVoC = weeklyVoC || totalVoC
