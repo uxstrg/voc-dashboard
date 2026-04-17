@@ -367,8 +367,8 @@ function DiagnosisHeader({
       {/* 상단 메타 행 */}
       <div className="px-6 py-4 flex items-center gap-6 text-sm border-b border-[#2E3329]">
         <span>
-          <strong style={{ color: '#E8EDE0' }}>{weekLabel}</strong>{' '}
-          <span className="font-mono" style={{ color: '#8A9980' }}>{rangeStr}</span>
+          <span style={{ color: '#8A9980' }}>{weekLabel}</span>{' '}
+          <strong className="font-mono" style={{ color: '#5EE86A' }}>{rangeStr}</strong>
         </span>
         <span style={{ color: '#2E3329' }}>|</span>
         <span>
