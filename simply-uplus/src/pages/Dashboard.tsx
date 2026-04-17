@@ -263,6 +263,9 @@ export default function Dashboard() {
         positiveRate={positiveRate}
         totalVoC={summary?.total_voc ?? vocData.length}
         totalIssues={summary?.total_issues ?? allIssues.length}
+        weeklyVoC={summary?.weekly_voc ?? 0}
+        weeklyIssues={summary?.weekly_issues ?? 0}
+        weeklyPositiveRate={summary?.weekly_positive_rate ?? 0}
         lastDiagnosedAt={summary?.last_diagnosed_at ?? null}
         earliestCollectedAt={summary?.earliest_collected_at ?? null}
         weeklyPattern={summary?.weekly_pattern ?? null}
@@ -318,12 +321,15 @@ export default function Dashboard() {
 
 // ─── [A] 진단 헤더 ───────────────────────────────────────────────────────────
 function DiagnosisHeader({
-  overallScore, positiveRate, totalVoC, totalIssues, lastDiagnosedAt, earliestCollectedAt, weeklyPattern, urgentIssues, onUrgentClick
+  overallScore, positiveRate, totalVoC, totalIssues, weeklyVoC, weeklyIssues, weeklyPositiveRate, lastDiagnosedAt, earliestCollectedAt, weeklyPattern, urgentIssues, onUrgentClick
 }: {
   overallScore: number
   positiveRate: number
   totalVoC: number
   totalIssues: number
+  weeklyVoC: number
+  weeklyIssues: number
+  weeklyPositiveRate: number
   lastDiagnosedAt: string | null
   earliestCollectedAt: string | null
   weeklyPattern: { title: string; body: string } | null
@@ -345,9 +351,9 @@ function DiagnosisHeader({
   const rangeStr = `${mondayStr} ~ ${todayStr}`
 
   // 이번 주 수치
-  const wVoC = (summary as any)?.weekly_voc ?? totalVoC
-  const wIssues = (summary as any)?.weekly_issues ?? totalIssues
-  const wPosRate = (summary as any)?.weekly_positive_rate ?? positiveRate
+  const wVoC = weeklyVoC || totalVoC
+  const wIssues = weeklyIssues || totalIssues
+  const wPosRate = weeklyPositiveRate || positiveRate
 
   return (
     <section
