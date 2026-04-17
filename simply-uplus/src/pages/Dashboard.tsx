@@ -29,6 +29,9 @@ interface SummaryData {
   positive_rate: number
   last_diagnosed_at: string | null
   earliest_collected_at: string | null
+  weekly_voc: number
+  weekly_issues: number
+  weekly_positive_rate: number
   weekly_scores: { week: string; [domain: string]: string | number }[]
   daily_scores: { day: string; [domain: string]: string | number }[]
   events: {
@@ -329,12 +332,22 @@ function DiagnosisHeader({
 }) {
   const statusLabel = getStatusLabel(overallScore)
 
-  // 분석 기간: 가장 오래된 수집일 ~ 가장 최근 진단일
-  const endDate = lastDiagnosedAt ? new Date(lastDiagnosedAt) : new Date()
-  const startDate = earliestCollectedAt ? new Date(earliestCollectedAt) : new Date(endDate)
-  const diffDays = Math.max(1, Math.round((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)))
-  const fmt = (d: Date) => `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`
-  const periodText = `${fmt(startDate)} – ${fmt(endDate).slice(5)}`
+  // N월 N주차 계산
+  const now = new Date()
+  const pad = (n: number) => String(n).padStart(2, '0')
+  const dayNames = ['일', '월', '화', '수', '목', '금', '토']
+  const thisMonday = new Date(now)
+  thisMonday.setDate(now.getDate() - ((now.getDay() + 6) % 7))
+  const weekOfMonth = Math.ceil(thisMonday.getDate() / 7)
+  const weekLabel = `${now.getMonth() + 1}월 ${weekOfMonth}주차 현황`
+  const mondayStr = `${pad(thisMonday.getMonth() + 1)}.${pad(thisMonday.getDate())}(${dayNames[thisMonday.getDay()]})`
+  const todayStr = `${pad(now.getMonth() + 1)}.${pad(now.getDate())}(${dayNames[now.getDay()]})`
+  const rangeStr = `${mondayStr} ~ ${todayStr}`
+
+  // 이번 주 수치
+  const wVoC = (summary as any)?.weekly_voc ?? totalVoC
+  const wIssues = (summary as any)?.weekly_issues ?? totalIssues
+  const wPosRate = (summary as any)?.weekly_positive_rate ?? positiveRate
 
   return (
     <section
@@ -348,24 +361,23 @@ function DiagnosisHeader({
       {/* 상단 메타 행 */}
       <div className="px-6 py-4 flex items-center gap-6 text-sm border-b border-[#2E3329]">
         <span>
-          <span style={{ color: '#8A9980' }}>분석 기간</span>{' '}
-          <strong className="font-mono" style={{ color: '#5EE86A' }}>{periodText}</strong>
-          <span style={{ color: '#8A9980' }}> · {diffDays}일</span>
+          <strong style={{ color: '#E8EDE0' }}>{weekLabel}</strong>{' '}
+          <span className="font-mono" style={{ color: '#8A9980' }}>{rangeStr}</span>
         </span>
         <span style={{ color: '#2E3329' }}>|</span>
         <span>
           <span style={{ color: '#8A9980' }}>수집 VoC</span>{' '}
-          <strong className="font-mono" style={{ color: '#5EE86A' }}>{totalVoC}건</strong>
+          <strong className="font-mono" style={{ color: '#5EE86A' }}>{wVoC}건</strong>
         </span>
         <span style={{ color: '#2E3329' }}>|</span>
         <span>
           <span style={{ color: '#8A9980' }}>진단 이슈</span>{' '}
-          <strong className="font-mono" style={{ color: '#5EE86A' }}>{totalIssues}건</strong>
+          <strong className="font-mono" style={{ color: '#5EE86A' }}>{wIssues}건</strong>
         </span>
         <span style={{ color: '#2E3329' }}>|</span>
         <span>
           <span style={{ color: '#8A9980' }}>긍정 반응</span>{' '}
-          <strong className="font-mono" style={{ color: '#5EE86A' }}>{positiveRate}%</strong>
+          <strong className="font-mono" style={{ color: '#5EE86A' }}>{wPosRate}%</strong>
         </span>
       </div>
 
