@@ -133,7 +133,7 @@ export default function Dashboard() {
   }, [summary, allIssues])
 
   const trendData = useMemo(() => {
-    const labels = ['2주 전', '1주 전', '이번 주'] as const
+    const labels = ['3주 전', '2주 전', '1주 전', '이번 주'] as const
     const now = new Date()
     const thisMonday = new Date(now)
     thisMonday.setDate(now.getDate() - now.getDay() + 1)
@@ -144,10 +144,10 @@ export default function Dashboard() {
       return `${pad(mon.getMonth() + 1)}.${pad(mon.getDate())}~${pad(sun.getMonth() + 1)}.${pad(sun.getDate())}`
     }
 
-    // 2주 전, 1주 전, 이번 주의 월요일
-    const weekMondays = Array.from({ length: 3 }, (_, i) => {
+    // 3주 전, 2주 전, 1주 전, 이번 주의 월요일
+    const weekMondays = Array.from({ length: 4 }, (_, i) => {
       const d = new Date(thisMonday)
-      d.setDate(d.getDate() + (i - 2) * 7)
+      d.setDate(d.getDate() + (i - 3) * 7)
       return d
     })
     const weekKeys = weekMondays.map(d => `${pad(d.getMonth() + 1)}.${pad(d.getDate())}`)
@@ -879,7 +879,7 @@ function DomainTrendChart({
     >
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-semibold" style={{ color: '#E8EDE0' }}>
-          도메인 점수 추이 ({mode === 'week' ? '최근 3주' : '최근 14일'})
+          도메인 점수 추이 ({mode === 'week' ? '최근 4주' : '최근 14일'})
         </h3>
         <div className="flex gap-1">
           {([['day', '일'], ['week', '주']] as const).map(([key, label]) => (
